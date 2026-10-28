@@ -1,0 +1,1634 @@
+{
+  "baseline": "knn_k5",
+  "test_data": "lora/eval_cross_repo_no_summary.json",
+  "test_sha256": "42052eedb3dc19a880a52daf0e9efbdfed0bd2feda62785809f0c4875663222c",
+  "train": {
+    "path": "data/v2/ablation_v2_no_summary/data/routing_train.json",
+    "sha256": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511",
+    "rows": 637,
+    "decision_counts": {
+      "tool_call": 403,
+      "clarify_needed": 98,
+      "no_tool": 136
+    },
+    "majority_decision": "tool_call"
+  },
+  "metrics": {
+    "counts": {
+      "n_file_rows": 87,
+      "skipped_bad_gold": 0,
+      "n_evaluated": 87,
+      "n_parse": 87,
+      "n_parse_valid_shape": 87,
+      "n_decision_match": 39,
+      "n_gold_tool_call": 35,
+      "n_tool_match": 22,
+      "n_args_match": 0,
+      "n_hallucination_tool": 0,
+      "n_relevance_ok": 25,
+      "n_gold_no_call": 52,
+      "n_irrelevance_ok": 35,
+      "n_args_valid": 22
+    },
+    "report_lines": [
+      "====== Phase 2A 路由测评 ======",
+      "样本总数（文件条数）: 87",
+      "金标可解析条数: 87（跳过金标损坏: 0）",
+      "模型输出可解析为 JSON: 87 (100.000%)",
+      "解析且角色字段合法: 87 (100.000%)",
+      "decision_type 一致: 39 (44.828%)",
+      "金标为 tool_call 的条数: 35",
+      "tool_call 子集·工具名一致: 22 (62.857% of gold tool_call)",
+      "tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)",
+      "预测 tool_call 但工具名非法/空: 0（越低越好）",
+      "—— BFCL 口径 ——",
+      "相关检测（该调工具时调了）: 25/35 (71.4%)",
+      "无关检测（不该调时没调）: 35/52 (67.3%)",
+      "参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 22/22 (100.0%)",
+      "=================================================="
+    ],
+    "decision_accuracy": {
+      "correct": 39,
+      "total": 87,
+      "rate": 0.4482758620689655,
+      "wilson95": [
+        0.348170047270701,
+        0.552756400524142
+      ]
+    },
+    "relevance": {
+      "correct": 25,
+      "total": 35,
+      "rate": 0.7142857142857143
+    },
+    "irrelevance": {
+      "correct": 35,
+      "total": 52,
+      "rate": 0.6730769230769231
+    }
+  },
+  "prediction_seconds": 2.2512205999992148,
+  "embedding": {
+    "train": {
+      "texts": 637,
+      "embed_documents_calls": 64,
+      "dimensions": 1024,
+      "seconds": 24.709781599998678
+    },
+    "test": {
+      "texts": 87,
+      "embed_documents_calls": 9,
+      "dimensions": 1024,
+      "seconds": 2.688533299999108
+    },
+    "shared_k": [
+      5,
+      1,
+      3,
+      10
+    ],
+    "train_shared_across_tests": true,
+    "actual_totals_in": "run.json"
+  },
+  "predictions": [
+    {
+      "index": 0,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 1,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "VectorStore 里 dense 检索和 RRF 混合检索分别在哪几个方法？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "VectorStore 里 dense 检索和 RRF 混合检索分别在哪几个方法？"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "search_codebase 工具返回给模型的 JSON 结构是什么？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "search_codebase 工具返回给模型的 JSON 结构是什么？"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "BM25 索引默认持久化到哪个文件路径？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "BM25 索引默认持久化到哪个文件路径？"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "代码切块 Chunk 是在哪个模块里做的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "代码切块 Chunk 是在哪个模块里做的？"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 7,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Dockerfile 自动生成走哪个 Python 模块？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "generate_dockerfile",
+        "arguments": {
+          "project_description": "Dockerfile 自动生成走哪个 Python 模块？"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "settings 里 embedding_provider 可以填哪些值？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "settings 里 embedding_provider 可以填哪些值？"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "多轮对话记忆裁剪 _prune_memory 会丢掉什么消息？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "多轮对话记忆裁剪 _prune_memory 会丢掉什么消息？"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Streamlit Web UI 的入口文件名是什么？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "generate_dockerfile",
+        "arguments": {
+          "project_description": "Streamlit Web UI 的入口文件名是什么？"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "FastAPI 聊天接口挂载在哪个路由下面？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "FastAPI 聊天接口挂载在哪个路由下面？"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Chroma 向量库从磁盘 load 时在 VectorStore 哪个方法？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Chroma 向量库从磁盘 load 时在 VectorStore 哪个方法？"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Query Rewriter 在检索里什么时候会改写 query？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Query Rewriter 在检索里什么时候会改写 query？"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "日志诊断 analyse_log 工具怎么接到 Agent 里的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 15,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "构建本地知识库的脚本一般在 scripts 目录叫什么？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "构建本地知识库的脚本一般在 scripts 目录叫什么？"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "向量持久化目录 Chroma_persist_dir 在配置里怎么配？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "向量持久化目录 Chroma_persist_dir 在配置里怎么配？"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 里 FastAPI 的接口路由是怎么组织和注册的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 18,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中负责接收用户问题并分发工具调用的核心逻辑在哪个模块？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中负责接收用户问题并分发工具调用的核心逻辑在哪个模块？"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 是如何封装 Function Calling 工具列表的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 是如何封装 Function Calling 工具列表的？"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目里 search_codebase 工具的实现流程是怎样的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 21,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Chroma 向量库是在什么位置初始化的，是否做了单例预热？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Chroma 向量库是在什么位置初始化的，是否做了单例预热？"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "代码仓库文档切分的逻辑写在哪，使用了什么 chunk 策略？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "代码仓库文档切分的逻辑写在哪，使用了什么 chunk 策略？"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Query Rewrite 的处理是在检索前哪个阶段执行的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Query Rewrite 的处理是在检索前哪个阶段执行的？"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中 Dense 检索的 embedding 模型调用逻辑在哪？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中 Dense 检索的 embedding 模型调用逻辑在哪？"
+        }
+      }
+    },
+    {
+      "index": 25,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 的工具路由结果是如何组织成 JSON 输出的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RepoAgent 的工具路由结果是如何组织成 JSON 输出的？"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "为了防止重复调用和死循环，调用指纹机制是怎么实现的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "为了防止重复调用和死循环，调用指纹机制是怎么实现的？"
+        }
+      }
+    },
+    {
+      "index": 27,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "AST 静态分析器的入口函数在哪，主要检查了哪些反模式？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 28,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "GitHub Actions CI 流水线里是如何集成 AST 静态分析器的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 29,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "日志分析工具在项目里是如何解析输入日志并生成结果的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 30,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Docker 配置生成工具的 prompt 或逻辑定义写在哪个文件里？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 31,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中的 RAG 检索评测脚本是如何计算 MRR 的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "generate_tests",
+        "arguments": {
+          "code": "项目中的 RAG 检索评测脚本是如何计算 MRR 的？"
+        }
+      }
+    },
+    {
+      "index": 32,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "LoRA 微调模型的加载和动态挂载逻辑是在什么位置实现的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 33,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目里构造 6 类业务场景 SFT 数据的脚本或流程在哪？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目里构造 6 类业务场景 SFT 数据的脚本或流程在哪？"
+        }
+      }
+    },
+    {
+      "index": 34,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "上下文过滤和滑动窗口优化是在推理链路的哪个阶段做的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 35,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Streamlit 前端是如何把用户提问、工具返回和模型回答串起来的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Streamlit 前端是如何把用户提问、工具返回和模型回答串起来的？"
+        }
+      }
+    },
+    {
+      "index": 36,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "项目中如果检索结果质量较差，是否有相应的降级或熔断处理逻辑？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 37,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 38,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "浏览器里前端请求后端报 CORS 被拦截，后端侧通常要动哪些配置？"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 40,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 41,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "requirements 里写了包名，运行却报 No module named，先检查虚拟环境、路径还是安装方式？"
+        }
+      }
+    },
+    {
+      "index": 42,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "表数据量没怎么涨，但某条 SQL 突然变慢，先看执行计划、索引还是锁等待比较划算？"
+        }
+      }
+    },
+    {
+      "index": 43,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 44,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 45,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "接口返回 401 和 403，排障时一般怎么判断是 token 无效还是权限不足？"
+        }
+      }
+    },
+    {
+      "index": 46,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 47,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 48,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 49,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 50,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "complete_code",
+        "arguments": {
+          "context": "微服务 A 调 B 超时，B 的 CPU 不高，先查 B 的线程池、下游依赖还是 A 的重试退避？"
+        }
+      }
+    },
+    {
+      "index": 51,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "本地能连 Redis，线上同密码同端口连不上，除了白名单还要核对 bind、TLS、集群地址吗？"
+        }
+      }
+    },
+    {
+      "index": 52,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 53,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 54,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 55,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 56,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 57,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 58,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 59,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 60,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_code",
+        "arguments": {
+          "code": "Python 里 list 和 tuple 有什么区别？"
+        }
+      }
+    },
+    {
+      "index": 61,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "complete_code",
+        "arguments": {
+          "context": "Python 中 try/except 的作用是什么？"
+        }
+      }
+    },
+    {
+      "index": 62,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_code",
+        "arguments": {
+          "code": "如何在 Python 中读取一个 txt 文件？"
+        }
+      }
+    },
+    {
+      "index": 63,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 64,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "complete_code",
+        "arguments": {
+          "context": "heapq 在 Python 里怎么用？"
+        }
+      }
+    },
+    {
+      "index": 65,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 66,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 67,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "LangChain 是做什么用的？"
+        }
+      }
+    },
+    {
+      "index": 68,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "什么是 BM25？"
+        }
+      }
+    },
+    {
+      "index": 69,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "什么是向量数据库？"
+        }
+      }
+    },
+    {
+      "index": 70,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 71,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "什么是 JSON Schema？"
+        }
+      }
+    },
+    {
+      "index": 72,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 73,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 74,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 75,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "什么是余弦相似度？"
+        }
+      }
+    },
+    {
+      "index": 76,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 77,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 78,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 79,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "Chroma 和 BM25 哪个更适合做通用知识问答？"
+        }
+      }
+    },
+    {
+      "index": 80,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 81,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 82,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 83,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 84,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 85,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "RAG 系统里为什么会出现幻觉，通常怎么缓解？"
+        }
+      }
+    },
+    {
+      "index": 86,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,1142 @@
+[
+  {
+    "id": "A01",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "消息最前面放了 system，nanochat 是在哪段代码把它并进 user 的？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"消息最前面放了 system，nanochat 是在哪段代码把它并进 user 的？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A02",
+    "bucket": "A",
+    "pair_id": "bpe",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "这个仓库的 RustBPETokenizer 把 BPE 训练交给哪个库？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"这个仓库的 RustBPETokenizer 把 BPE 训练交给哪个库？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A03",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "GPTConfig 默认几层？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"GPTConfig 默认几层？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A04",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "这里 MLP 的平方 ReLU 写在哪"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"这里 MLP 的平方 ReLU 写在哪\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A05",
+    "bucket": "A",
+    "pair_id": "muon",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "muon_step_fused 在更新时怎么判断哪些权重需要做 decay？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"muon_step_fused 在更新时怎么判断哪些权重需要做 decay？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A06",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "多卡时，MuonAdamW 对不足 1024 个元素的 AdamW 参数调用哪种梯度通信？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"多卡时，MuonAdamW 对不足 1024 个元素的 AdamW 参数调用哪种梯度通信？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A07",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "eval_with_timeout 默认限时几秒"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"eval_with_timeout 默认限时几秒\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A08",
+    "bucket": "A",
+    "pair_id": "kv_cache",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "KVCache.reset 会把 K/V 张量清零吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"KVCache.reset 会把 K/V 张量清零吗？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A09",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "我在跟 python 工具调用那段，Engine.generate 收到 <|python_end|> 后，把收集到的非空表达式交给谁执行？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"我在跟 python 工具调用那段，Engine.generate 收到 <|python_end|> 后，把收集到的非空表达式交给谁执行？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A10",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "想单独调 run_chat_eval；num_samples 的函数默认值是多少？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"想单独调 run_chat_eval；num_samples 的函数默认值是多少？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A11",
+    "bucket": "A",
+    "pair_id": "gsm8k",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "gsm8k.py 从回答里抠最终数字的函数在哪？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"gsm8k.py 从回答里抠最终数字的函数在哪？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A12",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "MMLU.evaluate 收到小写 a 会直接判错吗"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"MMLU.evaluate 收到小写 a 会直接判错吗\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A13",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "刚开始核对模型尺寸，base_train.py 怎么从 --depth 算出宽度？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"刚开始核对模型尺寸，base_train.py 怎么从 --depth 算出宽度？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A14",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "一行还剩点空位，但候选对话都装不下了。chat_sft.py 的打包器怎么填这段？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"一行还剩点空位，但候选对话都装不下了。chat_sft.py 的打包器怎么填这段？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "A15",
+    "bucket": "A",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "chat_rl.py 里，同一题所有 rollout 都拿到 1 分，算出的 advantage 是多少"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"chat_rl.py 里，同一题所有 rollout 都拿到 1 分，算出的 advantage 是多少\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B01",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "base 第 0 步，Muon 动量实际取多少"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"base 第 0 步，Muon 动量实际取多少\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B02",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "拼 base 数据，文档缓冲阈值默认是 1000 篇吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"拼 base 数据，文档缓冲阈值默认是 1000 篇吗？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B03",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "SFT 我没限定训练步数，现在进度按读入的对话算，还是按真正用掉的算？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"SFT 我没限定训练步数，现在进度按读入的对话算，还是按真正用掉的算？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B04",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "RL 的学习率倍率现在怎么随训练步数变化"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"RL 的学习率倍率现在怎么随训练步数变化\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B05",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "缓存目录的环境变量没设，基础目录默认是哪？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"缓存目录的环境变量没设，基础目录默认是哪？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B06",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "我留了几个 d20 checkpoint，加载时选了 d20、没选 step。现在会挑哪一个？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"我留了几个 d20 checkpoint，加载时选了 d20、没选 step。现在会挑哪一个？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B07",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "base 验证实际留几片数据"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"base 验证实际留几片数据\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B08",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "想确认 CORE 现在的 few-shot 抽样：怎样避免把被测题本身抽进去？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"想确认 CORE 现在的 few-shot 抽样：怎样避免把被测题本身抽进去？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B09",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "ChatCORE 的生成题一次采了多个回答，实际怎样才算这一题过关？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"ChatCORE 的生成题一次采了多个回答，实际怎样才算这一题过关？\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "B10",
+    "bucket": "B",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "bpb 没有效字节时实际返回啥"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"tool_call\", \"tool_name\": \"search_codebase\", \"arguments\": {\"query\": \"bpb 没有效字节时实际返回啥\", \"top_k\": 6}, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C01",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "动量在累积什么？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C02",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "batch 翻倍时，学习率也必须跟着翻倍吗"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C03",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "权重衰减和 L2 正则化在 Adam 里为什么不完全等价？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C04",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "按范数裁剪会改梯度方向吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C05",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "准备切到混合精度训练了，想弄明白 loss scaling 为什么能缓解梯度下溢。"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C06",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "量化为何会掉精度？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C07",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "生成时把 temperature 调低，输出分布会发生什么变化？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C08",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "我在估算服务延迟，为什么首个 token 的等待时间和后续 token 的生成时间要分开统计？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C09",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "类别失衡会怎样误导准确率"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C10",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "模型只在一小批样本上领先，怎样判断这个差距是否可靠？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C11",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "用同一套验证集反复选模型，会给最后的评估带来什么偏差"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C12",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "数据泄漏是什么？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C13",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "正准备混合几个来源的训练数据，除了样本量，采样比例还该考虑哪些因素？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C14",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "偏好优化里常见的 KL 约束，主要是在限制什么变化"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "C15",
+    "bucket": "C",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "奖励模型给高分，却不符合人的真实意图，这类 reward hacking 从哪里来？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D01",
+    "bucket": "D",
+    "pair_id": "kv_cache",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "KV cache 究竟缓存什么"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D02",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "rotary embeddings 怎么把相对位置带进注意力分数？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D03",
+    "bucket": "D",
+    "pair_id": "bpe",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "BPE 合并的是词吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D04",
+    "bucket": "D",
+    "pair_id": "gsm8k",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "GSM8K 在考什么"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D05",
+    "bucket": "D",
+    "pair_id": "muon",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "Muon 正交化有啥用？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D06",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "我刚学到归一化，想弄明白 RMSNorm 不减均值时靠什么控制激活尺度。"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D07",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "GQA 共享 K 和 V 后，各 query 头为什么仍能有不同的注意力分布？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D08",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "top-k 采样的 k 调大，候选 token 的范围会怎样变？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D09",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "正在补 GPU 性能基础，Flash Attention 为何能减少显存读写？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "D10",
+    "bucket": "D",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "sliding window attention 会让模型完全接触不到窗口外的信息吗"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E01",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "nanoGPT 生成时怎么处理超长上下文"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E02",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "vLLM 的优先级队列底下用的是什么数据结构？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E03",
+    "bucket": "E",
+    "pair_id": "kv_cache",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "HF Transformers 的 DynamicLayer 沿哪一维追加 key？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E04",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "llm.c 的 encoder_forward 怎样合成词向量和位置向量？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E05",
+    "bucket": "E",
+    "pair_id": "bpe",
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "tiktoken 教学版 bpe_encode 挑合并对看哪个值？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E06",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "读 nanochat 时想到：固定了随机种子，GPU 训练为何仍可能无法逐位复现？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E07",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "读 nanochat 时想到：不同 tokenizer 评出来的困惑度能直接比吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E08",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "我在用 nanochat 补基础，梯度累积为什么能模拟更大的 batch？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E09",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "以 nanochat 这类模型为例，贪心解码离整句概率最大还差在哪"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  },
+  {
+    "id": "E10",
+    "bucket": "E",
+    "pair_id": null,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n"
+      },
+      {
+        "from": "user",
+        "value": "看 nanochat 时卡在反传概念上：冻结参数和切断梯度传播是一回事吗？"
+      },
+      {
+        "from": "assistant",
+        "value": "{\"decision_type\": \"no_tool\", \"tool_name\": null, \"arguments\": null, \"clarify_answer\": null, \"oracle_context\": null}"
+      }
+    ]
+  }
+]

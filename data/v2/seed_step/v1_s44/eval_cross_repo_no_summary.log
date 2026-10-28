@@ -1,0 +1,113 @@
+正在加载分词器、基座并挂载 LoRA…
+  base_model = /root/autodl-tmp/models/Qwen/Qwen3.5-4B
+  lora_path  = /root/autodl-tmp/devagent/ablations/seed_step_2026-10-24/v1_s44/adapter
+
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:   0%|          | 1/723 [00:00<02:08,  5.60it/s]Loading weights:   4%|▍         | 28/723 [00:00<00:05, 120.45it/s]Loading weights:   7%|▋         | 50/723 [00:00<00:04, 158.13it/s]Loading weights:  11%|█         | 79/723 [00:00<00:03, 195.53it/s]Loading weights:  14%|█▍        | 101/723 [00:00<00:03, 186.63it/s]Loading weights:  18%|█▊        | 128/723 [00:00<00:02, 211.44it/s]Loading weights:  21%|██        | 151/723 [00:00<00:02, 199.24it/s]Loading weights:  24%|██▍       | 172/723 [00:00<00:02, 197.72it/s]Loading weights:  27%|██▋       | 195/723 [00:01<00:02, 189.50it/s]Loading weights:  30%|██▉       | 215/723 [00:01<00:02, 190.62it/s]Loading weights:  33%|███▎      | 238/723 [00:01<00:02, 201.11it/s]Loading weights:  36%|███▌      | 259/723 [00:01<00:02, 179.57it/s]Loading weights:  39%|███▉      | 285/723 [00:01<00:02, 200.26it/s]Loading weights:  43%|████▎     | 310/723 [00:01<00:01, 206.78it/s]Loading weights:  46%|████▌     | 332/723 [00:01<00:01, 205.48it/s]Loading weights:  50%|████▉     | 358/723 [00:01<00:01, 218.94it/s]Loading weights:  53%|█████▎    | 381/723 [00:01<00:01, 218.59it/s]Loading weights:  56%|█████▌    | 404/723 [00:02<00:01, 217.43it/s]Loading weights:  59%|█████▉    | 426/723 [00:02<00:01, 201.22it/s]Loading weights:  80%|███████▉  | 578/723 [00:02<00:00, 558.88it/s]Loading weights:  99%|█████████▉| 715/723 [00:02<00:00, 775.20it/s]Loading weights: 100%|██████████| 723/723 [00:02<00:00, 298.32it/s]
+LoRA 已加载：248 个 lora_B 矩阵
+====== RepoAgent Phase 2A · LoRA · 87 条 ======
+
+lora:   0%|          | 0/87 [00:00<?, ?it/s][transformers] The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   1%|          | 1/87 [00:02<03:33,  2.48s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   2%|▏         | 2/87 [00:05<04:11,  2.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   3%|▎         | 3/87 [00:09<04:27,  3.19s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   5%|▍         | 4/87 [00:11<03:45,  2.72s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   6%|▌         | 5/87 [00:13<03:18,  2.42s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   7%|▋         | 6/87 [00:16<03:37,  2.69s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   8%|▊         | 7/87 [00:18<03:16,  2.45s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:   9%|▉         | 8/87 [00:20<03:01,  2.29s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  10%|█         | 9/87 [00:22<03:05,  2.38s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  11%|█▏        | 10/87 [00:24<02:51,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  13%|█▎        | 11/87 [00:26<02:39,  2.10s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  14%|█▍        | 12/87 [00:29<02:59,  2.39s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  15%|█▍        | 13/87 [00:32<03:15,  2.64s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  16%|█▌        | 14/87 [00:34<02:55,  2.40s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  17%|█▋        | 15/87 [00:36<02:41,  2.25s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  18%|█▊        | 16/87 [00:38<02:30,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  20%|█▉        | 17/87 [00:41<02:51,  2.44s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  21%|██        | 18/87 [00:44<03:00,  2.61s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  22%|██▏       | 19/87 [00:47<03:12,  2.83s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  23%|██▎       | 20/87 [00:50<03:14,  2.90s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  24%|██▍       | 21/87 [00:53<02:54,  2.65s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  25%|██▌       | 22/87 [00:56<03:10,  2.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  26%|██▋       | 23/87 [00:59<03:08,  2.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  28%|██▊       | 24/87 [01:01<02:44,  2.62s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  29%|██▊       | 25/87 [01:04<02:49,  2.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  30%|██▉       | 26/87 [01:06<02:31,  2.49s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  31%|███       | 27/87 [01:08<02:19,  2.33s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  32%|███▏      | 28/87 [01:11<02:28,  2.52s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  33%|███▎      | 29/87 [01:13<02:15,  2.33s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  34%|███▍      | 30/87 [01:15<02:07,  2.24s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  36%|███▌      | 31/87 [01:18<02:17,  2.46s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  37%|███▋      | 32/87 [01:21<02:23,  2.60s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  38%|███▊      | 33/87 [01:24<02:30,  2.79s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  39%|███▉      | 34/87 [01:27<02:40,  3.03s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  40%|████      | 35/87 [01:29<02:18,  2.67s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  41%|████▏     | 36/87 [01:31<02:04,  2.44s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  43%|████▎     | 37/87 [01:33<01:54,  2.28s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  44%|████▎     | 38/87 [01:35<01:50,  2.25s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  45%|████▍     | 39/87 [01:38<01:51,  2.32s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  46%|████▌     | 40/87 [01:40<01:48,  2.30s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  47%|████▋     | 41/87 [01:42<01:42,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  48%|████▊     | 42/87 [01:44<01:35,  2.13s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  49%|████▉     | 43/87 [01:46<01:30,  2.07s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  51%|█████     | 44/87 [01:49<01:40,  2.35s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  52%|█████▏    | 45/87 [01:51<01:33,  2.24s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  53%|█████▎    | 46/87 [01:53<01:28,  2.15s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  54%|█████▍    | 47/87 [01:55<01:22,  2.06s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  55%|█████▌    | 48/87 [01:57<01:18,  2.02s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  56%|█████▋    | 49/87 [01:58<01:16,  2.00s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  57%|█████▋    | 50/87 [02:00<01:12,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  59%|█████▊    | 51/87 [02:02<01:10,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  60%|█████▉    | 52/87 [02:04<01:07,  1.92s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  61%|██████    | 53/87 [02:06<01:05,  1.92s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  62%|██████▏   | 54/87 [02:08<01:02,  1.91s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  63%|██████▎   | 55/87 [02:10<01:01,  1.92s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  64%|██████▍   | 56/87 [02:12<00:59,  1.91s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  66%|██████▌   | 57/87 [02:14<00:57,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  67%|██████▋   | 58/87 [02:16<00:57,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  68%|██████▊   | 59/87 [02:18<00:54,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  69%|██████▉   | 60/87 [02:20<00:53,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  70%|███████   | 61/87 [02:22<00:50,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  71%|███████▏  | 62/87 [02:24<00:48,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  72%|███████▏  | 63/87 [02:25<00:46,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  74%|███████▎  | 64/87 [02:27<00:44,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  75%|███████▍  | 65/87 [02:29<00:43,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  76%|███████▌  | 66/87 [02:31<00:41,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  77%|███████▋  | 67/87 [02:33<00:39,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  78%|███████▊  | 68/87 [02:35<00:37,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  79%|███████▉  | 69/87 [02:37<00:35,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  80%|████████  | 70/87 [02:39<00:33,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  82%|████████▏ | 71/87 [02:41<00:31,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  83%|████████▎ | 72/87 [02:43<00:29,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  84%|████████▍ | 73/87 [02:45<00:27,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  85%|████████▌ | 74/87 [02:47<00:25,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  86%|████████▌ | 75/87 [02:49<00:23,  1.99s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  87%|████████▋ | 76/87 [02:51<00:21,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  89%|████████▊ | 77/87 [02:53<00:19,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  90%|████████▉ | 78/87 [02:55<00:17,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  91%|█████████ | 79/87 [02:57<00:15,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  92%|█████████▏| 80/87 [02:59<00:13,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  93%|█████████▎| 81/87 [03:01<00:11,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  94%|█████████▍| 82/87 [03:03<00:09,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  95%|█████████▌| 83/87 [03:05<00:07,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  97%|█████████▋| 84/87 [03:07<00:05,  1.97s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  98%|█████████▊| 85/87 [03:09<00:03,  1.95s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora:  99%|█████████▉| 86/87 [03:11<00:01,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+lora: 100%|██████████| 87/87 [03:13<00:00,  1.94s/it]lora: 100%|██████████| 87/87 [03:13<00:00,  2.22s/it]
+====== Phase 2A 路由测评 ======
+样本总数（文件条数）: 87
+金标可解析条数: 87（跳过金标损坏: 0）
+模型输出可解析为 JSON: 87 (100.000%)
+解析且角色字段合法: 87 (100.000%)
+decision_type 一致: 69 (79.310%)
+金标为 tool_call 的条数: 35
+tool_call 子集·工具名一致: 18 (51.429% of gold tool_call)
+tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)
+预测 tool_call 但工具名非法/空: 0（越低越好）
+—— BFCL 口径 ——
+相关检测（该调工具时调了）: 18/35 (51.4%)
+无关检测（不该调时没调）: 52/52 (100.0%)
+参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 18/18 (100.0%)
+==================================================

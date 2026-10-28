@@ -1,0 +1,30 @@
+{
+  "input_sha256": {
+    "loRA/routing_train.json": "c067f56a05595e45221b04d0b77975368a3c3676ec191c70c8f6f02eb7ad4bf3",
+    "loRA/routing_train_v1_no_summary.json": "77620ccc59cb4eed6b3c6160917f1918e04935d60e21fa1dc82e39d1d7b8266e",
+    "loRA/eval_in_domain_no_summary.json": "6c21cc1b5e6a7191290897d4db0d0a363400d2c94eeb7d181bd4c0f7695790c7",
+    "loRA/eval_cross_repo_no_summary.json": "42052eedb3dc19a880a52daf0e9efbdfed0bd2feda62785809f0c4875663222c",
+    "loRA/dataset_info.json": "ca937c9d7b722152dc8cfd3a0f4c361c664fdb52d2fb98c477d69d1bd58ea44a",
+    "loRA/format_to_sharegpt.py": "ffe3db084dc9df62e47256d9bbcfc6c242058c577731bb86da4ea160f8efb40f"
+  },
+  "output_sha256": {
+    "routing_train.json": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511",
+    "eval_in_domain_no_summary.json": "6c21cc1b5e6a7191290897d4db0d0a363400d2c94eeb7d181bd4c0f7695790c7",
+    "eval_cross_repo_no_summary.json": "42052eedb3dc19a880a52daf0e9efbdfed0bd2feda62785809f0c4875663222c",
+    "dataset_info.json": "ca937c9d7b722152dc8cfd3a0f4c361c664fdb52d2fb98c477d69d1bd58ea44a"
+  },
+  "counts": {
+    "training": 637,
+    "v1_prefix": 497,
+    "supplement": 140,
+    "in_domain": 50,
+    "cross_repo": 87
+  },
+  "checks": {
+    "only_training_system_prompt_changed": true,
+    "all_other_fields_and_record_order_preserved": true,
+    "first_497_records_equal_v1": true,
+    "all_prompts_equal_v1_no_summary": true,
+    "evaluation_and_dataset_mapping_bytes_unchanged": true
+  }
+}

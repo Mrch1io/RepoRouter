@@ -1,0 +1,135 @@
+{
+  "started_at": "",
+  "status": "passed",
+  "temporary_source_copy": "<user-home>\\AppData\\Local\\Temp\\clean90-source-t2_l2hds\\src",
+  "original_count": 87,
+  "clean_count": 72,
+  "dimensions": 1024,
+  "collection": "langchain",
+  "distance": "l2",
+  "chromadb_version": "1.5.9",
+  "removed": [
+    {
+      "id": "b28fda9c-385c-4261-88e2-3d9b1c4b1245",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "38114655-1a40-4cc4-b6b9-41e277f3eb62",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "e6476c26-c281-452a-97aa-f765b0d9be8a",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "72a4a024-b4f6-464f-b1c2-5829cb26d216",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "9a5a6078-b2f1-4b1d-876c-5ace379aafef",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "563d6ea1-ebe7-4876-a29b-af4fcaee7846",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "3b5196a6-cf72-4333-94e3-4d8c0bdfa014",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "d283bd5c-51bf-4e27-8c43-8740dbe064dc",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "7a7d4a59-9ab5-4156-8006-c10e7b0d4764",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "bc15caac-701c-4cfa-bc44-b7b298040a4d",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "579ac5cc-5e0a-4db7-85ac-aba2abf2248d",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "dd758c53-7403-48aa-bfb4-826f75bd9467",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "5ce33f39-6ff4-4963-8352-0ee3d09baa84",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "2980a370-52bd-4036-92e9-0760e226d23e",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "4b7f11bc-590d-4cb3-b4e1-8010074a275d",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    }
+  ],
+  "removed_source_counts": {
+    "evaluation\\soft_fuse_dataset.py": 6,
+    "evaluation\\e2e_manifest.py": 3,
+    "evaluation\\rag_dataset.py": 3,
+    "evaluation\\rewriter_noisy_dataset.py": 3
+  },
+  "removed_sources_remaining": {
+    "evaluation\\soft_fuse_dataset.py": 0,
+    "evaluation\\e2e_manifest.py": 0,
+    "evaluation\\rag_dataset.py": 0,
+    "evaluation\\rewriter_noisy_dataset.py": 0
+  },
+  "retained_evaluation_counts": {
+    "evaluation\\llm_judge_e2e.py": 7,
+    "evaluation\\eva_retrieval.py": 4,
+    "evaluation\\eva_retrieval_reranker.py": 3,
+    "evaluation\\eva_rewriter.py": 3,
+    "evaluation\\chroma_verify_tokens.py": 1,
+    "evaluation\\stats.py": 1
+  },
+  "embeddings_elementwise_equal": true,
+  "max_absolute_embedding_difference": 0.0,
+  "documents_equal": true,
+  "metadata_equal": true,
+  "embedding_api_calls_for_derivation": 0,
+  "dense_smoke": {
+    "query": "RepoAgent.chat 在哪里实现",
+    "top_k": 6,
+    "returned": 6,
+    "sources": [
+      "agent\\core.py",
+      "agent\\core.py",
+      "agent\\tools\\docker_file_llm.py",
+      "api\\routes.py",
+      "agent\\tools\\tools_schemas.py",
+      "agent\\tools\\complete_code_llm.py"
+    ],
+    "seconds": 0.425145799999882,
+    "status": "passed"
+  },
+  "ended_at": "",
+  "original_index_unchanged": true,
+  "index_logical_sha256": {
+    "embeddings": "b9d6f62402988e40e448fd86093afa994852d17a57fb01b5da1eb18a3ead10dd",
+    "embedding_metadata": "713f0292fb59c8324d61398e8859049973a49af8ca85ca2372466e36fbf5439a",
+    "embedding_metadata_array": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "embeddings_queue": "f4ea5633f8f8b53cbbcc4cf79e48e15618ade36cf25a8a289693a2b7b5efb3f9",
+    "collections": "a60de2c9a3e2a40f5292d6867927945f1f5e8c548c8c20bcc7ae3c7475a7961b",
+    "collection_metadata": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "segments": "96b6b1d85ae85c52a8a0f18eff0866b0e83729eff93cd2c7714eaa1ab3cfee5d",
+    "max_seq_id": "36dfc3d0433cd1b65398c9e474cd61f225132f19c1646a448b070249188f73ec"
+  },
+  "index_files_sha256": {
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/data_level0.bin": "72d9049a1dac6c0f906634ea88c8f45758bd55c8f98fb608d4c7f7aea9c219a1",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/length.bin": "2d959bb2114d6416c59fdc7ec3d65b4ccb77510c1b89bded2a696eaaea79400c",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bm25_index.pkl": "68a718d111e46f215bc63620d62d5df4516fdb647c2875d15eec913670606452",
+    "chroma.sqlite3": "9c7f5ea5ef96ae8fb111f319f680d4d9e3d0092debcdde9995e82c11db2c4a10"
+  },
+  "temporary_source_copy_removed": true,
+  "finalized_at": ""
+}

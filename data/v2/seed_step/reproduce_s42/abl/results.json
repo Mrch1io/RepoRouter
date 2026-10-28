@@ -1,0 +1,22 @@
+{
+  "eval_in_domain_no_summary": {
+    "test": "eval_in_domain_no_summary",
+    "total": 50,
+    "evaluated": 50,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 49,
+    "accuracy": 0.98,
+    "historical_match": 49,
+    "difference": 0
+  },
+  "eval_cross_repo_no_summary": {
+    "test": "eval_cross_repo_no_summary",
+    "total": 87,
+    "evaluated": 87,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 78,
+    "accuracy": 0.896551724137931,
+    "historical_match": 78,
+    "difference": 0
+  }
+}

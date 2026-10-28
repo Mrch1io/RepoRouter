@@ -1,0 +1,20 @@
+{"name": "explain_src", "status": "running"}
+{"name": "explain_src", "status": "passed", "seconds": 22.379067400001077, "roc_auc": 0.801, "recommended": {"threshold": 0.8868874907493591, "outdomain_interception_rate": 0.56, "private_false_block_rate": 0.075, "outdomain_intercepted": 28, "private_intercepted": 3}}
+{"stage": "explanation", "status": "passed", "source_matches": 90, "max_absolute_distance_difference": 0.00036513805389404297, "auc_3dp": "0.801"}
+{"name": "baseline_src", "status": "running"}
+{"name": "baseline_src", "status": "passed", "seconds": 19.899361200001294, "roc_auc": 0.798, "recommended": {"threshold": 0.8868874907493591, "outdomain_interception_rate": 0.56, "private_false_block_rate": 0.075, "outdomain_intercepted": 28, "private_intercepted": 3}}
+{"name": "baseline_src_ast", "status": "running"}
+{"name": "baseline_src_ast", "status": "passed", "seconds": 20.960633500002587, "roc_auc": 0.801, "recommended": {"threshold": 0.8066497445106506, "outdomain_interception_rate": 0.64, "private_false_block_rate": 0.075, "outdomain_intercepted": 32, "private_intercepted": 3}}
+{"name": "baseline_src_flash", "status": "running"}
+{"name": "baseline_src_flash", "status": "passed", "seconds": 14.610389500001475, "roc_auc": 0.744, "recommended": {"threshold": 1.1008355617523193, "outdomain_interception_rate": 0.48, "private_false_block_rate": 0.075, "outdomain_intercepted": 24, "private_intercepted": 3}}
+{"name": "baseline_src_ast_flash", "status": "running"}
+{"name": "baseline_src_ast_flash", "status": "passed", "seconds": 14.853065000002971, "roc_auc": 0.6655, "recommended": {"threshold": 1.0791512727737427, "outdomain_interception_rate": 0.36, "private_false_block_rate": 0.075, "outdomain_intercepted": 18, "private_intercepted": 3}}
+{"name": "baseline_src_frozen90_clean", "status": "running"}
+{"name": "baseline_src_frozen90_clean", "status": "passed", "seconds": 21.411581899999874, "roc_auc": 0.8515, "recommended": {"threshold": 0.9053469300270081, "outdomain_interception_rate": 0.66, "private_false_block_rate": 0.075, "outdomain_intercepted": 33, "private_intercepted": 3}}
+{"name": "baseline_src_ast_noexam", "status": "running"}
+{"name": "baseline_src_ast_noexam", "status": "passed", "seconds": 21.761253299999225, "roc_auc": 0.8685, "recommended": {"threshold": 0.8851770162582397, "outdomain_interception_rate": 0.72, "private_false_block_rate": 0.075, "outdomain_intercepted": 36, "private_intercepted": 3}}
+{"name": "baseline_src_flash_noexam", "status": "running"}
+{"name": "baseline_src_flash_noexam", "status": "passed", "seconds": 14.549547700000403, "roc_auc": 0.863, "recommended": {"threshold": 1.1664958000183105, "outdomain_interception_rate": 0.7, "private_false_block_rate": 0.075, "outdomain_intercepted": 35, "private_intercepted": 3}}
+{"name": "baseline_src_ast_flash_noexam", "status": "running"}
+{"name": "baseline_src_ast_flash_noexam", "status": "passed", "seconds": 16.182198899998184, "roc_auc": 0.8305, "recommended": {"threshold": 1.1677236557006836, "outdomain_interception_rate": 0.66, "private_false_block_rate": 0.075, "outdomain_intercepted": 33, "private_intercepted": 3}}
+{"status": "passed", "error": null, "protected_integrity": {"status": "passed", "protected_file_count": 403, "changed": [], "missing": [], "added": []}}

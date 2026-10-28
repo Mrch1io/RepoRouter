@@ -1,0 +1,96 @@
+{
+  "source": "root@example.invalid:49616:/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24",
+  "files": {
+    "run.sh": {
+      "sha256": "92be75c331e34668a010abb2c3f7ed9b1f1e27622aee15af3293ea1b593c87a8",
+      "size_bytes": 2081
+    },
+    "train.yaml": {
+      "sha256": "5ae9bf29868c88216380638f24ddf8281af35f579d3f128f96450b1749afbf3e",
+      "size_bytes": 780
+    },
+    "train.baseline.yaml": {
+      "sha256": "81ef1dea6af38dbd3618204454da01083d598b9b062e479b61364e2cfcd26187",
+      "size_bytes": 1384
+    },
+    "environment.txt": {
+      "sha256": "dd2c45536510a42cc03059326ac04e6fceff6b39e1543c7b6dd4b3f75b7cad66",
+      "size_bytes": 6182
+    },
+    "run.json": {
+      "sha256": "a01564e2ce34ea39a1a192b98654b3cc2e3a6e2fcfd4d5dc07f825b7f91796c1",
+      "size_bytes": 5467
+    },
+    "inputs.sha256": {
+      "sha256": "dbc1ea6c89aa5e58bd64167b38e8cef8ff0d6ebe90f2e9cc2cf73e0bb4cbcfd3",
+      "size_bytes": 831
+    },
+    "token_validation.json": {
+      "sha256": "fb8a6483198313220dc9b5db4aa74e795a9fd8de8a1e8f284957d028ea956605",
+      "size_bytes": 3038
+    },
+    "runner.log": {
+      "sha256": "5ef6a8e7e32d4b87e2d7d9a034ee02e90228f377ceec83442d5572cd0fccca24",
+      "size_bytes": 273
+    },
+    "status.json": {
+      "sha256": "29fb70d8f64d72387172ed7db1623e25cdee9d15bf3b49294bcab548dc856ab9",
+      "size_bytes": 41
+    },
+    "train.log": {
+      "sha256": "31b4f78d72d74333db5eee32470a2786e5888ddc12fe95a7cee18eaf93a63380",
+      "size_bytes": 70464
+    },
+    "eval_in_domain_no_summary.log": {
+      "sha256": "bceb508059ed8de0acc146592fbdca84891bc2d0e23dc912e17a98d04adcb1fd",
+      "size_bytes": 10645
+    },
+    "eval_cross_repo_no_summary.log": {
+      "sha256": "b381c2642adbb85718df01269183978aa971aed2e79eb1871c6f07255d6116e1",
+      "size_bytes": 16602
+    },
+    "data/dataset_info.json": {
+      "sha256": "ca937c9d7b722152dc8cfd3a0f4c361c664fdb52d2fb98c477d69d1bd58ea44a",
+      "size_bytes": 673
+    },
+    "data/data_validation.json": {
+      "sha256": "6c76a8abd25c1ab552be9c1e345c617f42a0d34ccbf2e849e3017aef2c417d6b",
+      "size_bytes": 1483
+    },
+    "data/eval_cross_repo_no_summary.json": {
+      "sha256": "42052eedb3dc19a880a52daf0e9efbdfed0bd2feda62785809f0c4875663222c",
+      "size_bytes": 323598
+    },
+    "data/eval_in_domain_no_summary.json": {
+      "sha256": "6c21cc1b5e6a7191290897d4db0d0a363400d2c94eeb7d181bd4c0f7695790c7",
+      "size_bytes": 211796
+    },
+    "data/routing_train.json": {
+      "sha256": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511",
+      "size_bytes": 2603018
+    },
+    "adapter/trainer_log.jsonl": {
+      "sha256": "9bba0c71ceff9df665a2104dbf7e18db81e6787c24c3373b2af1ddd577360899",
+      "size_bytes": 9961
+    },
+    "adapter/adapter_config.json": {
+      "sha256": "82bc08c87499ca4a14101257145a687c0d61845264125d90cef569f5d89efa74",
+      "size_bytes": 1156
+    },
+    "adapter/train_results.json": {
+      "sha256": "753be6211d5e1c629a4289ff0c287657d20425dec9541a8b63034cfc4f859db9",
+      "size_bytes": 207
+    },
+    "adapter/all_results.json": {
+      "sha256": "753be6211d5e1c629a4289ff0c287657d20425dec9541a8b63034cfc4f859db9",
+      "size_bytes": 207
+    },
+    "adapter/trainer_state.json": {
+      "sha256": "5e6f90f12c157326fbb7104871ece22c64e54b78418933c33e349b1f1275c6f5",
+      "size_bytes": 9840
+    }
+  },
+  "preserved_previous_files": [
+    "status.json"
+  ]
+}

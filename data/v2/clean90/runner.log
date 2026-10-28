@@ -1,0 +1,9 @@
+generate_native
+generate_native 已结束，保留本次输出
+native 完成，开始 Q4 预检
+等待本实验 Q4 服务就绪
+Q4 参数与真实路由验证通过
+generate_q4
+generate_q4 已结束，保留本次输出
+本实验服务和隧道已停止
+两条链路各 90 题生成完成，服务与隧道已停止

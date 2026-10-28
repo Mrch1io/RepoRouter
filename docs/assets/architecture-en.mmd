@@ -1,0 +1,25 @@
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Inter, Segoe UI, Microsoft YaHei, sans-serif", "fontSize": "14px", "lineColor": "#94A3B8", "primaryTextColor": "#1E293B"}, "flowchart": {"curve": "basis", "nodeSpacing": 30, "rankSpacing": 42, "padding": 22}}}%%
+flowchart TB
+    IN["Streamlit web UI<br/>FastAPI<br/>One Agent per session"] --> CHAT["RepoRouter.chat<br/>Multi-turn memory · per-question trace"]
+    CHAT -->|native| NAT["DeepSeek Flash<br/>Decides on its own<br/>whether to call tools<br/>Repeated calls run only once<br/>At most 5 rounds"]
+    CHAT -->|small-model routing · phase2a| ROUTER["Q4: Qwen3.5-4B LoRA<br/>Q4_K_M · llama.cpp service<br/>Outputs a one-line routing JSON"]
+    ROUTER -->|tool_call| TOOLS["6 tools<br/>search_codebase · analyse_code<br/>generate_tests · analyse_log<br/>generate_dockerfile · complete_code"]
+    ROUTER -->|no_tool| ANS["DeepSeek Flash<br/>Only writes the answer,<br/>no tool list given"]
+    ROUTER -->|clarify_needed| ASK["Ask a follow-up question directly"]
+    TOOLS --> ANS
+    NAT <--> TOOLS
+    TOOLS <-->|search_codebase| KB[("Knowledge base<br/>Chroma vectors · qwen3.7 embeddings<br/>BM25 used only in evaluation")]
+    REPO["Any local repo"] -->|"build_knowledge_base.py<br/>character / AST chunking"| KB
+
+    classDef entry fill:#0F172A,stroke:#0F172A,color:#FFFFFF,stroke-width:1.5px,rx:12,ry:12;
+    classDef process fill:#EEF2FF,stroke:#A5B4FC,color:#312E81,stroke-width:1.5px,rx:10,ry:10;
+    classDef model fill:#F0FDFA,stroke:#5EEAD4,color:#115E59,stroke-width:1.5px,rx:10,ry:10;
+    classDef storage fill:#FFFBEB,stroke:#FCD34D,color:#78350F,stroke-width:1.5px;
+    classDef support fill:#F8FAFC,stroke:#CBD5E1,color:#475569,stroke-width:1.5px,rx:10,ry:10;
+
+    class IN,CHAT entry;
+    class NAT,ANS,ASK process;
+    class ROUTER model;
+    class KB storage;
+    class TOOLS,REPO support;
+    linkStyle default stroke:#94A3B8,stroke-width:1.5px;

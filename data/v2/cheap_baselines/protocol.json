@@ -1,0 +1,89 @@
+{
+  "train": {
+    "path": "data/v2/ablation_v2_no_summary/data/routing_train.json",
+    "sha256": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511",
+    "rows": 637,
+    "decision_counts": {
+      "tool_call": 403,
+      "clarify_needed": 98,
+      "no_tool": 136
+    },
+    "majority_decision": "tool_call"
+  },
+  "rules": {
+    "keywords": [
+      "项目里",
+      "仓库",
+      "我们",
+      "这个函数",
+      "哪个文件",
+      "代码库",
+      "库里",
+      "这个接口"
+    ],
+    "identifier_regex": "[A-Za-z][A-Za-z0-9_]*_[A-Za-z0-9_]*|_[A-Za-z0-9_]+|[a-z][A-Z]|[A-Z]{2,}[a-z]|[A-Za-z0-9_]+\\.py(?![A-Za-z0-9_])|[A-Za-z_][A-Za-z0-9_.]*\\s*[(（]",
+    "tuning_data": "data/v2/ablation_v2_no_summary/data/routing_train.json",
+    "train_metrics": {
+      "counts": {
+        "n_file_rows": 637,
+        "skipped_bad_gold": 0,
+        "n_evaluated": 637,
+        "n_parse": 637,
+        "n_parse_valid_shape": 637,
+        "n_decision_match": 394,
+        "n_gold_tool_call": 403,
+        "n_tool_match": 163,
+        "n_args_match": 0,
+        "n_hallucination_tool": 0,
+        "n_relevance_ok": 373,
+        "n_gold_no_call": 234,
+        "n_irrelevance_ok": 80,
+        "n_args_valid": 163
+      },
+      "report_lines": [
+        "====== Phase 2A 路由测评 ======",
+        "样本总数（文件条数）: 637",
+        "金标可解析条数: 637（跳过金标损坏: 0）",
+        "模型输出可解析为 JSON: 637 (100.000%)",
+        "解析且角色字段合法: 637 (100.000%)",
+        "decision_type 一致: 394 (61.852%)",
+        "金标为 tool_call 的条数: 403",
+        "tool_call 子集·工具名一致: 163 (40.447% of gold tool_call)",
+        "tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)",
+        "预测 tool_call 但工具名非法/空: 0（越低越好）",
+        "—— BFCL 口径 ——",
+        "相关检测（该调工具时调了）: 373/403 (92.6%)",
+        "无关检测（不该调时没调）: 80/234 (34.2%)",
+        "参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 163/163 (100.0%)",
+        "=================================================="
+      ],
+      "decision_accuracy": {
+        "correct": 394,
+        "total": 637,
+        "rate": 0.6185243328100472,
+        "wilson95": [
+          0.5801980487974595,
+          0.6554296008432631
+        ]
+      },
+      "relevance": {
+        "correct": 373,
+        "total": 403,
+        "rate": 0.9255583126550868
+      },
+      "irrelevance": {
+        "correct": 80,
+        "total": 234,
+        "rate": 0.3418803418803419
+      }
+    }
+  },
+  "primary_k": 5,
+  "sensitivity_k": [
+    1,
+    3,
+    10
+  ],
+  "script_sha256": "60261ea75a3258829c5fe76f8547c791d25d1f1989745c6ba97ea07935085544",
+  "results": []
+}

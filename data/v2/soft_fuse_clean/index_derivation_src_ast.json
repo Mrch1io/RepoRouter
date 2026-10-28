@@ -1,0 +1,126 @@
+{
+  "name": "src_ast",
+  "status": "passed",
+  "started_at": "",
+  "original_path": ".\\data\\indices\\src_ast",
+  "target_path": ".\\data\\indices\\src_ast_noexam",
+  "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_ast-bok22_aw",
+  "original_count": 110,
+  "clean_count": 89,
+  "removed_count": 21,
+  "removed": [
+    {
+      "id": "5f3d2747-3e46-4f1b-b6a6-baa2516226c2",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "40525ef8-9eb6-4d55-8f70-93a8553d8fc0",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "7002d348-c162-42da-a0b9-78d3ff915e67",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "62bdae22-9265-4c23-a9bd-d462125c9a04",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "b7345ace-522b-4c83-addd-13c1cce5e20e",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "340fcd8b-5813-4596-bbba-f3b5f1ddf2fe",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "5b8a4576-c5a5-4159-a554-5086d5d4152f",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "8d01f512-1f7f-4548-9a53-f3edc7c36962",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "43e3d5e5-d181-4fa2-af0b-df0c6237176b",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "f519d9e4-66f4-4660-99a3-320763c917dc",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "2cb02f0f-d6fa-4662-82e4-89cc3b0bbf69",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "e20fe784-bdec-4f52-9f87-f506ffaeae1f",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "33896aa2-6866-4e7d-b8b2-0cc98f17b8a0",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "fcd925d8-cdb1-440e-8b0c-a10b3dfc0b3e",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "de36ecb6-43a6-4ed3-86be-9c6cdd1b6265",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "bb4acc6c-ecc0-479e-a2b2-70cbffabca81",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "1f75d2fa-1fbc-46a0-aaa8-280117eb56a2",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "ef5ba038-ad3b-43b0-93ae-e3995ab35319",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "01705f0d-8536-4d76-bb3a-2520a6a30405",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "488711d8-414a-4b70-9bf7-4fd44ba48b90",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "47d909f0-ee4c-446a-911d-5fca66ad4151",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    }
+  ],
+  "removed_source_counts": {
+    "evaluation\\soft_fuse_dataset.py": 10,
+    "evaluation\\e2e_manifest.py": 4,
+    "evaluation\\rag_dataset.py": 4,
+    "evaluation\\rewriter_noisy_dataset.py": 3
+  },
+  "collection": "langchain",
+  "distance": "l2",
+  "dimensions": 1024,
+  "chromadb_version": "1.5.9",
+  "embeddings_elementwise_equal": true,
+  "max_absolute_embedding_difference": 0.0,
+  "documents_equal": true,
+  "metadata_equal": true,
+  "ids_equal": true,
+  "removed_sources_remaining": {
+    "evaluation\\soft_fuse_dataset.py": 0,
+    "evaluation\\e2e_manifest.py": 0,
+    "evaluation\\rag_dataset.py": 0,
+    "evaluation\\rewriter_noisy_dataset.py": 0
+  },
+  "embedding_api_calls_for_derivation": 0,
+  "bm25_documents_equal": true,
+  "bm25_smoke_passed": true,
+  "original_index_unchanged": true,
+  "retained_vector_norm_min": 0.999999939594484,
+  "retained_vector_norm_max": 1.0000000977789183,
+  "elapsed_seconds": 1.3887117999984184,
+  "ended_at": ""
+}

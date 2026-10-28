@@ -1,0 +1,42 @@
+{
+  "eval_in_domain_no_summary": {
+    "test": "eval_in_domain_no_summary",
+    "total": 50,
+    "evaluated": 50,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 48,
+    "accuracy": 0.96,
+    "historical_match": null,
+    "difference": null
+  },
+  "eval_cross_repo_no_summary": {
+    "test": "eval_cross_repo_no_summary",
+    "total": 87,
+    "evaluated": 87,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 81,
+    "accuracy": 0.9310344827586207,
+    "historical_match": 81,
+    "difference": 0
+  },
+  "eval_in_domain": {
+    "test": "eval_in_domain",
+    "total": 50,
+    "evaluated": 50,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 48,
+    "accuracy": 0.96,
+    "historical_match": 48,
+    "difference": 0
+  },
+  "eval_cross_repo": {
+    "test": "eval_cross_repo",
+    "total": 87,
+    "evaluated": 87,
+    "skipped_bad_gold": 0,
+    "decision_type_match": 82,
+    "accuracy": 0.9425287356321839,
+    "historical_match": 82,
+    "difference": 0
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "src_flash",
+  "status": "passed",
+  "started_at": "",
+  "original_path": ".\\data\\indices\\src_flash",
+  "target_path": ".\\data\\indices\\src_flash_noexam",
+  "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_flash-nyazd_rq",
+  "original_count": 87,
+  "clean_count": 72,
+  "removed_count": 15,
+  "removed": [
+    {
+      "id": "f0c4ff7b-fb2b-4dc3-8d5f-9e2337315d4e",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "138bf1fa-44cd-4b65-b82d-26d5b017187c",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "0756b362-e418-442f-a817-4a313f50dc1e",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "9ec71102-6e2c-4dae-a96b-8004cbd3938f",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "6210ab70-9dcd-42ce-a7da-e0dfdaee6621",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "094166d1-6772-44d3-9d84-d046b2b2b350",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "ecf26295-216f-4f38-9d7f-b0131f08ef5b",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "1793d18e-6869-4e32-a3ae-b1ac71dffd73",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "9c9985cd-df73-4e5d-acbe-37072e292c5b",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "4896bfd1-8995-4488-b7b1-e11211938427",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "ca820369-75c8-461a-afbd-08942e1bceab",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "94ba9226-43c1-49b0-8d84-a31159da2c3c",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "14b155c1-ddc8-4c5f-b81b-67cf0c1947a4",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "685a90c2-97a2-41d7-84c6-cc87ff8f129a",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "6f093a6c-e8a3-4cd9-a259-869833133680",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    }
+  ],
+  "removed_source_counts": {
+    "evaluation\\soft_fuse_dataset.py": 6,
+    "evaluation\\e2e_manifest.py": 3,
+    "evaluation\\rag_dataset.py": 3,
+    "evaluation\\rewriter_noisy_dataset.py": 3
+  },
+  "collection": "langchain",
+  "distance": "l2",
+  "dimensions": 1024,
+  "chromadb_version": "1.5.9",
+  "embeddings_elementwise_equal": true,
+  "max_absolute_embedding_difference": 0.0,
+  "documents_equal": true,
+  "metadata_equal": true,
+  "ids_equal": true,
+  "removed_sources_remaining": {
+    "evaluation\\soft_fuse_dataset.py": 0,
+    "evaluation\\e2e_manifest.py": 0,
+    "evaluation\\rag_dataset.py": 0,
+    "evaluation\\rewriter_noisy_dataset.py": 0
+  },
+  "embedding_api_calls_for_derivation": 0,
+  "bm25_documents_equal": true,
+  "bm25_smoke_passed": true,
+  "original_index_unchanged": true,
+  "retained_vector_norm_min": 0.9965959214575104,
+  "retained_vector_norm_max": 1.0035393520327045,
+  "elapsed_seconds": 0.5472702000006393,
+  "ended_at": ""
+}

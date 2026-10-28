@@ -1,0 +1,50 @@
+{
+  "status": "failed",
+  "protected_file_count": 319,
+  "sha256_verified_file_count": 319,
+  "changed_files": [
+    {
+      "path": "data/v2/clean90/judge_q4.jsonl",
+      "before": {
+        "bytes": 37259,
+        "mtime_ns": null,
+        "sha256": "fd0950e5f697004dced0ca1fd53fba0b20204add2ad17cd9e189669b63394890"
+      },
+      "after": {
+        "bytes": 86443,
+        "mtime_ns": null,
+        "sha256": "2bbe5cbdb67c8971c090347316d9a6c62091f2fae04ff907b36cd5c76aa61a31"
+      }
+    },
+    {
+      "path": "data/v2/clean90/judge_q4.log",
+      "before": {
+        "bytes": 1295,
+        "mtime_ns": null,
+        "sha256": "ab90bab84c070665f4f5090970c61ba202d735374eda3e45a2f82c7e1cf722f1"
+      },
+      "after": {
+        "bytes": 3279,
+        "mtime_ns": null,
+        "sha256": "5a5886a1893132268c764c058d86479cb895e9dcd6b82f646644ab0cb868f950"
+      }
+    },
+    {
+      "path": "data/v2/clean90/run.json",
+      "before": {
+        "bytes": 63563,
+        "mtime_ns": null,
+        "sha256": "ed692774195dfe4f85d504556ef472f083a7b00e44c7ee4097466bdf8eece475"
+      },
+      "after": {
+        "bytes": 65607,
+        "mtime_ns": null,
+        "sha256": "101ef92a3d5ed0994d9e4fe16c42b5ebeebbbaeff50a99df98aa2ba1d9e93ac8"
+      }
+    }
+  ],
+  "unexpected_added_files": [
+    "data/v2/clean90/compare.log",
+    "data/v2/clean90/comparison.json"
+  ]
+}

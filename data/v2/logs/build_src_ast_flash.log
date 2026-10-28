@@ -1,0 +1,10 @@
+删除旧索引：data/indices/src_ast_flash
+正在从src建立本地知识库（embedding：qwen3.7-text-embedding-flash）
+
+切块方式：ast | 共 110 块 | 平均 916 字符
+DenseChroma建库成功将110个代码块转化为了向量,存储到路径data/indices/src_ast_flash
+正在计算bm25稀疏词频矩阵
+稀疏索引已持久化保存至data\indices\src_ast_flash\bm25_index.pkl
+bm25建库成功！储存到路径data\indices\src_ast_flash\bm25_index.pkl!
+本地知识库建立完成！保存在 data/indices/src_ast_flash
+

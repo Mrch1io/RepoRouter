@@ -1,0 +1,111 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+正在加载分词器与基座模型…
+  base_model = /root/autodl-tmp/models/Qwen/Qwen3.5-4B
+
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:   4%|▎         | 27/723 [00:00<00:02, 253.11it/s]Loading weights:   7%|▋         | 53/723 [00:00<00:03, 214.04it/s]Loading weights:  11%|█         | 77/723 [00:00<00:02, 221.29it/s]Loading weights:  14%|█▍        | 100/723 [00:00<00:03, 185.09it/s]Loading weights:  18%|█▊        | 128/723 [00:00<00:02, 211.47it/s]Loading weights:  21%|██        | 151/723 [00:00<00:02, 195.37it/s]Loading weights:  24%|██▍       | 172/723 [00:00<00:02, 196.83it/s]Loading weights:  27%|██▋       | 195/723 [00:00<00:02, 203.97it/s]Loading weights:  30%|██▉       | 216/723 [00:01<00:02, 192.80it/s]Loading weights:  33%|███▎      | 238/723 [00:01<00:02, 194.86it/s]Loading weights:  36%|███▌      | 258/723 [00:01<00:02, 173.96it/s]Loading weights:  38%|███▊      | 278/723 [00:01<00:02, 177.79it/s]Loading weights:  42%|████▏     | 305/723 [00:01<00:02, 190.54it/s]Loading weights:  46%|████▌     | 330/723 [00:01<00:01, 199.56it/s]Loading weights:  49%|████▉     | 354/723 [00:01<00:01, 205.48it/s]Loading weights:  52%|█████▏    | 375/723 [00:01<00:01, 198.65it/s]Loading weights:  55%|█████▍    | 397/723 [00:02<00:01, 201.40it/s]Loading weights:  58%|█████▊    | 418/723 [00:02<00:01, 182.31it/s]Loading weights:  75%|███████▍  | 539/723 [00:02<00:00, 448.27it/s]Loading weights:  94%|█████████▍| 680/723 [00:02<00:00, 708.46it/s]Loading weights: 100%|██████████| 723/723 [00:02<00:00, 302.61it/s]
+====== RepoAgent Phase 2A · 基座 · 87 条 ======
+
+base:   0%|          | 0/87 [00:00<?, ?it/s][transformers] The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   1%|          | 1/87 [00:02<03:32,  2.47s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   2%|▏         | 2/87 [00:04<03:15,  2.30s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   3%|▎         | 3/87 [00:07<03:17,  2.35s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   5%|▍         | 4/87 [00:09<03:29,  2.52s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   6%|▌         | 5/87 [00:12<03:21,  2.46s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   7%|▋         | 6/87 [00:14<03:10,  2.35s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   8%|▊         | 7/87 [00:16<02:53,  2.17s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:   9%|▉         | 8/87 [00:17<02:41,  2.04s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  10%|█         | 9/87 [00:19<02:39,  2.05s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  11%|█▏        | 10/87 [00:22<02:46,  2.17s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  13%|█▎        | 11/87 [00:24<02:34,  2.03s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  14%|█▍        | 12/87 [00:26<02:36,  2.08s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  15%|█▍        | 13/87 [00:28<02:34,  2.09s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  16%|█▌        | 14/87 [00:30<02:34,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  17%|█▋        | 15/87 [00:32<02:30,  2.09s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  18%|█▊        | 16/87 [00:34<02:32,  2.15s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  20%|█▉        | 17/87 [00:37<02:30,  2.15s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  21%|██        | 18/87 [00:39<02:30,  2.18s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  22%|██▏       | 19/87 [00:41<02:31,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  23%|██▎       | 20/87 [00:43<02:29,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  24%|██▍       | 21/87 [00:46<02:27,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  25%|██▌       | 22/87 [00:48<02:27,  2.27s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  26%|██▋       | 23/87 [00:50<02:26,  2.28s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  28%|██▊       | 24/87 [00:53<02:23,  2.27s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  29%|██▊       | 25/87 [00:55<02:21,  2.29s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  30%|██▉       | 26/87 [00:57<02:09,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  31%|███       | 27/87 [00:59<02:08,  2.15s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  32%|███▏      | 28/87 [01:01<02:11,  2.23s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  33%|███▎      | 29/87 [01:04<02:16,  2.35s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  34%|███▍      | 30/87 [01:06<02:16,  2.39s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  36%|███▌      | 31/87 [01:09<02:12,  2.37s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  37%|███▋      | 32/87 [01:11<02:07,  2.33s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  38%|███▊      | 33/87 [01:13<02:08,  2.38s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  39%|███▉      | 34/87 [01:16<02:05,  2.36s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  40%|████      | 35/87 [01:18<02:00,  2.32s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  41%|████▏     | 36/87 [01:20<01:49,  2.15s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  43%|████▎     | 37/87 [01:22<01:51,  2.22s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  44%|████▎     | 38/87 [01:24<01:42,  2.10s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  45%|████▍     | 39/87 [01:26<01:36,  2.02s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  46%|████▌     | 40/87 [01:28<01:32,  1.96s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  47%|████▋     | 41/87 [01:29<01:25,  1.87s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  48%|████▊     | 42/87 [01:32<01:32,  2.05s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  49%|████▉     | 43/87 [01:34<01:27,  1.98s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  51%|█████     | 44/87 [01:36<01:31,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  52%|█████▏    | 45/87 [01:39<01:35,  2.27s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  53%|█████▎    | 46/87 [01:41<01:32,  2.24s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  54%|█████▍    | 47/87 [01:43<01:24,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  55%|█████▌    | 48/87 [01:45<01:21,  2.10s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  56%|█████▋    | 49/87 [01:48<01:29,  2.37s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  57%|█████▋    | 50/87 [01:49<01:20,  2.19s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  59%|█████▊    | 51/87 [01:52<01:22,  2.29s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  60%|█████▉    | 52/87 [01:55<01:25,  2.45s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  61%|██████    | 53/87 [01:57<01:21,  2.41s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  62%|██████▏   | 54/87 [01:59<01:12,  2.19s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  63%|██████▎   | 55/87 [02:01<01:13,  2.29s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  64%|██████▍   | 56/87 [02:03<01:05,  2.12s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  66%|██████▌   | 57/87 [02:05<00:59,  2.00s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  67%|██████▋   | 58/87 [02:07<00:56,  1.93s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  68%|██████▊   | 59/87 [02:08<00:53,  1.89s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  69%|██████▉   | 60/87 [02:10<00:49,  1.84s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  70%|███████   | 61/87 [02:12<00:47,  1.83s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  71%|███████▏  | 62/87 [02:14<00:44,  1.79s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  72%|███████▏  | 63/87 [02:15<00:43,  1.79s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  74%|███████▎  | 64/87 [02:17<00:40,  1.78s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  75%|███████▍  | 65/87 [02:19<00:38,  1.76s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  76%|███████▌  | 66/87 [02:20<00:36,  1.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  77%|███████▋  | 67/87 [02:22<00:34,  1.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  78%|███████▊  | 68/87 [02:24<00:32,  1.70s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  79%|███████▉  | 69/87 [02:25<00:30,  1.70s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  80%|████████  | 70/87 [02:27<00:28,  1.70s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  82%|████████▏ | 71/87 [02:29<00:27,  1.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  83%|████████▎ | 72/87 [02:31<00:26,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  84%|████████▍ | 73/87 [02:32<00:23,  1.71s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  85%|████████▌ | 74/87 [02:34<00:22,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  86%|████████▌ | 75/87 [02:36<00:20,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  87%|████████▋ | 76/87 [02:38<00:19,  1.76s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  89%|████████▊ | 77/87 [02:39<00:17,  1.74s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  90%|████████▉ | 78/87 [02:41<00:15,  1.74s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  91%|█████████ | 79/87 [02:43<00:13,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  92%|█████████▏| 80/87 [02:45<00:12,  1.74s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  93%|█████████▎| 81/87 [02:46<00:10,  1.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  94%|█████████▍| 82/87 [02:48<00:08,  1.74s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  95%|█████████▌| 83/87 [02:50<00:06,  1.73s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  97%|█████████▋| 84/87 [02:52<00:05,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  98%|█████████▊| 85/87 [02:54<00:03,  1.76s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base:  99%|█████████▉| 86/87 [02:55<00:01,  1.75s/it][transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+base: 100%|██████████| 87/87 [02:57<00:00,  1.76s/it]base: 100%|██████████| 87/87 [02:57<00:00,  2.04s/it]
+====== Phase 2A 路由测评 ======
+样本总数（文件条数）: 87
+金标可解析条数: 87（跳过金标损坏: 0）
+模型输出可解析为 JSON: 87 (100.000%)
+解析且角色字段合法: 87 (100.000%)
+decision_type 一致: 72 (82.759%)
+金标为 tool_call 的条数: 35
+tool_call 子集·工具名一致: 28 (80.000% of gold tool_call)
+tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)
+预测 tool_call 但工具名非法/空: 0（越低越好）
+—— BFCL 口径 ——
+相关检测（该调工具时调了）: 28/35 (80.0%)
+无关检测（不该调时没调）: 52/52 (100.0%)
+参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 28/28 (100.0%)
+==================================================

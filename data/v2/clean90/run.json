@@ -1,0 +1,1479 @@
+{
+  "manifest": [
+    {
+      "id": "p01",
+      "query": "FastAPI 里路由是怎么注册到应用上的？",
+      "bucket_type": "domain",
+      "grounding_tier": "ok_generic",
+      "should_call_tool": "no",
+      "grounding_tier_index_aware": "ok_generic",
+      "should_call_tool_index_aware": "no",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p02",
+      "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p03",
+      "query": "VectorStore 里 dense 检索和 RRF 混合检索分别在哪几个方法？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p04",
+      "query": "search_codebase 工具返回给模型的 JSON 结构是什么？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p05",
+      "query": "BM25 索引默认持久化到哪个文件路径？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p06",
+      "query": "代码切块 Chunk 是在哪个模块里做的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p07",
+      "query": "如何用 Qwen 的 text-embedding-v4 做嵌入？",
+      "bucket_type": "domain",
+      "grounding_tier": "prefer_ground",
+      "should_call_tool": "optional",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p08",
+      "query": "analyse_code 工具主要做哪些静态分析？",
+      "bucket_type": "domain",
+      "grounding_tier": "prefer_ground",
+      "should_call_tool": "optional",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p09",
+      "query": "生成单元测试对应哪个工具函数？",
+      "bucket_type": "domain",
+      "grounding_tier": "ok_generic",
+      "should_call_tool": "no",
+      "grounding_tier_index_aware": "ok_generic",
+      "should_call_tool_index_aware": "no",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p10",
+      "query": "Dockerfile 自动生成走哪个 Python 模块？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p11",
+      "query": "settings 里 embedding_provider 可以填哪些值？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p12",
+      "query": "多轮对话记忆裁剪 _prune_memory 会丢掉什么消息？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p13",
+      "query": "Streamlit Web UI 的入口文件名是什么？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p14",
+      "query": "FastAPI 聊天接口挂载在哪个路由下面？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p15",
+      "query": "RRF 融合里平滑常数 c 取多少？",
+      "bucket_type": "domain",
+      "grounding_tier": "prefer_ground",
+      "should_call_tool": "optional",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p16",
+      "query": "Chroma 向量库从磁盘 load 时在 VectorStore 哪个方法？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p17",
+      "query": "Query Rewriter 在检索里什么时候会改写 query？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p18",
+      "query": "日志诊断 analyse_log 工具怎么接到 Agent 里的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p19",
+      "query": "构建本地知识库的脚本一般在 scripts 目录叫什么？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "ok_generic",
+      "should_call_tool_index_aware": "no",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p20",
+      "query": "向量持久化目录 Chroma_persist_dir 在配置里怎么配？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p21",
+      "query": "RepoAgent 里 FastAPI 的接口路由是怎么组织和注册的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p22",
+      "query": "项目中负责接收用户问题并分发工具调用的核心逻辑在哪个模块？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p23",
+      "query": "RepoAgent 是如何封装 Function Calling 工具列表的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p24",
+      "query": "项目里 search_codebase 工具的实现流程是怎样的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p25",
+      "query": "Chroma 向量库是在什么位置初始化的，是否做了单例预热？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p26",
+      "query": "代码仓库文档切分的逻辑写在哪，使用了什么 chunk 策略？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p27",
+      "query": "Query Rewrite 的处理是在检索前哪个阶段执行的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "prefer_ground",
+      "should_call_tool_index_aware": "optional",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p28",
+      "query": "项目中 Dense 检索的 embedding 模型调用逻辑在哪？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p29",
+      "query": "RepoAgent 的工具路由结果是如何组织成 JSON 输出的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p30",
+      "query": "为了防止重复调用和死循环，调用指纹机制是怎么实现的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p31",
+      "query": "AST 静态分析器的入口函数在哪，主要检查了哪些反模式？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p32",
+      "query": "GitHub Actions CI 流水线里是如何集成 AST 静态分析器的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p33",
+      "query": "日志分析工具在项目里是如何解析输入日志并生成结果的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p34",
+      "query": "Docker 配置生成工具的 prompt 或逻辑定义写在哪个文件里？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p35",
+      "query": "项目中的 RAG 检索评测脚本是如何计算 MRR 的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p36",
+      "query": "LoRA 微调模型的加载和动态挂载逻辑是在什么位置实现的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p37",
+      "query": "项目里构造 6 类业务场景 SFT 数据的脚本或流程在哪？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p38",
+      "query": "上下文过滤和滑动窗口优化是在推理链路的哪个阶段做的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p39",
+      "query": "Streamlit 前端是如何把用户提问、工具返回和模型回答串起来的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p40",
+      "query": "项目中如果检索结果质量较差，是否有相应的降级或熔断处理逻辑？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "d01",
+      "query": "线上接口偶发 502，从网关、负载均衡到上游服务一般按什么顺序排查？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d02",
+      "query": "浏览器里前端请求后端报 CORS 被拦截，后端侧通常要动哪些配置？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d03",
+      "query": "容器里 curl 本机端口正常，宿主机映射端口却访问不通，常见原因有哪些？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d04",
+      "query": "Git push 提示 non-fast-forward，本地还有未推送提交，想先同步远端再推上去，常规怎么做？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d05",
+      "query": "requirements 里写了包名，运行却报 No module named，先检查虚拟环境、路径还是安装方式？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d06",
+      "query": "表数据量没怎么涨，但某条 SQL 突然变慢，先看执行计划、索引还是锁等待比较划算？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d07",
+      "query": "Docker 构建每次都要重新 pip install，镜像层缓存像没命中，可能哪里出了问题？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d08",
+      "query": "数据库报 Too many connections，更像是连接池配小了还是连接没释放？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d09",
+      "query": "接口返回 401 和 403，排障时一般怎么判断是 token 无效还是权限不足？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d10",
+      "query": "前端 dev 正常，打包上线后静态资源 404，多半是 publicPath、路由模式还是部署路径哪类问题？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d11",
+      "query": "Linux 磁盘写满导致服务起不来，先找大文件、清日志还是扩盘，一般什么顺序？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d12",
+      "query": "同一条流水线同一分支有时过有时挂，代码没变，先怀疑依赖锁版本、网络还是 runner 环境？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d13",
+      "query": "移动端或 H5 访问 HTTPS 报证书错误，除了过期还经常碰到证书链不完整吗？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d14",
+      "query": "微服务 A 调 B 超时，B 的 CPU 不高，先查 B 的线程池、下游依赖还是 A 的重试退避？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d15",
+      "query": "本地能连 Redis，线上同密码同端口连不上，除了白名单还要核对 bind、TLS、集群地址吗？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d16",
+      "query": "接口变慢怀疑 ORM 打出 N+1，日志或 profiling 上怎么快速验证？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d17",
+      "query": "主从同步延迟突然变大，大事务、网络抖动、从库负载，一般先查哪类指标？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d18",
+      "query": "接口做了幂等键还是偶尔重复扣款，除了幂等表还要查消息重投、超时重试吗？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d19",
+      "query": "线上堆栈里的行号和本地对不上，通常说明构建产物、source map 还是部署版本哪边不一致？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d20",
+      "query": "K8s 里 Pod 一直 Pending，节点资源够的话，先看调度事件、亲和性还是 PVC 绑定？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q02",
+      "query": "Python 的装饰器怎么写？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q03",
+      "query": "什么是快速排序？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q04",
+      "query": "二分查找的时间复杂度是多少？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q05",
+      "query": "Python 里 list 和 tuple 有什么区别？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q15",
+      "query": "Python 中 try/except 的作用是什么？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q18",
+      "query": "如何在 Python 中读取一个 txt 文件？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q19",
+      "query": "什么是 BFS 和 DFS？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q20",
+      "query": "heapq 在 Python 里怎么用？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q01",
+      "query": "FastAPI 的路由怎么注册？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q06",
+      "query": "什么是 Transformer？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q07",
+      "query": "LangChain 是做什么用的？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q08",
+      "query": "什么是 BM25？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q09",
+      "query": "什么是向量数据库？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q10",
+      "query": "LoRA 微调的原理是什么？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q11",
+      "query": "什么是 JSON Schema？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q12",
+      "query": "GitHub Actions 的基本作用是什么？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q13",
+      "query": "Dockerfile 和 docker-compose 有什么区别？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q14",
+      "query": "什么是 AST（抽象语法树）？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q16",
+      "query": "什么是余弦相似度？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q17",
+      "query": "什么是 RAG？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m01",
+      "query": "RepoAgent 这种项目里一般为什么要用 FastAPI？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m02",
+      "query": "如果要在 FastAPI 里注册一个新路由，通常该怎么写？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m03",
+      "query": "Chroma 和 BM25 哪个更适合做通用知识问答？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m04",
+      "query": "LoRA 为什么适合做小模型微调，这和 RepoAgent 有什么关系？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m05",
+      "query": "如果一个 Agent 老是死循环调用工具，通常有哪些通用解决思路？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m06",
+      "query": "Query Rewrite 一般是怎么提升检索效果的？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m07",
+      "query": "GitHub Actions 里为什么常常要做代码质量检查？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m08",
+      "query": "AST 静态分析一般能发现哪些类型的问题？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m09",
+      "query": "RAG 系统里为什么会出现幻觉，通常怎么缓解？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m10",
+      "query": "Function Calling 和普通 Prompt 问答相比，最大的区别是什么？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    }
+  ],
+  "source_sha256_frozen": {
+    "data/chroma_verified_skip_must_ground.json": "ef25f3932fc04a336cae332d42acf5a67f2ce9ed987e23c6040a3b6b25a4af19",
+    "loRA/build_cross_repo_eval.py": "ff81638c66ea0b4a007bf3fc996dd9c407d26f154636ab3d3991171064cde038",
+    "loRA/format_to_sharegpt.py": "ffe3db084dc9df62e47256d9bbcfc6c242058c577731bb86da4ea160f8efb40f",
+    "loRA/repoagent_routing_prompt_87.txt": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612",
+    "scripts/eval_agent.py": "81c8c751df0ecaab6acc81ea754c62a75fb3ed055472ed9805701cb92a0cdf8a",
+    "scripts/judge_answers.py": "db82e201a6a6e95ea8bd899f7a0761f6d212c3fceebfcef8475dccdc9ee76f6a",
+    "src/config.py": "1c07ff5dea9dcc0e5241ae93838f28c452bd9abd186d58af1fa78aa9b96acf13",
+    "src/main.py": "a92c6f67cd869d1916aa18b0c951db56bb40a3f2ef83d7d07c60a999482fb91a",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/agent/core.py": "157490972bc0dffc737168fa0016dfb7471f3fc713854abbf0af0a3e70c52de6",
+    "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+    "src/agent/router.py": "4060bb789c5ce8de74dc8fd11f870949445817c525dd5040f5fff10420aed7e0",
+    "src/agent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/api/routes.py": "a65955534e06fbed5ae1e0676fc56d4d604fd50e921aa8f18f35049da2a3f42d",
+    "src/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/evaluation/chroma_verify_tokens.py": "ae4c65a3d52f8861cb978b00264b1f3155ca409ef9bbe16d19ff2fafc13e8851",
+    "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3",
+    "src/evaluation/eva_retrieval.py": "8a3a615a67e4b704fd261c3c27f776da9793cbaaa14d74ec71418b8cb913879f",
+    "src/evaluation/eva_retrieval_reranker.py": "1ef2fba33c2db757c96c278e462a0f0139e7cf91403cbe20defc6db2327714ac",
+    "src/evaluation/eva_rewriter.py": "bea909e9617046879b36001cdbd73fd4f8c276b1def2ba494558ce3c95707c94",
+    "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+    "src/evaluation/rag_dataset.py": "43a5066761f3894b05866dde6b661c505359169f23a2c2a2a19e0a3fbb107340",
+    "src/evaluation/rewriter_noisy_dataset.py": "674d0e8520f2f7a1c9606f056c7e8da4ed1bd1c2bced4b3750eb8a3c34715c31",
+    "src/evaluation/soft_fuse_dataset.py": "94f3203e01759e95c6e7fe424a0c5b0378fd92baaca802e1415af20993bb3dc9",
+    "src/evaluation/stats.py": "d4ab849650e9c3890aa409a2d30580bc7a16269a0719e2ee885a47843d449c53",
+    "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/rag/bm25.py": "61123ed94cf778edcddcee07510e953ca4f604e41e4fa2f6a4114e806645ad10",
+    "src/rag/loader.py": "0222426ab0f3ccd14a295e420884173c917a276b85caf6bda7b274eb48d33119",
+    "src/rag/query_rewriter.py": "7846c231422d3564d9f2684ca7c0f87da1a88bf69af41e8a790eebb298a3e9f6",
+    "src/rag/splitter.py": "fca333815a7a09841d7b70be63aa2296c87e8b158178475f49f2f099d7000413",
+    "src/rag/tqdm_util.py": "51512f8db0d1662fbf8eba0d452124ca00a420a6218ab5d5aa2bf84cc25c72a8",
+    "src/rag/vectorstore.py": "cbe661b1684ac554e1200f66398ceb865da143b2afc7e08e814f5935be608983",
+    "src/rag/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/agent/tools/code_analyser.py": "a55a60460d36876a3bdfe387a52a4fee82c4dd1cc3adab6f6c084b7dfab4b224",
+    "src/agent/tools/complete_code_llm.py": "4185d77cb05a68f6a95014a3dac631e671f7c8580b2f5b8fcd273666e6280a23",
+    "src/agent/tools/docker_file_llm.py": "8193edae9bff31a94491ae90867745755a6a43b9131a9efcedcbc91d11af0d08",
+    "src/agent/tools/generate_tests_llm.py": "d9a7c50b04de636d91b5160ac4628c76c6d9d7793ecb71dba3092a09f58056af",
+    "src/agent/tools/log_analyser_llm.py": "e38d1fc1741a005981be83a27db25409caa898388437a1ef0456eb4dc4e85a4a",
+    "src/agent/tools/search_tool.py": "6ef6e43410dabfbef004f66403538a8dc7bfcb996576fcff7c15401ebaadb844",
+    "src/agent/tools/tools_schemas.py": "8ba108e695b380862143509d475fbde7352a484967828a3756baad29b51f6fb6"
+  },
+  "environment_file_sha256": "9103efd3f22ee4b547eb0453c03b7ac6fcd9bff9215d192d0f69957c26bfcff7",
+  "generation_config": {
+    "model": "deepseek-flash",
+    "max_tokens": 4096,
+    "temperature": 0.2,
+    "thinking": false,
+    "soft_fuse": false,
+    "repeat": 1
+  },
+  "frozen_settings": {
+    "deepseek_base_url": "https://api.deepseek.com",
+    "model_name": "deepseek-flash",
+    "llm_thinking": false,
+    "Chroma_persist_dir": "./data/indices/src",
+    "bm25_persist_dir": "./data/indices/src/bm25_index.pkl",
+    "embedding_provider": "qwen",
+    "qwen_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "qwen_embedding_name": "qwen3.7-text-embedding",
+    "qwen_rerank_name": "qwen3.7-text-rerank",
+    "judge_model": "qwen3.8-max",
+    "router_base_url": "http://127.0.0.1:8080/v1",
+    "router_model": "repoagent-router",
+    "reranking_provider": "qwen",
+    "enable_query_rewrite_in_tool": false,
+    "soft_fuse_enabled": false,
+    "soft_fuse_distance_threshold": null
+  },
+  "runtime_router_prompt_sha256": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612",
+  "experiment_id": "clean90",
+  "parent_experiment": "frozen90",
+  "changed_variable": "检索索引去掉 4 个存放考题/标准答案的文件（15 块），其余 72 块向量原样复用",
+  "created_at": "",
+  "status": "scoring_comparison_and_audit_complete",
+  "runs": [
+    {
+      "name": "generate_native",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\frozen90\\source\\scripts\\eval_agent.py",
+        "--routing-backend",
+        "native",
+        "--model",
+        "deepseek-flash",
+        "--max-tokens",
+        "4096",
+        "--jsonl-out",
+        ".\\data\\v2\\clean90\\e2e_native.jsonl"
+      ],
+      "started_at": "",
+      "exit_code": 0,
+      "ended_at": "",
+      "invalid_json_lines": [],
+      "output_sha256": "c6a411a8fc13847858698869a0201344820f1ea3a00958ac43bbc1403b62e45b",
+      "records": 90,
+      "failures": [],
+      "missing_ids": []
+    },
+    {
+      "name": "generate_q4",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\frozen90\\source\\scripts\\eval_agent.py",
+        "--routing-backend",
+        "phase2a",
+        "--model",
+        "deepseek-flash",
+        "--max-tokens",
+        "4096",
+        "--jsonl-out",
+        ".\\data\\v2\\clean90\\e2e_q4.jsonl"
+      ],
+      "started_at": "",
+      "exit_code": 0,
+      "ended_at": "",
+      "invalid_json_lines": [],
+      "output_sha256": "b93e2c33d9790039b77024c7ba8a99e05f3357492b74a6ac73be7bab5a0fbdd1",
+      "records": 90,
+      "failures": [],
+      "missing_ids": []
+    },
+    {
+      "name": "judge_native",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\frozen90\\source\\scripts\\judge_answers.py",
+        "--jsonl",
+        ".\\data\\v2\\clean90\\e2e_native.jsonl",
+        "--full",
+        "--out",
+        ".\\data\\v2\\clean90\\judge_native.jsonl",
+        "--judge-model",
+        "qwen3.8-max",
+        "--max-tokens",
+        "1200",
+        "--temperature",
+        "0.1",
+        "--workers",
+        "4"
+      ],
+      "started_at": "",
+      "ended_at": "",
+      "records": 90,
+      "output_sha256": "98358f9d70aef8ac893271d923fa83f90b70bdfe02ef5599cf9cc5bbc2ee2c28"
+    },
+    {
+      "name": "judge_q4",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\frozen90\\source\\scripts\\judge_answers.py",
+        "--jsonl",
+        ".\\data\\v2\\clean90\\e2e_q4.jsonl",
+        "--full",
+        "--out",
+        ".\\data\\v2\\clean90\\judge_q4.jsonl",
+        "--judge-model",
+        "qwen3.8-max",
+        "--max-tokens",
+        "1200",
+        "--temperature",
+        "0.1",
+        "--workers",
+        "4"
+      ],
+      "started_at": "",
+      "ended_at": "",
+      "records": 90,
+      "output_sha256": "bbe27ea7d3882d8982c3b4f35ade96ec7d1fee45b94128cd5f8379ffaaf8a91f"
+    },
+    {
+      "name": "compare",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\frozen90\\source\\scripts\\eval_agent.py",
+        "--compare",
+        ".\\data\\v2\\clean90\\e2e_native.jsonl",
+        ".\\data\\v2\\clean90\\e2e_q4.jsonl",
+        "--judges",
+        ".\\data\\v2\\clean90\\judge_native.jsonl",
+        ".\\data\\v2\\clean90\\judge_q4.jsonl",
+        "--compare-out",
+        ".\\data\\v2\\clean90\\comparison.json"
+      ],
+      "started_at": "",
+      "ended_at": "",
+      "records": 90,
+      "output_sha256": "1d72476f1c89c088b1d2bf7f33b7be0b8309651594c431a44aeed5f733e1a7d0"
+    }
+  ],
+  "generation_order": [
+    "native",
+    "phase2a"
+  ],
+  "server_preflight": {
+    "ssh_host": "example.invalid",
+    "ssh_port": 50556,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "memory_total_mib": 32607,
+    "memory_used_mib": 2,
+    "driver_version": "595.71.05",
+    "compute_processes": [],
+    "gpu_lock_path": "/root/autodl-tmp/gpu.lock",
+    "gpu_lock_held_by_other_process": false,
+    "gguf_path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+    "gguf_sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd",
+    "llama_version": "version: 0.7.0-dev (build 1, commit a37cc46); built with GNU 11.4.0 for Linux x86_64",
+    "status": "passed"
+  },
+  "steps": [
+    {
+      "name": "derive_index",
+      "started_at": "",
+      "targets_absent_before_creation": true,
+      "ended_at": "",
+      "exit_code": 0,
+      "output_sha256": "5e1845b76c373cc4bfa0f2573469cab53f6d8ddd040a9b21d8a7e9d359fbfcae"
+    }
+  ],
+  "index_logical_sha256_before": {
+    "embeddings": "b9d6f62402988e40e448fd86093afa994852d17a57fb01b5da1eb18a3ead10dd",
+    "embedding_metadata": "713f0292fb59c8324d61398e8859049973a49af8ca85ca2372466e36fbf5439a",
+    "embedding_metadata_array": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "embeddings_queue": "f4ea5633f8f8b53cbbcc4cf79e48e15618ade36cf25a8a289693a2b7b5efb3f9",
+    "collections": "a60de2c9a3e2a40f5292d6867927945f1f5e8c548c8c20bcc7ae3c7475a7961b",
+    "collection_metadata": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "segments": "96b6b1d85ae85c52a8a0f18eff0866b0e83729eff93cd2c7714eaa1ab3cfee5d",
+    "max_seq_id": "36dfc3d0433cd1b65398c9e474cd61f225132f19c1646a448b070249188f73ec"
+  },
+  "index_files_sha256_before": {
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/data_level0.bin": "72d9049a1dac6c0f906634ea88c8f45758bd55c8f98fb608d4c7f7aea9c219a1",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/length.bin": "2d959bb2114d6416c59fdc7ec3d65b4ccb77510c1b89bded2a696eaaea79400c",
+    "418d30b3-7425-499a-b480-aa4937fb5bf5/link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bm25_index.pkl": "68a718d111e46f215bc63620d62d5df4516fdb647c2875d15eec913670606452",
+    "chroma.sqlite3": "9c7f5ea5ef96ae8fb111f319f680d4d9e3d0092debcdde9995e82c11db2c4a10"
+  },
+  "index_derivation_sha256": "5e1845b76c373cc4bfa0f2573469cab53f6d8ddd040a9b21d8a7e9d359fbfcae",
+  "runner_sha256": "4cc987c83330f18dbde611aa5a20ed30b07991207f2110f87b4117ba48db999d",
+  "runner_started_at": "",
+  "updated_at": "",
+  "q4_preflight": {
+    "started_at": "",
+    "exit_code": 0,
+    "ended_at": "",
+    "runtime": {
+      "gguf": {
+        "path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+        "size_bytes": 2708804192,
+        "sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd"
+      },
+      "llama_server": {
+        "pid": 3696,
+        "argv": [
+          "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+          "-m",
+          "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8080",
+          "--alias",
+          "repoagent-router",
+          "--jinja",
+          "-ngl",
+          "99",
+          "--ctx-size",
+          "8192",
+          "--parallel",
+          "1"
+        ],
+        "actual_command": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server -m /root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf --host 127.0.0.1 --port 8080 --alias repoagent-router --jinja -ngl 99 --ctx-size 8192 --parallel 1",
+        "version": "version: 0.7.0-dev (build 1, commit a37cc46)\nbuilt with GNU 11.4.0 for Linux x86_64",
+        "commit": "a37cc46",
+        "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+        "props": {
+          "default_generation_settings": {
+            "params": {
+              "seed": 4294967295,
+              "temperature": 0.800000011920929,
+              "dynatemp_range": 0.0,
+              "dynatemp_exponent": 1.0,
+              "top_k": 40,
+              "top_p": 0.949999988079071,
+              "min_p": 0.05000000074505806,
+              "top_n_sigma": -1.0,
+              "xtc_probability": 0.0,
+              "xtc_threshold": 0.10000000149011612,
+              "typical_p": 1.0,
+              "repeat_last_n": 64,
+              "repeat_penalty": 1.0,
+              "presence_penalty": 0.0,
+              "frequency_penalty": 0.0,
+              "dry_multiplier": 0.0,
+              "dry_base": 1.75,
+              "dry_allowed_length": 2,
+              "dry_penalty_last_n": 64,
+              "mirostat": 0,
+              "mirostat_tau": 5.0,
+              "mirostat_eta": 0.10000000149011612,
+              "adaptive_target": -1.0,
+              "adaptive_decay": 0.8999999761581421,
+              "max_tokens": -1,
+              "n_predict": -1,
+              "n_keep": 0,
+              "n_discard": 0,
+              "ignore_eos": false,
+              "stream": false,
+              "n_probs": 0,
+              "min_keep": 0,
+              "chat_format": "Content-only",
+              "reasoning_format": "none",
+              "reasoning_in_content": false,
+              "generation_prompt": "",
+              "samplers": [
+                "penalties",
+                "dry",
+                "top_n_sigma",
+                "top_k",
+                "typ_p",
+                "top_p",
+                "min_p",
+                "xtc",
+                "temperature"
+              ],
+              "speculative.types": "none",
+              "timings_per_token": false,
+              "post_sampling_probs": false,
+              "backend_sampling": false,
+              "lora": []
+            },
+            "n_ctx": 8192
+          },
+          "total_slots": 1,
+          "model_alias": "repoagent-router",
+          "model_ftype": "Q4_K - Medium",
+          "model_path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+          "modalities": {
+            "vision": false,
+            "video": false,
+            "audio": false
+          },
+          "media_marker": "<__media_eKCBF3Sd3L7BEcvluEg5gtZ3EaUs9nPQ__>",
+          "endpoint_slots": true,
+          "endpoint_props": false,
+          "endpoint_metrics": false,
+          "ui": true,
+          "ui_settings": {},
+          "chat_template": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\\n' + content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | tojson | safe if args_value is mapping or (args_value is sequence and args_value is not string) else args_value | string %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+          "chat_template_caps": {
+            "supports_object_arguments": true,
+            "supports_parallel_tool_calls": true,
+            "supports_preserve_reasoning": false,
+            "supports_reasoning_effort": false,
+            "supports_string_content": true,
+            "supports_system_role": true,
+            "supports_tool_calls": true,
+            "supports_tools": true,
+            "supports_typed_content": true
+          },
+          "bos_token": ",",
+          "eos_token": "<|im_end|>",
+          "build_info": "b1-a37cc46",
+          "is_sleeping": false,
+          "cors_proxy_enabled": false
+        }
+      },
+      "hardware_csv": "name, memory.total [MiB], memory.used [MiB], driver_version\nNVIDIA GeForce RTX 5090, 32607 MiB, 3570 MiB, 595.71.05",
+      "gpu_processes_csv": "pid, process_name, used_gpu_memory [MiB]\n3696, /root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server, 3560 MiB",
+      "smoke_test": {
+        "question": "请定位当前仓库 src/agent/core.py 中 RepoAgent.chat 的实现。",
+        "decision": {
+          "decision_type": "tool_call",
+          "tool_name": "search_codebase",
+          "arguments": {
+            "query": "RepoAgent chat src/agent/core.py",
+            "top_k": 6
+          },
+          "clarify_answer": null,
+          "oracle_context": "定位 RepoAgent.chat 方法的具体实现"
+        },
+        "seconds": 1.4993495000016992
+      },
+      "ssh_tunnel": "127.0.0.1:8080 -> 5090 127.0.0.1:8080",
+      "gpu_lock_held": true
+    }
+  },
+  "local_processes": {
+    "runner": 34848,
+    "server_ssh": 49404,
+    "tunnel": 60936
+  },
+  "service_shutdown": {
+    "started_at": "",
+    "exit_code": 0,
+    "remote_pid": 3696,
+    "command_before_stop": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server -m /root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf --host 127.0.0.1 --port 8080 --alias repoagent-router --jinja -ngl 99 --ctx-size 8192 --parallel 1",
+    "remote_pid_gone": true,
+    "tunnel_exit_code": 1,
+    "server_ssh_exit_code": 0,
+    "local_8080_connectable": false,
+    "gpu_processes_csv_after_stop": "",
+    "experiment_pid_absent_from_gpu": true,
+    "ended_at": "",
+    "errors": []
+  },
+  "router_service_stopped": true,
+  "ssh_tunnel_stopped": true,
+  "runner_ended_at": "",
+  "runner_exit_code": 0,
+  "gguf_backup": {
+    "started_at": "",
+    "path": ".\\saves\\qwen3.5-4b\\gguf\\router-4b-v2-Q4_K_M.gguf",
+    "source": "root@example.invalid:/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+    "expected_sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd",
+    "target_absent_before_copy": true,
+    "exit_code": 0,
+    "sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd",
+    "size_bytes": 2708804192,
+    "verified": true,
+    "ended_at": ""
+  },
+  "final_service_check": {
+    "checked_at": "",
+    "gpu_processes_csv": "",
+    "local_8080_connect_ex": 10035,
+    "local_8080_connectable": false
+  },
+  "summary": {
+    "native": {
+      "started_at_beijing": "",
+      "ended_at_beijing": "",
+      "records": 90,
+      "execution_errors": 0,
+      "l1_correct": 87,
+      "must_retrieve_total": 35,
+      "must_retrieve_actual": 32,
+      "must_retrieve_missed_ids": [
+        "p17",
+        "p32",
+        "p38"
+      ],
+      "mean_seconds": 5.4335555555555555,
+      "mean_cost_usd": 0.0012145878666666666,
+      "total_cost_usd": 0.109312908,
+      "p04_p18_p29_actual_retrieval": {
+        "p04": true,
+        "p18": true,
+        "p29": true
+      }
+    },
+    "q4": {
+      "started_at_beijing": "",
+      "ended_at_beijing": "",
+      "records": 90,
+      "execution_errors": 0,
+      "l1_correct": 87,
+      "must_retrieve_total": 35,
+      "must_retrieve_actual": 32,
+      "must_retrieve_missed_ids": [
+        "p04",
+        "p18",
+        "p29"
+      ],
+      "mean_seconds": 3.9723333333333333,
+      "mean_cost_usd": 0.0007462504,
+      "total_cost_usd": 0.067162536,
+      "p04_p18_p29_actual_retrieval": {
+        "p04": false,
+        "p18": false,
+        "p29": false
+      }
+    }
+  },
+  "cost_scope": "冻结价格表估算的全部 DeepSeek 生成调用费用；不含 Qwen 嵌入、Qwen 评委和 GPU 租金。",
+  "final_integrity": {
+    "frozen_source_unchanged": true,
+    "environment_hash_unchanged": true,
+    "original_index_unchanged": true,
+    "clean_index_unchanged": true,
+    "outputs_match_recorded_sha256": true,
+    "manifest_unchanged": true,
+    "temporary_source_copy_removed": true
+  },
+  "completed_at": "",
+  "new_files": [
+    ".\\data\\v2\\clean90\\derive_index.py",
+    ".\\data\\v2\\clean90\\e2e_native.jsonl",
+    ".\\data\\v2\\clean90\\e2e_q4.jsonl",
+    ".\\data\\v2\\clean90\\generate_native.log",
+    ".\\data\\v2\\clean90\\generate_q4.log",
+    ".\\data\\v2\\clean90\\gguf_backup.log",
+    ".\\data\\v2\\clean90\\index_derivation.json",
+    ".\\data\\v2\\clean90\\index_derivation.log",
+    ".\\data\\v2\\clean90\\router_service.log",
+    ".\\data\\v2\\clean90\\run.json",
+    ".\\data\\v2\\clean90\\run_clean90.py",
+    ".\\data\\v2\\clean90\\runner.log",
+    ".\\data\\v2\\clean90\\ssh_tunnel.log",
+    ".\\data\\indices\\src_frozen90_clean\\418d30b3-7425-499a-b480-aa4937fb5bf5\\data_level0.bin",
+    ".\\data\\indices\\src_frozen90_clean\\418d30b3-7425-499a-b480-aa4937fb5bf5\\header.bin",
+    ".\\data\\indices\\src_frozen90_clean\\418d30b3-7425-499a-b480-aa4937fb5bf5\\length.bin",
+    ".\\data\\indices\\src_frozen90_clean\\418d30b3-7425-499a-b480-aa4937fb5bf5\\link_lists.bin",
+    ".\\data\\indices\\src_frozen90_clean\\bm25_index.pkl",
+    ".\\data\\indices\\src_frozen90_clean\\chroma.sqlite3",
+    ".\\saves\\qwen3.5-4b\\gguf\\router-4b-v2-Q4_K_M.gguf",
+    ".\\data\\v2\\clean90\\audit_retrieval_sources.py",
+    ".\\data\\v2\\clean90\\retrieval_audit.json",
+    ".\\data\\v2\\clean90\\run_scoring.py",
+    ".\\data\\v2\\clean90\\build_summary.py",
+    ".\\data\\v2\\clean90\\judge_native.jsonl",
+    ".\\data\\v2\\clean90\\judge_native.log",
+    ".\\data\\v2\\clean90\\judge_q4.jsonl",
+    ".\\data\\v2\\clean90\\judge_q4.log",
+    ".\\data\\v2\\clean90\\comparison.json",
+    ".\\data\\v2\\clean90\\compare.log",
+    ".\\data\\v2\\clean90\\summary.json",
+    ".\\data\\v2\\clean90\\结果.md"
+  ],
+  "new_file_count": 32,
+  "scoring_runner_sha256": "98e5644e460805246d05df8ae2b28dba710577d93b0bd62a9c80a676afa6c467",
+  "scoring_completed_at": "",
+  "scoring_artifacts": [
+    {
+      "path": ".\\data\\v2\\clean90\\audit_retrieval_sources.py",
+      "sha256": "4932eb0ccb4ab850c4a643be962b2e982cdd01a7a51afef757d5506d1677d464"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\retrieval_audit.json",
+      "sha256": "4db096e028da9d82bb7ceb7ff7db156bf76fbf55dc3022e66f14e41c1fefcd87"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\run_scoring.py",
+      "sha256": "98e5644e460805246d05df8ae2b28dba710577d93b0bd62a9c80a676afa6c467"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\build_summary.py",
+      "sha256": "30de97e704736639d8a13161d5290a7c8f8cfc1eebe24fa4684de7a90a1633bb"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\judge_native.jsonl",
+      "sha256": "98358f9d70aef8ac893271d923fa83f90b70bdfe02ef5599cf9cc5bbc2ee2c28"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\judge_native.log",
+      "sha256": "109538b20309843ab73088927805937b237cb3c3c2ccc6e699ffe4d24fd6fe8e"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\judge_q4.jsonl",
+      "sha256": "bbe27ea7d3882d8982c3b4f35ade96ec7d1fee45b94128cd5f8379ffaaf8a91f"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\judge_q4.log",
+      "sha256": "5a5886a1893132268c764c058d86479cb895e9dcd6b82f646644ab0cb868f950"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\comparison.json",
+      "sha256": "1d72476f1c89c088b1d2bf7f33b7be0b8309651594c431a44aeed5f733e1a7d0"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\compare.log",
+      "sha256": "42a1e6f96465570754c55dd478aacd5fde5316d62d7e5793a34bcdad17e8c066"
+    },
+    {
+      "path": ".\\data\\v2\\clean90\\summary.json",
+      "sha256": "3328bad48700de38dc1eb616ac0025d1aaf072b95122ca27183578bb332b27e1"
+    }
+  ],
+  "scoring_summary_file": ".\\data\\v2\\clean90\\summary.json",
+  "scoring_report_file": ".\\data\\v2\\clean90\\结果.md",
+  "scoring_validation": {
+    "frozen_source_hashes_match": true,
+    "answer_hashes_match": true,
+    "judge_input_hashes_match": true,
+    "both_judges_complete_90": true,
+    "comparison_uses_frozen_code": true,
+    "no_new_blind_review": true,
+    "audit_clean_excluded_calls_zero": true,
+    "failed_scoring_artifacts_removed": true
+  }
+}

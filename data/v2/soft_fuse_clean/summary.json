@@ -1,0 +1,659 @@
+{
+  "status": "stopped_at_old_result_reproduction",
+  "date": "",
+  "finalized_at": "",
+  "stop_reason": "src failed source, distance and ROC-AUC reproduction requirements; no rerun or fallback",
+  "completed_steps": [
+    "derived three new indices without embedding API calls",
+    "verified existing character-standard clean index on temporary copy",
+    "ran src old-index reproduction once"
+  ],
+  "not_run": [
+    "reproduce_src_ast",
+    "reproduce_src_flash",
+    "reproduce_src_ast_flash",
+    "all four clean calibrations"
+  ],
+  "max_false_block": 0.075,
+  "reproduction_src": {
+    "passed": false,
+    "source_mismatch_count": 2,
+    "source_mismatches": [
+      {
+        "split": "domain",
+        "id": "p02",
+        "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+        "old_source": "agent\\core.py",
+        "new_source": "agent\\tools\\tools_schemas.py",
+        "source_equal": false,
+        "old_distance": 0.7494447231292725,
+        "new_distance": 0.7264090776443481,
+        "absolute_distance_difference": 0.023035645484924316
+      },
+      {
+        "split": "domain",
+        "id": "p23",
+        "query": "RepoAgent 是如何封装 Function Calling 工具列表的？",
+        "old_source": "agent\\core.py",
+        "new_source": "agent\\tools\\tools_schemas.py",
+        "source_equal": false,
+        "old_distance": 0.5864067673683167,
+        "new_distance": 0.6801310181617737,
+        "absolute_distance_difference": 0.09372425079345703
+      }
+    ],
+    "distance_difference_ge_1e_3_count": 6,
+    "max_absolute_distance_difference": 0.10550636053085327,
+    "worst_distance_row": {
+      "split": "misleading_edge",
+      "id": "m01",
+      "query": "RepoAgent 这种项目里一般为什么要用 FastAPI？",
+      "old_source": "main.py",
+      "new_source": "main.py",
+      "source_equal": true,
+      "old_distance": 0.5278820395469666,
+      "new_distance": 0.6333884000778198,
+      "absolute_distance_difference": 0.10550636053085327
+    },
+    "old": {
+      "roc_auc": 0.8015,
+      "recommended_threshold": 0.8869903087615967,
+      "outdomain_intercepted": 28,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 35,
+      "top1_exam_questions": 33
+    },
+    "reproduced": {
+      "roc_auc": 0.798,
+      "recommended_threshold": 0.8868668079376221,
+      "outdomain_intercepted": 28,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 35,
+      "top1_exam_questions": 33
+    },
+    "auc_3dp": [
+      "0.801",
+      "0.798"
+    ],
+    "threshold_3dp": [
+      "0.887",
+      "0.887"
+    ]
+  },
+  "indices": [
+    {
+      "name": "src",
+      "label": "字符＋标准",
+      "old": {
+        "roc_auc": 0.8015,
+        "recommended_threshold": 0.8869903087615967,
+        "outdomain_intercepted": 28,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 35,
+        "top1_exam_questions": 33
+      },
+      "clean": null,
+      "clean_status": "not_run",
+      "derivation": {
+        "name": "src",
+        "status": "passed",
+        "started_at": "",
+        "original_path": ".\\data\\indices\\src",
+        "target_path": ".\\data\\indices\\src_frozen90_clean",
+        "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src-lk5dk_ma",
+        "original_count": 87,
+        "clean_count": 72,
+        "removed_count": 15,
+        "removed": [
+          {
+            "id": "b28fda9c-385c-4261-88e2-3d9b1c4b1245",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "38114655-1a40-4cc4-b6b9-41e277f3eb62",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "e6476c26-c281-452a-97aa-f765b0d9be8a",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "72a4a024-b4f6-464f-b1c2-5829cb26d216",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "9a5a6078-b2f1-4b1d-876c-5ace379aafef",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "563d6ea1-ebe7-4876-a29b-af4fcaee7846",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "3b5196a6-cf72-4333-94e3-4d8c0bdfa014",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "d283bd5c-51bf-4e27-8c43-8740dbe064dc",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "7a7d4a59-9ab5-4156-8006-c10e7b0d4764",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "bc15caac-701c-4cfa-bc44-b7b298040a4d",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "579ac5cc-5e0a-4db7-85ac-aba2abf2248d",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "dd758c53-7403-48aa-bfb4-826f75bd9467",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "5ce33f39-6ff4-4963-8352-0ee3d09baa84",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "2980a370-52bd-4036-92e9-0760e226d23e",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "4b7f11bc-590d-4cb3-b4e1-8010074a275d",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          }
+        ],
+        "removed_source_counts": {
+          "evaluation\\soft_fuse_dataset.py": 6,
+          "evaluation\\e2e_manifest.py": 3,
+          "evaluation\\rag_dataset.py": 3,
+          "evaluation\\rewriter_noisy_dataset.py": 3
+        },
+        "collection": "langchain",
+        "distance": "l2",
+        "dimensions": 1024,
+        "chromadb_version": "1.5.9",
+        "embeddings_elementwise_equal": true,
+        "max_absolute_embedding_difference": 0.0,
+        "documents_equal": true,
+        "metadata_equal": true,
+        "ids_equal": true,
+        "removed_sources_remaining": {
+          "evaluation\\soft_fuse_dataset.py": 0,
+          "evaluation\\e2e_manifest.py": 0,
+          "evaluation\\rag_dataset.py": 0,
+          "evaluation\\rewriter_noisy_dataset.py": 0
+        },
+        "embedding_api_calls_for_derivation": 0,
+        "bm25_documents_equal": true,
+        "bm25_smoke_passed": true,
+        "original_index_unchanged": true,
+        "retained_vector_norm_min": 0.9999999557477888,
+        "retained_vector_norm_max": 1.0000001078181242,
+        "elapsed_seconds": 0.47627579999971204,
+        "ended_at": ""
+      }
+    },
+    {
+      "name": "src_ast",
+      "label": "AST＋标准",
+      "old": {
+        "roc_auc": 0.7985,
+        "recommended_threshold": 0.8066497445106506,
+        "outdomain_intercepted": 32,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 41,
+        "top1_exam_questions": 39
+      },
+      "clean": null,
+      "clean_status": "not_run",
+      "derivation": {
+        "name": "src_ast",
+        "status": "passed",
+        "started_at": "",
+        "original_path": ".\\data\\indices\\src_ast",
+        "target_path": ".\\data\\indices\\src_ast_noexam",
+        "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_ast-bok22_aw",
+        "original_count": 110,
+        "clean_count": 89,
+        "removed_count": 21,
+        "removed": [
+          {
+            "id": "5f3d2747-3e46-4f1b-b6a6-baa2516226c2",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "40525ef8-9eb6-4d55-8f70-93a8553d8fc0",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "7002d348-c162-42da-a0b9-78d3ff915e67",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "62bdae22-9265-4c23-a9bd-d462125c9a04",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "b7345ace-522b-4c83-addd-13c1cce5e20e",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "340fcd8b-5813-4596-bbba-f3b5f1ddf2fe",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "5b8a4576-c5a5-4159-a554-5086d5d4152f",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "8d01f512-1f7f-4548-9a53-f3edc7c36962",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "43e3d5e5-d181-4fa2-af0b-df0c6237176b",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "f519d9e4-66f4-4660-99a3-320763c917dc",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "2cb02f0f-d6fa-4662-82e4-89cc3b0bbf69",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "e20fe784-bdec-4f52-9f87-f506ffaeae1f",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "33896aa2-6866-4e7d-b8b2-0cc98f17b8a0",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "fcd925d8-cdb1-440e-8b0c-a10b3dfc0b3e",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "de36ecb6-43a6-4ed3-86be-9c6cdd1b6265",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "bb4acc6c-ecc0-479e-a2b2-70cbffabca81",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "1f75d2fa-1fbc-46a0-aaa8-280117eb56a2",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "ef5ba038-ad3b-43b0-93ae-e3995ab35319",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "01705f0d-8536-4d76-bb3a-2520a6a30405",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "488711d8-414a-4b70-9bf7-4fd44ba48b90",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "47d909f0-ee4c-446a-911d-5fca66ad4151",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          }
+        ],
+        "removed_source_counts": {
+          "evaluation\\soft_fuse_dataset.py": 10,
+          "evaluation\\e2e_manifest.py": 4,
+          "evaluation\\rag_dataset.py": 4,
+          "evaluation\\rewriter_noisy_dataset.py": 3
+        },
+        "collection": "langchain",
+        "distance": "l2",
+        "dimensions": 1024,
+        "chromadb_version": "1.5.9",
+        "embeddings_elementwise_equal": true,
+        "max_absolute_embedding_difference": 0.0,
+        "documents_equal": true,
+        "metadata_equal": true,
+        "ids_equal": true,
+        "removed_sources_remaining": {
+          "evaluation\\soft_fuse_dataset.py": 0,
+          "evaluation\\e2e_manifest.py": 0,
+          "evaluation\\rag_dataset.py": 0,
+          "evaluation\\rewriter_noisy_dataset.py": 0
+        },
+        "embedding_api_calls_for_derivation": 0,
+        "bm25_documents_equal": true,
+        "bm25_smoke_passed": true,
+        "original_index_unchanged": true,
+        "retained_vector_norm_min": 0.999999939594484,
+        "retained_vector_norm_max": 1.0000000977789183,
+        "elapsed_seconds": 1.3887117999984184,
+        "ended_at": ""
+      }
+    },
+    {
+      "name": "src_flash",
+      "label": "字符＋Flash",
+      "old": {
+        "roc_auc": 0.7435,
+        "recommended_threshold": 1.1008355617523193,
+        "outdomain_intercepted": 24,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 55,
+        "top1_exam_questions": 50
+      },
+      "clean": null,
+      "clean_status": "not_run",
+      "derivation": {
+        "name": "src_flash",
+        "status": "passed",
+        "started_at": "",
+        "original_path": ".\\data\\indices\\src_flash",
+        "target_path": ".\\data\\indices\\src_flash_noexam",
+        "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_flash-nyazd_rq",
+        "original_count": 87,
+        "clean_count": 72,
+        "removed_count": 15,
+        "removed": [
+          {
+            "id": "f0c4ff7b-fb2b-4dc3-8d5f-9e2337315d4e",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "138bf1fa-44cd-4b65-b82d-26d5b017187c",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "0756b362-e418-442f-a817-4a313f50dc1e",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "9ec71102-6e2c-4dae-a96b-8004cbd3938f",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "6210ab70-9dcd-42ce-a7da-e0dfdaee6621",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "094166d1-6772-44d3-9d84-d046b2b2b350",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "ecf26295-216f-4f38-9d7f-b0131f08ef5b",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "1793d18e-6869-4e32-a3ae-b1ac71dffd73",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "9c9985cd-df73-4e5d-acbe-37072e292c5b",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "4896bfd1-8995-4488-b7b1-e11211938427",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "ca820369-75c8-461a-afbd-08942e1bceab",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "94ba9226-43c1-49b0-8d84-a31159da2c3c",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "14b155c1-ddc8-4c5f-b81b-67cf0c1947a4",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "685a90c2-97a2-41d7-84c6-cc87ff8f129a",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "6f093a6c-e8a3-4cd9-a259-869833133680",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          }
+        ],
+        "removed_source_counts": {
+          "evaluation\\soft_fuse_dataset.py": 6,
+          "evaluation\\e2e_manifest.py": 3,
+          "evaluation\\rag_dataset.py": 3,
+          "evaluation\\rewriter_noisy_dataset.py": 3
+        },
+        "collection": "langchain",
+        "distance": "l2",
+        "dimensions": 1024,
+        "chromadb_version": "1.5.9",
+        "embeddings_elementwise_equal": true,
+        "max_absolute_embedding_difference": 0.0,
+        "documents_equal": true,
+        "metadata_equal": true,
+        "ids_equal": true,
+        "removed_sources_remaining": {
+          "evaluation\\soft_fuse_dataset.py": 0,
+          "evaluation\\e2e_manifest.py": 0,
+          "evaluation\\rag_dataset.py": 0,
+          "evaluation\\rewriter_noisy_dataset.py": 0
+        },
+        "embedding_api_calls_for_derivation": 0,
+        "bm25_documents_equal": true,
+        "bm25_smoke_passed": true,
+        "original_index_unchanged": true,
+        "retained_vector_norm_min": 0.9965959214575104,
+        "retained_vector_norm_max": 1.0035393520327045,
+        "elapsed_seconds": 0.5472702000006393,
+        "ended_at": ""
+      }
+    },
+    {
+      "name": "src_ast_flash",
+      "label": "AST＋Flash",
+      "old": {
+        "roc_auc": 0.6635,
+        "recommended_threshold": 1.0815577507019043,
+        "outdomain_intercepted": 17,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 49,
+        "top1_exam_questions": 48
+      },
+      "clean": null,
+      "clean_status": "not_run",
+      "derivation": {
+        "name": "src_ast_flash",
+        "status": "passed",
+        "started_at": "",
+        "original_path": ".\\data\\indices\\src_ast_flash",
+        "target_path": ".\\data\\indices\\src_ast_flash_noexam",
+        "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_ast_flash-jn8z1dyw",
+        "original_count": 110,
+        "clean_count": 89,
+        "removed_count": 21,
+        "removed": [
+          {
+            "id": "ab8ad635-1d58-4810-8807-1ab743346c98",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "c9f9c29b-4399-4475-ac58-193ced9c48e1",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "32dca401-561e-4228-9fe7-1279dbc1712d",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "16908a5d-a598-489e-9a42-45c8c572d363",
+            "source": "evaluation\\e2e_manifest.py"
+          },
+          {
+            "id": "b6e74c0b-fafe-4be0-8b37-5ba5bd6ba9a3",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "3d8c7c3d-8391-4dc8-a59b-72ff5a90a79f",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "93b288a8-c832-4762-b70e-f13d22eb39bc",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "1a674714-8b23-4bd0-b32e-0c36579c343d",
+            "source": "evaluation\\rag_dataset.py"
+          },
+          {
+            "id": "990c343f-59c7-48a6-b9ae-7455b707aa78",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "73973626-84ac-412a-8e73-890172d435ee",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "69913160-da8b-451f-af91-982f55c9b762",
+            "source": "evaluation\\rewriter_noisy_dataset.py"
+          },
+          {
+            "id": "6a07e39a-49fb-4eaf-a82d-c82d4b48e8e9",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "757f90bb-4b83-4e28-885e-c714ef5ec7c1",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "fd14bef8-d3fd-45c6-a9cf-1ff66a926f2a",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "348ad0c0-01b5-40d1-a6bb-62051cf3fc56",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "3d02a148-0cb7-4458-afbd-71f2ad072888",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "e4a296d0-7e15-4f39-8c06-cb0754de33da",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "b0beb251-23a8-4cb5-b8fc-5462fb471b55",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "eaceb6e8-8564-456b-8088-1fd0b4c52bb2",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "fe4ae4ea-e570-46ec-aeeb-5e33400e2589",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          },
+          {
+            "id": "f955879f-7474-4b36-a622-ea1aa88dad97",
+            "source": "evaluation\\soft_fuse_dataset.py"
+          }
+        ],
+        "removed_source_counts": {
+          "evaluation\\soft_fuse_dataset.py": 10,
+          "evaluation\\e2e_manifest.py": 4,
+          "evaluation\\rag_dataset.py": 4,
+          "evaluation\\rewriter_noisy_dataset.py": 3
+        },
+        "collection": "langchain",
+        "distance": "l2",
+        "dimensions": 1024,
+        "chromadb_version": "1.5.9",
+        "embeddings_elementwise_equal": true,
+        "max_absolute_embedding_difference": 0.0,
+        "documents_equal": true,
+        "metadata_equal": true,
+        "ids_equal": true,
+        "removed_sources_remaining": {
+          "evaluation\\soft_fuse_dataset.py": 0,
+          "evaluation\\e2e_manifest.py": 0,
+          "evaluation\\rag_dataset.py": 0,
+          "evaluation\\rewriter_noisy_dataset.py": 0
+        },
+        "embedding_api_calls_for_derivation": 0,
+        "bm25_documents_equal": true,
+        "bm25_smoke_passed": true,
+        "original_index_unchanged": true,
+        "retained_vector_norm_min": 0.9979662074300087,
+        "retained_vector_norm_max": 1.0034995256308528,
+        "elapsed_seconds": 0.6733760999995866,
+        "ended_at": ""
+      }
+    }
+  ],
+  "clean_threshold_range": null,
+  "character_standard_clean_cosine_threshold": null,
+  "clean_outdomain_category_interceptions": null,
+  "protected_integrity": {
+    "status": "failed",
+    "protected_file_count": 319,
+    "sha256_verified_file_count": 319,
+    "changed_files": [
+      {
+        "path": "data/v2/clean90/judge_q4.jsonl",
+        "before": {
+          "bytes": 37259,
+          "mtime_ns": null,
+          "sha256": "fd0950e5f697004dced0ca1fd53fba0b20204add2ad17cd9e189669b63394890"
+        },
+        "after": {
+          "bytes": 86443,
+          "mtime_ns": null,
+          "sha256": "2bbe5cbdb67c8971c090347316d9a6c62091f2fae04ff907b36cd5c76aa61a31"
+        }
+      },
+      {
+        "path": "data/v2/clean90/judge_q4.log",
+        "before": {
+          "bytes": 1295,
+          "mtime_ns": null,
+          "sha256": "ab90bab84c070665f4f5090970c61ba202d735374eda3e45a2f82c7e1cf722f1"
+        },
+        "after": {
+          "bytes": 3279,
+          "mtime_ns": null,
+          "sha256": "5a5886a1893132268c764c058d86479cb895e9dcd6b82f646644ab0cb868f950"
+        }
+      },
+      {
+        "path": "data/v2/clean90/run.json",
+        "before": {
+          "bytes": 63563,
+          "mtime_ns": null,
+          "sha256": "ed692774195dfe4f85d504556ef472f083a7b00e44c7ee4097466bdf8eece475"
+        },
+        "after": {
+          "bytes": 65607,
+          "mtime_ns": null,
+          "sha256": "101ef92a3d5ed0994d9e4fe16c42b5ebeebbbaeff50a99df98aa2ba1d9e93ac8"
+        }
+      }
+    ],
+    "unexpected_added_files": [
+      "data/v2/clean90/compare.log",
+      "data/v2/clean90/comparison.json"
+    ],
+    "observation": "The protected clean90 directory changed."
+  },
+  "notes": [
+    "阈值是在同一批90题上选出、又在这90题上统计，结果偏乐观。",
+    "本次干净索引标定未运行，不能据此报告干净索引阈值、拦截率或余弦阈值。",
+    "原索引均只在系统临时目录的副本中由Chroma打开；三个新索引派生时直接写入指定新目录。",
+    "系统临时索引副本保留，路径及SHA256一并记入新文件清单。",
+    "完整性核对额外失败：clean90 内 judge_q4.jsonl、judge_q4.log、run.json 变化，新增 compare.log、comparison.json。未调查变化来源；不能声明全部历史文件保持不变。"
+  ],
+  "file_manifest": ".\\data\\v2\\soft_fuse_clean\\new_files_sha256.json"
+}

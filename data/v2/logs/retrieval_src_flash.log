@@ -1,0 +1,37 @@
+成功从路径data/indices/src_flash中读取Chroma向量数据库
+成功从硬盘持久路径读取到bm25索引引擎！
+成功从路径data\indices\src_flash\bm25_index.pkl中读取bm25向量数据库
+======================== 提问类型:exact_keyword =======================
+
+======================== 问题数量:5 =======================
+
+exact_keyword类型提问：引擎：dense | Hit_Rate：100.0% | MRR:0.767
+exact_keyword类型提问：引擎：bm25 | Hit_Rate：100.0% | MRR:0.707
+exact_keyword类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:0.733
+======================== 提问类型:chinese_semantic =======================
+
+======================== 问题数量:5 =======================
+
+chinese_semantic类型提问：引擎：dense | Hit_Rate：80.0% | MRR:0.800
+chinese_semantic类型提问：引擎：bm25 | Hit_Rate：0.0% | MRR:0.000
+chinese_semantic类型提问：引擎：hybrid | Hit_Rate：80.0% | MRR:0.417
+======================== 提问类型:english_semantic =======================
+
+======================== 问题数量:3 =======================
+
+english_semantic类型提问：引擎：dense | Hit_Rate：100.0% | MRR:0.611
+english_semantic类型提问：引擎：bm25 | Hit_Rate：33.3% | MRR:0.167
+english_semantic类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:0.567
+======================== 提问类型:mixed =======================
+
+======================== 问题数量:5 =======================
+
+mixed类型提问：引擎：dense | Hit_Rate：100.0% | MRR:0.867
+mixed类型提问：引擎：bm25 | Hit_Rate：80.0% | MRR:0.454
+mixed类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:0.397
+====================================================================================================
+================================================== 最终全局评测结果(top_k = 8，embedding = qwen3.7-text-embedding-flash，rerank = False) ==================================================
+引擎：dense | Hit_Rate：94.4% [74.2, 99.0] | MRR:0.778 [0.620, 0.926]
+引擎：bm25 | Hit_Rate：55.6% [33.7, 75.4] | MRR:0.350 [0.169, 0.554]
+引擎：hybrid | Hit_Rate：94.4% [74.2, 99.0] | MRR:0.524 [0.364, 0.696]
+已写入 data/v2/retrieval_src_flash.json

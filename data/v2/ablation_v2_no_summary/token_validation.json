@@ -1,0 +1,64 @@
+{
+  "scope": "Read-only CPU tokenization using the existing server environment; no model weights loaded and no GPU inference or training",
+  "base_model": "/root/autodl-tmp/models/Qwen/Qwen3.5-4B",
+  "llamafactory_commit": "7af909522a951e3ad9f022ea6f88b6755257eaa5",
+  "versions": {
+    "transformers": "5.6.0",
+    "torch": "2.12.1+cu130",
+    "peft": "0.18.1"
+  },
+  "template": "qwen3_5_nothink",
+  "cutoff_len": 2048,
+  "method": "AutoTokenizer(local_files_only=True); get_template_and_fix_tokenizer; encode_multiturn on each system/user/assistant triple; existing Factory infer_seqlen(source_length, target_length, cutoff_len - efficient_eos)",
+  "elapsed_token_audit_seconds": 2.106748353689909,
+  "timing_scope": "1671 single-turn examples after tokenizer initialization; excludes imports, file loading and SSH overhead",
+  "summary_added_tokens_per_example": 228,
+  "input_sha256": {
+    "v2_with_summary": "c067f56a05595e45221b04d0b77975368a3c3676ec191c70c8f6f02eb7ad4bf3",
+    "v1_no_summary": "77620ccc59cb4eed6b3c6160917f1918e04935d60e21fa1dc82e39d1d7b8266e"
+  },
+  "conditions": [
+    {
+      "name": "v1_no_summary",
+      "count": 497,
+      "min_tokens": 847,
+      "max_tokens": 2095,
+      "mean_tokens": 992.6438631790744,
+      "source_truncated_count": 1,
+      "target_truncated_count": 0,
+      "truncated_examples": [
+        {"index_zero_based": 430, "sample_id": "domain_0349", "source_tokens": 1436, "kept_source_tokens": 1389, "target_tokens": 659, "kept_target_tokens": 659}
+      ]
+    },
+    {
+      "name": "v2_with_summary",
+      "count": 637,
+      "min_tokens": 1075,
+      "max_tokens": 2323,
+      "mean_tokens": 1195.8069073783358,
+      "source_truncated_count": 2,
+      "target_truncated_count": 0,
+      "truncated_examples": [
+        {"index_zero_based": 22, "sample_id": "domain_0310", "source_tokens": 1591, "kept_source_tokens": 1491, "target_tokens": 557, "kept_target_tokens": 557},
+        {"index_zero_based": 430, "sample_id": "domain_0349", "source_tokens": 1664, "kept_source_tokens": 1389, "target_tokens": 659, "kept_target_tokens": 659}
+      ]
+    },
+    {
+      "name": "v2_no_summary",
+      "count": 637,
+      "min_tokens": 847,
+      "max_tokens": 2095,
+      "mean_tokens": 967.806907378336,
+      "source_truncated_count": 1,
+      "target_truncated_count": 0,
+      "truncated_examples": [
+        {"index_zero_based": 430, "sample_id": "domain_0349", "source_tokens": 1436, "kept_source_tokens": 1389, "target_tokens": 659, "kept_target_tokens": 659}
+      ]
+    }
+  ],
+  "interpretation": [
+    "The v1-to-v2 no-summary comparison has the same truncation on the shared 497 examples; the 140 added examples are not truncated.",
+    "The old v2 with-summary versus new v2 no-summary comparison includes summary-induced source truncation differences on two examples; it does not isolate semantic summary content from context-window occupancy.",
+    "Retain cutoff_len=2048 to match historical training. All supervised target tokens survive in all three conditions."
+  ]
+}

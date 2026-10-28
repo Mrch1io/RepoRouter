@@ -1,0 +1,60 @@
+{"id":"A01","bucket":"A","label":"tool_call","question":"消息最前面放了 system，nanochat 是在哪段代码把它并进 user 的？","answer":"在 nanochat/tokenizer.py 的 RustBPETokenizer.render_conversation 中：复制会话后，用两个换行把 system 内容接到紧随的 user 内容前，再移除首条 system。","gold":{"file":"nanochat/tokenizer.py","symbol":"RustBPETokenizer.render_conversation","lines":[157,165]},"pair_id":null}
+{"id":"A02","bucket":"A","label":"tool_call","question":"这个仓库的 RustBPETokenizer 把 BPE 训练交给哪个库？","answer":"train_from_iterator 创建 rustbpe.Tokenizer，再调用它的 train_from_iterator 训练 BPE。","gold":{"file":"nanochat/tokenizer.py","symbol":"RustBPETokenizer.train_from_iterator","lines":[42,48]},"pair_id":"bpe"}
+{"id":"A03","bucket":"A","label":"tool_call","question":"GPTConfig 默认几层？","answer":"直接使用 GPTConfig 的字段默认值时，n_layer 为 12。","gold":{"file":"nanochat/gpt.py","symbol":"GPTConfig","lines":[29,35]},"pair_id":null}
+{"id":"A04","bucket":"A","label":"tool_call","question":"这里 MLP 的平方 ReLU 写在哪","answer":"在 nanochat/gpt.py 的 MLP.forward 中，先经过 c_fc，再执行 F.relu(x).square()，最后经过 c_proj。","gold":{"file":"nanochat/gpt.py","symbol":"MLP.forward","lines":[137,141]},"pair_id":null}
+{"id":"A05","bucket":"A","label":"tool_call","question":"muon_step_fused 在更新时怎么判断哪些权重需要做 decay？","answer":"用更新量 g 与当前参数的逐元素乘积是否大于等于 0 构造 mask；weight decay 项乘上该 mask 后再更新参数。","gold":{"file":"nanochat/optim.py","symbol":"muon_step_fused","lines":[176,180]},"pair_id":"muon"}
+{"id":"A06","bucket":"A","label":"tool_call","question":"多卡时，MuonAdamW 对不足 1024 个元素的 AdamW 参数调用哪种梯度通信？","answer":"调用 dist.all_reduce，使用 ReduceOp.AVG 和 async_op=True；这一分支仅在 world_size 大于 1 时进入。","gold":{"file":"nanochat/optim.py","symbol":"MuonAdamW._reduce_adamw","lines":[274,285]},"pair_id":null}
+{"id":"A07","bucket":"A","label":"tool_call","question":"eval_with_timeout 默认限时几秒","answer":"函数参数 max_time 默认为 3，即 3 秒。","gold":{"file":"nanochat/engine.py","symbol":"eval_with_timeout","lines":[35,40]},"pair_id":null}
+{"id":"A08","bucket":"A","label":"tool_call","question":"KVCache.reset 会把 K/V 张量清零吗？","answer":"不会。它只把 cache_seqlens 清零并把 prev_embedding 设为 None，没有清空 k_cache 和 v_cache 的数据。","gold":{"file":"nanochat/engine.py","symbol":"KVCache.reset","lines":[106,109]},"pair_id":"kv_cache"}
+{"id":"A09","bucket":"A","label":"tool_call","question":"我在跟 python 工具调用那段，Engine.generate 收到 <|python_end|> 后，把收集到的非空表达式交给谁执行？","answer":"在 python 块内遇到结束标记且表达式非空时，先用 tokenizer.decode 解码，再调用 use_calculator(expr)。","gold":{"file":"nanochat/engine.py","symbol":"Engine.generate","lines":[255,259]},"pair_id":null}
+{"id":"A10","bucket":"A","label":"tool_call","question":"想单独调 run_chat_eval；num_samples 的函数默认值是多少？","answer":"函数签名中的 num_samples 默认为 1。","gold":{"file":"scripts/chat_eval.py","symbol":"run_chat_eval","lines":[156,158]},"pair_id":null}
+{"id":"A11","bucket":"A","label":"tool_call","question":"gsm8k.py 从回答里抠最终数字的函数在哪？","answer":"是 tasks/gsm8k.py 的 extract_answer：匹配 #### 后的数值文本，去掉其中的逗号后返回，未匹配则返回 None。","gold":{"file":"tasks/gsm8k.py","symbol":"extract_answer","lines":[21,33]},"pair_id":"gsm8k"}
+{"id":"A12","bucket":"A","label":"tool_call","question":"MMLU.evaluate 收到小写 a 会直接判错吗","answer":"正常启用断言时会先抛出 AssertionError，因为只接受 A、B、C、D；不会进入答案比较并返回 False。","gold":{"file":"tasks/mmlu.py","symbol":"MMLU.evaluate","lines":[49,54]},"pair_id":null}
+{"id":"A13","bucket":"A","label":"tool_call","question":"刚开始核对模型尺寸，base_train.py 怎么从 --depth 算出宽度？","answer":"build_model_meta 先用 depth 乘 args.aspect_ratio，再向上取整到 args.head_dim 的整数倍，将结果作为 n_embd。","gold":{"file":"scripts/base_train.py","symbol":"build_model_meta","lines":[129,139]},"pair_id":null}
+{"id":"A14","bucket":"A","label":"tool_call","question":"一行还剩点空位，但候选对话都装不下了。chat_sft.py 的打包器怎么填这段？","answer":"用 BOS token 补满剩余位置，同时给这些位置填入 0 的 mask，然后结束这一行的拼接。","gold":{"file":"scripts/chat_sft.py","symbol":"sft_data_generator_bos_bestfit","lines":[246,253]},"pair_id":null}
+{"id":"A15","bucket":"A","label":"tool_call","question":"chat_rl.py 里，同一题所有 rollout 都拿到 1 分，算出的 advantage 是多少","answer":"全部为 0：get_batch 将每个 reward 减去这组 rewards 的均值，不再除以标准差。","gold":{"file":"scripts/chat_rl.py","symbol":"get_batch","lines":[141,146]},"pair_id":null}
+{"id":"B01","bucket":"B","label":"tool_call","question":"base 第 0 步，Muon 动量实际取多少","answer":"第 0 步取 0.85，由 get_muon_momentum 的起始线性插值公式确定。","gold":{"file":"scripts/base_train.py","symbol":"get_muon_momentum","lines":[372,377]},"pair_id":null}
+{"id":"B02","bucket":"B","label":"tool_call","question":"拼 base 数据，文档缓冲阈值默认是 1000 篇吗？","answer":"是，预训练装箱数据加载器的 buffer_size 参数默认为 1000。","gold":{"file":"nanochat/dataloader.py","symbol":"tokenizing_distributed_data_loader_with_state_bos_bestfit","lines":[74,79]},"pair_id":null}
+{"id":"B03","bucket":"B","label":"tool_call","question":"SFT 我没限定训练步数，现在进度按读入的对话算，还是按真正用掉的算？","answer":"按真正装入 batch 的对话计数，进度为 consumed / dataset_size；读取缓冲区的 cursor 不直接作为这个进度的分子。","gold":{"file":"scripts/chat_sft.py","symbol":"sft_data_generator_bos_bestfit","lines":[240,274]},"pair_id":null}
+{"id":"B04","bucket":"B","label":"tool_call","question":"RL 的学习率倍率现在怎么随训练步数变化","answer":"倍率按 1.0 - it / num_steps 线性下降，调度公式在 it 等于 num_steps 时为 0。","gold":{"file":"scripts/chat_rl.py","symbol":"get_lr_multiplier","lines":[210,212]},"pair_id":null}
+{"id":"B05","bucket":"B","label":"tool_call","question":"缓存目录的环境变量没设，基础目录默认是哪？","answer":"默认为当前用户主目录下的 .cache/nanochat。","gold":{"file":"nanochat/common.py","symbol":"get_base_dir","lines":[71,80]},"pair_id":null}
+{"id":"B06","bucket":"B","label":"tool_call","question":"我留了几个 d20 checkpoint，加载时选了 d20、没选 step。现在会挑哪一个？","answer":"在 d20 对应目录中，解析 model_<step>.pt 文件名里的步号并取最大值，不按文件修改时间选。","gold":{"file":"nanochat/checkpoint_manager.py","symbol":"load_model_from_dir → find_last_step","lines":[137,157]},"pair_id":null}
+{"id":"B07","bucket":"B","label":"tool_call","question":"base 验证实际留几片数据","answer":"只留 1 个 parquet 分片，取数据文件列表的最后一个，其余用于训练。","gold":{"file":"nanochat/dataloader.py","symbol":"_document_batches","lines":[35,38]},"pair_id":null}
+{"id":"B08","bucket":"B","label":"tool_call","question":"想确认 CORE 现在的 few-shot 抽样：怎样避免把被测题本身抽进去？","answer":"候选索引先排除当前样本的 idx，再从剩余索引中抽取 few-shot 示例。","gold":{"file":"nanochat/core_eval.py","symbol":"evaluate_example","lines":[175,181]},"pair_id":null}
+{"id":"B09","bucket":"B","label":"tool_call","question":"ChatCORE 的生成题一次采了多个回答，实际怎样才算这一题过关？","answer":"只要至少一个回答通过任务判定，这道题就计为通过；代码对各回答的判定结果取 any。","gold":{"file":"scripts/chat_eval.py","symbol":"run_generative_eval","lines":[50,59]},"pair_id":null}
+{"id":"B10","bucket":"B","label":"tool_call","question":"bpb 没有效字节时实际返回啥","answer":"累计有效字节数为 0 时，返回正无穷 float('inf')。","gold":{"file":"nanochat/loss_eval.py","symbol":"evaluate_bpb","lines":[60,64]},"pair_id":null}
+{"id":"C01","bucket":"C","label":"no_tool","question":"动量在累积什么？","reason":"问的是优化器动量的通用含义，不依赖 nanochat 的优化器实现。","pair_id":null}
+{"id":"C02","bucket":"C","label":"no_tool","question":"batch 翻倍时，学习率也必须跟着翻倍吗","reason":"问的是批量大小与学习率的通用关系，没有指定仓库中的参数设置。","pair_id":null}
+{"id":"C03","bucket":"C","label":"no_tool","question":"权重衰减和 L2 正则化在 Adam 里为什么不完全等价？","reason":"这是自适应优化算法的原理问题，查阅 nanochat 不是回答所必需的。","pair_id":null}
+{"id":"C04","bucket":"C","label":"no_tool","question":"按范数裁剪会改梯度方向吗？","reason":"问的是梯度范数裁剪的数学性质，不涉及仓库实际采用的裁剪方式。","pair_id":null}
+{"id":"C05","bucket":"C","label":"no_tool","question":"准备切到混合精度训练了，想弄明白 loss scaling 为什么能缓解梯度下溢。","reason":"问题落在浮点数表示与梯度缩放的通用机制上，不需要仓库事实。","pair_id":null}
+{"id":"C06","bucket":"C","label":"no_tool","question":"量化为何会掉精度？","reason":"量化误差是通用推理知识，问题没有询问 nanochat 的量化实现。","pair_id":null}
+{"id":"C07","bucket":"C","label":"no_tool","question":"生成时把 temperature 调低，输出分布会发生什么变化？","reason":"问的是采样温度对概率分布的数学影响，不是本仓库的采样参数。","pair_id":null}
+{"id":"C08","bucket":"C","label":"no_tool","question":"我在估算服务延迟，为什么首个 token 的等待时间和后续 token 的生成时间要分开统计？","reason":"这是大模型服务延迟指标的通用解释，不依赖 nanochat 的服务代码。","pair_id":null}
+{"id":"C09","bucket":"C","label":"no_tool","question":"类别失衡会怎样误导准确率","reason":"问的是分类评估指标在类别失衡下的局限，不涉及仓库评测实现。","pair_id":null}
+{"id":"C10","bucket":"C","label":"no_tool","question":"模型只在一小批样本上领先，怎样判断这个差距是否可靠？","reason":"问题寻求评估差异可靠性的通用统计方法，无需读取仓库源码。","pair_id":null}
+{"id":"C11","bucket":"C","label":"no_tool","question":"用同一套验证集反复选模型，会给最后的评估带来什么偏差","reason":"问的是反复使用验证集导致的选择偏差，答案不取决于具体项目。","pair_id":null}
+{"id":"C12","bucket":"C","label":"no_tool","question":"数据泄漏是什么？","reason":"这是机器学习中的通用概念定义，不需要检索 nanochat。","pair_id":null}
+{"id":"C13","bucket":"C","label":"no_tool","question":"正准备混合几个来源的训练数据，除了样本量，采样比例还该考虑哪些因素？","reason":"问的是多来源数据配比需要考虑的通用因素，没有要求某个训练脚本的实际配比。","pair_id":null}
+{"id":"C14","bucket":"C","label":"no_tool","question":"偏好优化里常见的 KL 约束，主要是在限制什么变化","reason":"问的是对齐训练中 KL 约束的作用，不依赖仓库是否实现了该约束。","pair_id":null}
+{"id":"C15","bucket":"C","label":"no_tool","question":"奖励模型给高分，却不符合人的真实意图，这类 reward hacking 从哪里来？","reason":"这是奖励代理目标与人类意图不一致的通用问题，不需要 nanochat 的代码事实。","pair_id":null}
+{"id":"D01","bucket":"D","label":"no_tool","question":"KV cache 究竟缓存什么","reason":"问的是 KV cache 的通用存储内容，没有要求当前实现的缓存布局或行为。","pair_id":"kv_cache"}
+{"id":"D02","bucket":"D","label":"no_tool","question":"rotary embeddings 怎么把相对位置带进注意力分数？","reason":"这是旋转位置编码的数学原理问题，不依赖 nanochat 采用的参数或具体实现。","pair_id":null}
+{"id":"D03","bucket":"D","label":"no_tool","question":"BPE 合并的是词吗？","reason":"问的是 BPE 合并单位的概念，不是在查询仓库训练分词器的调用过程。","pair_id":"bpe"}
+{"id":"D04","bucket":"D","label":"no_tool","question":"GSM8K 在考什么","reason":"问题只要求说明 GSM8K 的任务性质，不涉及仓库中的数据处理或判分规则。","pair_id":"gsm8k"}
+{"id":"D05","bucket":"D","label":"no_tool","question":"Muon 正交化有啥用？","reason":"问的是 Muon 对更新矩阵做正交化的通用含义，不需要确认该仓库的优化器变体。","pair_id":"muon"}
+{"id":"D06","bucket":"D","label":"no_tool","question":"我刚学到归一化，想弄明白 RMSNorm 不减均值时靠什么控制激活尺度。","reason":"这是 RMSNorm 归一化机制的概念问题，不涉及仓库是否使用可训练参数。","pair_id":null}
+{"id":"D07","bucket":"D","label":"no_tool","question":"GQA 共享 K 和 V 后，各 query 头为什么仍能有不同的注意力分布？","reason":"问的是分组查询注意力的通用计算关系，不是当前模型的头数或张量布局。","pair_id":null}
+{"id":"D08","bucket":"D","label":"no_tool","question":"top-k 采样的 k 调大，候选 token 的范围会怎样变？","reason":"这是 top-k 采样参数的通用含义，无需读取仓库中的采样函数。","pair_id":null}
+{"id":"D09","bucket":"D","label":"no_tool","question":"正在补 GPU 性能基础，Flash Attention 为何能减少显存读写？","reason":"问题要求解释 Flash Attention 的通用计算与存储原理，不依赖 nanochat 的后端选择。","pair_id":null}
+{"id":"D10","bucket":"D","label":"no_tool","question":"sliding window attention 会让模型完全接触不到窗口外的信息吗","reason":"这是局部注意力窗口与多层感受野的通用关系，不是在询问本仓库的窗口配置。","pair_id":null}
+{"id":"E01","bucket":"E","label":"no_tool","question":"nanoGPT 生成时怎么处理超长上下文","reason":"问的是 nanoGPT 生成循环的具体行为，检索唯一可用的 nanochat 仓库不能确定答案。","pair_id":null}
+{"id":"E02","bucket":"E","label":"no_tool","question":"vLLM 的优先级队列底下用的是什么数据结构？","reason":"问的是 vLLM 优先级请求队列的具体实现，检索 nanochat 无法核实。","pair_id":null}
+{"id":"E03","bucket":"E","label":"no_tool","question":"HF Transformers 的 DynamicLayer 沿哪一维追加 key？","reason":"问题明确指向 Hugging Face Transformers 的缓存实现，查 nanochat 无法核实。","pair_id":"kv_cache"}
+{"id":"E04","bucket":"E","label":"no_tool","question":"llm.c 的 encoder_forward 怎样合成词向量和位置向量？","reason":"所问函数属于 llm.c，当前 nanochat 检索范围不包含它的实现。","pair_id":null}
+{"id":"E05","bucket":"E","label":"no_tool","question":"tiktoken 教学版 bpe_encode 挑合并对看哪个值？","reason":"问的是 tiktoken 教学实现的合并选择规则，需要该项目源码而非 nanochat 源码。","pair_id":"bpe"}
+{"id":"E06","bucket":"E","label":"no_tool","question":"读 nanochat 时想到：固定了随机种子，GPU 训练为何仍可能无法逐位复现？","reason":"nanochat 仅交代阅读背景，问题考查随机种子与计算确定性的通用关系。","pair_id":null}
+{"id":"E07","bucket":"E","label":"no_tool","question":"读 nanochat 时想到：不同 tokenizer 评出来的困惑度能直接比吗？","reason":"问的是不同分词方式下困惑度的可比性，不涉及 nanochat 的计算实现或实际分数。","pair_id":null}
+{"id":"E08","bucket":"E","label":"no_tool","question":"我在用 nanochat 补基础，梯度累积为什么能模拟更大的 batch？","reason":"问题落在梯度累积的数学原理，nanochat 只是学习背景。","pair_id":null}
+{"id":"E09","bucket":"E","label":"no_tool","question":"以 nanochat 这类模型为例，贪心解码离整句概率最大还差在哪","reason":"局部最高概率选择与序列整体最优的区别属于通用解码知识。","pair_id":null}
+{"id":"E10","bucket":"E","label":"no_tool","question":"看 nanochat 时卡在反传概念上：冻结参数和切断梯度传播是一回事吗？","reason":"问的是冻结参数与梯度传播的通用区别，没有询问 nanochat 冻结了哪些参数。","pair_id":null}

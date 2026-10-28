@@ -1,0 +1,146 @@
+挂载云端qwen api成功
+成功从路径data/indices/src中读取Chroma向量数据库
+成功从硬盘持久路径读取到bm25索引引擎！
+成功从路径data\indices\src\bm25_index.pkl中读取bm25向量数据库
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对16个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对14个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对15个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对17个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对16个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对20个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对18个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对18个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对16个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对20个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对17个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对15个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对18个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对16个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对12个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对17个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对14个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对24个文档进行精排
+
+正在调用qwen3.7-text-rerank模型对15个文档进行精排
+
+======================== 提问类型:exact_keyword =======================
+
+======================== 问题数量:5 =======================
+
+exact_keyword类型提问：引擎：dense | Hit_Rate：100.0% | MRR:1.000
+exact_keyword类型提问：引擎：bm25 | Hit_Rate：100.0% | MRR:1.000
+exact_keyword类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:1.000
+======================== 提问类型:chinese_semantic =======================
+
+======================== 问题数量:5 =======================
+
+chinese_semantic类型提问：引擎：dense | Hit_Rate：100.0% | MRR:1.000
+chinese_semantic类型提问：引擎：bm25 | Hit_Rate：20.0% | MRR:0.200
+chinese_semantic类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:1.000
+======================== 提问类型:english_semantic =======================
+
+======================== 问题数量:3 =======================
+
+english_semantic类型提问：引擎：dense | Hit_Rate：100.0% | MRR:1.000
+english_semantic类型提问：引擎：bm25 | Hit_Rate：66.7% | MRR:0.667
+english_semantic类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:1.000
+======================== 提问类型:mixed =======================
+
+======================== 问题数量:5 =======================
+
+mixed类型提问：引擎：dense | Hit_Rate：100.0% | MRR:1.000
+mixed类型提问：引擎：bm25 | Hit_Rate：80.0% | MRR:0.800
+mixed类型提问：引擎：hybrid | Hit_Rate：100.0% | MRR:1.000
+====================================================================================================
+================================================== 最终全局评测结果(top_k = 8，embedding = qwen3.7-text-embedding，rerank = True) ==================================================
+引擎：dense | Hit_Rate：100.0% [82.4, 100.0] | MRR:1.000 [1.000, 1.000]
+引擎：bm25 | Hit_Rate：66.7% [43.7, 83.7] | MRR:0.667 [0.444, 0.889]
+引擎：hybrid | Hit_Rate：100.0% [82.4, 100.0] | MRR:1.000 [1.000, 1.000]
+已写入 data/v2/retrieval_src_rerank.json

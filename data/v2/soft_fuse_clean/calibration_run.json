@@ -1,0 +1,37 @@
+{
+  "status": "failed",
+  "started_at": "",
+  "runs": [
+    {
+      "stage": "reproduce",
+      "name": "src",
+      "status": "failed_validation",
+      "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-reproduce-src-hzvaoghu",
+      "index": ".\\data\\indices\\src",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        ".\\data\\v2\\soft_fuse_clean\\source\\scripts\\eval_soft_fuse.py",
+        "--persist-dir",
+        "<user-home>\\AppData\\Local\\Temp\\soft-fuse-reproduce-src-hzvaoghu\\index",
+        "--embedding",
+        "qwen3.7-text-embedding",
+        "--max-false-block",
+        "0.075",
+        "--json-out",
+        ".\\data\\v2\\soft_fuse_clean\\reproduce_src.json"
+      ],
+      "cwd": ".",
+      "output": ".\\data\\v2\\soft_fuse_clean\\reproduce_src.json",
+      "log": ".\\data\\v2\\soft_fuse_clean\\reproduce_src.log",
+      "elapsed_seconds": 20.98611250000249,
+      "returncode": 0,
+      "original_index_unchanged": true,
+      "validation_report": ".\\data\\v2\\soft_fuse_clean\\reproduction_check_src.json"
+    }
+  ],
+  "eval_script_sha256": "2ca9b971b5ed137e2aa7911ab5ce539a6acf08aa8c0f8a5b0a41d01d45d9b49f",
+  "error_type": "AssertionError",
+  "error": "Old result reproduction mismatch: src",
+  "ended_at": ""
+}

@@ -1,0 +1,50 @@
+{
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+  "pytest": {
+    "passed": 158,
+    "deselected": 7,
+    "seconds": 24.02,
+    "exit_code": 0
+  },
+  "in_memory_rule_examples_passed": 18,
+  "rule_train_verification": {
+    "rows": 637,
+    "decision_correct": 394,
+    "relevance_correct": 373,
+    "irrelevance_correct": 80
+  },
+  "rule_benchmark": {
+    "predictions": 63700,
+    "seconds": 0.32468900000094436,
+    "microseconds_per_question": 5.09715855574481
+  },
+  "saved_results_audit": {
+    "files": 21,
+    "prediction_records": 1379,
+    "replayed_test_predictions": false,
+    "no_tool_cross_repo": "52/87",
+    "no_tool_nanochat": "35/60",
+    "http_200_log_lines": 84
+  },
+  "file_audit": {
+    "existing_file_count": 932,
+    "removed": [],
+    "observed_existing_changes": [
+      "docs/QUICKSTART.md"
+    ],
+    "note": "docs/QUICKSTART.md changed concurrently. All other existing files matched the initial snapshot. SHA256 checked files below 20 MB; size and modification time checked all files. .venv, .git and node_modules were excluded."
+  },
+  "external_change": {
+    "path": "docs/QUICKSTART.md",
+    "before": {
+      "size": 13470,
+      "mtime_ns": 1792915599306698000,
+      "sha256": "31f17174884be288a1510d6ef6d7c056638d7dc6d6e1cdfb23d44e34b5d5289a"
+    },
+    "after": {
+      "size": 13567,
+      "mtime_ns": "1792915754104608700",
+      "sha256": "229b657739d1f17c607b6f49c15ed792d4ec4ccd51e15bf30d7d62393d41d282"
+    }
+  }
+}

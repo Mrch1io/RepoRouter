@@ -1,0 +1,47 @@
+---
+config:
+  theme: base
+  look: classic
+  layout: dagre
+  themeVariables:
+    fontFamily: "Microsoft YaHei"
+    fontSize: "18px"
+    lineColor: "#94A3B8"
+    primaryTextColor: "#1E293B"
+    background: "#FFFFFF"
+    edgeLabelBackground: "#FFFFFF"
+  flowchart: {curve: basis, nodeSpacing: 24, rankSpacing: 32, padding: 12}
+  themeCSS: |
+    .nodeLabel { white-space: nowrap; }
+    g.node[id*="flowchart-V2-"] { transform: translate(142.5078125px, 198px); }
+    path[data-id="L_ROW1_ROW2_0"] { d: path("M 1112.945 121.5 L 1112.945 173 L 210.641 173 L 210.641 349.5"); }
+    path[data-id="L_V2_GGUF_0"] { d: path("M 249.016 198 L 301.516 198"); }
+    path[data-id="L_V2_R87_0"] { d: path("M 240 172.5 C 265 110, 270 82.5, 308.641 82.5"); }
+---
+%%子图之间的连线由 CSS 接到 SUP 和 V2；同时对齐第二行主链。
+%%路径坐标对应 Microsoft YaHei 18px 和 Mermaid CLI 12.0.0。
+flowchart TB
+    subgraph ROW1[" "]
+        direction LR
+        GEN["Gemini 生成路由题<br/>虚构的内部项目<br/>ModelHub-Serve"] --> CLEAN["规则清洗 + 人工复核<br/>500 → 497 条"]
+        CLEAN --> V1["v1：Qwen3.5-4B LoRA<br/>497 条 · LLaMA-Factory<br/>租用的 RTX 5090"]
+        V1 -->|"同分布 98%<br/>本仓库只有 81.6%"| SUP["补 140 道边界题<br/>→ 637 条"]
+    end
+    subgraph ROW2[" "]
+        direction LR
+        V2["v2：同样设置再训练"] --> R87["路由评测 · 3 个 seed<br/>同分布 50 · 本仓库 87<br/>新仓库 nanochat 60"]
+        V2 --> GGUF["合并 → GGUF Q4_K_M<br/>2.52 GiB"]
+        GGUF --> SERVE["llama.cpp 服务<br/>OpenAI 兼容接口"]
+        SERVE --> E2E["90 题端到端（两轮）<br/>逐题配对 · 自动评委<br/>人工盲评"]
+    end
+    ROW1 --> ROW2
+    style ROW1 fill:none,stroke:none
+    style ROW2 fill:none,stroke:none
+    classDef process fill:#EEF2FF,stroke:#A5B4FC,color:#312E81,stroke-width:1.5px,rx:10,ry:10;
+    classDef model fill:#F0FDFA,stroke:#5EEAD4,color:#115E59,stroke-width:1.5px,rx:10,ry:10;
+    classDef application fill:#EFF6FF,stroke:#93C5FD,color:#1E3A8A,stroke-width:1.5px,rx:10,ry:10;
+
+    class GEN,CLEAN,SUP process;
+    class V1,V2,GGUF,SERVE model;
+    class R87,E2E application;
+    linkStyle default stroke:#94A3B8,stroke-width:1.5px;

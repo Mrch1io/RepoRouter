@@ -1,0 +1,353 @@
+{
+  "created_at_utc": "",
+  "launch_date": "",
+  "remote_run_dir": "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24",
+  "ssh_port": 50556,
+  "preflight": {
+    "checked_at_utc": "",
+    "ssh_port": 50556,
+    "checks": {
+      "new_run_directory_absent": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24"
+      },
+      "gpu_5090": {
+        "passed": true,
+        "detail": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.71.05"
+      },
+      "gpu_compute_processes_empty": {
+        "passed": true,
+        "detail": ""
+      },
+      "gpu_lock_content_empty": {
+        "passed": true,
+        "detail": ""
+      },
+      "gpu_lock_available": {
+        "passed": true,
+        "detail": "Nonblocking read-only check passed; released on close"
+      },
+      "disk_free_at_least_20GiB": {
+        "passed": true,
+        "detail": {
+          "free_bytes": 34562314240,
+          "free_GiB": 32.189
+        }
+      },
+      "factory_git_metadata_present": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/LLaMA-Factory/.git"
+      },
+      "llamafactory_commit": {
+        "passed": true,
+        "detail": "7af909522a951e3ad9f022ea6f88b6755257eaa5"
+      },
+      "package_versions": {
+        "passed": true,
+        "detail": {
+          "torch": "2.12.1+cu130",
+          "transformers": "5.6.0",
+          "peft": "0.18.1",
+          "datasets": "4.0.0",
+          "accelerate": "1.11.0",
+          "trl": "0.24.0"
+        }
+      },
+      "base_model_exists": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/models/Qwen/Qwen3.5-4B"
+      },
+      "v1_adapter_matches_local": {
+        "passed": true,
+        "detail": {
+          "matches": [
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a"
+          ],
+          "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+          "candidates": {
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+          }
+        }
+      },
+      "v2_adapter_matches_local": {
+        "passed": true,
+        "detail": {
+          "matches": [
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2"
+          ],
+          "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+          "candidates": {
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+          }
+        }
+      },
+      "ablation_adapter_exists": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_model.safetensors"
+      }
+    },
+    "adapters": {
+      "v1": {
+        "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a",
+        "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+        "config_sha256": "5273597e2f200c9162d9fcba6404d097a2d96310404859946c5fe2d86c06385f"
+      },
+      "v2": {
+        "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2",
+        "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+        "config_sha256": "8122053f44781a6deadaed7dd6848290b94df1c05170e9a9e0683fee2d0a1c66"
+      },
+      "abl": {
+        "path": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter",
+        "sha256": "4d503884b087d2c6e43d69bf973d7db866f404ca60357574bf24d2a9c33cff84",
+        "config_sha256": "82bc08c87499ca4a14101257145a687c0d61845264125d90cef569f5d89efa74"
+      }
+    },
+    "status": "passed"
+  },
+  "jobs": [
+    {
+      "name": "v1_240steps_s42",
+      "condition": "v1",
+      "seed": 42,
+      "rows": 497,
+      "expected_steps": 240,
+      "expected_epoch": null,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary"
+      ]
+    },
+    {
+      "name": "v1_s43",
+      "condition": "v1",
+      "seed": 43,
+      "rows": 497,
+      "expected_steps": 189,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary"
+      ]
+    },
+    {
+      "name": "v1_s44",
+      "condition": "v1",
+      "seed": 44,
+      "rows": 497,
+      "expected_steps": 189,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary"
+      ]
+    },
+    {
+      "name": "abl_s43",
+      "condition": "abl",
+      "seed": 43,
+      "rows": 637,
+      "expected_steps": 240,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary"
+      ]
+    },
+    {
+      "name": "abl_s44",
+      "condition": "abl",
+      "seed": 44,
+      "rows": 637,
+      "expected_steps": 240,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary"
+      ]
+    },
+    {
+      "name": "v2_s43",
+      "condition": "v2",
+      "seed": 43,
+      "rows": 637,
+      "expected_steps": 240,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary",
+        "eval_in_domain",
+        "eval_cross_repo"
+      ]
+    },
+    {
+      "name": "v2_s44",
+      "condition": "v2",
+      "seed": 44,
+      "rows": 637,
+      "expected_steps": 240,
+      "expected_epoch": 3.0,
+      "tests": [
+        "eval_in_domain_no_summary",
+        "eval_cross_repo_no_summary",
+        "eval_in_domain",
+        "eval_cross_repo"
+      ]
+    }
+  ],
+  "inputs": {
+    "lora\\routing_train_v1_no_summary.json": {
+      "rows": 497,
+      "sha256": "77620ccc59cb4eed6b3c6160917f1918e04935d60e21fa1dc82e39d1d7b8266e"
+    },
+    "data\\v2\\ablation_v2_no_summary\\data\\routing_train.json": {
+      "rows": 637,
+      "sha256": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511"
+    },
+    "lora\\routing_train.json": {
+      "rows": 637,
+      "sha256": "c067f56a05595e45221b04d0b77975368a3c3676ec191c70c8f6f02eb7ad4bf3"
+    },
+    "lora\\eval_in_domain_no_summary.json": {
+      "rows": 50,
+      "sha256": "6c21cc1b5e6a7191290897d4db0d0a363400d2c94eeb7d181bd4c0f7695790c7"
+    },
+    "lora\\eval_cross_repo_no_summary.json": {
+      "rows": 87,
+      "sha256": "42052eedb3dc19a880a52daf0e9efbdfed0bd2feda62785809f0c4875663222c"
+    },
+    "lora\\eval_in_domain.json": {
+      "rows": 50,
+      "sha256": "e19005c69b5f456184792ed94a327f4db876dbae8d1fa516f21702e8664a3696"
+    },
+    "lora\\eval_cross_repo.json": {
+      "rows": 87,
+      "sha256": "934739c06d36a43520f99420fad6108f59fd6b00aa51b037b39aa9dd28631707"
+    }
+  },
+  "evaluation": {
+    "source": "data/v2/ablation_v2_no_summary/source",
+    "max_new_tokens": 512,
+    "temperature": 0.1,
+    "do_sample": false,
+    "metric": "decision_type_match",
+    "seed42_source": "reproduce_s42 outputs from this queue"
+  },
+  "yaml_diff_validation": {
+    "v1_240steps_s42": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "v1_s43": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "v1_s44": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "abl_s43": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "abl_s44": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "v2_s43": "passed: only output_dir, dataset_dir, seed and max_steps",
+    "v2_s44": "passed: only output_dir, dataset_dir, seed and max_steps"
+  },
+  "preflight_rechecks": [
+    {
+      "checked_at_utc": "",
+      "ssh_port": 50556,
+      "checks": {
+        "new_run_directory_absent": {
+          "passed": true,
+          "detail": "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24"
+        },
+        "gpu_5090": {
+          "passed": true,
+          "detail": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.71.05"
+        },
+        "gpu_compute_processes_empty": {
+          "passed": true,
+          "detail": ""
+        },
+        "gpu_lock_content_empty": {
+          "passed": true,
+          "detail": ""
+        },
+        "gpu_lock_available": {
+          "passed": true,
+          "detail": "Nonblocking read-only check passed; released on close"
+        },
+        "disk_free_at_least_20GiB": {
+          "passed": true,
+          "detail": {
+            "free_bytes": 34562314240,
+            "free_GiB": 32.189
+          }
+        },
+        "factory_git_metadata_present": {
+          "passed": true,
+          "detail": "/root/autodl-tmp/devagent/LLaMA-Factory/.git"
+        },
+        "llamafactory_commit": {
+          "passed": true,
+          "detail": "7af909522a951e3ad9f022ea6f88b6755257eaa5"
+        },
+        "package_versions": {
+          "passed": true,
+          "detail": {
+            "torch": "2.12.1+cu130",
+            "transformers": "5.6.0",
+            "peft": "0.18.1",
+            "datasets": "4.0.0",
+            "accelerate": "1.11.0",
+            "trl": "0.24.0"
+          }
+        },
+        "base_model_exists": {
+          "passed": true,
+          "detail": "/root/autodl-tmp/models/Qwen/Qwen3.5-4B"
+        },
+        "v1_adapter_matches_local": {
+          "passed": true,
+          "detail": {
+            "matches": [
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a"
+            ],
+            "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+            "candidates": {
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+            }
+          }
+        },
+        "v2_adapter_matches_local": {
+          "passed": true,
+          "detail": {
+            "matches": [
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2"
+            ],
+            "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+            "candidates": {
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+              "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+            }
+          }
+        },
+        "ablation_adapter_exists": {
+          "passed": true,
+          "detail": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_model.safetensors"
+        }
+      },
+      "adapters": {
+        "v1": {
+          "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a",
+          "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+          "config_sha256": "5273597e2f200c9162d9fcba6404d097a2d96310404859946c5fe2d86c06385f"
+        },
+        "v2": {
+          "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2",
+          "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+          "config_sha256": "8122053f44781a6deadaed7dd6848290b94df1c05170e9a9e0683fee2d0a1c66"
+        },
+        "abl": {
+          "path": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter",
+          "sha256": "4d503884b087d2c6e43d69bf973d7db866f404ca60357574bf24d2a9c33cff84",
+          "config_sha256": "82bc08c87499ca4a14101257145a687c0d61845264125d90cef569f5d89efa74"
+        }
+      },
+      "status": "passed"
+    }
+  ]
+}

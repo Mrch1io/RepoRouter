@@ -1,0 +1,105 @@
+TARGET_TOTAL=450 | segment_ratio=(70, 15, 15) | 计划批次数: 24，总条数: 450 | 模型: gemini-4-argon
+切片条数: {'private_domain': 315, 'dev_general_no_rag': 67, 'misleading_edge': 68}
+切片与 bucket: private_domain→domain, dev_general_no_rag→far_general, misleading_edge→misleading_edge
+各切片 MIX: {'private_domain': {'tool_call': 0.7, 'no_tool': 0.15, 'clarify_needed': 0.15}, 'dev_general_no_rag': {'tool_call': 0.35, 'no_tool': 0.4, 'clarify_needed': 0.25}, 'misleading_edge': {'tool_call': 0.4, 'no_tool': 0.15, 'clarify_needed': 0.45}}
+
+>>> 批次 1/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 20
+
+>>> 批次 2/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 40
+
+>>> 批次 3/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 60
+
+>>> 批次 4/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 80
+
+>>> 批次 5/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 100
+
+>>> 批次 6/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 120
+
+>>> 批次 7/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 140
+
+>>> 批次 8/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 160
+
+>>> 批次 9/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 180
+
+>>> 批次 10/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 200
+
+>>> 批次 11/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 220
+
+>>> 批次 12/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 240
+
+>>> 批次 13/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+  [OpenAI 兼容接口] 第 1 次失败: Invalid \escape: line 57 column 32 (char 1548)
+    本批得到 20 条，累计 260
+
+>>> 批次 14/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 280
+
+>>> 批次 15/24 | gemini | n=20 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 14, 'no_tool': 3, 'clarify_needed': 3}
+    本批得到 20 条，累计 300
+
+>>> 批次 16/24 | gemini | n=15 | slice=private_domain
+    私域语境（内部项目 ModelHub-Serve，基于 FastAPI+Transformers） | kind配比 {'tool_call': 11, 'no_tool': 2, 'clarify_needed': 2}
+    本批得到 15 条，累计 315
+
+>>> 批次 17/24 | gemini | n=20 | slice=dev_general_no_rag
+    开发通识（无需查库） | kind配比 {'tool_call': 7, 'no_tool': 8, 'clarify_needed': 5}
+    本批得到 20 条，累计 335
+
+>>> 批次 18/24 | gemini | n=20 | slice=dev_general_no_rag
+    开发通识（无需查库） | kind配比 {'tool_call': 7, 'no_tool': 8, 'clarify_needed': 5}
+    本批得到 20 条，累计 355
+
+>>> 批次 19/24 | gemini | n=20 | slice=dev_general_no_rag
+    开发通识（无需查库） | kind配比 {'tool_call': 7, 'no_tool': 8, 'clarify_needed': 5}
+    本批得到 20 条，累计 375
+
+>>> 批次 20/24 | gemini | n=7 | slice=dev_general_no_rag
+    开发通识（无需查库） | kind配比 {'tool_call': 2, 'no_tool': 3, 'clarify_needed': 2}
+    本批得到 7 条，累计 382
+
+>>> 批次 21/24 | gemini | n=20 | slice=misleading_edge
+    误导向/边界 | kind配比 {'tool_call': 8, 'no_tool': 3, 'clarify_needed': 9}
+    本批得到 20 条，累计 402
+
+>>> 批次 22/24 | gemini | n=20 | slice=misleading_edge
+    误导向/边界 | kind配比 {'tool_call': 8, 'no_tool': 3, 'clarify_needed': 9}
+    本批得到 20 条，累计 422
+
+>>> 批次 23/24 | gemini | n=20 | slice=misleading_edge
+    误导向/边界 | kind配比 {'tool_call': 8, 'no_tool': 3, 'clarify_needed': 9}
+    本批得到 20 条，累计 442
+
+>>> 批次 24/24 | gemini | n=8 | slice=misleading_edge
+    误导向/边界 | kind配比 {'tool_call': 3, 'no_tool': 1, 'clarify_needed': 4}
+    本批得到 8 条，累计 450
+
+完成，共写入 450 行 -> <user-home>\Desktop\RepoAgent-main\experiments\data_flywheel\out\ft_qa_450.jsonl
+token 用量: 输入 59343 | 输出 126892 | 思考 0 | 估算花费约 $1.39
+分层划分（seed=42）: 训练 400 -> ft_qa_450_train.jsonl | 测试 50 -> ft_qa_450_test.jsonl

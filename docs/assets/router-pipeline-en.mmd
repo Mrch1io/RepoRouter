@@ -1,0 +1,47 @@
+---
+config:
+  theme: base
+  look: classic
+  layout: dagre
+  themeVariables:
+    fontFamily: "Microsoft YaHei"
+    fontSize: "18px"
+    lineColor: "#94A3B8"
+    primaryTextColor: "#1E293B"
+    background: "#FFFFFF"
+    edgeLabelBackground: "#FFFFFF"
+  flowchart: {curve: basis, nodeSpacing: 24, rankSpacing: 32, padding: 12}
+  themeCSS: |
+    .nodeLabel { white-space: nowrap; }
+    g.node[id*="flowchart-V2-"] { transform: translate(136.3515625px, 225px); }
+    path[data-id="L_ROW1_ROW2_0"] { d: path("M 1153.0078125 162 L 1153.0078125 227 L 165.203125 227 L 165.203125 417"); }
+    path[data-id="L_V2_GGUF_0"] { d: path("M 236.203125 225 L 304.9375 225"); }
+    path[data-id="L_V2_R87_0"] { d: path("M 226.203125 186 C 251.203125 123.5 256.203125 96 289.203125 96"); }
+---
+%%CSS connects the subgraphs from SUP to V2 and aligns the second-row main chain.
+%%Recalculated coordinates use Microsoft YaHei 18px and Mermaid CLI 12.0.0.
+flowchart TB
+    subgraph ROW1[" "]
+        direction LR
+        GEN["Gemini generates<br/>routing questions<br/>for a fictional<br/>internal project<br/>ModelHub-Serve"] --> CLEAN["Rule-based cleaning<br/>+ manual review<br/>500 → 497 examples"]
+        CLEAN --> V1["v1: Qwen3.5-4B LoRA<br/>497 examples<br/>LLaMA-Factory<br/>rented RTX 5090"]
+        V1 -->|"in-distribution 98%<br/>this repo only 81.6%"| SUP["Add 140<br/>boundary questions<br/>→ 637 examples"]
+    end
+    subgraph ROW2[" "]
+        direction LR
+        V2["v2: retrain with<br/>the same settings"] --> R87["Routing evaluation · 3 seeds<br/>in-distribution 50<br/>this repo 87<br/>new repo nanochat 60"]
+        V2 --> GGUF["Merge → GGUF Q4_K_M<br/>2.52 GiB"]
+        GGUF --> SERVE["llama.cpp service<br/>OpenAI-compatible API"]
+        SERVE --> E2E["90-question end-to-end<br/>(two rounds)<br/>paired per question<br/>automatic judge<br/>human blind review"]
+    end
+    ROW1 --> ROW2
+    style ROW1 fill:none,stroke:none
+    style ROW2 fill:none,stroke:none
+    classDef process fill:#EEF2FF,stroke:#A5B4FC,color:#312E81,stroke-width:1.5px,rx:10,ry:10;
+    classDef model fill:#F0FDFA,stroke:#5EEAD4,color:#115E59,stroke-width:1.5px,rx:10,ry:10;
+    classDef application fill:#EFF6FF,stroke:#93C5FD,color:#1E3A8A,stroke-width:1.5px,rx:10,ry:10;
+
+    class GEN,CLEAN,SUP process;
+    class V1,V2,GGUF,SERVE model;
+    class R87,E2E application;
+    linkStyle default stroke:#94A3B8,stroke-width:1.5px;

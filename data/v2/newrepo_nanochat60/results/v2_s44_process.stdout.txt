@@ -1,0 +1,280 @@
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:   0%|          | 1/723 [00:00<02:09,  5.57it/s]Loading weights:   4%|▍         | 28/723 [00:00<00:05, 120.65it/s]Loading weights:   6%|▋         | 46/723 [00:00<00:04, 141.94it/s]Loading weights:  11%|█         | 76/723 [00:00<00:03, 197.13it/s]Loading weights:  14%|█▎        | 98/723 [00:00<00:03, 204.36it/s]Loading weights:  18%|█▊        | 128/723 [00:00<00:02, 231.28it/s]Loading weights:  21%|██        | 153/723 [00:00<00:02, 204.12it/s]Loading weights:  25%|██▍       | 179/723 [00:00<00:02, 217.08it/s]Loading weights:  28%|██▊       | 202/723 [00:01<00:02, 209.66it/s]Loading weights:  31%|███       | 225/723 [00:01<00:02, 213.42it/s]Loading weights:  35%|███▍      | 252/723 [00:01<00:02, 222.13it/s]Loading weights:  38%|███▊      | 276/723 [00:01<00:01, 224.91it/s]Loading weights:  42%|████▏     | 306/723 [00:01<00:01, 238.50it/s]Loading weights:  46%|████▌     | 331/723 [00:01<00:01, 230.07it/s]Loading weights:  50%|████▉     | 359/723 [00:01<00:01, 241.64it/s]Loading weights:  53%|█████▎    | 384/723 [00:01<00:01, 237.60it/s]Loading weights:  57%|█████▋    | 411/723 [00:01<00:01, 243.87it/s]Loading weights:  68%|██████▊   | 494/723 [00:02<00:00, 408.64it/s]Loading weights:  89%|████████▉ | 647/723 [00:02<00:00, 729.01it/s]Loading weights: 100%|██████████| 723/723 [00:02<00:00, 329.11it/s]
+LoRA 已加载：248 个 lora_B 矩阵
+开始，模式：lora，测试集：eval_nanochat60.json
+冻结文件 SHA256 校验通过，清单 SHA256：a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4
+[transformers] The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：1/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：2/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：3/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：4/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：5/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：6/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：7/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：8/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：9/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：10/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：11/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：12/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：13/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：14/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：15/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：16/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：17/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：18/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：19/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：20/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：21/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：22/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：23/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：24/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：25/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：26/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：27/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：28/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：29/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：30/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：31/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：32/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：33/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：34/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：35/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：36/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：37/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：38/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：39/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：40/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：41/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：42/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：43/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：44/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：45/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：46/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：47/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：48/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：49/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：50/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：51/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：52/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：53/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：54/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：55/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：56/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：57/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：58/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：59/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：60/60
+====== Phase 2A 路由测评 ======
+样本总数（文件条数）: 60
+金标可解析条数: 60（跳过金标损坏: 0）
+模型输出可解析为 JSON: 60 (100.000%)
+解析且角色字段合法: 60 (100.000%)
+decision_type 一致: 50 (83.333%)
+金标为 tool_call 的条数: 25
+tool_call 子集·工具名一致: 16 (64.000% of gold tool_call)
+tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)
+预测 tool_call 但工具名非法/空: 0（越低越好）
+—— BFCL 口径 ——
+相关检测（该调工具时调了）: 16/25 (64.0%)
+无关检测（不该调时没调）: 34/35 (97.1%)
+参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 16/16 (100.0%)
+==================================================
+结束
+开始，模式：lora，测试集：eval_nanochat60_no_summary.json
+冻结文件 SHA256 校验通过，清单 SHA256：a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：1/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：2/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：3/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：4/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：5/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：6/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：7/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：8/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：9/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：10/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：11/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：12/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：13/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：14/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：15/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：16/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：17/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：18/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：19/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：20/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：21/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：22/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：23/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：24/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：25/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：26/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：27/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：28/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：29/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：30/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：31/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：32/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：33/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：34/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：35/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：36/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：37/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：38/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：39/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：40/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：41/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：42/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：43/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：44/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：45/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：46/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：47/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：48/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：49/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：50/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：51/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：52/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：53/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：54/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：55/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：56/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：57/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：58/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：59/60
+[transformers] Setting `pad_token_id` to `eos_token_id`:248044 for open-end generation.
+进度：60/60
+====== Phase 2A 路由测评 ======
+样本总数（文件条数）: 60
+金标可解析条数: 60（跳过金标损坏: 0）
+模型输出可解析为 JSON: 60 (100.000%)
+解析且角色字段合法: 60 (100.000%)
+decision_type 一致: 48 (80.000%)
+金标为 tool_call 的条数: 25
+tool_call 子集·工具名一致: 16 (64.000% of gold tool_call)
+tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)
+预测 tool_call 但工具名非法/空: 0（越低越好）
+—— BFCL 口径 ——
+相关检测（该调工具时调了）: 16/25 (64.0%)
+无关检测（不该调时没调）: 33/35 (94.3%)
+参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 16/16 (100.0%)
+==================================================
+结束

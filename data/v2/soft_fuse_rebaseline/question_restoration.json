@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "file": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-rebaseline-source-l6yjoamw\\explain_source\\src\\evaluation\\soft_fuse_dataset.py",
+  "changed_questions": [
+    {
+      "split": "domain",
+      "id": "p02",
+      "original_query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+      "restored_query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？"
+    },
+    {
+      "split": "domain",
+      "id": "p21",
+      "original_query": "RepoAgent 里 FastAPI 的接口路由是怎么组织和注册的？",
+      "restored_query": "RepoAgent 里 FastAPI 的接口路由是怎么组织和注册的？"
+    },
+    {
+      "split": "domain",
+      "id": "p23",
+      "original_query": "RepoAgent 是如何封装 Function Calling 工具列表的？",
+      "restored_query": "RepoAgent 是如何封装 Function Calling 工具列表的？"
+    },
+    {
+      "split": "domain",
+      "id": "p29",
+      "original_query": "RepoAgent 的工具路由结果是如何组织成 JSON 输出的？",
+      "restored_query": "RepoAgent 的工具路由结果是如何组织成 JSON 输出的？"
+    },
+    {
+      "split": "misleading_edge",
+      "id": "m01",
+      "original_query": "RepoAgent 这种项目里一般为什么要用 FastAPI？",
+      "restored_query": "RepoAgent 这种项目里一般为什么要用 FastAPI？"
+    },
+    {
+      "split": "misleading_edge",
+      "id": "m04",
+      "original_query": "LoRA 为什么适合做小模型微调，这和 RepoAgent 有什么关系？",
+      "restored_query": "LoRA 为什么适合做小模型微调，这和 RepoAgent 有什么关系？"
+    }
+  ],
+  "replacement_count": 7
+}

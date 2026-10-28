@@ -1,0 +1,110 @@
+{
+  "started_at": "",
+  "ended_at": "",
+  "executable": ".\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+    "--mode",
+    "api",
+    "--model",
+    "deepseek-v4-pro",
+    "--test-data",
+    "data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+    "data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+    "--output-prefix",
+    "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary",
+    "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary"
+  ],
+  "test_data": ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+  "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+  "parameters": {
+    "mode": "api",
+    "model": "deepseek-v4-pro",
+    "base_model": null,
+    "lora_path": null,
+    "temperature": 0.1,
+    "max_tokens": 512,
+    "max_new_tokens": 512
+  },
+  "thinking": false,
+  "do_sample": null,
+  "api_failures": 0,
+  "metrics": {
+    "n_file_rows": 60,
+    "skipped_bad_gold": 0,
+    "n_evaluated": 60,
+    "n_parse": 60,
+    "n_parse_valid_shape": 60,
+    "n_decision_match": 55,
+    "n_gold_tool_call": 25,
+    "n_tool_match": 24,
+    "n_args_match": 0,
+    "n_hallucination_tool": 0,
+    "n_relevance_ok": 24,
+    "n_gold_no_call": 35,
+    "n_irrelevance_ok": 31,
+    "n_args_valid": 24
+  },
+  "buckets": {
+    "A": {
+      "correct": 15,
+      "total": 15
+    },
+    "B": {
+      "correct": 9,
+      "total": 10
+    },
+    "C": {
+      "correct": 15,
+      "total": 15
+    },
+    "D": {
+      "correct": 7,
+      "total": 10
+    },
+    "E": {
+      "correct": 9,
+      "total": 10
+    }
+  },
+  "pairs": {
+    "bpe": {
+      "correct": 3,
+      "total": 3,
+      "all_correct": true
+    },
+    "muon": {
+      "correct": 2,
+      "total": 2,
+      "all_correct": true
+    },
+    "kv_cache": {
+      "correct": 2,
+      "total": 3,
+      "all_correct": false
+    },
+    "gsm8k": {
+      "correct": 1,
+      "total": 2,
+      "all_correct": false
+    }
+  },
+  "pairs_all_correct": 2,
+  "report_lines": [
+    "====== Phase 2A 路由测评 ======",
+    "样本总数（文件条数）: 60",
+    "金标可解析条数: 60（跳过金标损坏: 0）",
+    "模型输出可解析为 JSON: 60 (100.000%)",
+    "解析且角色字段合法: 60 (100.000%)",
+    "decision_type 一致: 55 (91.667%)",
+    "金标为 tool_call 的条数: 25",
+    "tool_call 子集·工具名一致: 24 (96.000% of gold tool_call)",
+    "tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)",
+    "预测 tool_call 但工具名非法/空: 0（越低越好）",
+    "—— BFCL 口径 ——",
+    "相关检测（该调工具时调了）: 24/25 (96.0%)",
+    "无关检测（不该调时没调）: 31/35 (88.6%)",
+    "参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 24/24 (100.0%)",
+    "=================================================="
+  ]
+}

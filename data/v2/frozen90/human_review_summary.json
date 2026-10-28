@@ -1,0 +1,1054 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "recorded_at": "",
+  "timezone": "Asia/Shanghai",
+  "reviewer_provenance": "the blind review is completed",
+  "scope": {
+    "reviewed_questions": 21,
+    "reviewed_answers": 42,
+    "per_chain_answers": 21,
+    "random_questions": 10,
+    "disagreement_questions": 11,
+    "overlap_questions": 0,
+    "full_population_questions": 90,
+    "unreviewed_questions": 69,
+    "statistics_unit": "answer within each chain; selection strata reported separately"
+  },
+  "label_mapping": {
+    "正确": "correct",
+    "部分正确": "partially_correct",
+    "错误": "incorrect"
+  },
+  "human_error_definition": "partially_correct or incorrect, following the preregistered non-fully-correct error counting convention",
+  "miss_rate_definition": "human non-fully-correct answers judged correct automatically / all human non-fully-correct answers; zero denominator is null",
+  "inputs_sha256": {
+    "comparison.review.jsonl": "e1acbfae4d2c0c9a9d21acb10e07d5999c80974b6722c0189d79c44c2fdb9c90",
+    "comparison.review-map.json": "cda68ec899f3cb919e25551d4cc5b532f3bdc4cf62b77edf4069a952e6092ac6",
+    "review_plan.json": "895d8e28a3210266f4e1326f549fd26ad4320f9337928505efe6bf68539af1cc",
+    "comparison.json": "e250819f44f4d7a457d76c25a7222ccd0739a0a1684bc6a0c238a1c5620902e9",
+    "e2e_native.jsonl": "11fde34553b276dd2bc122ce3c912cfaa0f0e68d0e71e2a3cdc6db09e2ebe798",
+    "e2e_q4.jsonl": "26d6de31a514fde7274692ef9040392e7e9f100591e7f503e3a35c422513effa",
+    "judge_native.jsonl": "997f07cdb2cc29774e9d9bbe370825d19973fb8621829bc284803c958e219e2c",
+    "judge_q4.jsonl": "28023c9b0eef522ecdf88c00e5a16cecb6020cc2831adfab7b92ab2dca38d8f0"
+  },
+  "automated_run_original_sha256": "8869478b0188f3f8608ef1aa8143b7635ff94458e6f40f451781752c576e349a",
+  "original_archive": {
+    "filename": "frozen90.zip",
+    "sha256": "44bea565c16c13671714d327003a2e753bf6fc0ff62af41a8a2facba2e69090c",
+    "preserved": true
+  },
+  "integrity": {
+    "42_unique_valid_reviews": true,
+    "only_human_review_changed_from_blind_original": true,
+    "all_other_automated_archive_members_unchanged": true,
+    "preregistered_random_sample_reproduced": true,
+    "all_11_disagreement_pairs_included": true,
+    "no_model_or_judge_requests": true
+  },
+  "strata": {
+    "random": {
+      "native": {
+        "reviewed_answers": 10,
+        "human_counts": {
+          "correct": 9,
+          "partially_correct": 1,
+          "incorrect": 0
+        },
+        "automatic_counts": {
+          "correct": 10,
+          "partially_correct": 0,
+          "incorrect": 0
+        },
+        "confusion_automatic_to_human": {
+          "correct": {
+            "correct": 9,
+            "partially_correct": 1,
+            "incorrect": 0
+          },
+          "partially_correct": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 0
+          },
+          "incorrect": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 0
+          }
+        },
+        "human_correct_fraction": {
+          "numerator": 9,
+          "denominator": 10,
+          "rate": 0.9,
+          "wilson95": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        },
+        "judge_miss_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "wilson95": [
+            0.20654329147389294,
+            1.0
+          ]
+        },
+        "false_correct_fraction": {
+          "numerator": 1,
+          "denominator": 10,
+          "rate": 0.1,
+          "wilson95": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        },
+        "missed_error_ids": [
+          "p38"
+        ],
+        "false_alarm_ids": [],
+        "exact_label_agreement": 9
+      },
+      "q4": {
+        "reviewed_answers": 10,
+        "human_counts": {
+          "correct": 9,
+          "partially_correct": 1,
+          "incorrect": 0
+        },
+        "automatic_counts": {
+          "correct": 10,
+          "partially_correct": 0,
+          "incorrect": 0
+        },
+        "confusion_automatic_to_human": {
+          "correct": {
+            "correct": 9,
+            "partially_correct": 1,
+            "incorrect": 0
+          },
+          "partially_correct": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 0
+          },
+          "incorrect": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 0
+          }
+        },
+        "human_correct_fraction": {
+          "numerator": 9,
+          "denominator": 10,
+          "rate": 0.9,
+          "wilson95": [
+            0.5958436145024278,
+            0.9821242504842788
+          ]
+        },
+        "judge_miss_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0,
+          "wilson95": [
+            0.20654329147389294,
+            1.0
+          ]
+        },
+        "false_correct_fraction": {
+          "numerator": 1,
+          "denominator": 10,
+          "rate": 0.1,
+          "wilson95": [
+            0.01787574951572113,
+            0.4041563854975721
+          ]
+        },
+        "missed_error_ids": [
+          "p38"
+        ],
+        "false_alarm_ids": [],
+        "exact_label_agreement": 9
+      }
+    },
+    "judgement_disagreement": {
+      "native": {
+        "reviewed_answers": 11,
+        "human_counts": {
+          "correct": 2,
+          "partially_correct": 7,
+          "incorrect": 2
+        },
+        "automatic_counts": {
+          "correct": 7,
+          "partially_correct": 4,
+          "incorrect": 0
+        },
+        "confusion_automatic_to_human": {
+          "correct": {
+            "correct": 2,
+            "partially_correct": 5,
+            "incorrect": 0
+          },
+          "partially_correct": {
+            "correct": 0,
+            "partially_correct": 2,
+            "incorrect": 2
+          },
+          "incorrect": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 0
+          }
+        },
+        "human_correct_fraction": {
+          "numerator": 2,
+          "denominator": 11,
+          "rate": 0.18181818181818182,
+          "wilson95": null
+        },
+        "judge_miss_rate": {
+          "numerator": 5,
+          "denominator": 9,
+          "rate": 0.5555555555555556,
+          "wilson95": null
+        },
+        "false_correct_fraction": {
+          "numerator": 5,
+          "denominator": 7,
+          "rate": 0.7142857142857143,
+          "wilson95": null
+        },
+        "missed_error_ids": [
+          "p40",
+          "p04",
+          "p09",
+          "p29",
+          "p03"
+        ],
+        "false_alarm_ids": [],
+        "exact_label_agreement": 4
+      },
+      "q4": {
+        "reviewed_answers": 11,
+        "human_counts": {
+          "correct": 2,
+          "partially_correct": 4,
+          "incorrect": 5
+        },
+        "automatic_counts": {
+          "correct": 3,
+          "partially_correct": 5,
+          "incorrect": 3
+        },
+        "confusion_automatic_to_human": {
+          "correct": {
+            "correct": 1,
+            "partially_correct": 2,
+            "incorrect": 0
+          },
+          "partially_correct": {
+            "correct": 1,
+            "partially_correct": 2,
+            "incorrect": 2
+          },
+          "incorrect": {
+            "correct": 0,
+            "partially_correct": 0,
+            "incorrect": 3
+          }
+        },
+        "human_correct_fraction": {
+          "numerator": 2,
+          "denominator": 11,
+          "rate": 0.18181818181818182,
+          "wilson95": null
+        },
+        "judge_miss_rate": {
+          "numerator": 2,
+          "denominator": 9,
+          "rate": 0.2222222222222222,
+          "wilson95": null
+        },
+        "false_correct_fraction": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666,
+          "wilson95": null
+        },
+        "missed_error_ids": [
+          "p30",
+          "p24"
+        ],
+        "false_alarm_ids": [
+          "p07"
+        ],
+        "exact_label_agreement": 6
+      }
+    }
+  },
+  "combined_audit_counts_not_population_estimates": {
+    "native": {
+      "reviewed_answers": 21,
+      "human_counts": {
+        "correct": 11,
+        "partially_correct": 8,
+        "incorrect": 2
+      },
+      "automatic_counts": {
+        "correct": 17,
+        "partially_correct": 4,
+        "incorrect": 0
+      },
+      "confusion_automatic_to_human": {
+        "correct": {
+          "correct": 11,
+          "partially_correct": 6,
+          "incorrect": 0
+        },
+        "partially_correct": {
+          "correct": 0,
+          "partially_correct": 2,
+          "incorrect": 2
+        },
+        "incorrect": {
+          "correct": 0,
+          "partially_correct": 0,
+          "incorrect": 0
+        }
+      },
+      "human_correct_fraction": {
+        "numerator": 11,
+        "denominator": 21,
+        "rate": 0.5238095238095238,
+        "wilson95": null
+      },
+      "judge_miss_rate": {
+        "numerator": 6,
+        "denominator": 10,
+        "rate": 0.6,
+        "wilson95": null
+      },
+      "false_correct_fraction": {
+        "numerator": 6,
+        "denominator": 17,
+        "rate": 0.35294117647058826,
+        "wilson95": null
+      },
+      "missed_error_ids": [
+        "p40",
+        "p04",
+        "p38",
+        "p09",
+        "p29",
+        "p03"
+      ],
+      "false_alarm_ids": [],
+      "exact_label_agreement": 13
+    },
+    "q4": {
+      "reviewed_answers": 21,
+      "human_counts": {
+        "correct": 11,
+        "partially_correct": 5,
+        "incorrect": 5
+      },
+      "automatic_counts": {
+        "correct": 13,
+        "partially_correct": 5,
+        "incorrect": 3
+      },
+      "confusion_automatic_to_human": {
+        "correct": {
+          "correct": 10,
+          "partially_correct": 3,
+          "incorrect": 0
+        },
+        "partially_correct": {
+          "correct": 1,
+          "partially_correct": 2,
+          "incorrect": 2
+        },
+        "incorrect": {
+          "correct": 0,
+          "partially_correct": 0,
+          "incorrect": 3
+        }
+      },
+      "human_correct_fraction": {
+        "numerator": 11,
+        "denominator": 21,
+        "rate": 0.5238095238095238,
+        "wilson95": null
+      },
+      "judge_miss_rate": {
+        "numerator": 3,
+        "denominator": 10,
+        "rate": 0.3,
+        "wilson95": null
+      },
+      "false_correct_fraction": {
+        "numerator": 3,
+        "denominator": 13,
+        "rate": 0.23076923076923078,
+        "wilson95": null
+      },
+      "missed_error_ids": [
+        "p30",
+        "p24",
+        "p38"
+      ],
+      "false_alarm_ids": [
+        "p07"
+      ],
+      "exact_label_agreement": 15
+    }
+  },
+  "records": [
+    {
+      "review_id": "r001",
+      "sample_id": "p40",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r002",
+      "sample_id": "p24",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r003",
+      "sample_id": "p30",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r004",
+      "sample_id": "p17",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r005",
+      "sample_id": "p04",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r006",
+      "sample_id": "p30",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r007",
+      "sample_id": "d14",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "incorrect",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r008",
+      "sample_id": "p07",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "partially_correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": true
+    },
+    {
+      "review_id": "r009",
+      "sample_id": "q06",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r010",
+      "sample_id": "p10",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r011",
+      "sample_id": "q06",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r012",
+      "sample_id": "p29",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "incorrect",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r013",
+      "sample_id": "d03",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r014",
+      "sample_id": "d14",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r015",
+      "sample_id": "p24",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r016",
+      "sample_id": "q14",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r017",
+      "sample_id": "d08",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r018",
+      "sample_id": "m03",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r019",
+      "sample_id": "m05",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r020",
+      "sample_id": "q14",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r021",
+      "sample_id": "p38",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r022",
+      "sample_id": "m03",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r023",
+      "sample_id": "p09",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r024",
+      "sample_id": "p18",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "incorrect",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r025",
+      "sample_id": "p03",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r026",
+      "sample_id": "p04",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r027",
+      "sample_id": "p29",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r028",
+      "sample_id": "p18",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r029",
+      "sample_id": "p40",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r030",
+      "sample_id": "p07",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r031",
+      "sample_id": "q02",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r032",
+      "sample_id": "p17",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r033",
+      "sample_id": "p10",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r034",
+      "sample_id": "d10",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r035",
+      "sample_id": "d08",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r036",
+      "sample_id": "p38",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r037",
+      "sample_id": "p03",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "部分正确",
+      "human_judgement": "partially_correct",
+      "automatic_judgement": "correct",
+      "human_error": true,
+      "judge_missed_error": true,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r038",
+      "sample_id": "d03",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r039",
+      "sample_id": "p09",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_label_original": "错误",
+      "human_judgement": "incorrect",
+      "automatic_judgement": "partially_correct",
+      "human_error": true,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r040",
+      "sample_id": "d10",
+      "repeat": 0,
+      "chain": "native",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r041",
+      "sample_id": "m05",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    },
+    {
+      "review_id": "r042",
+      "sample_id": "q02",
+      "repeat": 0,
+      "chain": "q4",
+      "selection": [
+        "random"
+      ],
+      "human_label_original": "正确",
+      "human_judgement": "correct",
+      "automatic_judgement": "correct",
+      "human_error": false,
+      "judge_missed_error": false,
+      "judge_false_alarm": false
+    }
+  ],
+  "conclusions": [
+    "Both chains have 9 correct and 1 partially correct answer in the same 10 preregistered random questions; p38 is the shared automatic-judge miss.",
+    "Among the 11 deliberately selected disagreement questions, native has 2 correct/7 partially correct/2 incorrect; Q4 has 2/4/5.",
+    "Automatic judging missed non-fully-correct answers in both chains. The single-error denominator in each random group does not establish a population miss rate of 100%.",
+    "These results do not establish equal overall quality or a human accuracy for all 90 questions. Existing automatic counts 83/90 and 79/90 remain unchanged."
+  ],
+  "limitations": [
+    "One human review record per answer; reviewer counts and item-level reasons were not recorded.",
+    "Random sample contains only 10 questions; disagreement cases are selected and must not be pooled into a population estimate.",
+    "The 90 questions are not a fresh independent benchmark; 22 were used for pilot diagnosis.",
+    "本次未主动重建或更新检索语料。BM25及登记的8张Chroma逻辑表哈希一致，覆盖87条嵌入、元数据及含向量BLOB的队列。chroma.sqlite3、data_level0.bin、length.bin物理哈希变化；另3文件一致。Chroma持久化客户端具备写入能力，变化可能来自初始化或维护，未追踪具体原因。未校验其他13张表，也未独立证明HNSW内部状态完全相同，不能声称完整物理索引逐字节冻结。",
+    "Observed latency and API cost differences remain confounded by output length, call count, caching, and execution order."
+  ]
+}

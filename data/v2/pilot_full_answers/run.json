@@ -1,0 +1,942 @@
+{
+  "date": "",
+  "status": "Flash与Q4的22题试评及评分已完成",
+  "sample_ids": [
+    "p02",
+    "p04",
+    "p11",
+    "p24",
+    "p40",
+    "d01",
+    "d05",
+    "d10",
+    "q03",
+    "q18",
+    "q01",
+    "q08",
+    "q10",
+    "q14",
+    "q17",
+    "m02",
+    "m03",
+    "m06",
+    "m08",
+    "m10",
+    "d18",
+    "m04"
+  ],
+  "manifest": [
+    {
+      "id": "p02",
+      "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p04",
+      "query": "search_codebase 工具返回给模型的 JSON 结构是什么？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p11",
+      "query": "settings 里 embedding_provider 可以填哪些值？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p24",
+      "query": "项目里 search_codebase 工具的实现流程是怎样的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p40",
+      "query": "项目中如果检索结果质量较差，是否有相应的降级或熔断处理逻辑？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "d01",
+      "query": "线上接口偶发 502，从网关、负载均衡到上游服务一般按什么顺序排查？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d05",
+      "query": "requirements 里写了包名，运行却报 No module named，先检查虚拟环境、路径还是安装方式？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d10",
+      "query": "前端 dev 正常，打包上线后静态资源 404，多半是 publicPath、路由模式还是部署路径哪类问题？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q03",
+      "query": "什么是快速排序？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q18",
+      "query": "如何在 Python 中读取一个 txt 文件？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q01",
+      "query": "FastAPI 的路由怎么注册？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q08",
+      "query": "什么是 BM25？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q10",
+      "query": "LoRA 微调的原理是什么？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q14",
+      "query": "什么是 AST（抽象语法树）？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q17",
+      "query": "什么是 RAG？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m02",
+      "query": "如果要在 FastAPI 里注册一个新路由，通常该怎么写？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m03",
+      "query": "Chroma 和 BM25 哪个更适合做通用知识问答？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m06",
+      "query": "Query Rewrite 一般是怎么提升检索效果的？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m08",
+      "query": "AST 静态分析一般能发现哪些类型的问题？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m10",
+      "query": "Function Calling 和普通 Prompt 问答相比，最大的区别是什么？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d18",
+      "query": "接口做了幂等键还是偶尔重复扣款，除了幂等表还要查消息重投、超时重试吗？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m04",
+      "query": "LoRA 为什么适合做小模型微调，这和 RepoAgent 有什么关系？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    }
+  ],
+  "answerer_model": "deepseek-flash",
+  "judge_model": "qwen3.8-max",
+  "max_tokens": 4096,
+  "temperature": 0.2,
+  "thinking": false,
+  "soft_fuse": false,
+  "embedding_model": "qwen3.7-text-embedding",
+  "index_directory": ".\\data\\indices\\src",
+  "index_file_sha256_before": {
+    "bm25_index.pkl": "a4d68502fb660e413632c1c2b8bfb1e62739b37a3c76e15af38a239dfac40323",
+    "chroma.sqlite3": "09b1dc4dab94ae4eee8b4a690127c9015f0c2ca2bf57cc1d7d68a3d8948f65da",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\data_level0.bin": "5ca32aefc959d9d019d073df9c04a024b6bbcf33c5bd4c70dea162f7d41a98d0",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\length.bin": "231bfd0a9c0d4ef6c57a318c49f5c74811c13fd37e8e4e9e01476db6c8f0e043",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "notes": [
+    "Existing historical 87-chunk index; same snapshot for both chains, not current-code ground truth.",
+    "Full returned answers and exact supplied tool contexts are saved. No scores from old 1200-character previews are reused.",
+    "Pilot generator budget is 4096 tokens; finish_reason records output limits.",
+    "Configured Q4 router on 127.0.0.1:8080 is currently unavailable.",
+    "Tool-exception and empty-answer failure gates were tightened after native generation started; native outputs will be checked for these failures before scoring is accepted.",
+    "Q4 on the 5090 after server startup; no local inference runtime/model was installed."
+  ],
+  "source_sha256": {
+    "scripts/eval_agent.py": "0ec1e4571be3cd44c727aea71119d5c224230f796c85410fc18f162e9fafbcce",
+    "scripts/judge_answers.py": "a5a91e3ebdf8bb1863b32caf54a07ff6113167d590b0e887c0a177c92e79fbca",
+    "src/agent/core.py": "c3143b1b5ce7742840c060394f5324df3a3ec09a8e9f973e6042aafdbf955f8b",
+    "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+    "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+    "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3"
+  },
+  "commands": {
+    "native": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend native --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_native.jsonl",
+    "q4_pending": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend phase2a --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl",
+    "judge_native": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_native.jsonl --out data/v2/pilot_full_answers/judge_native.jsonl --workers 4",
+    "judge_q4": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl --out data/v2/pilot_full_answers/judge_phase2a_q4.jsonl --workers 4",
+    "q4_attempt2": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend phase2a --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_phase2a_q4_attempt2.jsonl",
+    "judge_q4_attempt2": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_phase2a_q4_attempt2.jsonl --out data/v2/pilot_full_answers/judge_phase2a_q4_attempt2.jsonl --workers 4"
+  },
+  "validation": {
+    "pytest_passed": 54,
+    "deselected_integration_tests": 7,
+    "existing_warning": "Pydantic class-based Config deprecation",
+    "inline_tests": "native/phase2a context and full answer; exact22 selection; full-answer judge and failure paths; temporary outputs deleted"
+  },
+  "source_sha256_after_failure_gates": {
+    "scripts/eval_agent.py": "2429387879046b4fcdc793da48d23fa7c379bf6197a6cb9240160fd8c6c56ddc",
+    "scripts/judge_answers.py": "a5a91e3ebdf8bb1863b32caf54a07ff6113167d590b0e887c0a177c92e79fbca",
+    "src/agent/core.py": "18f43f1e15d055e7386ac2f23116e66460f39c04f4d8273fad293e177c0a28b9",
+    "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+    "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+    "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3"
+  },
+  "local_gpu": {
+    "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "vram_mib": 8188,
+    "driver": "610.62",
+    "q4_run_status": "not_used_5090"
+  },
+  "index_file_sha256_after_native": {
+    "bm25_index.pkl": "a4d68502fb660e413632c1c2b8bfb1e62739b37a3c76e15af38a239dfac40323",
+    "chroma.sqlite3": "c517522d17870559127594977c8c3b9f1cd06f8441213c4c86d6dfa982072ea8",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\data_level0.bin": "58b9c15f8b8967683c7bd24c809ef3d104bfc956c956814eece94a327962ef7e",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\length.bin": "cae07a5e0aba6f766cda962a2f16ab35fd3ec559338a7b0998bd85a829476753",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_integrity_verified": true,
+  "artifacts_sha256": {
+    "e2e_native.jsonl": "1232a652c7f7191d165cd78f77f430f98850f52f8732b12348d5c54769c9f86a",
+    "judge_native.jsonl": "84879c59e806de54a543d64b509f2f0570ff658ffc79ab53c840950dc1d37868",
+    "summary.json": "f741125e4803fe3abf8e7dba2c051de4752dd197db7fedbc1f939c35e34f3124"
+  },
+  "index_logical_sha256_after_native": {
+    "embeddings": "fd6ac0f770904bf73589976f2dc940c223b4990f017e60ffdae2c2bef3d20d45",
+    "embedding_metadata": "ea7fc2265cc193825a7127dc84a4302056e3e0328e59accb1b2c71fb0b09b511",
+    "embedding_metadata_array": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "embeddings_queue": "b17eee2c18cc017ee00d4964bb7d37d702de1af4be9833141f0a0b31c57871ac",
+    "collections": "10bd874daa9035d7583a41085ccd60fa8c5db7bd65fca694a13bf95146247234",
+    "collection_metadata": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "segments": "a0eb89d49612a430d74a52bbf00a9b7da2b2a912b676c9f4322329354f5cbe7b",
+    "max_seq_id": "6518821291736cb462086c06f44a59a6fbeb4e73cabb71a037d754e66c187c38"
+  },
+  "index_validation_baseline": "<user-home>\\Desktop\\RepoAgent-backup-baseline\\data\\indices\\src\\chroma.sqlite3",
+  "index_logical_content_unchanged": true,
+  "q4_preflight": {
+    "date": "",
+    "status": "第二轮22题与评分完成；首轮12题中断记录保留",
+    "native_original_run": {
+      "path": "data/v2/pilot_full_answers/run.native-original.json",
+      "sha256": "a0ed7f215a3b7303b19005b500875f964a84020ba4d4b99e9d521118f2a1e252",
+      "original_top_level_fields_preserved": true,
+      "artifacts_sha256_verified": {
+        "e2e_native.jsonl": "1232a652c7f7191d165cd78f77f430f98850f52f8732b12348d5c54769c9f86a",
+        "judge_native.jsonl": "84879c59e806de54a543d64b509f2f0570ff658ffc79ab53c840950dc1d37868",
+        "summary.json": "f741125e4803fe3abf8e7dba2c051de4752dd197db7fedbc1f939c35e34f3124"
+      }
+    },
+    "historical_prompt_source": {
+      "path": "loRA/eval_cross_repo.json",
+      "file_sha256": "934739c06d36a43520f99420fad6108f59fd6b00aa51b037b39aa9dd28631707",
+      "sample_count": 87,
+      "distinct_system_prompts": 1
+    },
+    "repo_summary": {
+      "text": "项目：RepoAgent（AI 驱动的代码研发助手）\nsrc/agent/core.py：time_logger、safe_json_loads、RepoAgent、RepoAgent._prune_memory、RepoAgent._log_usage、RepoAgent._run_tool、RepoAgent._chat_phase2a、RepoAgent.chat、RepoAgent.clear_memory\nsrc/agent/llm.py：reset_usage、_add_usage、chat_completion\nsrc/agent/router.py：_get_client、parse_routing_json、route\nsrc/agent/tools/code_analyser.py：code_issue、code_analyser、code_analyser.analyse、code_analyser._check_mutable_default_args、code_analyser._check_bare_except、code_analyser._check_function_length、code_analyser._calc_complexity、code_analyser._check_complexity、code_analyser._check_unused_imports、code_analyser.format_report、analyse_code\nsrc/agent/tools/complete_code_llm.py：code_completion\nsrc/agent/tools/docker_file_llm.py：gen_docker_file\nsrc/agent/tools/generate_tests_llm.py：_strip_fence、run_pytest、read_coverage、gen_tests\nsrc/agent/tools/log_analyser_llm.py：analyse_log\nsrc/agent/tools/search_tool.py：time_logger、_get_vector_store、_get_rewriter、search_codebase\nsrc/agent/tools/tools_schemas.py：check_tool_args\nsrc/api/routes.py：get_agent、ChatRequest、ChatResponse、CodeAnalyseRequest、DockerfileRequest、LogAnalyseRequest、chat_endpoint、analyse_code_endpoint、generate_dockerfile_endpoint、log_analyse_endpoint、clear_memory_endpoint、health\nsrc/config.py：Settings\nsrc/evaluation/chroma_verify_tokens.py：load_src_py_blob、interesting_tokens、extra_anchor_tokens\nsrc/evaluation/e2e_manifest.py：_index_aware_overrides_merged、_domain_grounding_tier、grounding_tier_index_aware、_tier_to_should_call_tool、_tag、build_e2e_manifest\nsrc/evaluation/eva_retrieval.py：hit_and_rr\nsrc/evaluation/eva_retrieval_reranker.py：hit_and_rr\nsrc/evaluation/eva_rewriter.py：hit_and_rr\nsrc/evaluation/llm_judge_e2e.py：all_manifest_sample_ids、_gold_summary、build_judge_messages、parse_judge_json、validate_judge_output\nsrc/evaluation/stats.py：wilson_ci、bootstrap_ci、mcnemar_p、roc_auc\nsrc/main.py：health、root\nsrc/rag/bm25.py：_tokenize、BM25Retiever、BM25Retiever.index_document、BM25Retiever.load、BM25Retiever.search\nsrc/rag/loader.py：RePoLoader、RePoLoader.iter_file、RePoLoader.load\nsrc/rag/query_rewriter.py：Query_rewrite_result、Query_rewriter、Query_rewriter.rewrite\nsrc/rag/splitter.py：CodeSplitter、CodeSplitter.split、CodeSplitter._split_ast\nsrc/rag/tqdm_util.py：tqdm、ensure_line_buffered_stdio\nsrc/rag/vectorstore.py：VectorStore、VectorStore.index_document、VectorStore.load、VectorStore.search、VectorStore._rerank_documents_qwen、VectorStore._rerank_documents、VectorStore.search_dense、VectorStore.dense_top1_with_distance、VectorStore.search_bm25、VectorStore.search_hybrid",
+      "sha256_utf8": "1fa08bf8d664879a6ae3adffa7cf489fe3aebe02ce41855dfe6b05585bb23aa5",
+      "characters": 2550
+    },
+    "routing_system_prompt": {
+      "snapshot_path": "loRA/repoagent_routing_prompt_87.txt",
+      "text": "【当前仓库】\n以下是当前私有代码仓库的文件与类名、函数名（自动整理，可能不全）：\n项目：RepoAgent（AI 驱动的代码研发助手）\nsrc/agent/core.py：time_logger、safe_json_loads、RepoAgent、RepoAgent._prune_memory、RepoAgent._log_usage、RepoAgent._run_tool、RepoAgent._chat_phase2a、RepoAgent.chat、RepoAgent.clear_memory\nsrc/agent/llm.py：reset_usage、_add_usage、chat_completion\nsrc/agent/router.py：_get_client、parse_routing_json、route\nsrc/agent/tools/code_analyser.py：code_issue、code_analyser、code_analyser.analyse、code_analyser._check_mutable_default_args、code_analyser._check_bare_except、code_analyser._check_function_length、code_analyser._calc_complexity、code_analyser._check_complexity、code_analyser._check_unused_imports、code_analyser.format_report、analyse_code\nsrc/agent/tools/complete_code_llm.py：code_completion\nsrc/agent/tools/docker_file_llm.py：gen_docker_file\nsrc/agent/tools/generate_tests_llm.py：_strip_fence、run_pytest、read_coverage、gen_tests\nsrc/agent/tools/log_analyser_llm.py：analyse_log\nsrc/agent/tools/search_tool.py：time_logger、_get_vector_store、_get_rewriter、search_codebase\nsrc/agent/tools/tools_schemas.py：check_tool_args\nsrc/api/routes.py：get_agent、ChatRequest、ChatResponse、CodeAnalyseRequest、DockerfileRequest、LogAnalyseRequest、chat_endpoint、analyse_code_endpoint、generate_dockerfile_endpoint、log_analyse_endpoint、clear_memory_endpoint、health\nsrc/config.py：Settings\nsrc/evaluation/chroma_verify_tokens.py：load_src_py_blob、interesting_tokens、extra_anchor_tokens\nsrc/evaluation/e2e_manifest.py：_index_aware_overrides_merged、_domain_grounding_tier、grounding_tier_index_aware、_tier_to_should_call_tool、_tag、build_e2e_manifest\nsrc/evaluation/eva_retrieval.py：hit_and_rr\nsrc/evaluation/eva_retrieval_reranker.py：hit_and_rr\nsrc/evaluation/eva_rewriter.py：hit_and_rr\nsrc/evaluation/llm_judge_e2e.py：all_manifest_sample_ids、_gold_summary、build_judge_messages、parse_judge_json、validate_judge_output\nsrc/evaluation/stats.py：wilson_ci、bootstrap_ci、mcnemar_p、roc_auc\nsrc/main.py：health、root\nsrc/rag/bm25.py：_tokenize、BM25Retiever、BM25Retiever.index_document、BM25Retiever.load、BM25Retiever.search\nsrc/rag/loader.py：RePoLoader、RePoLoader.iter_file、RePoLoader.load\nsrc/rag/query_rewriter.py：Query_rewrite_result、Query_rewriter、Query_rewriter.rewrite\nsrc/rag/splitter.py：CodeSplitter、CodeSplitter.split、CodeSplitter._split_ast\nsrc/rag/tqdm_util.py：tqdm、ensure_line_buffered_stdio\nsrc/rag/vectorstore.py：VectorStore、VectorStore.index_document、VectorStore.load、VectorStore.search、VectorStore._rerank_documents_qwen、VectorStore._rerank_documents、VectorStore.search_dense、VectorStore.dense_top1_with_distance、VectorStore.search_bm25、VectorStore.search_hybrid\n\n你是一个拥有多智能体协作能力的研发助手。\n你有多个的辅助工具（如静态代码分析、源码检索、日志分析等）。\n请严格遵守以下指令：\n1. 分析用户问题，如果需要查阅代码、分析 Bug 或生成配置，必须毫不犹豫地调用对应工具。\n2. 除非明显缺少信息，否则不要重复调用工具。每个问题最多调用 1 次 search_codebase。\n3. 必须用中文回答。\n【Phase 2A 单轮工具路由】\n本阶段监督目标是**单轮路由决策**（结构化 JSON），不是长篇自然语言解答。请分析用户问题后，只输出**一行**可解析的 JSON 对象，不要输出 markdown 围栏、不要前后解释或自然语言段落。\n- decision_type 只能是 \"tool_call\" | \"no_tool\" | \"clarify_needed\"。\n- tool_call：必须给出与下列列表一致的 tool_name 与可执行 arguments；clarify_answer 为 null；oracle_context 可为 null，或在 search_codebase 时给极短检索意图说明（非替代 arguments）。\n- no_tool：tool_name、arguments、clarify_answer、oracle_context 均为 null；表示本轮无需调用任何工具；**禁止**编造本仓库具体路径、默认配置、镜像名等未验证事实。\n- clarify_needed：tool_name、arguments、oracle_context 为 null；clarify_answer 为 1～2 句中文，仅追问缺失信息或点明歧义；禁止教程式长文与身份表演套话。\n- 禁止输出 response_kind、direct_answer 字段。\n\n【Agent 工具列表与参数（务必遵守工具名与字段）】\n1. 工具名: `analyse_code`\n   - 触发场景: 静态代码问题分析。\n   - 参数: {{\"code\": \"<必填，一段存在潜在问题的 Python 源代码>\"}}\n2. 工具名: `search_codebase`\n   - 触发场景: 询问某个模块、逻辑在哪，或查询实现/配置。\n   - 参数: {{\"query\": \"<必填，检索关键词/短句>\", \"top_k\": <选填整数，默认6>}}\n3. 工具名: `analyse_log`\n   - 触发场景: 报错信息、异常堆栈分析。\n   - 参数: {{\"log\": \"<必填，一段包含 traceback 的报错文本>\"}}\n4. 工具名: `generate_dockerfile`\n   - 触发场景: 容器化、Docker、部署依赖描述。\n   - 参数: {{\"project_description\": \"<必填，项目运行环境或依赖描述>\"}}\n5. 工具名: `generate_tests`\n   - 触发场景: 单元测试（pytest）或边界覆盖。\n   - 参数: {{\"code\": \"<必填，需要被测试的函数代码>\", \"description\": \"<选填，额外说明>\"}}\n6. 工具名: `complete_code`\n   - 触发场景: 续写残缺代码。\n   - 参数: {{\"context\": \"<必填，用户已有的残缺代码>\"}}\n\n【路由输出 JSON 形状（单行、无换行）】\n{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"关键词\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"no_tool\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":null,\"oracle_context\":null}\n{\"decision_type\":\"clarify_needed\",\"tool_name\":null,\"arguments\":null,\"clarify_answer\":\"请补充完整 Traceback 或报错行号。\",\"oracle_context\":null}\n",
+      "sha256_utf8": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612",
+      "file_sha256": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612",
+      "characters": 4419,
+      "matches_all_87_historical_system_prompts": true
+    },
+    "tool_context_policy": {
+      "phase2a": "full_tool_result",
+      "native": "full_tool_result",
+      "character_limit": null,
+      "trace_contains_full_tool_result": true
+    },
+    "router_request": {
+      "temperature": 0.1,
+      "max_tokens": 512,
+      "extra_body": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    "source_sha256": {
+      "scripts/eval_agent.py": "2429387879046b4fcdc793da48d23fa7c379bf6197a6cb9240160fd8c6c56ddc",
+      "scripts/judge_answers.py": "a5a91e3ebdf8bb1863b32caf54a07ff6113167d590b0e887c0a177c92e79fbca",
+      "src/agent/core.py": "157490972bc0dffc737168fa0016dfb7471f3fc713854abbf0af0a3e70c52de6",
+      "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+      "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+      "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3",
+      "src/agent/router.py": "4060bb789c5ce8de74dc8fd11f870949445817c525dd5040f5fff10420aed7e0",
+      "loRA/format_to_sharegpt.py": "ffe3db084dc9df62e47256d9bbcfc6c242058c577731bb86da4ea160f8efb40f",
+      "loRA/build_cross_repo_eval.py": "ff81638c66ea0b4a007bf3fc996dd9c407d26f154636ab3d3991171064cde038",
+      "loRA/repoagent_routing_prompt_87.txt": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612"
+    },
+    "runtime": {
+      "status": "第二轮隧道及真实路由预检通过",
+      "gguf": {
+        "path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+        "size_bytes": 2708804192,
+        "sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd"
+      },
+      "llama_server": {
+        "pid": 2789,
+        "executable": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+        "version": "version: 0.7.0-dev (build 1, commit a37cc46)\nbuilt with GNU 11.4.0 for Linux x86_64",
+        "commit": "a37cc46",
+        "command": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server -m /root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf --host 127.0.0.1 --port 8080 --alias repoagent-router --jinja -ngl 99 --ctx-size 8192 --parallel 1",
+        "argv": [
+          "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+          "-m",
+          "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8080",
+          "--alias",
+          "repoagent-router",
+          "--jinja",
+          "-ngl",
+          "99",
+          "--ctx-size",
+          "8192",
+          "--parallel",
+          "1"
+        ],
+        "cwd": "/root",
+        "effective_context_size": 8192,
+        "chat_template": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\\n' + content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | tojson | safe if args_value is mapping or (args_value is sequence and args_value is not string) else args_value | string %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+        "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+        "default_generation_settings": {
+          "params": {
+            "seed": 4294967295,
+            "temperature": 0.800000011920929,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 40,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "max_tokens": -1,
+            "n_predict": -1,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": false,
+            "stream": false,
+            "n_probs": 0,
+            "min_keep": 0,
+            "chat_format": "Content-only",
+            "reasoning_format": "none",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "n_ctx": 8192
+        },
+        "cuda_loaded": true
+      },
+      "hardware": {
+        "gpu_name": "NVIDIA GeForce RTX 5090",
+        "vram_mib": 32607,
+        "driver_version": "580.105.08",
+        "loaded_vram_mib": 3535,
+        "gpu_raw": "NVIDIA GeForce RTX 5090, 32607 MiB, 3535 MiB, 580.105.08"
+      },
+      "ssh_tunnel": {
+        "host": "example.invalid",
+        "ssh_port": 49616,
+        "local_address": "127.0.0.1:8080",
+        "remote_address": "127.0.0.1:8080",
+        "health": "ok",
+        "model_id": "repoagent-router",
+        "local_process_id": 48440
+      },
+      "measurement_note": "评测、检索、Flash 请求及评分均在本机执行；5090 仅提供路由。总耗时含 SSH 往返；以下预检用于验证和预热，不计入22题。",
+      "smoke_test": {
+        "question": "请定位当前仓库 src/agent/core.py 中 RepoAgent.chat 的实现。",
+        "decision": {
+          "decision_type": "tool_call",
+          "tool_name": "search_codebase",
+          "arguments": {
+            "query": "RepoAgent chat src/agent/core.py",
+            "top_k": 6
+          },
+          "clarify_answer": null,
+          "oracle_context": "定位 RepoAgent.chat 方法的源码实现"
+        },
+        "raw_response": "{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"RepoAgent chat src/agent/core.py\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":\"定位 RepoAgent.chat 方法的源码实现\"}",
+        "finish_reason": "stop",
+        "seconds": 0.655,
+        "status": "通过"
+      }
+    },
+    "regression": {
+      "status": "passed",
+      "total_passed": 74,
+      "targeted": {
+        "passed": 20,
+        "seconds": 4.22,
+        "command": ".venv/Scripts/python.exe -B -m pytest -q -p no:cacheprovider tests/test_q4_preflight_temporary.py",
+        "temporary_test_source_sha256": "9570014bc94b90ec259a69c8f7f1a7b3e9edcfe3f3c98d0a8a950a5ab7b3ea1c",
+        "coverage": [
+          "Native and phase2a preserve complete Unicode JSON at 5999, 6000, 6001, 8390 and 24000 characters; trace matches the actual supplied evidence.",
+          "Runtime prompt and snapshot bytes match the system prompt of all 87 historical cases.",
+          "README, source AST and base-template changes do not change the runtime prompt.",
+          "Three router requests read the prompt snapshot only once.",
+          "Cross-repository evaluation builder preserves historical full prompt and legacy no-summary behavior without writing historical data.",
+          "No-tool, clarification and parse-failure fallback behavior is preserved."
+        ],
+        "network": "socket connections blocked; model and tool calls mocked"
+      },
+      "existing_suite": {
+        "passed": 54,
+        "deselected_live_api_tests": 7,
+        "seconds": 17.28,
+        "command": ".venv/Scripts/python.exe -B -m pytest -q --ignore=tests/test_q4_preflight_temporary.py --basetemp=.q4-preflight-pytest-tmp-snapshot -p no:cacheprovider"
+      },
+      "existing_warning": "Pydantic class-based Config deprecation",
+      "q4_evaluation_started": false
+    },
+    "q4_evaluation_started": true,
+    "summary_addendum": {
+      "path": "data/v2/pilot_full_answers/summary.addendum.json",
+      "sha256": "eb2d230295a544f1e978c4f605009052de7d505d1f27db3e621a459c9915e8ed"
+    },
+    "runs": [
+      {
+        "attempt": 1,
+        "status": "中断，保留原始记录",
+        "started_at_utc": "",
+        "answers": "data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl",
+        "judgements": "data/v2/pilot_full_answers/judge_phase2a_q4.jsonl",
+        "generation_command": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend phase2a --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl",
+        "judge_command": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl --out data/v2/pilot_full_answers/judge_phase2a_q4.jsonl --workers 4",
+        "python_bytecode_cache": "PYTHONDONTWRITEBYTECODE=1",
+        "completed_samples": 12,
+        "answers_sha256": "524c047905b3247df732ba700a1dfb949042745709a4781bdba00be652db33bf",
+        "interruption_note": "恢复时发现本机评测进程、SSH隧道及远端llama-server均已退出；具体退出原因未知。已保存12题无执行错误，未评分。",
+        "detected_at_utc": "",
+        "runtime": {
+          "status": "隧道、模型身份及真实路由预检通过",
+          "gguf": {
+            "path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+            "size_bytes": 2708804192,
+            "sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd"
+          },
+          "llama_server": {
+            "pid": 2374,
+            "executable": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+            "version": "version: 0.7.0-dev (build 1, commit a37cc46)\nbuilt with GNU 11.4.0 for Linux x86_64",
+            "commit": "a37cc46",
+            "command": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server -m /root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf --host 127.0.0.1 --port 8080 --alias repoagent-router --jinja -ngl 99 --ctx-size 8192 --parallel 1",
+            "argv": [
+              "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+              "-m",
+              "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8080",
+              "--alias",
+              "repoagent-router",
+              "--jinja",
+              "-ngl",
+              "99",
+              "--ctx-size",
+              "8192",
+              "--parallel",
+              "1"
+            ],
+            "cwd": "/root",
+            "effective_context_size": 8192,
+            "chat_template": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\\n' + content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | tojson | safe if args_value is mapping or (args_value is sequence and args_value is not string) else args_value | string %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+            "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+            "default_generation_settings": {
+              "params": {
+                "seed": 4294967295,
+                "temperature": 0.800000011920929,
+                "dynatemp_range": 0.0,
+                "dynatemp_exponent": 1.0,
+                "top_k": 40,
+                "top_p": 0.949999988079071,
+                "min_p": 0.05000000074505806,
+                "top_n_sigma": -1.0,
+                "xtc_probability": 0.0,
+                "xtc_threshold": 0.10000000149011612,
+                "typical_p": 1.0,
+                "repeat_last_n": 64,
+                "repeat_penalty": 1.0,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "dry_multiplier": 0.0,
+                "dry_base": 1.75,
+                "dry_allowed_length": 2,
+                "dry_penalty_last_n": 64,
+                "mirostat": 0,
+                "mirostat_tau": 5.0,
+                "mirostat_eta": 0.10000000149011612,
+                "adaptive_target": -1.0,
+                "adaptive_decay": 0.8999999761581421,
+                "max_tokens": -1,
+                "n_predict": -1,
+                "n_keep": 0,
+                "n_discard": 0,
+                "ignore_eos": false,
+                "stream": false,
+                "n_probs": 0,
+                "min_keep": 0,
+                "chat_format": "Content-only",
+                "reasoning_format": "none",
+                "reasoning_in_content": false,
+                "generation_prompt": "",
+                "samplers": [
+                  "penalties",
+                  "dry",
+                  "top_n_sigma",
+                  "top_k",
+                  "typ_p",
+                  "top_p",
+                  "min_p",
+                  "xtc",
+                  "temperature"
+                ],
+                "speculative.types": "none",
+                "timings_per_token": false,
+                "post_sampling_probs": false,
+                "backend_sampling": false,
+                "lora": []
+              },
+              "n_ctx": 8192
+            },
+            "cuda_loaded": true
+          },
+          "hardware": {
+            "gpu_name": "NVIDIA GeForce RTX 5090",
+            "vram_mib": 32607,
+            "driver_version": "580.105.08",
+            "loaded_vram_mib": 3535
+          },
+          "ssh_tunnel": {
+            "host": "example.invalid",
+            "ssh_port": 49616,
+            "local_address": "127.0.0.1:8080",
+            "remote_address": "127.0.0.1:8080",
+            "health": "ok",
+            "model_id": "repoagent-router"
+          },
+          "measurement_note": "评测、检索、Flash 请求及评分均在本机执行；5090 仅提供路由。总耗时含 SSH 往返；以下预检用于验证和预热，不计入22题。",
+          "smoke_test": {
+            "question": "请定位当前仓库 src/agent/core.py 中 RepoAgent.chat 的实现。",
+            "decision": {
+              "decision_type": "tool_call",
+              "tool_name": "search_codebase",
+              "arguments": {
+                "query": "RepoAgent chat src/agent/core.py",
+                "top_k": 6
+              },
+              "clarify_answer": null,
+              "oracle_context": "定位 RepoAgent.chat 方法的具体实现"
+            },
+            "raw_response": "{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"RepoAgent chat src/agent/core.py\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":\"定位 RepoAgent.chat 方法的具体实现\"}",
+            "finish_reason": "stop",
+            "seconds": 0.866,
+            "usage": {
+              "completion_tokens": 51,
+              "prompt_tokens": 1583,
+              "total_tokens": 1634,
+              "completion_tokens_details": null,
+              "prompt_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": null,
+                "cached_tokens": 0,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "status": "通过"
+          }
+        }
+      },
+      {
+        "attempt": 2,
+        "status": "完成",
+        "started_at_utc": "",
+        "answers": "data/v2/pilot_full_answers/e2e_phase2a_q4_attempt2.jsonl",
+        "judgements": "data/v2/pilot_full_answers/judge_phase2a_q4_attempt2.jsonl",
+        "generation_command": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend phase2a --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_phase2a_q4_attempt2.jsonl",
+        "judge_command": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_phase2a_q4_attempt2.jsonl --out data/v2/pilot_full_answers/judge_phase2a_q4_attempt2.jsonl --workers 4",
+        "runtime": {
+          "status": "第二轮隧道及真实路由预检通过",
+          "gguf": {
+            "path": "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+            "size_bytes": 2708804192,
+            "sha256": "c3b83fb8e5693e1e8042fbb46a9d9b808674bc008e544562be4d488a6ce02dfd"
+          },
+          "llama_server": {
+            "pid": 2789,
+            "executable": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+            "version": "version: 0.7.0-dev (build 1, commit a37cc46)\nbuilt with GNU 11.4.0 for Linux x86_64",
+            "commit": "a37cc46",
+            "command": "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server -m /root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf --host 127.0.0.1 --port 8080 --alias repoagent-router --jinja -ngl 99 --ctx-size 8192 --parallel 1",
+            "argv": [
+              "/root/autodl-tmp/RepoAgent/llama.cpp/build/bin/llama-server",
+              "-m",
+              "/root/autodl-tmp/export/gguf/router-4b-v2-Q4_K_M.gguf",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "8080",
+              "--alias",
+              "repoagent-router",
+              "--jinja",
+              "-ngl",
+              "99",
+              "--ctx-size",
+              "8192",
+              "--parallel",
+              "1"
+            ],
+            "cwd": "/root",
+            "effective_context_size": 8192,
+            "chat_template": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {{- '<|im_start|>system\\n' + content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | tojson | safe if args_value is mapping or (args_value is sequence and args_value is not string) else args_value | string %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+            "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+            "default_generation_settings": {
+              "params": {
+                "seed": 4294967295,
+                "temperature": 0.800000011920929,
+                "dynatemp_range": 0.0,
+                "dynatemp_exponent": 1.0,
+                "top_k": 40,
+                "top_p": 0.949999988079071,
+                "min_p": 0.05000000074505806,
+                "top_n_sigma": -1.0,
+                "xtc_probability": 0.0,
+                "xtc_threshold": 0.10000000149011612,
+                "typical_p": 1.0,
+                "repeat_last_n": 64,
+                "repeat_penalty": 1.0,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "dry_multiplier": 0.0,
+                "dry_base": 1.75,
+                "dry_allowed_length": 2,
+                "dry_penalty_last_n": 64,
+                "mirostat": 0,
+                "mirostat_tau": 5.0,
+                "mirostat_eta": 0.10000000149011612,
+                "adaptive_target": -1.0,
+                "adaptive_decay": 0.8999999761581421,
+                "max_tokens": -1,
+                "n_predict": -1,
+                "n_keep": 0,
+                "n_discard": 0,
+                "ignore_eos": false,
+                "stream": false,
+                "n_probs": 0,
+                "min_keep": 0,
+                "chat_format": "Content-only",
+                "reasoning_format": "none",
+                "reasoning_in_content": false,
+                "generation_prompt": "",
+                "samplers": [
+                  "penalties",
+                  "dry",
+                  "top_n_sigma",
+                  "top_k",
+                  "typ_p",
+                  "top_p",
+                  "min_p",
+                  "xtc",
+                  "temperature"
+                ],
+                "speculative.types": "none",
+                "timings_per_token": false,
+                "post_sampling_probs": false,
+                "backend_sampling": false,
+                "lora": []
+              },
+              "n_ctx": 8192
+            },
+            "cuda_loaded": true
+          },
+          "hardware": {
+            "gpu_name": "NVIDIA GeForce RTX 5090",
+            "vram_mib": 32607,
+            "driver_version": "580.105.08",
+            "loaded_vram_mib": 3535,
+            "gpu_raw": "NVIDIA GeForce RTX 5090, 32607 MiB, 3535 MiB, 580.105.08"
+          },
+          "ssh_tunnel": {
+            "host": "example.invalid",
+            "ssh_port": 49616,
+            "local_address": "127.0.0.1:8080",
+            "remote_address": "127.0.0.1:8080",
+            "health": "ok",
+            "model_id": "repoagent-router",
+            "local_process_id": 48440
+          },
+          "measurement_note": "评测、检索、Flash 请求及评分均在本机执行；5090 仅提供路由。总耗时含 SSH 往返；以下预检用于验证和预热，不计入22题。",
+          "smoke_test": {
+            "question": "请定位当前仓库 src/agent/core.py 中 RepoAgent.chat 的实现。",
+            "decision": {
+              "decision_type": "tool_call",
+              "tool_name": "search_codebase",
+              "arguments": {
+                "query": "RepoAgent chat src/agent/core.py",
+                "top_k": 6
+              },
+              "clarify_answer": null,
+              "oracle_context": "定位 RepoAgent.chat 方法的源码实现"
+            },
+            "raw_response": "{\"decision_type\":\"tool_call\",\"tool_name\":\"search_codebase\",\"arguments\":{\"query\":\"RepoAgent chat src/agent/core.py\",\"top_k\":6},\"clarify_answer\":null,\"oracle_context\":\"定位 RepoAgent.chat 方法的源码实现\"}",
+            "finish_reason": "stop",
+            "seconds": 0.655,
+            "status": "通过"
+          }
+        },
+        "generation_completed_at_utc": "",
+        "completed_samples": 22,
+        "answers_sha256": "1324b6a8a90a933cd62e29fefc170c431b1ac7dd0b3bd481fb8a5bec191d52d1",
+        "generation_validation": {
+          "完整且唯一题目": 22,
+          "执行失败": 0,
+          "空回答": 0,
+          "路由解析失败": 0,
+          "正常停止": 22,
+          "超过1200字符": 9
+        },
+        "service_cleanup": {
+          "server_pid": 2789,
+          "server_stopped": true,
+          "temporary_server_log_removed": true,
+          "completed_server_requests": 23,
+          "router_compute_mean_ms_excluding_smoke": 243.33636363636361,
+          "ssh_tunnel_stopped": true,
+          "cloud_instance_powered_off": false,
+          "temporary_local_logs_removed": 5,
+          "new_report_or_markdown_files": 0,
+          "new_source_or_test_files": 0,
+          "note": "仅停止本次启动的llama-server与SSH隧道；未关闭云主机。"
+        },
+        "completed_at_utc": "",
+        "judged_samples": 22,
+        "generation_errors": 0,
+        "judge_errors": 0,
+        "artifacts_sha256": {
+          "e2e_phase2a_q4_attempt2.jsonl": "1324b6a8a90a933cd62e29fefc170c431b1ac7dd0b3bd481fb8a5bec191d52d1",
+          "judge_phase2a_q4_attempt2.jsonl": "67bcd4b44a27a594c5dd0aac6113fd4221bebd91324e7ac5ddc38778ea23b61c"
+        },
+        "integrity_validation": {
+          "题目和数量一致": true,
+          "评分输入哈希对应完整回答": true,
+          "Native基线与首轮中断记录未改": true,
+          "源码和提示词哈希未变": true,
+          "索引逻辑内容未变": true
+        }
+      }
+    ],
+    "comparison": {
+      "说明": "同一批22题、同一本机代码与索引、同一评委的完整链路试评；原始分数未经人工重标。",
+      "native": {
+        "题数": 22,
+        "工具判断命中": 22,
+        "检索次数": 5,
+        "评委判断": {
+          "correct": 21,
+          "partially_correct": 1
+        },
+        "评委平均分": 4.7727272727272725,
+        "平均端到端秒数": 6.531363636363636,
+        "中位端到端秒数": 5.875,
+        "回答总字符": 35477,
+        "DeepSeek回答侧估算美元": 0.025832327999999998,
+        "费用口径": "使用代码内价格表，仅含回答侧API；不含嵌入、评委及5090租金。"
+      },
+      "q4": {
+        "题数": 22,
+        "工具判断命中": 21,
+        "检索次数": 4,
+        "评委判断": {
+          "correct": 20,
+          "partially_correct": 2
+        },
+        "评委平均分": 4.681818181818182,
+        "平均端到端秒数": 4.536363636363636,
+        "中位端到端秒数": 4.404999999999999,
+        "回答总字符": 24622,
+        "DeepSeek回答侧估算美元": 0.016397988,
+        "费用口径": "使用代码内价格表，仅含回答侧API；不含嵌入、评委及5090租金。"
+      },
+      "人工抽查": [
+        {
+          "题号": "p04",
+          "链路": "Q4",
+          "问题": "路由误判no_tool，实际未检索；回答却写先调用工具，未给出真实仓库JSON结构。评委3分/部分正确，保留原始分。"
+        },
+        {
+          "题号": "p24",
+          "链路": "两组",
+          "问题": "两组均将返回结构描述为列表，实际外层为包含results的对象；Native还将soft_fuse误说成Dense/BM25融合。Q4评委4分/正确，仍漏看返回结构问题。"
+        },
+        {
+          "题号": "m04",
+          "链路": "Native",
+          "问题": "A(d×r)、B(r×d)却写W+BA，矩阵维度不一致；原评委5分/正确，属于漏判。"
+        }
+      ],
+      "限制": [
+        "单次22题、小样本、单评委，不能据此证明质量等价或微调带来独立收益。",
+        "Q4答案短约30.6%，且少一次检索；端到端耗时差不能归因纯路由模型提速。",
+        "Q4耗时包含SSH网络往返；正式题目前做过一次真实路由预热。",
+        "两链保存完整工具返回；原有检索逻辑仍对单个源码片段限900字符。",
+        "历史87块索引逻辑内容未变，不代表当前源码全量。",
+        "Q4的tool_names_round只因事件类型而为空；实际调用应看router_decision、actual_call_search_codebase和tool_contexts。"
+      ],
+      "自动判断配对检验": {
+        "Native正确而Q4非正确": 2,
+        "Q4正确而Native非正确": 1,
+        "McNemar双侧p": 1.0,
+        "解释": "仅对自动评委标签检验，不替代人工事实核验。"
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "path_base": ".",
+  "files": [
+    {
+      "run": "v1_240steps_s42",
+      "source": "data/v2/seed_step/v1_240steps_s42/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_240steps_s42/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "751d73b76c57c6e3c4f2a386d54b284a0fc8618b54d5b77f6db7b701cc886a7b"
+    },
+    {
+      "run": "v1_240steps_s42",
+      "source": "data/v2/seed_step/v1_240steps_s42/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_240steps_s42/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "23abf7d0f864a9282d5dcfe2660548722a67074f6c3de3c59fa2ef27efdddee0"
+    },
+    {
+      "run": "v1_s43",
+      "source": "data/v2/seed_step/v1_s43/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_s43/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "b07346358f97fc68b768075cb25b9ab56f3ce8075716b7b2d85667f62e526ff1"
+    },
+    {
+      "run": "v1_s43",
+      "source": "data/v2/seed_step/v1_s43/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_s43/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "951648783dd8b8032dfd1912446177b217c6c9938d9b28ad702c24522dbd8ac7"
+    },
+    {
+      "run": "v1_s44",
+      "source": "data/v2/seed_step/v1_s44/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_s44/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "49482cdf3c81ee3a71b97cf8ce30ecc9b941b67e5d4bb576ef13cc071014bebc"
+    },
+    {
+      "run": "v1_s44",
+      "source": "data/v2/seed_step/v1_s44/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v1_s44/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "793b29f9df36e1f60a4db981a75268ca0e6607dadd4e03e2dbcfbe3a0ed0f5a1"
+    },
+    {
+      "run": "abl_s43",
+      "source": "data/v2/seed_step/abl_s43/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/abl_s43/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "8bcd240c21fb01c3c55dce1a5baddee1a8a54a8eac52aacafdc4491005b98da7"
+    },
+    {
+      "run": "abl_s43",
+      "source": "data/v2/seed_step/abl_s43/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/abl_s43/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "6961dffd25b1364caa8f1f889efe71a82597632fe8f16a77ff736bd898796211"
+    },
+    {
+      "run": "abl_s44",
+      "source": "data/v2/seed_step/abl_s44/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/abl_s44/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "a7843fb1dbb46ec1baf0e4d297051960210cd14b9f06cf7cd10aeab6ff5b4184"
+    },
+    {
+      "run": "abl_s44",
+      "source": "data/v2/seed_step/abl_s44/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/abl_s44/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "e600143aad33ecef942e5cb12b5feeeafd16ed7bda1a7a15d279379e3a436a0b"
+    },
+    {
+      "run": "v2_s43",
+      "source": "data/v2/seed_step/v2_s43/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v2_s43/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "52616d9091395f954bd64c6a4a1dd979d749344ff362e25a5fae1a1ac953b12c"
+    },
+    {
+      "run": "v2_s43",
+      "source": "data/v2/seed_step/v2_s43/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v2_s43/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "98f8fd4b4b45b1c6e88ca4775e852721b8cee326a1d3de8c4548a4280038f315"
+    },
+    {
+      "run": "v2_s44",
+      "source": "data/v2/seed_step/v2_s44/adapter/adapter_model.safetensors",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v2_s44/adapter_model.safetensors",
+      "size_bytes": 129934448,
+      "sha256": "00535a1fbe076cf87b0e803123a481f32efa6cd298d2f40e67be71ed362062c9"
+    },
+    {
+      "run": "v2_s44",
+      "source": "data/v2/seed_step/v2_s44/adapter/adapter_config.json",
+      "destination": "saves/qwen3.5-4b/lora/seed_step/v2_s44/adapter_config.json",
+      "size_bytes": 1156,
+      "sha256": "f099e6e6abc2de61be5a65ec086fd71688a6d5b05bf2ee2483c5d5bc60b7efb0"
+    }
+  ]
+}

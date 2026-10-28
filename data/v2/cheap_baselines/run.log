@@ -1,0 +1,117 @@
+2026-10-25 16:11:21,609 训练集637条，类别{'tool_call': 403, 'clarify_needed': 98, 'no_tool': 136}；规则冻结，主结果k=5，其余只作敏感性参考
+2026-10-25 16:11:25,322 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:25,791 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:26,200 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:26,875 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:27,510 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:27,811 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:28,155 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:28,874 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:29,297 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:29,624 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:29,625 嵌入 train：100/637条
+2026-10-25 16:11:30,138 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:30,540 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:31,011 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:31,320 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:31,638 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:32,027 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:32,541 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:32,860 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:33,130 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:33,464 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:33,467 嵌入 train：200/637条
+2026-10-25 16:11:33,750 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:34,328 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:34,623 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:35,235 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:35,628 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:36,023 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:36,341 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:36,849 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:37,199 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:37,585 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:37,585 嵌入 train：300/637条
+2026-10-25 16:11:37,866 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:38,164 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:38,680 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:39,046 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:39,518 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:39,813 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:40,134 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:40,440 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:40,732 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:41,007 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:41,008 嵌入 train：400/637条
+2026-10-25 16:11:41,347 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:41,649 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:41,975 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:42,314 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:42,636 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:43,258 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:44,340 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:44,613 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:44,952 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:45,233 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:45,236 嵌入 train：500/637条
+2026-10-25 16:11:45,615 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:45,960 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:46,260 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:46,550 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:46,811 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:47,084 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:47,375 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:47,682 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:47,968 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:48,295 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:48,295 嵌入 train：600/637条
+2026-10-25 16:11:48,669 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:48,949 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:49,251 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:49,497 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:49,502 嵌入 train：637/637条
+2026-10-25 16:11:49,508 always_no_tool / eval_cross_repo_no_summary：52/87，预测 0.0000秒
+2026-10-25 16:11:49,511 majority / eval_cross_repo_no_summary：35/87，预测 0.0001秒
+2026-10-25 16:11:49,514 keywords / eval_cross_repo_no_summary：61/87，预测 0.0003秒
+2026-10-25 16:11:49,840 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:50,071 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:50,421 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:50,744 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:51,050 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:51,341 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:51,682 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:51,931 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:52,199 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:11:52,202 嵌入 eval_cross_repo_no_summary：87/87条
+2026-10-25 16:11:54,450 knn_k5 / eval_cross_repo_no_summary：39/87，预测 2.2512秒
+2026-10-25 16:11:56,762 knn_k1 / eval_cross_repo_no_summary：36/87，预测 2.3059秒
+2026-10-25 16:11:58,953 knn_k3 / eval_cross_repo_no_summary：41/87，预测 2.1975秒
+2026-10-25 16:12:01,216 knn_k10 / eval_cross_repo_no_summary：37/87，预测 2.2604秒
+2026-10-25 16:12:01,231 always_no_tool / eval_in_domain_no_summary：8/50，预测 0.0000秒
+2026-10-25 16:12:01,231 majority / eval_in_domain_no_summary：31/50，预测 0.0000秒
+2026-10-25 16:12:01,231 keywords / eval_in_domain_no_summary：30/50，预测 0.0003秒
+2026-10-25 16:12:01,907 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:02,769 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:03,149 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:03,492 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:03,766 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:03,777 嵌入 eval_in_domain_no_summary：50/50条
+2026-10-25 16:12:05,017 knn_k5 / eval_in_domain_no_summary：41/50，预测 1.2473秒
+2026-10-25 16:12:06,316 knn_k1 / eval_in_domain_no_summary：43/50，预测 1.2900秒
+2026-10-25 16:12:07,616 knn_k3 / eval_in_domain_no_summary：43/50，预测 1.2926秒
+2026-10-25 16:12:08,880 knn_k10 / eval_in_domain_no_summary：40/50，预测 1.2621秒
+2026-10-25 16:12:08,883 always_no_tool / eval_nanochat60_no_summary：35/60，预测 0.0000秒
+2026-10-25 16:12:08,887 majority / eval_nanochat60_no_summary：25/60，预测 0.0001秒
+2026-10-25 16:12:08,887 keywords / eval_nanochat60_no_summary：43/60，预测 0.0002秒
+2026-10-25 16:12:09,201 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:09,541 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:09,933 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:10,190 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:10,485 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:10,768 HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-25 16:12:10,770 嵌入 eval_nanochat60_no_summary：60/60条
+2026-10-25 16:12:12,216 knn_k5 / eval_nanochat60_no_summary：35/60，预测 1.4475秒
+2026-10-25 16:12:13,799 knn_k1 / eval_nanochat60_no_summary：35/60，预测 1.5751秒
+2026-10-25 16:12:15,265 knn_k3 / eval_nanochat60_no_summary：36/60，预测 1.4718秒
+2026-10-25 16:12:16,771 knn_k10 / eval_nanochat60_no_summary：35/60，预测 1.4970秒
+2026-10-25 16:12:16,773 完成：嵌入{'texts': 834, 'embed_documents_calls': 84, 'seconds': 31.823017599996092}，总耗时55.186秒

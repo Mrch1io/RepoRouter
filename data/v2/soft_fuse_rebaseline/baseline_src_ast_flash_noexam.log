@@ -1,0 +1,41 @@
+成功从路径<user-home>\AppData\Local\Temp\soft-fuse-rebaseline-src_ast_flash_noexam-2xiyvhvg\index中读取Chroma向量数据库
+成功从硬盘持久路径读取到bm25索引引擎！
+成功从路径<user-home>\AppData\Local\Temp\soft-fuse-rebaseline-src_ast_flash_noexam-2xiyvhvg\index\bm25_index.pkl中读取bm25向量数据库
+
+--- 域内 (domain) (n=40) ---
+  min=0.628960  max=1.303797  mean=0.950343  median=0.948105
+  p25=0.864847  p50=0.948105  p75=1.066155  p95=1.204465
+
+--- 域外·明显通用远域 (far_general) (n=28) ---
+  min=1.006240  max=1.415456  mean=1.266379  median=1.265594
+  p25=1.214695  p50=1.265594  p75=1.323974  p95=1.402115
+
+--- 域外·术语接近不该查库 (term_near_no_rag) (n=12) ---
+  min=0.880169  max=1.391538  mean=1.086182  median=1.038049
+  p25=0.946477  p50=1.038049  p75=1.190331  p95=1.366104
+
+--- 域外·误导边界 (misleading_edge) (n=10) ---
+  min=0.848820  max=1.262138  mean=1.034428  median=1.003456
+  p25=0.891310  p50=1.003456  p75=1.168574  p95=1.247483
+
+--- 域外·合并 (outdomain 50) (n=50) ---
+  min=0.848820  max=1.415456  mean=1.176742  median=1.222417
+  p25=1.029184  p50=1.222417  p75=1.294869  p95=1.390636
+
+--- 全部 90 条 (all) (n=90) ---
+  min=0.628960  max=1.415456  mean=1.076120  median=1.080413
+  p25=0.931156  p50=1.080413  p75=1.240092  p95=1.371752
+
+--- 分布分离度 min(域外桶) - max(域内) ---
+  域外50 vs 域内: min(外) - max(域内) = -0.454977
+  远域28 vs 域内: min(外) - max(域内) = -0.297557
+  术语近12 vs 域内: min(外) - max(域内) = -0.423627
+  误导边界10 vs 域内: min(外) - max(域内) = -0.454977
+
+--- 标定提示（主阈值：域内 vs 域外50）---
+  非正：两类距离重叠，单靠 top-1 距离无法完美分开，需 Rerank/多信号或放宽指标。
+
+--- ROC-AUC（域外距离 > 域内距离 的概率）= 0.831 ---
+  推荐阈值（域内误伤 ≤ 7.5%）：1.1677 | 域外拦截 66.0% | 域内误伤 7.5%
+
+已写入 .\data\v2\soft_fuse_rebaseline\baseline_src_ast_flash_noexam.json

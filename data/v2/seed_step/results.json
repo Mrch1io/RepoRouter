@@ -1,0 +1,450 @@
+{
+  "metric": "decision_type_match",
+  "seed42_source": "today_reproduction",
+  "rows": [
+    {
+      "condition": "v1",
+      "seed": 42,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v1",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98,
+      "historical_match": 49,
+      "difference": 0
+    },
+    {
+      "condition": "v1",
+      "seed": 42,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v1",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 71,
+      "accuracy": 0.8160919540229885,
+      "historical_match": 71,
+      "difference": 0
+    },
+    {
+      "condition": "abl",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/abl",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98,
+      "historical_match": 49,
+      "difference": 0
+    },
+    {
+      "condition": "abl",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/abl",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 78,
+      "accuracy": 0.896551724137931,
+      "historical_match": 78,
+      "difference": 0
+    },
+    {
+      "condition": "v2",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v2",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 48,
+      "accuracy": 0.96,
+      "historical_match": null,
+      "difference": null
+    },
+    {
+      "condition": "v2",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v2",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 81,
+      "accuracy": 0.9310344827586207,
+      "historical_match": 81,
+      "difference": 0
+    },
+    {
+      "condition": "v2",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v2",
+      "test": "eval_in_domain",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 48,
+      "accuracy": 0.96,
+      "historical_match": 48,
+      "difference": 0
+    },
+    {
+      "condition": "v2",
+      "seed": 42,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "reproduce_s42/v2",
+      "test": "eval_cross_repo",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 82,
+      "accuracy": 0.9425287356321839,
+      "historical_match": 82,
+      "difference": 0
+    },
+    {
+      "condition": "v1",
+      "seed": 42,
+      "steps": 240,
+      "group": "step_control",
+      "source": "v1_240steps_s42",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98
+    },
+    {
+      "condition": "v1",
+      "seed": 42,
+      "steps": 240,
+      "group": "step_control",
+      "source": "v1_240steps_s42",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 74,
+      "accuracy": 0.8505747126436781
+    },
+    {
+      "condition": "v1",
+      "seed": 43,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "v1_s43",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98
+    },
+    {
+      "condition": "v1",
+      "seed": 43,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "v1_s43",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 73,
+      "accuracy": 0.8390804597701149
+    },
+    {
+      "condition": "v1",
+      "seed": 44,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "v1_s44",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 50,
+      "accuracy": 1.0
+    },
+    {
+      "condition": "v1",
+      "seed": 44,
+      "steps": 189,
+      "group": "three_seeds",
+      "source": "v1_s44",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 69,
+      "accuracy": 0.7931034482758621
+    },
+    {
+      "condition": "abl",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "abl_s43",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98
+    },
+    {
+      "condition": "abl",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "abl_s43",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 83,
+      "accuracy": 0.9540229885057471
+    },
+    {
+      "condition": "abl",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "abl_s44",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98
+    },
+    {
+      "condition": "abl",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "abl_s44",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 81,
+      "accuracy": 0.9310344827586207
+    },
+    {
+      "condition": "v2",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s43",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 48,
+      "accuracy": 0.96
+    },
+    {
+      "condition": "v2",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s43",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 79,
+      "accuracy": 0.9080459770114943
+    },
+    {
+      "condition": "v2",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s43",
+      "test": "eval_in_domain",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 48,
+      "accuracy": 0.96
+    },
+    {
+      "condition": "v2",
+      "seed": 43,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s43",
+      "test": "eval_cross_repo",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 83,
+      "accuracy": 0.9540229885057471
+    },
+    {
+      "condition": "v2",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s44",
+      "test": "eval_in_domain_no_summary",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 48,
+      "accuracy": 0.96
+    },
+    {
+      "condition": "v2",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s44",
+      "test": "eval_cross_repo_no_summary",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 80,
+      "accuracy": 0.9195402298850575
+    },
+    {
+      "condition": "v2",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s44",
+      "test": "eval_in_domain",
+      "total": 50,
+      "evaluated": 50,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 49,
+      "accuracy": 0.98
+    },
+    {
+      "condition": "v2",
+      "seed": 44,
+      "steps": 240,
+      "group": "three_seeds",
+      "source": "v2_s44",
+      "test": "eval_cross_repo",
+      "total": 87,
+      "evaluated": 87,
+      "skipped_bad_gold": 0,
+      "decision_type_match": 83,
+      "accuracy": 0.9540229885057471
+    }
+  ],
+  "three_seed_summary": [
+    {
+      "condition": "v1",
+      "test": "eval_in_domain_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.9866666666666667,
+      "sample_std_accuracy": 0.011547005383792526
+    },
+    {
+      "condition": "v1",
+      "test": "eval_cross_repo_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.8160919540229885,
+      "sample_std_accuracy": 0.02298850574712641
+    },
+    {
+      "condition": "abl",
+      "test": "eval_in_domain_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.98,
+      "sample_std_accuracy": 0.0
+    },
+    {
+      "condition": "abl",
+      "test": "eval_cross_repo_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.9272030651340996,
+      "sample_std_accuracy": 0.028926568717512417
+    },
+    {
+      "condition": "v2",
+      "test": "eval_in_domain_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.96,
+      "sample_std_accuracy": 0.0
+    },
+    {
+      "condition": "v2",
+      "test": "eval_cross_repo_no_summary",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.9195402298850575,
+      "sample_std_accuracy": 0.011494252873563204
+    },
+    {
+      "condition": "v2",
+      "test": "eval_in_domain",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.9666666666666667,
+      "sample_std_accuracy": 0.011547005383792526
+    },
+    {
+      "condition": "v2",
+      "test": "eval_cross_repo",
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "mean_accuracy": 0.950191570881226,
+      "sample_std_accuracy": 0.006636209990685346
+    }
+  ]
+}

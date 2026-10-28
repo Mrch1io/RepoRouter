@@ -1,0 +1,7 @@
+A e2e_native.jsonl: 每题 $0.00122 | 5.2 秒
+B e2e_q4.jsonl: 每题 $0.00079 | 4.0 秒
+all: 90 对 | 路由正确 A=89 B=86 | McNemar p=0.375
+known_pilot22: 22 对 | 路由正确 A=22 B=21 | McNemar p=1.0
+remaining68: 68 对 | 路由正确 A=67 B=65 | McNemar p=0.625
+评分有效配对 90/90 | 评分失败 {'A': 0, 'B': 0} | 回答截断 {'A': 0, 'B': 0}
+配对统计和待人工复核名单已写入 .\data\v2\frozen90\comparison.json

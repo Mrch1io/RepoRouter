@@ -1,0 +1,321 @@
+{
+  "date": "",
+  "status": "native_complete_q4_waiting_for_5090",
+  "sample_ids": [
+    "p02",
+    "p04",
+    "p11",
+    "p24",
+    "p40",
+    "d01",
+    "d05",
+    "d10",
+    "q03",
+    "q18",
+    "q01",
+    "q08",
+    "q10",
+    "q14",
+    "q17",
+    "m02",
+    "m03",
+    "m06",
+    "m08",
+    "m10",
+    "d18",
+    "m04"
+  ],
+  "manifest": [
+    {
+      "id": "p02",
+      "query": "RepoAgent 的 RepoAgent.chat 里工具调用是怎么解析 JSON 的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p04",
+      "query": "search_codebase 工具返回给模型的 JSON 结构是什么？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p11",
+      "query": "settings 里 embedding_provider 可以填哪些值？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p24",
+      "query": "项目里 search_codebase 工具的实现流程是怎样的？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "p40",
+      "query": "项目中如果检索结果质量较差，是否有相应的降级或熔断处理逻辑？",
+      "bucket_type": "domain",
+      "grounding_tier": "must_ground",
+      "should_call_tool": "yes",
+      "grounding_tier_index_aware": "must_ground",
+      "should_call_tool_index_aware": "yes",
+      "should_hit_private_knowledge": "yes",
+      "should_soft_fallback_if_searched": "no"
+    },
+    {
+      "id": "d01",
+      "query": "线上接口偶发 502，从网关、负载均衡到上游服务一般按什么顺序排查？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d05",
+      "query": "requirements 里写了包名，运行却报 No module named，先检查虚拟环境、路径还是安装方式？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d10",
+      "query": "前端 dev 正常，打包上线后静态资源 404，多半是 publicPath、路由模式还是部署路径哪类问题？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q03",
+      "query": "什么是快速排序？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q18",
+      "query": "如何在 Python 中读取一个 txt 文件？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q01",
+      "query": "FastAPI 的路由怎么注册？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q08",
+      "query": "什么是 BM25？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q10",
+      "query": "LoRA 微调的原理是什么？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q14",
+      "query": "什么是 AST（抽象语法树）？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "q17",
+      "query": "什么是 RAG？",
+      "bucket_type": "term_near_no_rag",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m02",
+      "query": "如果要在 FastAPI 里注册一个新路由，通常该怎么写？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m03",
+      "query": "Chroma 和 BM25 哪个更适合做通用知识问答？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m06",
+      "query": "Query Rewrite 一般是怎么提升检索效果的？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m08",
+      "query": "AST 静态分析一般能发现哪些类型的问题？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m10",
+      "query": "Function Calling 和普通 Prompt 问答相比，最大的区别是什么？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "d18",
+      "query": "接口做了幂等键还是偶尔重复扣款，除了幂等表还要查消息重投、超时重试吗？",
+      "bucket_type": "far_general",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    },
+    {
+      "id": "m04",
+      "query": "LoRA 为什么适合做小模型微调，这和 RepoAgent 有什么关系？",
+      "bucket_type": "misleading_edge",
+      "should_call_tool": "no",
+      "should_hit_private_knowledge": "no",
+      "should_soft_fallback_if_searched": "yes",
+      "grounding_tier": "n/a"
+    }
+  ],
+  "answerer_model": "deepseek-flash",
+  "judge_model": "qwen3.8-max",
+  "max_tokens": 4096,
+  "temperature": 0.2,
+  "thinking": false,
+  "soft_fuse": false,
+  "embedding_model": "qwen3.7-text-embedding",
+  "index_directory": ".\\data\\indices\\src",
+  "index_file_sha256_before": {
+    "bm25_index.pkl": "a4d68502fb660e413632c1c2b8bfb1e62739b37a3c76e15af38a239dfac40323",
+    "chroma.sqlite3": "09b1dc4dab94ae4eee8b4a690127c9015f0c2ca2bf57cc1d7d68a3d8948f65da",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\data_level0.bin": "5ca32aefc959d9d019d073df9c04a024b6bbcf33c5bd4c70dea162f7d41a98d0",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\length.bin": "231bfd0a9c0d4ef6c57a318c49f5c74811c13fd37e8e4e9e01476db6c8f0e043",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "notes": [
+    "Existing historical 87-chunk index; same snapshot for both chains, not current-code ground truth.",
+    "Full returned answers and exact supplied tool contexts are saved. No scores from old 1200-character previews are reused.",
+    "Pilot generator budget is 4096 tokens; finish_reason records output limits.",
+    "Configured Q4 router on 127.0.0.1:8080 is currently unavailable.",
+    "Tool-exception and empty-answer failure gates were tightened after native generation started; native outputs will be checked for these failures before scoring is accepted.",
+    "Q4 on the 5090 after server startup; no local inference runtime/model was installed."
+  ],
+  "source_sha256": {
+    "scripts/eval_agent.py": "0ec1e4571be3cd44c727aea71119d5c224230f796c85410fc18f162e9fafbcce",
+    "scripts/judge_answers.py": "a5a91e3ebdf8bb1863b32caf54a07ff6113167d590b0e887c0a177c92e79fbca",
+    "src/agent/core.py": "c3143b1b5ce7742840c060394f5324df3a3ec09a8e9f973e6042aafdbf955f8b",
+    "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+    "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+    "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3"
+  },
+  "commands": {
+    "native": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend native --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_native.jsonl",
+    "q4_pending": ".venv/Scripts/python.exe scripts/eval_agent.py --phase1 --routing-backend phase2a --model deepseek-flash --max-tokens 4096 --jsonl-out data/v2/pilot_full_answers/e2e_phase2a_q4.jsonl",
+    "judge_native": ".venv/Scripts/python.exe scripts/judge_answers.py --jsonl data/v2/pilot_full_answers/e2e_native.jsonl --out data/v2/pilot_full_answers/judge_native.jsonl --workers 4"
+  },
+  "validation": {
+    "pytest_passed": 54,
+    "deselected_integration_tests": 7,
+    "existing_warning": "Pydantic class-based Config deprecation",
+    "inline_tests": "native/phase2a context and full answer; exact22 selection; full-answer judge and failure paths; temporary outputs deleted"
+  },
+  "source_sha256_after_failure_gates": {
+    "scripts/eval_agent.py": "2429387879046b4fcdc793da48d23fa7c379bf6197a6cb9240160fd8c6c56ddc",
+    "scripts/judge_answers.py": "a5a91e3ebdf8bb1863b32caf54a07ff6113167d590b0e887c0a177c92e79fbca",
+    "src/agent/core.py": "18f43f1e15d055e7386ac2f23116e66460f39c04f4d8273fad293e177c0a28b9",
+    "src/agent/llm.py": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848",
+    "src/evaluation/llm_judge_e2e.py": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6",
+    "src/evaluation/e2e_manifest.py": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3"
+  },
+  "local_gpu": {
+    "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "vram_mib": 8188,
+    "driver": "610.62",
+    "q4_run_status": "not_used_5090"
+  },
+  "index_file_sha256_after_native": {
+    "bm25_index.pkl": "a4d68502fb660e413632c1c2b8bfb1e62739b37a3c76e15af38a239dfac40323",
+    "chroma.sqlite3": "c517522d17870559127594977c8c3b9f1cd06f8441213c4c86d6dfa982072ea8",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\data_level0.bin": "58b9c15f8b8967683c7bd24c809ef3d104bfc956c956814eece94a327962ef7e",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\header.bin": "bf12d4486518c7addf488cb4854526902c78e91951990e1e2f4e055cec814e5d",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\length.bin": "cae07a5e0aba6f766cda962a2f16ab35fd3ec559338a7b0998bd85a829476753",
+    "e09a8c85-4ec8-4299-b8e1-238cde8cb267\\link_lists.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_integrity_verified": true,
+  "artifacts_sha256": {
+    "e2e_native.jsonl": "1232a652c7f7191d165cd78f77f430f98850f52f8732b12348d5c54769c9f86a",
+    "judge_native.jsonl": "84879c59e806de54a543d64b509f2f0570ff658ffc79ab53c840950dc1d37868",
+    "summary.json": "f741125e4803fe3abf8e7dba2c051de4752dd197db7fedbc1f939c35e34f3124"
+  },
+  "index_logical_sha256_after_native": {
+    "embeddings": "fd6ac0f770904bf73589976f2dc940c223b4990f017e60ffdae2c2bef3d20d45",
+    "embedding_metadata": "ea7fc2265cc193825a7127dc84a4302056e3e0328e59accb1b2c71fb0b09b511",
+    "embedding_metadata_array": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "embeddings_queue": "b17eee2c18cc017ee00d4964bb7d37d702de1af4be9833141f0a0b31c57871ac",
+    "collections": "10bd874daa9035d7583a41085ccd60fa8c5db7bd65fca694a13bf95146247234",
+    "collection_metadata": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "segments": "a0eb89d49612a430d74a52bbf00a9b7da2b2a912b676c9f4322329354f5cbe7b",
+    "max_seq_id": "6518821291736cb462086c06f44a59a6fbeb4e73cabb71a037d754e66c187c38"
+  },
+  "index_validation_baseline": "<user-home>\\Desktop\\RepoAgent-backup-baseline\\data\\indices\\src\\chroma.sqlite3",
+  "index_logical_content_unchanged": true
+}

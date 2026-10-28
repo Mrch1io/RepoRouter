@@ -1,0 +1,9 @@
+正在从src建立本地知识库（embedding：qwen3.7-text-embedding）
+
+切块方式：char | 共 87 块 | 平均 1259 字符
+DenseChroma建库成功将87个代码块转化为了向量,存储到路径data/indices/src
+正在计算bm25稀疏词频矩阵
+稀疏索引已持久化保存至data\indices\src\bm25_index.pkl
+bm25建库成功！储存到路径data\indices\src\bm25_index.pkl!
+本地知识库建立完成！保存在 data/indices/src
+

@@ -1,0 +1,234 @@
+abl_s43/data/dataset_info.json: OK
+abl_s43/data/eval_cross_repo_no_summary.json: OK
+abl_s43/data/eval_in_domain_no_summary.json: OK
+abl_s43/data/routing_train.json: OK
+abl_s43/inputs.sha256: OK
+abl_s43/train.diff: OK
+abl_s43/train.yaml: OK
+abl_s44/data/dataset_info.json: OK
+abl_s44/data/eval_cross_repo_no_summary.json: OK
+abl_s44/data/eval_in_domain_no_summary.json: OK
+abl_s44/data/routing_train.json: OK
+abl_s44/inputs.sha256: OK
+abl_s44/train.diff: OK
+abl_s44/train.yaml: OK
+adapters.sha256: OK
+data/eval_cross_repo.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain.json: OK
+data/eval_in_domain_no_summary.json: OK
+queue.sh: OK
+reproduce_s42/abl/inputs.sha256: OK
+reproduce_s42/v1/inputs.sha256: OK
+reproduce_s42/v2/inputs.sha256: OK
+run.json: OK
+source/loRA/eval_routing_lora.py: OK
+source/src/agent/tools/tools_schemas.py: OK
+template/run.sh: OK
+template/train.yaml: OK
+v1_240steps_s42/data/dataset_info.json: OK
+v1_240steps_s42/data/eval_cross_repo_no_summary.json: OK
+v1_240steps_s42/data/eval_in_domain_no_summary.json: OK
+v1_240steps_s42/data/routing_train.json: OK
+v1_240steps_s42/inputs.sha256: OK
+v1_240steps_s42/train.diff: OK
+v1_240steps_s42/train.yaml: OK
+v1_s43/data/dataset_info.json: OK
+v1_s43/data/eval_cross_repo_no_summary.json: OK
+v1_s43/data/eval_in_domain_no_summary.json: OK
+v1_s43/data/routing_train.json: OK
+v1_s43/inputs.sha256: OK
+v1_s43/train.diff: OK
+v1_s43/train.yaml: OK
+v1_s44/data/dataset_info.json: OK
+v1_s44/data/eval_cross_repo_no_summary.json: OK
+v1_s44/data/eval_in_domain_no_summary.json: OK
+v1_s44/data/routing_train.json: OK
+v1_s44/inputs.sha256: OK
+v1_s44/train.diff: OK
+v1_s44/train.yaml: OK
+v2_s43/data/dataset_info.json: OK
+v2_s43/data/eval_cross_repo.json: OK
+v2_s43/data/eval_cross_repo_no_summary.json: OK
+v2_s43/data/eval_in_domain.json: OK
+v2_s43/data/eval_in_domain_no_summary.json: OK
+v2_s43/data/routing_train.json: OK
+v2_s43/inputs.sha256: OK
+v2_s43/train.diff: OK
+v2_s43/train.yaml: OK
+v2_s44/data/dataset_info.json: OK
+v2_s44/data/eval_cross_repo.json: OK
+v2_s44/data/eval_cross_repo_no_summary.json: OK
+v2_s44/data/eval_in_domain.json: OK
+v2_s44/data/eval_in_domain_no_summary.json: OK
+v2_s44/data/routing_train.json: OK
+v2_s44/inputs.sha256: OK
+v2_s44/train.diff: OK
+v2_s44/train.yaml: OK
+yaml_diffs.json: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a/adapter_config.json: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2/adapter_config.json: OK
+/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_config.json: OK
+../../data/eval_cross_repo_no_summary.json: OK
+../../data/eval_in_domain_no_summary.json: OK
+../../queue.sh: OK
+../../run.json: OK
+../../source/loRA/eval_routing_lora.py: OK
+../../source/src/agent/tools/tools_schemas.py: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a/adapter_config.json: OK
+evaluating reproduce_s42/v1/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98, "historical_match": 49, "difference": 0}
+evaluating reproduce_s42/v1/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 71, "accuracy": 0.8160919540229885, "historical_match": 71, "difference": 0}
+../../data/eval_cross_repo_no_summary.json: OK
+../../data/eval_in_domain_no_summary.json: OK
+../../queue.sh: OK
+../../run.json: OK
+../../source/loRA/eval_routing_lora.py: OK
+../../source/src/agent/tools/tools_schemas.py: OK
+/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_config.json: OK
+evaluating reproduce_s42/abl/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98, "historical_match": 49, "difference": 0}
+evaluating reproduce_s42/abl/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 78, "accuracy": 0.896551724137931, "historical_match": 78, "difference": 0}
+../../data/eval_cross_repo.json: OK
+../../data/eval_cross_repo_no_summary.json: OK
+../../data/eval_in_domain.json: OK
+../../data/eval_in_domain_no_summary.json: OK
+../../queue.sh: OK
+../../run.json: OK
+../../source/loRA/eval_routing_lora.py: OK
+../../source/src/agent/tools/tools_schemas.py: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2/adapter_model.safetensors: OK
+/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2/adapter_config.json: OK
+evaluating reproduce_s42/v2/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 48, "accuracy": 0.96, "historical_match": null, "difference": null}
+evaluating reproduce_s42/v2/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 81, "accuracy": 0.9310344827586207, "historical_match": 81, "difference": 0}
+evaluating reproduce_s42/v2/eval_in_domain
+{"test": "eval_in_domain", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 48, "accuracy": 0.96, "historical_match": 48, "difference": 0}
+evaluating reproduce_s42/v2/eval_cross_repo
+{"test": "eval_cross_repo", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 82, "accuracy": 0.9425287356321839, "historical_match": 82, "difference": 0}
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+data/dataset_info.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+training v1_240steps_s42
+{"global_step": 240, "epoch": 3.819277108433735, "trainer_state_epoch": 3.819277108433735, "adapter_sha256": "751d73b76c57c6e3c4f2a386d54b284a0fc8618b54d5b77f6db7b701cc886a7b"}
+evaluating v1_240steps_s42/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98}
+evaluating v1_240steps_s42/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 74, "accuracy": 0.8505747126436781}
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+data/dataset_info.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+training v1_s43
+{"global_step": 189, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "b07346358f97fc68b768075cb25b9ab56f3ce8075716b7b2d85667f62e526ff1"}
+evaluating v1_s43/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98}
+evaluating v1_s43/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 73, "accuracy": 0.8390804597701149}
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+data/dataset_info.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+training v1_s44
+{"global_step": 189, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "49482cdf3c81ee3a71b97cf8ce30ecc9b941b67e5d4bb576ef13cc071014bebc"}
+evaluating v1_s44/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 50, "accuracy": 1.0}
+evaluating v1_s44/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 69, "accuracy": 0.7931034482758621}
+data/dataset_info.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+training abl_s43
+{"global_step": 240, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "8bcd240c21fb01c3c55dce1a5baddee1a8a54a8eac52aacafdc4491005b98da7"}
+evaluating abl_s43/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98}
+evaluating abl_s43/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 83, "accuracy": 0.9540229885057471}
+data/dataset_info.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+training abl_s44
+{"global_step": 240, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "a7843fb1dbb46ec1baf0e4d297051960210cd14b9f06cf7cd10aeab6ff5b4184"}
+evaluating abl_s44/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98}
+evaluating abl_s44/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 81, "accuracy": 0.9310344827586207}
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+data/dataset_info.json: OK
+data/eval_cross_repo.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+training v2_s43
+{"global_step": 240, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "52616d9091395f954bd64c6a4a1dd979d749344ff362e25a5fae1a1ac953b12c"}
+evaluating v2_s43/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 48, "accuracy": 0.96}
+evaluating v2_s43/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 79, "accuracy": 0.9080459770114943}
+evaluating v2_s43/eval_in_domain
+{"test": "eval_in_domain", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 48, "accuracy": 0.96}
+evaluating v2_s43/eval_cross_repo
+{"test": "eval_cross_repo", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 83, "accuracy": 0.9540229885057471}
+../queue.sh: OK
+../run.json: OK
+../source/loRA/eval_routing_lora.py: OK
+../source/src/agent/tools/tools_schemas.py: OK
+data/dataset_info.json: OK
+data/eval_cross_repo.json: OK
+data/eval_cross_repo_no_summary.json: OK
+data/eval_in_domain.json: OK
+data/eval_in_domain_no_summary.json: OK
+data/routing_train.json: OK
+train.yaml: OK
+training v2_s44
+{"global_step": 240, "epoch": 3.0, "trainer_state_epoch": 3.0, "adapter_sha256": "00535a1fbe076cf87b0e803123a481f32efa6cd298d2f40e67be71ed362062c9"}
+evaluating v2_s44/eval_in_domain_no_summary
+{"test": "eval_in_domain_no_summary", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 48, "accuracy": 0.96}
+evaluating v2_s44/eval_cross_repo_no_summary
+{"test": "eval_cross_repo_no_summary", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 80, "accuracy": 0.9195402298850575}
+evaluating v2_s44/eval_in_domain
+{"test": "eval_in_domain", "total": 50, "evaluated": 50, "skipped_bad_gold": 0, "decision_type_match": 49, "accuracy": 0.98}
+evaluating v2_s44/eval_cross_repo
+{"test": "eval_cross_repo", "total": 87, "evaluated": 87, "skipped_bad_gold": 0, "decision_type_match": 83, "accuracy": 0.9540229885057471}
+queue complete; server remains running.

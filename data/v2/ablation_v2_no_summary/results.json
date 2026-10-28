@@ -1,0 +1,67 @@
+{
+  "verified_at_utc": "",
+  "status": "complete",
+  "completed_at_utc": "",
+  "training": {
+    "epochs": 3,
+    "global_step": 240,
+    "train_runtime_seconds": 2828.2779,
+    "train_loss": 0.1974911242723465
+  },
+  "evaluation": {
+    "in_domain": {
+      "samples": 50,
+      "valid_gold": 50,
+      "skipped_gold": 0,
+      "decision_type_correct": 49,
+      "accuracy": 0.98,
+      "log": "eval_in_domain_no_summary.log",
+      "sha256": "bceb508059ed8de0acc146592fbdca84891bc2d0e23dc912e17a98d04adcb1fd"
+    },
+    "cross_repo": {
+      "samples": 87,
+      "valid_gold": 87,
+      "skipped_gold": 0,
+      "decision_type_correct": 78,
+      "accuracy": 0.896551724137931,
+      "log": "eval_cross_repo_no_summary.log",
+      "sha256": "b381c2642adbb85718df01269183978aa971aed2e79eb1871c6f07255d6116e1"
+    }
+  },
+  "primary_comparison": {
+    "exam": "87 cross-repository questions; no summary at inference in all three arms",
+    "metric": "decision_type match, not final-answer accuracy",
+    "v1_497_no_training_summary": {
+      "correct": 71,
+      "total": 87
+    },
+    "ablation_637_no_training_summary": {
+      "correct": 78,
+      "total": 87
+    },
+    "v2_637_with_training_summary": {
+      "correct": 81,
+      "total": 87
+    },
+    "added_examples_net_correct": 7,
+    "training_summary_net_correct": 3
+  },
+  "inference_summary_comparison": {
+    "v2_without_summary": 81,
+    "v2_with_summary": 82,
+    "total": 87
+  },
+  "verification": {
+    "train_and_evaluations_completed": true,
+    "ablation_processes_absent_at_verification": true,
+    "remote_files_synced_and_sha256_verified": 22,
+    "sync_manifest": "completion_sync_manifest.json"
+  },
+  "limitations": [
+    "Single seed 42 and 87-question test; score differences do not establish a stable 70/30 causal allocation.",
+    "Fixed 3 epochs also changes optimizer steps from 189 to 240 when adding examples.",
+    "2048-token cutoff truncates two inputs for summary v2 and the same one input for no-summary v1/ablation; all supervised answers are complete.",
+    "Current saved test sets match snapshot hashes; historical logs themselves do not bind input hashes.",
+    "Historical v2 50-question result 48/50 uses summary at inference; v1 and ablation 49/50 use no summary."
+  ]
+}

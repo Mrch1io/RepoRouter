@@ -1,0 +1,203 @@
+{
+  "status": "passed_and_launched",
+  "history": [
+    {
+      "status": "stopped",
+      "failed_check": "local_snapshot_schema_import",
+      "detail": "runpy.run_path loaded the frozen evaluation snapshot, but check_tool_args was None. Assertion failed before any evaluation-parser or training-check tests ran.",
+      "interpreter": "<user-home>/AppData/Local/Python/bin/python.exe",
+      "passed_checks": [
+        "All server preflight checks passed on SSH port 50556",
+        "All seven YAML files differ only in allowed fields",
+        "All copied data and snapshot source bytes match existing inputs",
+        "queue.sh passed remote bash -n",
+        "All six embedded Python blocks passed syntax parsing"
+      ],
+      "uploaded": false,
+      "queue_started": false,
+      "retry_attempted": false
+    }
+  ],
+  "correction": {
+    "cause": "Project root on sys.path selected the regular project src package instead of the frozen source/src namespace package; the project helper was renamed to schemas.py.",
+    "snapshot_modified": false,
+    "new_method": "Run in seed_step/source with PYTHONDONTWRITEBYTECODE=1 and python -B; require src paths inside the snapshot and check_tool_args(search_codebase, {query:x, top_k:6}) == True.",
+    "src_paths": [
+      ".\\data\\v2\\seed_step\\source\\src"
+    ],
+    "tool_schema_result": true,
+    "pycache_count": 0
+  },
+  "local_validation": {
+    "status": "passed",
+    "test_cases": 24,
+    "elapsed_seconds": 0.029884,
+    "cases": [
+      "parse_snapshot_report_v1_50",
+      "parse_snapshot_report_abl_87",
+      "parse_snapshot_report_v2_87",
+      "parse_snapshot_report_v2_50",
+      "reject_truncated",
+      "reject_duplicate",
+      "reject_bad_gold",
+      "reject_wrong_total",
+      "reject_impossible_correct",
+      "reject_missing_tools",
+      "training_check_v1_240steps_s42",
+      "training_check_v1_s43",
+      "training_check_v1_s44",
+      "training_check_abl_s43",
+      "training_check_abl_s44",
+      "training_check_v2_s43",
+      "training_check_v2_s44",
+      "reject_training_step",
+      "reject_training_result_epoch",
+      "reject_training_state_epoch",
+      "reject_training_empty_weights",
+      "summary_26_rows_8_groups_today_seed42_step_control_separate",
+      "reject_incomplete_summary",
+      "status_missing_complete_malformed"
+    ],
+    "snapshot_schema_import": "passed",
+    "bash_syntax": "passed via remote bash -n",
+    "snapshot_bytes_unchanged": true,
+    "pycache_count": 0,
+    "manifest_local_entries_checked": 155,
+    "queue_independent_review": "passed"
+  },
+  "server_preflight_recheck": {
+    "checked_at_utc": "",
+    "ssh_port": 50556,
+    "checks": {
+      "new_run_directory_absent": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24"
+      },
+      "gpu_5090": {
+        "passed": true,
+        "detail": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.71.05"
+      },
+      "gpu_compute_processes_empty": {
+        "passed": true,
+        "detail": ""
+      },
+      "gpu_lock_content_empty": {
+        "passed": true,
+        "detail": ""
+      },
+      "gpu_lock_available": {
+        "passed": true,
+        "detail": "Nonblocking read-only check passed; released on close"
+      },
+      "disk_free_at_least_20GiB": {
+        "passed": true,
+        "detail": {
+          "free_bytes": 34562314240,
+          "free_GiB": 32.189
+        }
+      },
+      "factory_git_metadata_present": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/LLaMA-Factory/.git"
+      },
+      "llamafactory_commit": {
+        "passed": true,
+        "detail": "7af909522a951e3ad9f022ea6f88b6755257eaa5"
+      },
+      "package_versions": {
+        "passed": true,
+        "detail": {
+          "torch": "2.12.1+cu130",
+          "transformers": "5.6.0",
+          "peft": "0.18.1",
+          "datasets": "4.0.0",
+          "accelerate": "1.11.0",
+          "trl": "0.24.0"
+        }
+      },
+      "base_model_exists": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/models/Qwen/Qwen3.5-4B"
+      },
+      "v1_adapter_matches_local": {
+        "passed": true,
+        "detail": {
+          "matches": [
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a"
+          ],
+          "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+          "candidates": {
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+          }
+        }
+      },
+      "v2_adapter_matches_local": {
+        "passed": true,
+        "detail": {
+          "matches": [
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2"
+          ],
+          "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+          "candidates": {
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+            "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+          }
+        }
+      },
+      "ablation_adapter_exists": {
+        "passed": true,
+        "detail": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter/adapter_model.safetensors"
+      }
+    },
+    "adapters": {
+      "v1": {
+        "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a",
+        "sha256": "fd513c0bd7aa2f86aa44ecfd9a7456a309e9f1a75d54b433d817800655c5b77f",
+        "config_sha256": "5273597e2f200c9162d9fcba6404d097a2d96310404859946c5fe2d86c06385f"
+      },
+      "v2": {
+        "path": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2",
+        "sha256": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa",
+        "config_sha256": "8122053f44781a6deadaed7dd6848290b94df1c05170e9a9e0683fee2d0a1c66"
+      },
+      "abl": {
+        "path": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter",
+        "sha256": "4d503884b087d2c6e43d69bf973d7db866f404ca60357574bf24d2a9c33cff84",
+        "config_sha256": "82bc08c87499ca4a14101257145a687c0d61845264125d90cef569f5d89efa74"
+      }
+    },
+    "status": "passed"
+  },
+  "uploaded": true,
+  "queue_started": true,
+  "remote_validation": {
+    "checked_at_utc": "",
+    "working_directory": "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24/source",
+    "interpreter": "/root/autodl-tmp/devagent/venv/bin/python",
+    "src_paths": [
+      "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24/source/src",
+      "/root/autodl-tmp/devagent/ablations/seed_step_2026-10-24/source/src"
+    ],
+    "tool_schema_result": true,
+    "pycache_count": 0,
+    "bash_syntax": "passed",
+    "sha256sum_check": "passed",
+    "sha256sum_ok_entries": 167
+  },
+  "launch_confirmation": {
+    "confirmed_at_utc": "",
+    "runner_pid": 6346,
+    "queue_status": {
+      "status": "running",
+      "stage": "evaluating",
+      "item": "reproduce_s42/v1",
+      "test": "eval_in_domain_no_summary",
+      "updated_at_utc": ""
+    },
+    "first_evaluation": "reproduce_s42/v1/eval_in_domain_no_summary",
+    "observed_completed_samples": 2,
+    "lora_loaded": true,
+    "gpu_processes": "6385, /root/autodl-tmp/devagent/venv/bin/python, 9820 MiB"
+  }
+}

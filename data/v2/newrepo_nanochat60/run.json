@@ -1,0 +1,792 @@
+{
+  "status": "completed",
+  "timezone": "Asia/Shanghai",
+  "created_at": "",
+  "python": ".\\.venv\\Scripts\\python.exe",
+  "project": ".",
+  "nanochat": {
+    "commit": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+    "zip_sha256": "8c43d2f621eb04136253e7af4dfc63b8430efeb0365a52118e09e0ea366bd35d",
+    "path": "<user-home>\\Desktop\\eval-repos\\nanochat-92d63d4"
+  },
+  "questions": {
+    "original_path": "<user-home>\\Desktop\\eval-repos\\handwritten_nanochat.txt",
+    "sha256": "ccd7847c0056e7463585e6f116d34433666ffc4d91c552a74284e236e4c13fe4",
+    "count": 60,
+    "bucket_counts": {
+      "A": 15,
+      "B": 10,
+      "C": 15,
+      "D": 10,
+      "E": 10
+    },
+    "validation": [
+      {
+        "id": "A01",
+        "file": "nanochat/tokenizer.py",
+        "symbol": "RustBPETokenizer.render_conversation",
+        "lines": [
+          157,
+          165
+        ],
+        "matches": [
+          {
+            "symbol": "RustBPETokenizer.render_conversation",
+            "definition_lines": [
+              140,
+              224
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A02",
+        "file": "nanochat/tokenizer.py",
+        "symbol": "RustBPETokenizer.train_from_iterator",
+        "lines": [
+          42,
+          48
+        ],
+        "matches": [
+          {
+            "symbol": "RustBPETokenizer.train_from_iterator",
+            "definition_lines": [
+              42,
+              61
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A03",
+        "file": "nanochat/gpt.py",
+        "symbol": "GPTConfig",
+        "lines": [
+          29,
+          35
+        ],
+        "matches": [
+          {
+            "symbol": "GPTConfig",
+            "definition_lines": [
+              29,
+              39
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A04",
+        "file": "nanochat/gpt.py",
+        "symbol": "MLP.forward",
+        "lines": [
+          137,
+          141
+        ],
+        "matches": [
+          {
+            "symbol": "MLP.forward",
+            "definition_lines": [
+              137,
+              141
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A05",
+        "file": "nanochat/optim.py",
+        "symbol": "muon_step_fused",
+        "lines": [
+          176,
+          180
+        ],
+        "matches": [
+          {
+            "symbol": "muon_step_fused",
+            "definition_lines": [
+              112,
+              180
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A06",
+        "file": "nanochat/optim.py",
+        "symbol": "MuonAdamW._reduce_adamw",
+        "lines": [
+          274,
+          285
+        ],
+        "matches": [
+          {
+            "symbol": "MuonAdamW._reduce_adamw",
+            "definition_lines": [
+              274,
+              293
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A07",
+        "file": "nanochat/engine.py",
+        "symbol": "eval_with_timeout",
+        "lines": [
+          35,
+          40
+        ],
+        "matches": [
+          {
+            "symbol": "eval_with_timeout",
+            "definition_lines": [
+              35,
+              44
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A08",
+        "file": "nanochat/engine.py",
+        "symbol": "KVCache.reset",
+        "lines": [
+          106,
+          109
+        ],
+        "matches": [
+          {
+            "symbol": "KVCache.reset",
+            "definition_lines": [
+              106,
+              109
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A09",
+        "file": "nanochat/engine.py",
+        "symbol": "Engine.generate",
+        "lines": [
+          255,
+          259
+        ],
+        "matches": [
+          {
+            "symbol": "Engine.generate",
+            "definition_lines": [
+              176,
+              275
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A10",
+        "file": "scripts/chat_eval.py",
+        "symbol": "run_chat_eval",
+        "lines": [
+          156,
+          158
+        ],
+        "matches": [
+          {
+            "symbol": "run_chat_eval",
+            "definition_lines": [
+              156,
+              175
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A11",
+        "file": "tasks/gsm8k.py",
+        "symbol": "extract_answer",
+        "lines": [
+          21,
+          33
+        ],
+        "matches": [
+          {
+            "symbol": "extract_answer",
+            "definition_lines": [
+              22,
+              33
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A12",
+        "file": "tasks/mmlu.py",
+        "symbol": "MMLU.evaluate",
+        "lines": [
+          49,
+          54
+        ],
+        "matches": [
+          {
+            "symbol": "MMLU.evaluate",
+            "definition_lines": [
+              49,
+              54
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A13",
+        "file": "scripts/base_train.py",
+        "symbol": "build_model_meta",
+        "lines": [
+          129,
+          139
+        ],
+        "matches": [
+          {
+            "symbol": "build_model_meta",
+            "definition_lines": [
+              129,
+              143
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A14",
+        "file": "scripts/chat_sft.py",
+        "symbol": "sft_data_generator_bos_bestfit",
+        "lines": [
+          246,
+          253
+        ],
+        "matches": [
+          {
+            "symbol": "sft_data_generator_bos_bestfit",
+            "definition_lines": [
+              180,
+              298
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "A15",
+        "file": "scripts/chat_rl.py",
+        "symbol": "get_batch",
+        "lines": [
+          141,
+          146
+        ],
+        "matches": [
+          {
+            "symbol": "get_batch",
+            "definition_lines": [
+              86,
+              146
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B01",
+        "file": "scripts/base_train.py",
+        "symbol": "get_muon_momentum",
+        "lines": [
+          372,
+          377
+        ],
+        "matches": [
+          {
+            "symbol": "get_muon_momentum",
+            "definition_lines": [
+              372,
+              382
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B02",
+        "file": "nanochat/dataloader.py",
+        "symbol": "tokenizing_distributed_data_loader_with_state_bos_bestfit",
+        "lines": [
+          74,
+          79
+        ],
+        "matches": [
+          {
+            "symbol": "tokenizing_distributed_data_loader_with_state_bos_bestfit",
+            "definition_lines": [
+              74,
+              161
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B03",
+        "file": "scripts/chat_sft.py",
+        "symbol": "sft_data_generator_bos_bestfit",
+        "lines": [
+          240,
+          274
+        ],
+        "matches": [
+          {
+            "symbol": "sft_data_generator_bos_bestfit",
+            "definition_lines": [
+              180,
+              298
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B04",
+        "file": "scripts/chat_rl.py",
+        "symbol": "get_lr_multiplier",
+        "lines": [
+          210,
+          212
+        ],
+        "matches": [
+          {
+            "symbol": "get_lr_multiplier",
+            "definition_lines": [
+              210,
+              212
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B05",
+        "file": "nanochat/common.py",
+        "symbol": "get_base_dir",
+        "lines": [
+          71,
+          80
+        ],
+        "matches": [
+          {
+            "symbol": "get_base_dir",
+            "definition_lines": [
+              71,
+              80
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B06",
+        "file": "nanochat/checkpoint_manager.py",
+        "symbol": "load_model_from_dir → find_last_step",
+        "lines": [
+          137,
+          157
+        ],
+        "matches": [
+          {
+            "symbol": "load_model_from_dir",
+            "definition_lines": [
+              148,
+              161
+            ]
+          },
+          {
+            "symbol": "find_last_step",
+            "definition_lines": [
+              137,
+              143
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B07",
+        "file": "nanochat/dataloader.py",
+        "symbol": "_document_batches",
+        "lines": [
+          35,
+          38
+        ],
+        "matches": [
+          {
+            "symbol": "_document_batches",
+            "definition_lines": [
+              25,
+              71
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B08",
+        "file": "nanochat/core_eval.py",
+        "symbol": "evaluate_example",
+        "lines": [
+          175,
+          181
+        ],
+        "matches": [
+          {
+            "symbol": "evaluate_example",
+            "definition_lines": [
+              168,
+              241
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B09",
+        "file": "scripts/chat_eval.py",
+        "symbol": "run_generative_eval",
+        "lines": [
+          50,
+          59
+        ],
+        "matches": [
+          {
+            "symbol": "run_generative_eval",
+            "definition_lines": [
+              28,
+              80
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      },
+      {
+        "id": "B10",
+        "file": "nanochat/loss_eval.py",
+        "symbol": "evaluate_bpb",
+        "lines": [
+          60,
+          64
+        ],
+        "matches": [
+          {
+            "symbol": "evaluate_bpb",
+            "definition_lines": [
+              9,
+              65
+            ]
+          }
+        ],
+        "all_found": true,
+        "all_overlap": true
+      }
+    ]
+  },
+  "summary": {
+    "lines": 28,
+    "characters": 3565
+  },
+  "prompt_checks": {
+    "no_summary_equal_training": true,
+    "summary_training_endswith_same_phase2a_prompt": true
+  },
+  "copied_sources_sha256": {
+    "lora/eval_routing_api.py": "18955d89f5d0a424e8c9f97f79c95f6b63288ed5ac4eb7df3730de3433534cb1",
+    "lora/eval_routing_base.py": "4ea7c69718b385e2e0ead7ed794fb92508917b7701bf46103658ca47650b213d",
+    "lora/eval_routing_lora.py": "8bf6f4986621314df57cfe1a837e0c07b850ed8d7608bb02128b693a46bcc3b7",
+    "lora/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/config.py": "ab0e8752d141fe6dfa7d9c05a66af0514b00680c953057ee1c4021e0d08dd095",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/agent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/agent/tools/schemas.py": "079e2e56420eef350c216758678c68b82e00fa02de7f8ed1f9648a414b21c703"
+  },
+  "generation_inputs_sha256": {
+    "lora/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lora/build_cross_repo_eval.py": "60cf3518653c4f94af2f7de1d228c4b6db7793e5d0353458264f627abaf8a21d",
+    "lora/eval_cross_repo.json": "934739c06d36a43520f99420fad6108f59fd6b00aa51b037b39aa9dd28631707",
+    "lora/format_to_sharegpt.py": "64ca6b25b78497bbc4527aeb1d05570e5252c336ecb0b8e1afe385303691b8b9",
+    "lora/routing_train.json": "c067f56a05595e45221b04d0b77975368a3c3676ec191c70c8f6f02eb7ad4bf3",
+    "lora/routing_train_v1_no_summary.json": "77620ccc59cb4eed6b3c6160917f1918e04935d60e21fa1dc82e39d1d7b8266e",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/evaluation/e2e_manifest.py": "2b3fec92827ef039be132a1a92e476619af570b376e9e8540361fe8cd29d535c",
+    "src/evaluation/soft_fuse_dataset.py": "94f3203e01759e95c6e7fe424a0c5b0378fd92baaca802e1415af20993bb3dc9"
+  },
+  "evaluations": [
+    {
+      "model": "deepseek-flash",
+      "variant": "summary",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-flash",
+        "--test-data",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py --mode api --model deepseek-flash --test-data data\\v2\\newrepo_nanochat60\\eval_nanochat60.json data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json --output-prefix data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary",
+      "started_at": "",
+      "ended_at": "",
+      "exit_code": 0,
+      "metrics_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.metrics.json",
+      "log_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.log",
+      "per_case_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.jsonl",
+      "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+      "recomputed_matches_saved_results": true
+    },
+    {
+      "model": "deepseek-flash",
+      "variant": "no_summary",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-flash",
+        "--test-data",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py --mode api --model deepseek-flash --test-data data\\v2\\newrepo_nanochat60\\eval_nanochat60.json data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json --output-prefix data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary",
+      "started_at": "",
+      "ended_at": "",
+      "exit_code": 0,
+      "metrics_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.metrics.json",
+      "log_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.log",
+      "per_case_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.jsonl",
+      "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+      "recomputed_matches_saved_results": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "variant": "summary",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-v4-pro",
+        "--test-data",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py --mode api --model deepseek-v4-pro --test-data data\\v2\\newrepo_nanochat60\\eval_nanochat60.json data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json --output-prefix data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary",
+      "started_at": "",
+      "ended_at": "",
+      "exit_code": 0,
+      "metrics_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.metrics.json",
+      "log_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.log",
+      "per_case_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.jsonl",
+      "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+      "recomputed_matches_saved_results": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "variant": "no_summary",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-v4-pro",
+        "--test-data",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        "data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary",
+        "data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py --mode api --model deepseek-v4-pro --test-data data\\v2\\newrepo_nanochat60\\eval_nanochat60.json data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json --output-prefix data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary",
+      "started_at": "",
+      "ended_at": "",
+      "exit_code": 0,
+      "metrics_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.metrics.json",
+      "log_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.log",
+      "per_case_file": ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.jsonl",
+      "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+      "recomputed_matches_saved_results": true
+    }
+  ],
+  "frozen_at": "",
+  "frozen_manifest_sha256": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+  "wrapper_verification": {
+    "sha256_accept_and_reject": true,
+    "frozen_import_isolation": true,
+    "api_parameters_and_single_client": true,
+    "base_lora_loading_test": "in-memory stubs; no local model dependencies installed",
+    "scoring_test_cases": 60,
+    "expected_matches": 55,
+    "report_lines_equal_original": true,
+    "safe_api_error_logging": true
+  },
+  "environment": {
+    "python_version": "3.12.13 (main, Jun 23 2026, 15:23:43) [MSC v.1944 64 bit (AMD64)]",
+    "openai": "3.35.1",
+    "pydantic-settings": "2.16.0"
+  },
+  "commands": [
+    {
+      "model": "deepseek-flash",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-flash",
+        "--test-data",
+        ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary",
+        ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 \".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py\" --mode api --model deepseek-flash --test-data \".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json\" \".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json\" --output-prefix \".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary\" \".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary\""
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "cwd": ".",
+      "argv": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py",
+        "--mode",
+        "api",
+        "--model",
+        "deepseek-v4-pro",
+        "--test-data",
+        ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json",
+        ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json",
+        "--output-prefix",
+        ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary",
+        ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary"
+      ],
+      "command": "\".\\.venv\\Scripts\\python.exe\" -B -X utf8 \".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py\" --mode api --model deepseek-v4-pro --test-data \".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json\" \".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json\" --output-prefix \".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary\" \".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary\""
+    }
+  ],
+  "completed_at": "",
+  "final_verification": {
+    "frozen_files_sha256_pass": true,
+    "copied_original_sources_unchanged": true,
+    "generation_inputs_unchanged": true,
+    "nanochat_files_equal_zip": true,
+    "all_four_results_recomputed": true,
+    "api_failures": 0,
+    "cases_total": 240
+  },
+  "all_new_files_sha256": {
+    ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60.json": "bf5aad5d5f8d275bd1d5abc69e781f658b0ee5c22d1af711b20132fb25f2f2b1",
+    ".\\data\\v2\\newrepo_nanochat60\\eval_nanochat60_no_summary.json": "6b44f740b590a4bb3e8c0ec7eabc480b35a557d03017880045d27a1febd0f230",
+    ".\\data\\v2\\newrepo_nanochat60\\frozen_sha256.json": "a9a6c6c0791e0027a716d054c97356ac7a1f6106e1661811160008c8f1c5abd4",
+    ".\\data\\v2\\newrepo_nanochat60\\questions_frozen.jsonl": "ccd7847c0056e7463585e6f116d34433666ffc4d91c552a74284e236e4c13fe4",
+    ".\\data\\v2\\newrepo_nanochat60\\repo_summary.txt": "17c265b87fd29dfc30ed1295559b142350d92a91d81017c9df626b17fc08a50f",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.jsonl": "1c26845deffc66c8102efd07786eaa96789b84e54e27bd3384d89f4d26e791bf",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.log": "2b68aad967edc703858942f4c1fe28fe0d5d5b9523f136541a60b7d3201d4e5e",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_no_summary.metrics.json": "4aa0f45d45e01d1c73901401d1d22b3298c9c288749f41523cc0ebc20a93f3c8",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.jsonl": "4f01801e79e51b2e1e771e989d104c1f59204a6258beadd07138755525c551a3",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.log": "fa1ee3b025d017c7fd79ad4ff7451214d7f6a2129829d1530c1c3d36634a410f",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-flash_summary.metrics.json": "c664614d861b511ef4015d7567dfdc195b7ab784d260c7d35600e91ea1f4eba6",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.jsonl": "a9581e254853dadb552d87ab0edf40e2da825b91793c7dc914fa645f04a60d10",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.log": "31abc8054dfc4b51450d9a46a1a145082fdb6c938a44612c86364c68b3d5c996",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_no_summary.metrics.json": "b186446a6946050a47ce899fc5feaeca91df92b3ad63a6bb937398070de374c6",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.jsonl": "c1d34e8901cacfefda1c42dbda4b21d5ef21d5b4a889d8b302c3a9db178b832f",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.log": "18bc744deb1d7e5c375d54578a1ea9f1f098ff9360cddd6957208270d41f52ac",
+    ".\\data\\v2\\newrepo_nanochat60\\results\\api_deepseek-v4-pro_summary.metrics.json": "9775d6c004f8fcd9751884be8775ac134bcfb5557dc82f6fcf107144d53c89ef",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_per_case.py": "c2ca240d741c3d017688f4d9b2767b42bd2c543fafaa4932a410cb56c437f2c2",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_routing_api.py": "18955d89f5d0a424e8c9f97f79c95f6b63288ed5ac4eb7df3730de3433534cb1",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_routing_base.py": "4ea7c69718b385e2e0ead7ed794fb92508917b7701bf46103658ca47650b213d",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\lora\\eval_routing_lora.py": "8bf6f4986621314df57cfe1a837e0c07b850ed8d7608bb02128b693a46bcc3b7",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\src\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\src\\agent\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\src\\agent\\tools\\schemas.py": "079e2e56420eef350c216758678c68b82e00fa02de7f8ed1f9648a414b21c703",
+    ".\\data\\v2\\newrepo_nanochat60\\source\\src\\config.py": "ab0e8752d141fe6dfa7d9c05a66af0514b00680c953057ee1c4021e0d08dd095"
+  },
+  "file_count_including_run_json": 27,
+  "self_sha256_note": "避免自包含哈希。其余全部新增文件的绝对路径及 SHA256 见 all_new_files_sha256。"
+}

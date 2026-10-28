@@ -1,0 +1,1164 @@
+{
+  "baseline": "knn_k10",
+  "test_data": "data/v2/newrepo_nanochat60/eval_nanochat60_no_summary.json",
+  "test_sha256": "6b44f740b590a4bb3e8c0ec7eabc480b35a557d03017880045d27a1febd0f230",
+  "train": {
+    "path": "data/v2/ablation_v2_no_summary/data/routing_train.json",
+    "sha256": "41c9359af1c9462e6ee5dab16e4760ead4acf301cc701aebd0d5351c9144e511",
+    "rows": 637,
+    "decision_counts": {
+      "tool_call": 403,
+      "clarify_needed": 98,
+      "no_tool": 136
+    },
+    "majority_decision": "tool_call"
+  },
+  "metrics": {
+    "counts": {
+      "n_file_rows": 60,
+      "skipped_bad_gold": 0,
+      "n_evaluated": 60,
+      "n_parse": 60,
+      "n_parse_valid_shape": 60,
+      "n_decision_match": 35,
+      "n_gold_tool_call": 25,
+      "n_tool_match": 14,
+      "n_args_match": 0,
+      "n_hallucination_tool": 0,
+      "n_relevance_ok": 18,
+      "n_gold_no_call": 35,
+      "n_irrelevance_ok": 19,
+      "n_args_valid": 14
+    },
+    "report_lines": [
+      "====== Phase 2A 路由测评 ======",
+      "样本总数（文件条数）: 60",
+      "金标可解析条数: 60（跳过金标损坏: 0）",
+      "模型输出可解析为 JSON: 60 (100.000%)",
+      "解析且角色字段合法: 60 (100.000%)",
+      "decision_type 一致: 35 (58.333%)",
+      "金标为 tool_call 的条数: 25",
+      "tool_call 子集·工具名一致: 14 (56.000% of gold tool_call)",
+      "tool_call 子集·工具+arguments 一致: 0 (0.000% of gold tool_call)",
+      "预测 tool_call 但工具名非法/空: 0（越低越好）",
+      "—— BFCL 口径 ——",
+      "相关检测（该调工具时调了）: 18/25 (72.0%)",
+      "无关检测（不该调时没调）: 19/35 (54.3%)",
+      "参数合法率（工具名对的里面，必填参数齐、类型对、没编参数）: 14/14 (100.0%)",
+      "=================================================="
+    ],
+    "decision_accuracy": {
+      "correct": 35,
+      "total": 60,
+      "rate": 0.5833333333333334,
+      "wilson95": [
+        0.45727854313239624,
+        0.6993591351212818
+      ]
+    },
+    "relevance": {
+      "correct": 18,
+      "total": 25,
+      "rate": 0.72
+    },
+    "irrelevance": {
+      "correct": 19,
+      "total": 35,
+      "rate": 0.5428571428571428
+    }
+  },
+  "prediction_seconds": 1.496955099999468,
+  "embedding": {
+    "train": {
+      "texts": 637,
+      "embed_documents_calls": 64,
+      "dimensions": 1024,
+      "seconds": 24.709781599998678
+    },
+    "test": {
+      "texts": 60,
+      "embed_documents_calls": 6,
+      "dimensions": 1024,
+      "seconds": 1.8827673999985564
+    },
+    "shared_k": [
+      5,
+      1,
+      3,
+      10
+    ],
+    "train_shared_across_tests": true,
+    "actual_totals_in": "run.json"
+  },
+  "predictions": [
+    {
+      "index": 0,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "消息最前面放了 system，nanochat 是在哪段代码把它并进 user 的？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "消息最前面放了 system，nanochat 是在哪段代码把它并进 user 的？"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "这个仓库的 RustBPETokenizer 把 BPE 训练交给哪个库？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "这个仓库的 RustBPETokenizer 把 BPE 训练交给哪个库？"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "GPTConfig 默认几层？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "GPTConfig 默认几层？"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "这里 MLP 的平方 ReLU 写在哪",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "这里 MLP 的平方 ReLU 写在哪"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "muon_step_fused 在更新时怎么判断哪些权重需要做 decay？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 5,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "多卡时，MuonAdamW 对不足 1024 个元素的 AdamW 参数调用哪种梯度通信？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 6,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "eval_with_timeout 默认限时几秒",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "eval_with_timeout 默认限时几秒"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "KVCache.reset 会把 K/V 张量清零吗？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "KVCache.reset 会把 K/V 张量清零吗？"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "我在跟 python 工具调用那段，Engine.generate 收到 <|python_end|> 后，把收集到的非空表达式交给谁执行？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 9,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "想单独调 run_chat_eval；num_samples 的函数默认值是多少？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "想单独调 run_chat_eval；num_samples 的函数默认值是多少？"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "gsm8k.py 从回答里抠最终数字的函数在哪？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "gsm8k.py 从回答里抠最终数字的函数在哪？"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "MMLU.evaluate 收到小写 a 会直接判错吗",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "generate_tests",
+        "arguments": {
+          "code": "MMLU.evaluate 收到小写 a 会直接判错吗"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "刚开始核对模型尺寸，base_train.py 怎么从 --depth 算出宽度？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "刚开始核对模型尺寸，base_train.py 怎么从 --depth 算出宽度？"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "一行还剩点空位，但候选对话都装不下了。chat_sft.py 的打包器怎么填这段？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "一行还剩点空位，但候选对话都装不下了。chat_sft.py 的打包器怎么填这段？"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "chat_rl.py 里，同一题所有 rollout 都拿到 1 分，算出的 advantage 是多少",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 15,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "base 第 0 步，Muon 动量实际取多少",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "base 第 0 步，Muon 动量实际取多少"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "拼 base 数据，文档缓冲阈值默认是 1000 篇吗？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "拼 base 数据，文档缓冲阈值默认是 1000 篇吗？"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "SFT 我没限定训练步数，现在进度按读入的对话算，还是按真正用掉的算？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "SFT 我没限定训练步数，现在进度按读入的对话算，还是按真正用掉的算？"
+        }
+      }
+    },
+    {
+      "index": 18,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "RL 的学习率倍率现在怎么随训练步数变化",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 19,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "缓存目录的环境变量没设，基础目录默认是哪？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "缓存目录的环境变量没设，基础目录默认是哪？"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "我留了几个 d20 checkpoint，加载时选了 d20、没选 step。现在会挑哪一个？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "我留了几个 d20 checkpoint，加载时选了 d20、没选 step。现在会挑哪一个？"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "base 验证实际留几片数据",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "generate_tests",
+        "arguments": {
+          "code": "base 验证实际留几片数据"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "想确认 CORE 现在的 few-shot 抽样：怎样避免把被测题本身抽进去？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 23,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "ChatCORE 的生成题一次采了多个回答，实际怎样才算这一题过关？",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "ChatCORE 的生成题一次采了多个回答，实际怎样才算这一题过关？"
+        }
+      }
+    },
+    {
+      "index": 24,
+      "gold": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "bpb 没有效字节时实际返回啥",
+          "top_k": 6
+        },
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 25,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "动量在累积什么？"
+        }
+      }
+    },
+    {
+      "index": 26,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 27,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 28,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 29,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 30,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 31,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "生成时把 temperature 调低，输出分布会发生什么变化？"
+        }
+      }
+    },
+    {
+      "index": 32,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "我在估算服务延迟，为什么首个 token 的等待时间和后续 token 的生成时间要分开统计？"
+        }
+      }
+    },
+    {
+      "index": 33,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 34,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 35,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_code",
+        "arguments": {
+          "code": "用同一套验证集反复选模型，会给最后的评估带来什么偏差"
+        }
+      }
+    },
+    {
+      "index": 36,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "clarify_needed",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": "请补充更多信息。"
+      }
+    },
+    {
+      "index": 37,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 38,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "偏好优化里常见的 KL 约束，主要是在限制什么变化"
+        }
+      }
+    },
+    {
+      "index": 39,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "奖励模型给高分，却不符合人的真实意图，这类 reward hacking 从哪里来？"
+        }
+      }
+    },
+    {
+      "index": 40,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "KV cache 究竟缓存什么"
+        }
+      }
+    },
+    {
+      "index": 41,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "rotary embeddings 怎么把相对位置带进注意力分数？"
+        }
+      }
+    },
+    {
+      "index": 42,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 43,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "GSM8K 在考什么"
+        }
+      }
+    },
+    {
+      "index": 44,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 45,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 46,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 47,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "top-k 采样的 k 调大，候选 token 的范围会怎样变？"
+        }
+      }
+    },
+    {
+      "index": 48,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 49,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 50,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "nanoGPT 生成时怎么处理超长上下文"
+        }
+      }
+    },
+    {
+      "index": 51,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "vLLM 的优先级队列底下用的是什么数据结构？"
+        }
+      }
+    },
+    {
+      "index": 52,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 53,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "llm.c 的 encoder_forward 怎样合成词向量和位置向量？"
+        }
+      }
+    },
+    {
+      "index": 54,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 55,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "读 nanochat 时想到：固定了随机种子，GPU 训练为何仍可能无法逐位复现？"
+        }
+      }
+    },
+    {
+      "index": 56,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 57,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "search_codebase",
+        "arguments": {
+          "query": "我在用 nanochat 补基础，梯度累积为什么能模拟更大的 batch？"
+        }
+      }
+    },
+    {
+      "index": 58,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null
+      }
+    },
+    {
+      "index": 59,
+      "gold": {
+        "decision_type": "no_tool",
+        "tool_name": null,
+        "arguments": null,
+        "clarify_answer": null,
+        "oracle_context": null
+      },
+      "prediction": {
+        "decision_type": "tool_call",
+        "tool_name": "analyse_log",
+        "arguments": {
+          "log": "看 nanochat 时卡在反传概念上：冻结参数和切断梯度传播是一回事吗？"
+        }
+      }
+    }
+  ]
+}

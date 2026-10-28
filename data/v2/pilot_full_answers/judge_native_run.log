@@ -1,0 +1,24 @@
+[ok] 1/22 p11 -> correct score=5
+[ok] 2/22 p02 -> correct score=4
+[ok] 3/22 p40 -> correct score=4
+[ok] 4/22 d01 -> correct score=5
+[ok] 5/22 p04 -> correct score=5
+[ok] 6/22 d10 -> correct score=5
+[ok] 7/22 d05 -> correct score=5
+[ok] 8/22 q18 -> correct score=5
+[ok] 9/22 q03 -> correct score=4
+[ok] 10/22 q10 -> correct score=5
+[ok] 11/22 q01 -> correct score=5
+[ok] 12/22 q14 -> correct score=5
+[ok] 13/22 q17 -> correct score=5
+[ok] 14/22 q08 -> correct score=4
+[ok] 15/22 p24 -> partially_correct score=4
+[ok] 16/22 m02 -> correct score=5
+[ok] 17/22 m06 -> correct score=5
+[ok] 18/22 m03 -> correct score=5
+[ok] 19/22 m10 -> correct score=5
+[ok] 20/22 d18 -> correct score=5
+[ok] 21/22 m08 -> correct score=5
+[ok] 22/22 m04 -> correct score=5
+
+完成: 成功 22, 失败 0, 写入 data\v2\pilot_full_answers\judge_native.jsonl

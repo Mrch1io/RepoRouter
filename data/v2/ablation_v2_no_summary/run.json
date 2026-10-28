@@ -1,0 +1,129 @@
+{
+  "created_at_utc": "",
+  "status": "complete",
+  "question": "Effect of adding 140 examples without repository-summary conditioning during training",
+  "treatment": "637 original ordered examples; remove only training repository summary; initialize fresh LoRA on unchanged base",
+  "primary_evaluation": "50 in-domain and 87 cross-repository examples, both without summary; greedy generation, max_new_tokens=512",
+  "remote_run_dir": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24",
+  "training_config_changes": {
+    "dataset": {
+      "baseline": "RepoAgent_phase2a_routing",
+      "ablation": "repoagent_phase2a_routing"
+    },
+    "dataset_dir": {
+      "baseline": null,
+      "ablation": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/data"
+    },
+    "output_dir": {
+      "baseline": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2",
+      "ablation": "/root/autodl-tmp/devagent/ablations/v2_no_summary_2026-10-24/adapter"
+    },
+    "overwrite_output_dir": {
+      "baseline": true,
+      "ablation": false
+    }
+  },
+  "llamafactory_commit": "7af909522a951e3ad9f022ea6f88b6755257eaa5",
+  "versions": {
+    "torch": "2.12.1+cu130",
+    "transformers": "5.6.0",
+    "peft": "0.18.1",
+    "datasets": "4.0.0",
+    "accelerate": "1.11.0",
+    "trl": "0.24.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 580.105.08",
+  "baseline_adapter_dir": "/root/autodl-tmp/devagent/saves/qwen3.5-4b/lora/devagent_phase2a_v2",
+  "expected_steps": 240,
+  "expected_epochs": 3,
+  "pilot_gate": {
+    "completed_samples": 22,
+    "judged_samples": 22,
+    "answers_sha256": "1324b6a8a90a933cd62e29fefc170c431b1ac7dd0b3bd481fb8a5bec191d52d1",
+    "judgements_sha256": "67bcd4b44a27a594c5dd0aac6113fd4221bebd91324e7ac5ddc38778ea23b61c",
+    "gpu_idle_before_launch": true
+  },
+  "limitations": [
+    "Single seed 42; not a multi-seed significance estimate.",
+    "Adding examples at fixed 3 epochs also increases optimizer steps (v1 189 vs 240).",
+    "Fixed cutoff_len=2048: with-summary v2 truncates 2 input prompts, no-summary v1 and ablation truncate 1; all supervised targets remain complete.",
+    "Historical comparisons use saved v1/no-summary and v2/no-summary routing results, not final-answer quality."
+  ],
+  "base_files": {
+    "chat_template.jinja": {
+      "size_bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "config.json": {
+      "size_bytes": 3161,
+      "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670"
+    },
+    "configuration.json": {
+      "size_bytes": 73,
+      "sha256": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9"
+    },
+    "merges.txt": {
+      "size_bytes": 3353259,
+      "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+    },
+    "model.safetensors-00001-of-00002.safetensors": {
+      "size_bytes": 5329398688,
+      "sha256": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61"
+    },
+    "model.safetensors-00002-of-00002.safetensors": {
+      "size_bytes": 3990429408,
+      "sha256": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188"
+    },
+    "model.safetensors.index.json": {
+      "size_bytes": 76196,
+      "sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "preprocessor_config.json": {
+      "size_bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    "tokenizer.json": {
+      "size_bytes": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "tokenizer_config.json": {
+      "size_bytes": 16710,
+      "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+    },
+    "video_preprocessor_config.json": {
+      "size_bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    },
+    "vocab.json": {
+      "size_bytes": 6722759,
+      "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    }
+  },
+  "baseline_files": {
+    "train_results.json": "27029eb8204d50090ab88345b1a947f8bc1fb5d7751812d55abc025bac5e3842",
+    "trainer_state.json": "d6edba6d59a50a1e81301e6621dafd618dfa0cd6590a9839f5e4d31f7ccbf848",
+    "training_args.bin": "791daba1e3b47447d7b775d5acd9791f433fbc8fb2d35e0a6ae4fd9eea858412",
+    "adapter_config.json": "8122053f44781a6deadaed7dd6848290b94df1c05170e9a9e0683fee2d0a1c66",
+    "adapter_model.safetensors": "9b8aa668320def1caf0c09e7a4c136a2a35266d6ee63f5e339e9d3cd6f2be6aa"
+  },
+  "validation": {
+    "data_checks": "passed; 637 rows, prefix497 exact, input/output hashes verified",
+    "prepare_script_tests": "8 passed; 68.35ms / 637 examples",
+    "token_check": "token_validation.json; 1671 rows in 2.107s, no truncated target",
+    "bash_syntax": "passed",
+    "evaluation_tool_schema_import": "passed"
+  },
+  "token_validation_sha256": "fb8a6483198313220dc9b5db4aa74e795a9fd8de8a1e8f284957d028ea956605",
+  "launch_requested_at_utc": "",
+  "runner_pid": 4646,
+  "last_verified_at_utc": "",
+  "last_verified_training": {
+    "current_steps": 240,
+    "total_steps": 240,
+    "epoch": 3.0,
+    "percentage": 100.0
+  },
+  "last_verified_gpu_processes": "",
+  "completed_at_utc": "",
+  "results_file": "results.json"
+}

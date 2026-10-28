@@ -1,0 +1,6 @@
+等待其他实验释放 GPU 锁
+实验暂停：保留已有记录，不覆盖重跑
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "run_frozen.py", line 106, in <module>
+RuntimeError: SSH server or tunnel exited; inspect experiment logs

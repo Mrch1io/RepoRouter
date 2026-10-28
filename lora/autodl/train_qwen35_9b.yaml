@@ -1,0 +1,42 @@
+### RepoRouter Phase 2A 路由 SFT：Qwen3.5-9B + LoRA（LLaMA-Factory >= 0.9.5）
+### 运行：llamafactory-cli train /root/RepoRouter/lora/autodl/train_qwen35_9b.yaml
+### 显存：bf16 LoRA 约 22GB，推荐 RTX 5090 32GB（4090 24GB 很紧）
+
+### model
+model_name_or_path: /root/autodl-tmp/models/Qwen/Qwen3.5-9B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target: all
+freeze_vision_tower: true        # Qwen3.5 自带视觉编码器，这个任务只用文字，不训它
+
+### dataset
+dataset: repoagent_phase2a_routing   # 见 lora/dataset_info.json
+template: qwen3_5_nothink           # 路由直接输出一行 JSON，用不思考的模板；推理时也要一致
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+output_dir: /root/LLaMA-Factory/saves/qwen3.5-9b/lora/repoagent_phase2a
+logging_steps: 5
+save_strategy: epoch
+plot_loss: true
+overwrite_output_dir: true
+report_to: none
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+seed: 42

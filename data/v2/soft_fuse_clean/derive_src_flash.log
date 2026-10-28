@@ -1,0 +1,5 @@
+{"name": "src_flash", "before": 87, "after": 72, "removed_source_counts": {"evaluation\\soft_fuse_dataset.py": 6, "evaluation\\e2e_manifest.py": 3, "evaluation\\rag_dataset.py": 3, "evaluation\\rewriter_noisy_dataset.py": 3}}
+正在计算bm25稀疏词频矩阵
+稀疏索引已持久化保存至.\data\indices\src_flash_noexam\bm25_index.pkl
+成功从硬盘持久路径读取到bm25索引引擎！
+{"name": "src_flash", "status": "passed", "max_absolute_embedding_difference": 0.0, "seconds": 0.5472702000006393}

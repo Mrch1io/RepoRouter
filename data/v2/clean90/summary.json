@@ -1,0 +1,433 @@
+{
+  "created_at": "",
+  "columns": {
+    "frozen_native": {
+      "label": "frozen 原生",
+      "comparison_side": "A",
+      "route_correct": 89,
+      "must_retrieve_actual": 34,
+      "judge_correct": 83,
+      "remaining68_correct": 62,
+      "score": 4.688888888888889,
+      "seconds": 5.190222222222222,
+      "cost_usd": 0.0012197293333333333,
+      "answer_chars": 1608.1222222222223,
+      "usage_calls": 1.3777777777777778
+    },
+    "frozen_q4": {
+      "label": "frozen Q4",
+      "comparison_side": "B",
+      "route_correct": 86,
+      "must_retrieve_actual": 32,
+      "judge_correct": 79,
+      "remaining68_correct": 59,
+      "score": 4.588888888888889,
+      "seconds": 4.005333333333334,
+      "cost_usd": 0.0007905151333333332,
+      "answer_chars": 1096.2555555555555,
+      "usage_calls": 0.9888888888888889
+    },
+    "clean_native": {
+      "label": "clean 原生",
+      "comparison_side": "A",
+      "route_correct": 87,
+      "must_retrieve_actual": 32,
+      "judge_correct": 81,
+      "remaining68_correct": 59,
+      "score": 4.644444444444445,
+      "seconds": 5.4335555555555555,
+      "cost_usd": 0.0012145878666666666,
+      "answer_chars": 1605.9222222222222,
+      "usage_calls": 1.3555555555555556
+    },
+    "clean_q4": {
+      "label": "clean Q4",
+      "comparison_side": "B",
+      "route_correct": 87,
+      "must_retrieve_actual": 32,
+      "judge_correct": 81,
+      "remaining68_correct": 62,
+      "score": 4.5777777777777775,
+      "seconds": 3.9723333333333333,
+      "cost_usd": 0.0007462504,
+      "answer_chars": 1036.7111111111112,
+      "usage_calls": 0.9777777777777777
+    }
+  },
+  "clean_paired_comparison": {
+    "direction": "B_minus_A",
+    "mcnemar": {
+      "final_judgement": {
+        "overall_n": 90,
+        "n": 90,
+        "A_correct": 81,
+        "B_correct": 81,
+        "A_only": 8,
+        "B_only": 8,
+        "mcnemar_p": 1.0
+      },
+      "l1_correct": {
+        "overall_n": 90,
+        "n": 90,
+        "A_correct": 87,
+        "B_correct": 87,
+        "A_only": 3,
+        "B_only": 3,
+        "mcnemar_p": 1.0
+      }
+    },
+    "differences": {
+      "score": {
+        "overall_n": 90,
+        "n": 90,
+        "A_mean": 4.644444444444445,
+        "B_mean": 4.5777777777777775,
+        "mean_delta_B_minus_A": -0.06666666666666667,
+        "delta_ci95": [
+          -0.25555555555555554,
+          0.1111111111111111
+        ]
+      },
+      "seconds": {
+        "overall_n": 90,
+        "n": 90,
+        "A_mean": 5.4335555555555555,
+        "B_mean": 3.9723333333333333,
+        "mean_delta_B_minus_A": -1.4612222222222222,
+        "delta_ci95": [
+          -1.7199999999999998,
+          -1.2074444444444445
+        ]
+      },
+      "cost_usd": {
+        "overall_n": 90,
+        "n": 90,
+        "A_mean": 0.0012145878666666666,
+        "B_mean": 0.0007462504,
+        "mean_delta_B_minus_A": -0.00046833746666666667,
+        "delta_ci95": [
+          -0.0005555536000000001,
+          -0.0003867204
+        ]
+      }
+    }
+  },
+  "judgement_correctness_changes": {
+    "native": [
+      {
+        "sample_id": "p08",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p15",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p18",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/soft_fuse_dataset.py"
+        ]
+      },
+      {
+        "sample_id": "p24",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/rag_dataset.py",
+          "src/evaluation/rewriter_noisy_dataset.py"
+        ]
+      },
+      {
+        "sample_id": "p25",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/rewriter_noisy_dataset.py"
+        ]
+      },
+      {
+        "sample_id": "p32",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/soft_fuse_dataset.py"
+        ]
+      },
+      {
+        "sample_id": "p36",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/soft_fuse_dataset.py"
+        ]
+      },
+      {
+        "sample_id": "p37",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/e2e_manifest.py",
+          "src/evaluation/rag_dataset.py",
+          "src/evaluation/soft_fuse_dataset.py"
+        ]
+      }
+    ],
+    "q4": [
+      {
+        "sample_id": "d07",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/e2e_manifest.py"
+        ]
+      },
+      {
+        "sample_id": "p02",
+        "frozen_judgement": "correct",
+        "clean_judgement": "partially_correct",
+        "frozen_correct": true,
+        "clean_correct": false,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p07",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p08",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p09",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": false,
+        "frozen_exam_files": []
+      },
+      {
+        "sample_id": "p13",
+        "frozen_judgement": "partially_correct",
+        "clean_judgement": "correct",
+        "frozen_correct": false,
+        "clean_correct": true,
+        "frozen_retrieved_exam_file": true,
+        "frozen_exam_files": [
+          "src/evaluation/soft_fuse_dataset.py"
+        ]
+      }
+    ]
+  },
+  "judgement_label_only_changes": {
+    "native": [],
+    "q4": []
+  },
+  "routing_decision_changes": {
+    "native": [
+      {
+        "sample_id": "p32",
+        "frozen": true,
+        "clean": false
+      },
+      {
+        "sample_id": "p38",
+        "frozen": true,
+        "clean": false
+      }
+    ],
+    "q4": [
+      {
+        "sample_id": "d07",
+        "frozen": "tool_call",
+        "clean": "clarify_needed"
+      }
+    ]
+  },
+  "retrieval_audit": {
+    "frozen_native": {
+      "retrieval_calls": 34,
+      "returned_fragments": 224,
+      "evaluation_retrieval_calls": 29,
+      "excluded_retrieval_calls": 27,
+      "question_verbatim_retrieval_calls": 6,
+      "evaluation_source_retrieval_counts": {
+        "src/evaluation/chroma_verify_tokens.py": 2,
+        "src/evaluation/e2e_manifest.py": 2,
+        "src/evaluation/eva_retrieval.py": 4,
+        "src/evaluation/eva_retrieval_reranker.py": 2,
+        "src/evaluation/eva_rewriter.py": 2,
+        "src/evaluation/llm_judge_e2e.py": 3,
+        "src/evaluation/rag_dataset.py": 9,
+        "src/evaluation/rewriter_noisy_dataset.py": 14,
+        "src/evaluation/soft_fuse_dataset.py": 15
+      },
+      "excluded_source_retrieval_counts": {
+        "src/evaluation/e2e_manifest.py": 2,
+        "src/evaluation/rag_dataset.py": 9,
+        "src/evaluation/rewriter_noisy_dataset.py": 14,
+        "src/evaluation/soft_fuse_dataset.py": 15
+      }
+    },
+    "frozen_q4": {
+      "retrieval_calls": 33,
+      "returned_fragments": 198,
+      "evaluation_retrieval_calls": 26,
+      "excluded_retrieval_calls": 21,
+      "question_verbatim_retrieval_calls": 5,
+      "evaluation_source_retrieval_counts": {
+        "src/evaluation/chroma_verify_tokens.py": 1,
+        "src/evaluation/e2e_manifest.py": 4,
+        "src/evaluation/eva_retrieval.py": 3,
+        "src/evaluation/eva_retrieval_reranker.py": 1,
+        "src/evaluation/eva_rewriter.py": 5,
+        "src/evaluation/llm_judge_e2e.py": 4,
+        "src/evaluation/rag_dataset.py": 5,
+        "src/evaluation/rewriter_noisy_dataset.py": 10,
+        "src/evaluation/soft_fuse_dataset.py": 12
+      },
+      "excluded_source_retrieval_counts": {
+        "src/evaluation/e2e_manifest.py": 4,
+        "src/evaluation/rag_dataset.py": 5,
+        "src/evaluation/rewriter_noisy_dataset.py": 10,
+        "src/evaluation/soft_fuse_dataset.py": 12
+      }
+    },
+    "clean_native": {
+      "retrieval_calls": 32,
+      "returned_fragments": 220,
+      "evaluation_retrieval_calls": 17,
+      "excluded_retrieval_calls": 0,
+      "question_verbatim_retrieval_calls": 0,
+      "evaluation_source_retrieval_counts": {
+        "src/evaluation/chroma_verify_tokens.py": 5,
+        "src/evaluation/eva_retrieval.py": 9,
+        "src/evaluation/eva_retrieval_reranker.py": 3,
+        "src/evaluation/eva_rewriter.py": 2,
+        "src/evaluation/llm_judge_e2e.py": 4
+      },
+      "excluded_source_retrieval_counts": {
+        "src/evaluation/e2e_manifest.py": 0,
+        "src/evaluation/rag_dataset.py": 0,
+        "src/evaluation/rewriter_noisy_dataset.py": 0,
+        "src/evaluation/soft_fuse_dataset.py": 0
+      }
+    },
+    "clean_q4": {
+      "retrieval_calls": 32,
+      "returned_fragments": 192,
+      "evaluation_retrieval_calls": 14,
+      "excluded_retrieval_calls": 0,
+      "question_verbatim_retrieval_calls": 0,
+      "evaluation_source_retrieval_counts": {
+        "src/evaluation/chroma_verify_tokens.py": 2,
+        "src/evaluation/eva_retrieval.py": 6,
+        "src/evaluation/eva_retrieval_reranker.py": 2,
+        "src/evaluation/eva_rewriter.py": 5,
+        "src/evaluation/llm_judge_e2e.py": 6
+      },
+      "excluded_source_retrieval_counts": {
+        "src/evaluation/e2e_manifest.py": 0,
+        "src/evaluation/rag_dataset.py": 0,
+        "src/evaluation/rewriter_noisy_dataset.py": 0,
+        "src/evaluation/soft_fuse_dataset.py": 0
+      }
+    }
+  },
+  "clean_q4_p04_p18_p29": {
+    "p04": {
+      "actual_call_search_codebase": false,
+      "decision_type": "no_tool"
+    },
+    "p18": {
+      "actual_call_search_codebase": false,
+      "decision_type": "no_tool"
+    },
+    "p29": {
+      "actual_call_search_codebase": false,
+      "decision_type": "no_tool"
+    }
+  },
+  "notes": [
+    "表中聚合统计直接取两份 comparison.json；McNemar 和 bootstrap 95% 区间直接取 clean comparison.json，未重新计算。",
+    "剩余 68 题排除冻结代码定义的 known_pilot22；自动判正确仅指 final_judgement=correct，partially_correct 与 incorrect 均为非正确。",
+    "平均回答字数沿用冻结代码 len(final_answer)，包括标点与代码字符；费用按冻结价格表估算全部 DeepSeek 调用，不含嵌入与 GPU 租金。",
+    "原生链路先决定查不查，再读取检索结果。Q4 独立路由温度为 0.1，原生工具决策及 DeepSeek 回答温度为 0.2；跨运行查不查变化属于采样差异，不能归因于索引。",
+    "两次运行时段不同，只报告观察到的差异，不作索引变化与答案质量之间的因果结论。此次没有重做人工盲评。",
+    "审计以 tool_actions 中 search_codebase 调用为单位，关联 tool_contexts 读取片段；同次同来源去重，各来源次数可重叠。完整来源分布及逐题证据见 retrieval_audit.json。"
+  ],
+  "inputs": {
+    "frozen_comparison": {
+      "path": ".\\data\\v2\\frozen90\\comparison.json",
+      "sha256": "e250819f44f4d7a457d76c25a7222ccd0739a0a1684bc6a0c238a1c5620902e9"
+    },
+    "clean_comparison": {
+      "path": ".\\data\\v2\\clean90\\comparison.json",
+      "sha256": "1d72476f1c89c088b1d2bf7f33b7be0b8309651594c431a44aeed5f733e1a7d0"
+    },
+    "retrieval_audit": {
+      "path": ".\\data\\v2\\clean90\\retrieval_audit.json",
+      "sha256": "4db096e028da9d82bb7ceb7ff7db156bf76fbf55dc3022e66f14e41c1fefcd87"
+    },
+    "frozen_native": {
+      "path": ".\\data\\v2\\frozen90\\e2e_native.jsonl",
+      "sha256": "11fde34553b276dd2bc122ce3c912cfaa0f0e68d0e71e2a3cdc6db09e2ebe798"
+    },
+    "frozen_q4": {
+      "path": ".\\data\\v2\\frozen90\\e2e_q4.jsonl",
+      "sha256": "26d6de31a514fde7274692ef9040392e7e9f100591e7f503e3a35c422513effa"
+    },
+    "clean_native": {
+      "path": ".\\data\\v2\\clean90\\e2e_native.jsonl",
+      "sha256": "c6a411a8fc13847858698869a0201344820f1ea3a00958ac43bbc1403b62e45b"
+    },
+    "clean_q4": {
+      "path": ".\\data\\v2\\clean90\\e2e_q4.jsonl",
+      "sha256": "b93e2c33d9790039b77024c7ba8a99e05f3357492b74a6ac73be7bab5a0fbdd1"
+    }
+  }
+}

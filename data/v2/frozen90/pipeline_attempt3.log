@@ -1,0 +1,8 @@
+等待其他实验释放 GPU 锁
+隧道与真实路由验证通过，开始相邻运行两条链路
+generate_native
+generate_q4
+judge_native
+judge_q4
+compare
+两组90题及评分、配对比较完成，待最终校验与打包

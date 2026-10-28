@@ -1,0 +1,422 @@
+[
+  {
+    "review_id": "r001",
+    "sample_id": "p40",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r002",
+    "sample_id": "p24",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r003",
+    "sample_id": "p30",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r004",
+    "sample_id": "p17",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r005",
+    "sample_id": "p04",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r006",
+    "sample_id": "p30",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r007",
+    "sample_id": "d14",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r008",
+    "sample_id": "p07",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r009",
+    "sample_id": "q06",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r010",
+    "sample_id": "p10",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r011",
+    "sample_id": "q06",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r012",
+    "sample_id": "p29",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r013",
+    "sample_id": "d03",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r014",
+    "sample_id": "d14",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r015",
+    "sample_id": "p24",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r016",
+    "sample_id": "q14",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r017",
+    "sample_id": "d08",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r018",
+    "sample_id": "m03",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r019",
+    "sample_id": "m05",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r020",
+    "sample_id": "q14",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r021",
+    "sample_id": "p38",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r022",
+    "sample_id": "m03",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r023",
+    "sample_id": "p09",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r024",
+    "sample_id": "p18",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r025",
+    "sample_id": "p03",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r026",
+    "sample_id": "p04",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r027",
+    "sample_id": "p29",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r028",
+    "sample_id": "p18",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r029",
+    "sample_id": "p40",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r030",
+    "sample_id": "p07",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r031",
+    "sample_id": "q02",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r032",
+    "sample_id": "p17",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r033",
+    "sample_id": "p10",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r034",
+    "sample_id": "d10",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r035",
+    "sample_id": "d08",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r036",
+    "sample_id": "p38",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r037",
+    "sample_id": "p03",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r038",
+    "sample_id": "d03",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r039",
+    "sample_id": "p09",
+    "repeat": 0,
+    "selection": [
+      "judgement_disagreement"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r040",
+    "sample_id": "d10",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "A"
+  },
+  {
+    "review_id": "r041",
+    "sample_id": "m05",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  },
+  {
+    "review_id": "r042",
+    "sample_id": "q02",
+    "repeat": 0,
+    "selection": [
+      "random"
+    ],
+    "human_review": "pending",
+    "chain": "B"
+  }
+]

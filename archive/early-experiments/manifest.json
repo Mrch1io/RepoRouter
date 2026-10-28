@@ -1,0 +1,334 @@
+{
+  "archived_at": "",
+  "purpose": "Early RepoAgent materials; project naming normalized, current file hashes recorded, initial archive hashes retained.",
+  "files": [
+    {
+      "original_path": "loRA/eval_base.py",
+      "archived_path": "archive/early-experiments/lora/eval_base.py",
+      "bytes": 6421,
+      "sha256": "4979d74988c9e65487bfc42d7834c135376bc029d6a21802a11121dbf4698ee1",
+      "archived_bytes": 6421,
+      "archived_sha256": "4979d74988c9e65487bfc42d7834c135376bc029d6a21802a11121dbf4698ee1",
+      "previous_archived_path": "archive/early-experiments/loRA/eval_base.py"
+    },
+    {
+      "original_path": "loRA/eval_lora.py",
+      "archived_path": "archive/early-experiments/lora/eval_lora.py",
+      "bytes": 6617,
+      "sha256": "2e3eab6d4f3cd78e12a5d3cf7aac2233bd82e5701e86c7c1b9df235f28241dd5",
+      "archived_bytes": 6617,
+      "archived_sha256": "2e3eab6d4f3cd78e12a5d3cf7aac2233bd82e5701e86c7c1b9df235f28241dd5",
+      "previous_archived_path": "archive/early-experiments/loRA/eval_lora.py"
+    },
+    {
+      "original_path": "loRA/eval_api.py",
+      "archived_path": "archive/early-experiments/lora/eval_api.py",
+      "bytes": 4106,
+      "sha256": "1f16cd139dd5593277600426d0c057e0fff06c3e8ed42dbaafc69da66de981ed",
+      "archived_bytes": 4106,
+      "archived_sha256": "1f16cd139dd5593277600426d0c057e0fff06c3e8ed42dbaafc69da66de981ed",
+      "previous_archived_path": "archive/early-experiments/loRA/eval_api.py"
+    },
+    {
+      "original_path": "loRA/eval_mixed_schema.py",
+      "archived_path": "archive/early-experiments/lora/eval_mixed_schema.py",
+      "bytes": 12553,
+      "sha256": "bd86524bec99a27bfe25de39b3084773cb454f89e571ed5f7e1f422ae155aa97",
+      "archived_bytes": 12553,
+      "archived_sha256": "bd86524bec99a27bfe25de39b3084773cb454f89e571ed5f7e1f422ae155aa97",
+      "previous_archived_path": "archive/early-experiments/loRA/eval_mixed_schema.py"
+    },
+    {
+      "original_path": "loRA/generate_lora_data.py",
+      "archived_path": "archive/early-experiments/lora/generate_lora_data.py",
+      "bytes": 17237,
+      "sha256": "c37b87a235b56c26116b59dc6c64ab3d24daf2d9a57189d9677362f36490dd4f",
+      "archived_bytes": 17237,
+      "archived_sha256": "c37b87a235b56c26116b59dc6c64ab3d24daf2d9a57189d9677362f36490dd4f",
+      "previous_archived_path": "archive/early-experiments/loRA/generate_lora_data.py"
+    },
+    {
+      "original_path": "loRA/generate_lora_data_fastapi_transformers.py",
+      "archived_path": "archive/early-experiments/lora/generate_lora_data_fastapi_transformers.py",
+      "bytes": 13905,
+      "sha256": "c17caf24e219ebd02f959d9b32640524917c56757a752fe752f51962d528c0f3",
+      "archived_bytes": 13905,
+      "archived_sha256": "c17caf24e219ebd02f959d9b32640524917c56757a752fe752f51962d528c0f3",
+      "previous_archived_path": "archive/early-experiments/loRA/generate_lora_data_fastapi_transformers.py"
+    },
+    {
+      "original_path": "loRA/repoagent_raw_data.json",
+      "archived_path": "archive/early-experiments/lora/repoagent_raw_data.json",
+      "bytes": 213297,
+      "sha256": "9c0ed731e78610c4741a779faae3457aebe14fddb99edc55b8a9039059171d0c",
+      "archived_bytes": 213297,
+      "archived_sha256": "9c0ed731e78610c4741a779faae3457aebe14fddb99edc55b8a9039059171d0c",
+      "previous_archived_path": "archive/early-experiments/loRA/repoagent_raw_data.json"
+    },
+    {
+      "original_path": "loRA/repoagent_train_data.json",
+      "archived_path": "archive/early-experiments/lora/repoagent_train_data.json",
+      "bytes": 868995,
+      "sha256": "99cb9e5943a822f23267475a62eb5e719141f407824110a48800cf894ff4ca96",
+      "archived_bytes": 868995,
+      "archived_sha256": "99cb9e5943a822f23267475a62eb5e719141f407824110a48800cf894ff4ca96",
+      "previous_archived_path": "archive/early-experiments/loRA/repoagent_train_data.json"
+    },
+    {
+      "original_path": "loRA/repoagent_test_data.json",
+      "archived_path": "archive/early-experiments/lora/repoagent_test_data.json",
+      "bytes": 96634,
+      "sha256": "b500bd24f51ad870cebbed99c8b85e399f9df21a9473610f106fbaf78fe1c1d7",
+      "archived_bytes": 96634,
+      "archived_sha256": "b500bd24f51ad870cebbed99c8b85e399f9df21a9473610f106fbaf78fe1c1d7",
+      "previous_archived_path": "archive/early-experiments/loRA/repoagent_test_data.json"
+    },
+    {
+      "original_path": "scripts/summarize_judge_round2.py",
+      "archived_path": "archive/early-experiments/scripts/summarize_judge_round2.py",
+      "bytes": 3103,
+      "sha256": "605671a8680eac75cb7a017d2f843c033781283189fa54a7e818a0854ffcf33b",
+      "archived_bytes": 3103,
+      "archived_sha256": "605671a8680eac75cb7a017d2f843c033781283189fa54a7e818a0854ffcf33b"
+    },
+    {
+      "original_path": "scripts/compare_judge_round2_vs_index_aware.py",
+      "archived_path": "archive/early-experiments/scripts/compare_judge_round2_vs_index_aware.py",
+      "bytes": 2963,
+      "sha256": "71dc644c8d09e803f1a8526196148ed5fc5b0647b7209b943bef6f949e08de82",
+      "archived_bytes": 2963,
+      "archived_sha256": "71dc644c8d09e803f1a8526196148ed5fc5b0647b7209b943bef6f949e08de82"
+    },
+    {
+      "original_path": "scripts/report_judge_round2_index_aware.py",
+      "archived_path": "archive/early-experiments/scripts/report_judge_round2_index_aware.py",
+      "bytes": 5098,
+      "sha256": "28d2ead2836b0805cbb73b078224ec8231a02df3132e456dec3bfb6b56df1207",
+      "archived_bytes": 5098,
+      "archived_sha256": "28d2ead2836b0805cbb73b078224ec8231a02df3132e456dec3bfb6b56df1207"
+    },
+    {
+      "original_path": "scripts/build_experiment_indices.py",
+      "archived_path": "archive/early-experiments/scripts/build_experiment_indices.py",
+      "bytes": 6199,
+      "sha256": "fc1151bad8f2ea40f745235f909d408cbd58d19d0daf368f6f5fc5b97f0351d7",
+      "archived_bytes": 6199,
+      "archived_sha256": "fc1151bad8f2ea40f745235f909d408cbd58d19d0daf368f6f5fc5b97f0351d7"
+    },
+    {
+      "original_path": "experiments/external/README.md",
+      "archived_path": "archive/early-experiments/experiments/external/README.md",
+      "bytes": 1185,
+      "sha256": "a0be7014887a73dfbb459e98a2babdd3fa1379bc8a4dbf1faa51a117decad980",
+      "archived_bytes": 1185,
+      "archived_sha256": "a0be7014887a73dfbb459e98a2babdd3fa1379bc8a4dbf1faa51a117decad980"
+    },
+    {
+      "original_path": "experiments/indices/README.md",
+      "archived_path": "archive/early-experiments/experiments/indices/README.md",
+      "bytes": 2500,
+      "sha256": "3afee5bfb730fdcac5677d672465616f3318b7dea3d80552770f653a258fb672",
+      "archived_bytes": 2500,
+      "archived_sha256": "3afee5bfb730fdcac5677d672465616f3318b7dea3d80552770f653a258fb672"
+    },
+    {
+      "original_path": "docs/RepoAgent更新进展3.22.md",
+      "archived_path": "archive/early-experiments/docs/2026-03-22-进展.md",
+      "bytes": 8153,
+      "sha256": "a08a18de801d6ec63c7c2bee8750a5e1af9546b330b42935f32b2efaeca4966d",
+      "archived_bytes": 8153,
+      "archived_sha256": "a08a18de801d6ec63c7c2bee8750a5e1af9546b330b42935f32b2efaeca4966d",
+      "previous_archived_path": "archive/early-experiments/docs/RepoAgent更新进展3.22.md"
+    },
+    {
+      "original_path": "docs/RepoAgent更新进展3.22.pdf",
+      "archived_path": "archive/early-experiments/docs/2026-03-22-进展.pdf",
+      "bytes": 423366,
+      "sha256": "b54496e8d3a82e23788ecf4ba601210877e467f806b0a69366e120fd97c12227",
+      "archived_bytes": 423366,
+      "archived_sha256": "b54496e8d3a82e23788ecf4ba601210877e467f806b0a69366e120fd97c12227",
+      "previous_archived_path": "archive/early-experiments/docs/RepoAgent更新进展3.22.pdf"
+    },
+    {
+      "original_path": "评估/01-检索评估-引擎对比-基线.md",
+      "archived_path": "archive/early-experiments/评估/01-检索引擎基线.md",
+      "bytes": 1703,
+      "sha256": "772ddf8155c7988bb3a7f0581488f127be4614a7bfe16cb8117966efc479268a",
+      "archived_bytes": 1703,
+      "archived_sha256": "772ddf8155c7988bb3a7f0581488f127be4614a7bfe16cb8117966efc479268a",
+      "previous_archived_path": "archive/early-experiments/评估/01-检索评估-引擎对比-基线.md"
+    },
+    {
+      "original_path": "评估/02-检索评估-PoolSize对比.md",
+      "archived_path": "archive/early-experiments/评估/02-候选池大小对比.md",
+      "bytes": 2261,
+      "sha256": "8512292181933823333b094b65f4a7911620223d3b095d4a391bf85b3d762fcb",
+      "archived_bytes": 2261,
+      "archived_sha256": "8512292181933823333b094b65f4a7911620223d3b095d4a391bf85b3d762fcb",
+      "previous_archived_path": "archive/early-experiments/评估/02-检索评估-PoolSize对比.md"
+    },
+    {
+      "original_path": "评估/03-检索评估-Reranker消融实验.md",
+      "archived_path": "archive/early-experiments/评估/03-重排消融.md",
+      "bytes": 1442,
+      "sha256": "f1a58f4d0b844021d3cc3472b56bf2f3790b7085e1011acbb6bfbf68d5a13731",
+      "archived_bytes": 1442,
+      "archived_sha256": "f1a58f4d0b844021d3cc3472b56bf2f3790b7085e1011acbb6bfbf68d5a13731",
+      "previous_archived_path": "archive/early-experiments/评估/03-检索评估-Reranker消融实验.md"
+    },
+    {
+      "original_path": "评估/04-检索评估-QueryRewrite消融实验.md",
+      "archived_path": "archive/early-experiments/评估/04-查询改写消融.md",
+      "bytes": 1038,
+      "sha256": "3417f7024ea1b8fc4e77d579a74ce2fe85d90796ab3f7babf4010312fb9fb17a",
+      "archived_bytes": 1038,
+      "archived_sha256": "3417f7024ea1b8fc4e77d579a74ce2fe85d90796ab3f7babf4010312fb9fb17a",
+      "previous_archived_path": "archive/early-experiments/评估/04-检索评估-QueryRewrite消融实验.md"
+    },
+    {
+      "original_path": "评估/05-LoRA微调评估报告.md",
+      "archived_path": "archive/early-experiments/评估/05-LoRA评测.md",
+      "bytes": 752,
+      "sha256": "95d904d085f22e72baa5a2a5a38a5d8fa9a79f59e6dc77ef2e733373d4d440bf",
+      "archived_bytes": 752,
+      "archived_sha256": "95d904d085f22e72baa5a2a5a38a5d8fa9a79f59e6dc77ef2e733373d4d440bf",
+      "previous_archived_path": "archive/early-experiments/评估/05-LoRA微调评估报告.md"
+    },
+    {
+      "original_path": "评估/06-Agent工具组合示例.md",
+      "archived_path": "archive/early-experiments/评估/06-多工具协作.md",
+      "bytes": 1178,
+      "sha256": "52a4e3093b32f1170a4a006bf7688eff60e3a31ac36aff24f100c5595e4b3be2",
+      "archived_bytes": 1178,
+      "archived_sha256": "52a4e3093b32f1170a4a006bf7688eff60e3a31ac36aff24f100c5595e4b3be2",
+      "previous_archived_path": "archive/early-experiments/评估/06-Agent工具组合示例.md"
+    },
+    {
+      "original_path": "评估/07-附录-VectorStore实现说明.md",
+      "archived_path": "archive/early-experiments/评估/07-向量库实现.md",
+      "bytes": 780,
+      "sha256": "01fe6920e13b54d3b9ee76bd7e3af9ee19ca6d6acbff1d8423c51b67e49d3d2b",
+      "archived_bytes": 780,
+      "archived_sha256": "01fe6920e13b54d3b9ee76bd7e3af9ee19ca6d6acbff1d8423c51b67e49d3d2b",
+      "previous_archived_path": "archive/early-experiments/评估/07-附录-VectorStore实现说明.md"
+    },
+    {
+      "original_path": "评估/08-软熔断Phase1与端到端评测.md",
+      "archived_path": "archive/early-experiments/评估/08-软熔断与端到端评测.md",
+      "bytes": 3984,
+      "sha256": "c7df7cc53e7167571c54f422c8f81c276853ce985148ced20194b672442870c0",
+      "archived_bytes": 3984,
+      "archived_sha256": "c7df7cc53e7167571c54f422c8f81c276853ce985148ced20194b672442870c0",
+      "previous_archived_path": "archive/early-experiments/评估/08-软熔断Phase1与端到端评测.md"
+    },
+    {
+      "original_path": "评估/09-prompt与工具描述优化后复测.md",
+      "archived_path": "archive/early-experiments/评估/09-提示词优化复测.md",
+      "bytes": 13355,
+      "sha256": "528ffa75e43cb5fedb01d0b192b73d53092e8d59c9df0e11a7280de811cd95cc",
+      "archived_bytes": 13355,
+      "archived_sha256": "528ffa75e43cb5fedb01d0b192b73d53092e8d59c9df0e11a7280de811cd95cc",
+      "previous_archived_path": "archive/early-experiments/评估/09-prompt与工具描述优化后复测.md"
+    },
+    {
+      "original_path": "评估/1.txt",
+      "archived_path": "archive/early-experiments/评估/检索候选池对比.txt",
+      "bytes": 8756,
+      "sha256": "982059c45b0188ad46b464497e47d57cfbf0bb21f6a20d908295576f3f5588da",
+      "archived_bytes": 8756,
+      "archived_sha256": "982059c45b0188ad46b464497e47d57cfbf0bb21f6a20d908295576f3f5588da",
+      "previous_archived_path": "archive/early-experiments/评估/1.txt"
+    },
+    {
+      "original_path": "评估/10-LLM-as-Judge-v1.md",
+      "archived_path": "archive/early-experiments/评估/10-回答质量评分.md",
+      "bytes": 12959,
+      "sha256": "c4a9d12552a63f352abb3c523899a940b70cbbbd4f3b13b5c4af8c2e71f7f29e",
+      "archived_bytes": 12959,
+      "archived_sha256": "c4a9d12552a63f352abb3c523899a940b70cbbbd4f3b13b5c4af8c2e71f7f29e",
+      "previous_archived_path": "archive/early-experiments/评估/10-LLM-as-Judge-v1.md"
+    },
+    {
+      "original_path": "评估/11-Phase2A路由SFT微调报告.md",
+      "archived_path": "archive/early-experiments/评估/11-路由微调.md",
+      "bytes": 6896,
+      "sha256": "ed350802a592c8b9b51054a0c9523d53e81ebfe5eea95da83721e3193681c9dc",
+      "archived_bytes": 6896,
+      "archived_sha256": "ed350802a592c8b9b51054a0c9523d53e81ebfe5eea95da83721e3193681c9dc",
+      "previous_archived_path": "archive/early-experiments/评估/11-Phase2A路由SFT微调报告.md"
+    },
+    {
+      "original_path": "评估/12-咨询展示-进展与路线图.md",
+      "archived_path": "archive/early-experiments/评估/12-进展与计划.md",
+      "bytes": 4819,
+      "sha256": "1742fc2656380404039c6374decdbe9301f32384383a5fe67e1ebbe8a3827cc8",
+      "archived_bytes": 4819,
+      "archived_sha256": "1742fc2656380404039c6374decdbe9301f32384383a5fe67e1ebbe8a3827cc8",
+      "previous_archived_path": "archive/early-experiments/评估/12-咨询展示-进展与路线图.md"
+    },
+    {
+      "original_path": "评估/12-咨询展示-展示版.html",
+      "archived_path": "archive/early-experiments/评估/12-进展展示.html",
+      "bytes": 16237,
+      "sha256": "8bf13fc0e7eb0aa2f88fd41b9a4198c8337a56e3820ae8e066fdc8f6ee652fdd",
+      "archived_bytes": 16237,
+      "archived_sha256": "8bf13fc0e7eb0aa2f88fd41b9a4198c8337a56e3820ae8e066fdc8f6ee652fdd",
+      "previous_archived_path": "archive/early-experiments/评估/12-咨询展示-展示版.html"
+    },
+    {
+      "original_path": "评估/3.txt",
+      "archived_path": "archive/early-experiments/评估/检索重排分析.txt",
+      "bytes": 1838,
+      "sha256": "b0b634b6df3b412e3bf3d70421ed12f3011b695e3b0eafe2c6ee94c68dcb48d0",
+      "archived_bytes": 1838,
+      "archived_sha256": "b0b634b6df3b412e3bf3d70421ed12f3011b695e3b0eafe2c6ee94c68dcb48d0",
+      "previous_archived_path": "archive/early-experiments/评估/3.txt"
+    },
+    {
+      "original_path": "评估/4.txt",
+      "archived_path": "archive/early-experiments/评估/重排与查询改写对比.txt",
+      "bytes": 5675,
+      "sha256": "7c67ca020b024686d38ad0a1a5707936a889a950d72e6e8ce2541b06e6ebbfc9",
+      "archived_bytes": 5675,
+      "archived_sha256": "7c67ca020b024686d38ad0a1a5707936a889a950d72e6e8ce2541b06e6ebbfc9",
+      "previous_archived_path": "archive/early-experiments/评估/4.txt"
+    },
+    {
+      "original_path": "评估/5.txt",
+      "archived_path": "archive/early-experiments/评估/多工具协作示例.txt",
+      "bytes": 5269,
+      "sha256": "3937248aec8d65d4ecb0f32814ca632db78dac7b0b2599ab4c014ab77957527c",
+      "archived_bytes": 5269,
+      "archived_sha256": "3937248aec8d65d4ecb0f32814ca632db78dac7b0b2599ab4c014ab77957527c",
+      "previous_archived_path": "archive/early-experiments/评估/5.txt"
+    },
+    {
+      "original_path": "评估/6.txt",
+      "archived_path": "archive/early-experiments/评估/向量库检索示例.txt",
+      "bytes": 3002,
+      "sha256": "bea28232b302d743b80a8321e7382e1a6c38cff62a2e080d18b631dcf8dd9950",
+      "archived_bytes": 3002,
+      "archived_sha256": "bea28232b302d743b80a8321e7382e1a6c38cff62a2e080d18b631dcf8dd9950",
+      "previous_archived_path": "archive/early-experiments/评估/6.txt"
+    },
+    {
+      "original_path": "评估/lora.txt",
+      "archived_path": "archive/early-experiments/评估/LoRA评测记录.txt",
+      "bytes": 1338,
+      "sha256": "cf4497a596d045f070cac1903899ac0beba8ae804ecc5edf48285422e32c33ae",
+      "archived_bytes": 1338,
+      "archived_sha256": "cf4497a596d045f070cac1903899ac0beba8ae804ecc5edf48285422e32c33ae",
+      "previous_archived_path": "archive/early-experiments/评估/lora.txt"
+    },
+    {
+      "original_path": "评估/README_EVL.md",
+      "archived_path": "archive/early-experiments/评估/README.md",
+      "bytes": 2198,
+      "sha256": "99c0974dd74f11cfbfc5bd620ce92620154476a6f233414bce556e2635f01bf7",
+      "archived_bytes": 2198,
+      "archived_sha256": "99c0974dd74f11cfbfc5bd620ce92620154476a6f233414bce556e2635f01bf7",
+      "previous_archived_path": "archive/early-experiments/评估/README_EVL.md"
+    }
+  ],
+  "naming_updated_at": ""
+}

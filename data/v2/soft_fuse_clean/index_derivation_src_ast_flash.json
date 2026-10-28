@@ -1,0 +1,126 @@
+{
+  "name": "src_ast_flash",
+  "status": "passed",
+  "started_at": "",
+  "original_path": ".\\data\\indices\\src_ast_flash",
+  "target_path": ".\\data\\indices\\src_ast_flash_noexam",
+  "temporary_directory": "<user-home>\\AppData\\Local\\Temp\\soft-fuse-clean-src_ast_flash-jn8z1dyw",
+  "original_count": 110,
+  "clean_count": 89,
+  "removed_count": 21,
+  "removed": [
+    {
+      "id": "ab8ad635-1d58-4810-8807-1ab743346c98",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "c9f9c29b-4399-4475-ac58-193ced9c48e1",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "32dca401-561e-4228-9fe7-1279dbc1712d",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "16908a5d-a598-489e-9a42-45c8c572d363",
+      "source": "evaluation\\e2e_manifest.py"
+    },
+    {
+      "id": "b6e74c0b-fafe-4be0-8b37-5ba5bd6ba9a3",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "3d8c7c3d-8391-4dc8-a59b-72ff5a90a79f",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "93b288a8-c832-4762-b70e-f13d22eb39bc",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "1a674714-8b23-4bd0-b32e-0c36579c343d",
+      "source": "evaluation\\rag_dataset.py"
+    },
+    {
+      "id": "990c343f-59c7-48a6-b9ae-7455b707aa78",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "73973626-84ac-412a-8e73-890172d435ee",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "69913160-da8b-451f-af91-982f55c9b762",
+      "source": "evaluation\\rewriter_noisy_dataset.py"
+    },
+    {
+      "id": "6a07e39a-49fb-4eaf-a82d-c82d4b48e8e9",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "757f90bb-4b83-4e28-885e-c714ef5ec7c1",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "fd14bef8-d3fd-45c6-a9cf-1ff66a926f2a",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "348ad0c0-01b5-40d1-a6bb-62051cf3fc56",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "3d02a148-0cb7-4458-afbd-71f2ad072888",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "e4a296d0-7e15-4f39-8c06-cb0754de33da",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "b0beb251-23a8-4cb5-b8fc-5462fb471b55",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "eaceb6e8-8564-456b-8088-1fd0b4c52bb2",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "fe4ae4ea-e570-46ec-aeeb-5e33400e2589",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    },
+    {
+      "id": "f955879f-7474-4b36-a622-ea1aa88dad97",
+      "source": "evaluation\\soft_fuse_dataset.py"
+    }
+  ],
+  "removed_source_counts": {
+    "evaluation\\soft_fuse_dataset.py": 10,
+    "evaluation\\e2e_manifest.py": 4,
+    "evaluation\\rag_dataset.py": 4,
+    "evaluation\\rewriter_noisy_dataset.py": 3
+  },
+  "collection": "langchain",
+  "distance": "l2",
+  "dimensions": 1024,
+  "chromadb_version": "1.5.9",
+  "embeddings_elementwise_equal": true,
+  "max_absolute_embedding_difference": 0.0,
+  "documents_equal": true,
+  "metadata_equal": true,
+  "ids_equal": true,
+  "removed_sources_remaining": {
+    "evaluation\\soft_fuse_dataset.py": 0,
+    "evaluation\\e2e_manifest.py": 0,
+    "evaluation\\rag_dataset.py": 0,
+    "evaluation\\rewriter_noisy_dataset.py": 0
+  },
+  "embedding_api_calls_for_derivation": 0,
+  "bm25_documents_equal": true,
+  "bm25_smoke_passed": true,
+  "original_index_unchanged": true,
+  "retained_vector_norm_min": 0.9979662074300087,
+  "retained_vector_norm_max": 1.0034995256308528,
+  "elapsed_seconds": 0.6733760999995866,
+  "ended_at": ""
+}

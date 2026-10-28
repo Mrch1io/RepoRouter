@@ -1,0 +1,354 @@
+{
+  "scope": "All new persistent files and retained system temporary index-copy files; excludes this manifest itself.",
+  "file_count": 58,
+  "files": [
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\calibration_run.json",
+      "kind": "experiment",
+      "bytes": 1331,
+      "sha256": "22cba1cb671d68f712e2e3aae50404628546169fd5b397631ca8fbfa16909c1d"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\calibration_runner.log",
+      "kind": "experiment",
+      "bytes": 164,
+      "sha256": "442ce8c4090f2a252659804b684ace515eda1cc5bf393867fbc9618ec3885411"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\derive_index.py",
+      "kind": "experiment",
+      "bytes": 8406,
+      "sha256": "3be15f0e0ff5d85b0180cb609153fe17ec1979b487b00915b1a3744981e17e57"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\derive_src.log",
+      "kind": "experiment",
+      "bytes": 389,
+      "sha256": "d5f14d981141b4967d3b2f2907028cc9de34bee88cb366bf75a950c525180dda"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\derive_src_ast.log",
+      "kind": "experiment",
+      "bytes": 513,
+      "sha256": "e25684ce174abbaa88cedbcc1fa55602753a076b1bd83696545f6cd6bc1bb6c2"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\derive_src_ast_flash.log",
+      "kind": "experiment",
+      "bytes": 531,
+      "sha256": "149061b4467c9c69b7f916e162b8d4088612f95ae986b8c27d49799e91d794f6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\derive_src_flash.log",
+      "kind": "experiment",
+      "bytes": 517,
+      "sha256": "624785f71eb219ec1fa7c5b65b69c39e01cebafb6a060cb4356d1aca1df86209"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\index_derivation_src.json",
+      "kind": "experiment",
+      "bytes": 3128,
+      "sha256": "3a6dd36f67ce76d94f3630ae1a07c48a86fc1f9edf335f2fbddd54d6481677a7"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\index_derivation_src_ast.json",
+      "kind": "experiment",
+      "bytes": 3845,
+      "sha256": "4ca93c093381ad2ab301d0ce2fbdfdb4983972a59e4144afb4968892a234de6f"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\index_derivation_src_ast_flash.json",
+      "kind": "experiment",
+      "bytes": 3870,
+      "sha256": "6030a7997b6e51a6dc89dab05eb58d0c40529af46068f1109d44a0b1db0e947c"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\index_derivation_src_flash.json",
+      "kind": "experiment",
+      "bytes": 3143,
+      "sha256": "904e6ba85117b8454933495c117cb1eedc5b64c1c8583295b0bce40b7880f989"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\protected_after.json",
+      "kind": "experiment",
+      "bytes": 1365,
+      "sha256": "546903241a3ae4315a51e5d991312e151edaf5195be9491caf6201c201058502"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\reproduce_src.json",
+      "kind": "experiment",
+      "bytes": 22565,
+      "sha256": "868c94ec34fdb24416e5b61e4588cee7807afda8f28ce7c19e7bf67d4333598a"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\reproduce_src.log",
+      "kind": "experiment",
+      "bytes": 2016,
+      "sha256": "014584b955fcd5254f7fc49cd5a29895d351e8a4db20d441ba01b74e39798298"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\reproduction_check_src.json",
+      "kind": "experiment",
+      "bytes": 38840,
+      "sha256": "2aec8d678009467cd26707aa355217781c1d09db757ae04f32ef7d1ebe945ec9"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\run_calibration.py",
+      "kind": "experiment",
+      "bytes": 8060,
+      "sha256": "d2c4c1a5cda073225428cefa98e56d7f886007584a4c42efe8332529ce9f023d"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\data\\chroma_verified_skip_must_ground.json",
+      "kind": "experiment",
+      "bytes": 184,
+      "sha256": "ef25f3932fc04a336cae332d42acf5a67f2ce9ed987e23c6040a3b6b25a4af19"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\loRA\\build_cross_repo_eval.py",
+      "kind": "experiment",
+      "bytes": 2793,
+      "sha256": "ff81638c66ea0b4a007bf3fc996dd9c407d26f154636ab3d3991171064cde038"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\loRA\\format_to_sharegpt.py",
+      "kind": "experiment",
+      "bytes": 17512,
+      "sha256": "ffe3db084dc9df62e47256d9bbcfc6c242058c577731bb86da4ea160f8efb40f"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\loRA\\repoagent_routing_prompt_87.txt",
+      "kind": "experiment",
+      "bytes": 5971,
+      "sha256": "dc2719b91b94ecf225ece4b6bbbff8013cd51a49f4171e86ef50d5422725e612"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\scripts\\eval_agent.py",
+      "kind": "experiment",
+      "bytes": 30375,
+      "sha256": "81c8c751df0ecaab6acc81ea754c62a75fb3ed055472ed9805701cb92a0cdf8a"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\scripts\\eval_soft_fuse.py",
+      "kind": "experiment",
+      "bytes": 9658,
+      "sha256": "2ca9b971b5ed137e2aa7911ab5ce539a6acf08aa8c0f8a5b0a41d01d45d9b49f"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\scripts\\judge_answers.py",
+      "kind": "experiment",
+      "bytes": 9908,
+      "sha256": "db82e201a6a6e95ea8bd899f7a0761f6d212c3fceebfcef8475dccdc9ee76f6a"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\__init__.py",
+      "kind": "experiment",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\__init__.py",
+      "kind": "experiment",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\core.py",
+      "kind": "experiment",
+      "bytes": 14839,
+      "sha256": "157490972bc0dffc737168fa0016dfb7471f3fc713854abbf0af0a3e70c52de6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\llm.py",
+      "kind": "experiment",
+      "bytes": 3734,
+      "sha256": "aa21076106197d627c2ee4a77a1c6996e2505d50d5fd048cc5de5a73125ae848"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\router.py",
+      "kind": "experiment",
+      "bytes": 2500,
+      "sha256": "4060bb789c5ce8de74dc8fd11f870949445817c525dd5040f5fff10420aed7e0"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\code_analyser.py",
+      "kind": "experiment",
+      "bytes": 8713,
+      "sha256": "a55a60460d36876a3bdfe387a52a4fee82c4dd1cc3adab6f6c084b7dfab4b224"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\complete_code_llm.py",
+      "kind": "experiment",
+      "bytes": 721,
+      "sha256": "4185d77cb05a68f6a95014a3dac631e671f7c8580b2f5b8fcd273666e6280a23"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\docker_file_llm.py",
+      "kind": "experiment",
+      "bytes": 935,
+      "sha256": "8193edae9bff31a94491ae90867745755a6a43b9131a9efcedcbc91d11af0d08"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\generate_tests_llm.py",
+      "kind": "experiment",
+      "bytes": 4678,
+      "sha256": "d9a7c50b04de636d91b5160ac4628c76c6d9d7793ecb71dba3092a09f58056af"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\log_analyser_llm.py",
+      "kind": "experiment",
+      "bytes": 751,
+      "sha256": "e38d1fc1741a005981be83a27db25409caa898388437a1ef0456eb4dc4e85a4a"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\search_tool.py",
+      "kind": "experiment",
+      "bytes": 3675,
+      "sha256": "6ef6e43410dabfbef004f66403538a8dc7bfcb996576fcff7c15401ebaadb844"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\agent\\tools\\tools_schemas.py",
+      "kind": "experiment",
+      "bytes": 6392,
+      "sha256": "8ba108e695b380862143509d475fbde7352a484967828a3756baad29b51f6fb6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\api\\__init__.py",
+      "kind": "experiment",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\api\\routes.py",
+      "kind": "experiment",
+      "bytes": 3630,
+      "sha256": "a65955534e06fbed5ae1e0676fc56d4d604fd50e921aa8f18f35049da2a3f42d"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\config.py",
+      "kind": "experiment",
+      "bytes": 3386,
+      "sha256": "1c07ff5dea9dcc0e5241ae93838f28c452bd9abd186d58af1fa78aa9b96acf13"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\__init__.py",
+      "kind": "experiment",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\chroma_verify_tokens.py",
+      "kind": "experiment",
+      "bytes": 1692,
+      "sha256": "ae4c65a3d52f8861cb978b00264b1f3155ca409ef9bbe16d19ff2fafc13e8851"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\e2e_manifest.py",
+      "kind": "experiment",
+      "bytes": 6020,
+      "sha256": "d3c5e0138a3d752c357fc9a78a2706fdf9c4303da858619b096f5ebf198edab3"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\eva_retrieval.py",
+      "kind": "experiment",
+      "bytes": 5388,
+      "sha256": "8a3a615a67e4b704fd261c3c27f776da9793cbaaa14d74ec71418b8cb913879f"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\eva_retrieval_reranker.py",
+      "kind": "experiment",
+      "bytes": 3611,
+      "sha256": "1ef2fba33c2db757c96c278e462a0f0139e7cf91403cbe20defc6db2327714ac"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\eva_rewriter.py",
+      "kind": "experiment",
+      "bytes": 3636,
+      "sha256": "bea909e9617046879b36001cdbd73fd4f8c276b1def2ba494558ce3c95707c94"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\llm_judge_e2e.py",
+      "kind": "experiment",
+      "bytes": 13193,
+      "sha256": "8258473c117ee7f3d00deda1bc9e93c705ee9544734c959c444062d27751e1b6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\rag_dataset.py",
+      "kind": "experiment",
+      "bytes": 2989,
+      "sha256": "43a5066761f3894b05866dde6b661c505359169f23a2c2a2a19e0a3fbb107340"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\rewriter_noisy_dataset.py",
+      "kind": "experiment",
+      "bytes": 3860,
+      "sha256": "674d0e8520f2f7a1c9606f056c7e8da4ed1bd1c2bced4b3750eb8a3c34715c31"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\soft_fuse_dataset.py",
+      "kind": "experiment",
+      "bytes": 10396,
+      "sha256": "94f3203e01759e95c6e7fe424a0c5b0378fd92baaca802e1415af20993bb3dc9"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\evaluation\\stats.py",
+      "kind": "experiment",
+      "bytes": 2313,
+      "sha256": "d4ab849650e9c3890aa409a2d30580bc7a16269a0719e2ee885a47843d449c53"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\main.py",
+      "kind": "experiment",
+      "bytes": 1224,
+      "sha256": "a92c6f67cd869d1916aa18b0c951db56bb40a3f2ef83d7d07c60a999482fb91a"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\__init__.py",
+      "kind": "experiment",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\bm25.py",
+      "kind": "experiment",
+      "bytes": 3847,
+      "sha256": "61123ed94cf778edcddcee07510e953ca4f604e41e4fa2f6a4114e806645ad10"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\loader.py",
+      "kind": "experiment",
+      "bytes": 3550,
+      "sha256": "0222426ab0f3ccd14a295e420884173c917a276b85caf6bda7b274eb48d33119"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\query_rewriter.py",
+      "kind": "experiment",
+      "bytes": 2630,
+      "sha256": "7846c231422d3564d9f2684ca7c0f87da1a88bf69af41e8a790eebb298a3e9f6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\splitter.py",
+      "kind": "experiment",
+      "bytes": 3650,
+      "sha256": "fca333815a7a09841d7b70be63aa2296c87e8b158178475f49f2f099d7000413"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\tqdm_util.py",
+      "kind": "experiment",
+      "bytes": 838,
+      "sha256": "51512f8db0d1662fbf8eba0d452124ca00a420a6218ab5d5aa2bf84cc25c72a8"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\source\\src\\rag\\vectorstore.py",
+      "kind": "experiment",
+      "bytes": 13659,
+      "sha256": "cbe661b1684ac554e1200f66398ceb865da143b2afc7e08e814f5935be608983"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_clean\\summary.json",
+      "kind": "experiment",
+      "bytes": 22865,
+      "sha256": "5a2511d307212e4c84af8d6fd1572dea22c1483e94e8fac0bd46bfdb32e46326"
+    }
+  ]
+}

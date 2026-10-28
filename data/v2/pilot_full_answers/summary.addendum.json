@@ -1,0 +1,29 @@
+{
+  "kind": "historical_summary_addendum",
+  "recorded_date": "",
+  "timezone": "Asia/Shanghai",
+  "scope": "Post-native, pre-Q4 code-state clarification. The original summary remains a historical snapshot; native answers, scores, statistics and their interpretation are unchanged. No Q4 answers or scores have been generated.",
+  "historical_summary": {
+    "path": "data/v2/pilot_full_answers/summary.json",
+    "sha256": "f741125e4803fe3abf8e7dba2c051de4752dd197db7fedbc1f939c35e34f3124"
+  },
+  "clarifications": [
+    {
+      "json_pointer": "/limitations/2",
+      "historical_text": "Native returns complete tool context; phase2a currently supplies at most 6000 characters. The future comparison measures whole pipelines, not isolated finetuning.",
+      "current_text": "Native and phase2a now forward the complete returned tool result to the answer model and record it in the tool_context trace. The application-level 6000-character slice in phase2a has been removed; model context-window limits still apply. The future comparison measures whole pipelines, not isolated finetuning.",
+      "reason": "The phase2a tool-result slice was removed after the native pilot was archived. This clarification applies to the current code and future Q4 comparison, not retroactively to historical execution."
+    }
+  ],
+  "evidence": {
+    "source": {
+      "path": "src/agent/core.py",
+      "sha256": "157490972bc0dffc737168fa0016dfb7471f3fc713854abbf0af0a3e70c52de6"
+    },
+    "run_metadata": {
+      "path": "data/v2/pilot_full_answers/run.json",
+      "json_pointer": "/q4_preflight/tool_context_policy"
+    }
+  },
+  "q4_evaluation_started": false
+}

@@ -1,0 +1,173 @@
+{
+  "file_count": 28,
+  "files": [
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.json",
+      "kind": "experiment",
+      "bytes": 22567,
+      "sha256": "b40134a9f15c0bb5359699ee61346acdd6ee7571b7893df4988d29cefc3af46e"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.log",
+      "kind": "experiment",
+      "bytes": 2022,
+      "sha256": "fefe554a8afdd89b417b1621f74a34458e19b9135408a1d1dfe282e11d474e4c"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.json",
+      "kind": "experiment",
+      "bytes": 22706,
+      "sha256": "92cc170d6d5cc9df84407106effae49304b55888ffc269b65d1d0b0962b2ef85"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.log",
+      "kind": "experiment",
+      "bytes": 2034,
+      "sha256": "47362b43395e40bfc19d7150411e6b5b4980de60c109438bc4a15440f4758d4c"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.json",
+      "kind": "experiment",
+      "bytes": 22775,
+      "sha256": "39f3d4e169df8e206abe1b871c648df657c152e3bcfc773d67a1cb48c1de09da"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.log",
+      "kind": "experiment",
+      "bytes": 2052,
+      "sha256": "2daf34db40e0bcfdeb89f6f523ccd4fcaf2c8b3472416141f1b7213c6f742d3d"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.json",
+      "kind": "experiment",
+      "bytes": 22244,
+      "sha256": "3bac5b7fb7556c3da9c8e692ef08603b647011f80bfe0ffe5121e06834d8a2ff"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.log",
+      "kind": "experiment",
+      "bytes": 2073,
+      "sha256": "2a0a22fefd35008ec81e1133d2a74187224f1d5b0abee7b42d995f0d53906ec5"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.json",
+      "kind": "experiment",
+      "bytes": 22270,
+      "sha256": "ae17a302ed36fd6a9b0b25c2eb04c23926d056c50e3a97125a2df1385895773d"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.log",
+      "kind": "experiment",
+      "bytes": 2055,
+      "sha256": "96e09a513128de07e1e4586b853a14fe7d22539125645927c0624e45f0b02397"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.json",
+      "kind": "experiment",
+      "bytes": 22817,
+      "sha256": "830831e762a4ebded5dc6c77f52a961bb26fba8b22522023e8e8210f5a0db5df"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.log",
+      "kind": "experiment",
+      "bytes": 2040,
+      "sha256": "c3d266c40e1a30792b71b92f4d020605590b1b5b61e693923d3b35b94ca22fc0"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.json",
+      "kind": "experiment",
+      "bytes": 22307,
+      "sha256": "923d13821f1ab43d9533bc98f5d433a774bfea72c3f6e1cc92dbeb21c2ef0e42"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.log",
+      "kind": "experiment",
+      "bytes": 2061,
+      "sha256": "f0b2fe6e63a66f352e8f0380dfed2445680c0bb464c8baabf4a0c06108ea6ae6"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.json",
+      "kind": "experiment",
+      "bytes": 22298,
+      "sha256": "19b835296ac82db4e740c11dac92ef53da6b53249a9dd7e4b3e6c5aaad923116"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.log",
+      "kind": "experiment",
+      "bytes": 2067,
+      "sha256": "b08783db5ec72bd4321326f150754e2484f38ac71a63329c5ba7088ac7978fc7"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\explain_src.json",
+      "kind": "experiment",
+      "bytes": 22537,
+      "sha256": "380fa526df126a08cdec8a9be1e7d529043ed7084cb18ccf5f17d23e8305ca73"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\explain_src.log",
+      "kind": "experiment",
+      "bytes": 2021,
+      "sha256": "14aeb40dcaaade033a2ea658f9fbb2c1e1df215cf8b8777eb2ffae40d22dc36f"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\explanation_check.json",
+      "kind": "experiment",
+      "bytes": 47867,
+      "sha256": "7ac9c1963341ca010b45b7a0dc1eeca60d8f6c35d548eec3e11250a64559606b"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\protected_after.json",
+      "kind": "experiment",
+      "bytes": 65077,
+      "sha256": "088dc5970331483c12b26e76553dcd4cedd8eb4cf262f2a350b64cbf8c2a9c84"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\protected_after_explanation.json",
+      "kind": "experiment",
+      "bytes": 65077,
+      "sha256": "088dc5970331483c12b26e76553dcd4cedd8eb4cf262f2a350b64cbf8c2a9c84"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\protected_before.json",
+      "kind": "experiment",
+      "bytes": 65385,
+      "sha256": "eb34b349b7a657a945c791f70f704cac7436666d3087ef54b160fc5c71d0777b"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\question_restoration.json",
+      "kind": "experiment",
+      "bytes": 1751,
+      "sha256": "c883b12b4b2dbddc92a75ad7ef7ea5bffb7bf086d54158bd12f985060189f2c1"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\run.json",
+      "kind": "experiment",
+      "bytes": 15563,
+      "sha256": "8c52810491e964c167f44eca8fc07366c34f84e6d38a2d330fc227c20c32eec9"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\run_calibration.py",
+      "kind": "experiment",
+      "bytes": 14119,
+      "sha256": "4c568a4bdb6afa595b680fb99bd6a886eab1dbd803c2ac46cc492bb324bb807e"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\runner.log",
+      "kind": "experiment",
+      "bytes": 3326,
+      "sha256": "b535faddd1c7c9adadd3a85687e59e6c758000ef28f9d09aa39a4ac027394510"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\summary.json",
+      "kind": "experiment",
+      "bytes": 13482,
+      "sha256": "caf87f3367e7546e446f46bd30746ae43a9bd03bad02a2c2414631368a39fa54"
+    },
+    {
+      "path": ".\\data\\v2\\soft_fuse_rebaseline\\new_files.json",
+      "kind": "manifest",
+      "sha256": null,
+      "note": "自身SHA256不写入自身，避免递归摘要。"
+    }
+  ]
+}

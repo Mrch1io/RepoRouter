@@ -1,0 +1,5920 @@
+{
+  "inputs": {
+    "A": ".\\data\\v2\\frozen90\\e2e_native.jsonl",
+    "B": ".\\data\\v2\\frozen90\\e2e_q4.jsonl",
+    "judges": [
+      ".\\data\\v2\\frozen90\\judge_native.jsonl",
+      ".\\data\\v2\\frozen90\\judge_q4.jsonl"
+    ]
+  },
+  "delta_direction": "B_minus_A",
+  "usage_scope": "DeepSeek 全部调用合计；output 不是最终回答的单独 token 数",
+  "subsets": {
+    "all": {
+      "n": 90,
+      "must_ground_n": 35,
+      "execution_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "judge_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "truncated_answers": {
+        "A": 0,
+        "B": 0
+      },
+      "must_ground_retrieval": {
+        "A": {
+          "searched": 34,
+          "not_searched": 1,
+          "missing_context": 0,
+          "invalid_context": 0
+        },
+        "B": {
+          "searched": 32,
+          "not_searched": 3,
+          "missing_context": 0,
+          "invalid_context": 0
+        }
+      },
+      "binary": {
+        "l1_correct": {
+          "overall_n": 90,
+          "n": 90,
+          "A_correct": 89,
+          "B_correct": 86,
+          "A_only": 4,
+          "B_only": 1,
+          "mcnemar_p": 0.375
+        },
+        "final_judgement": {
+          "overall_n": 90,
+          "n": 90,
+          "A_correct": 83,
+          "B_correct": 79,
+          "A_only": 7,
+          "B_only": 3,
+          "mcnemar_p": 0.34375
+        }
+      },
+      "metrics": {
+        "seconds": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 5.190222222222222,
+          "B_mean": 4.005333333333334,
+          "mean_delta_B_minus_A": -1.1848888888888889,
+          "delta_ci95": [
+            -1.5061111111111112,
+            -0.892
+          ]
+        },
+        "cost_usd": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 0.0012197293333333333,
+          "B_mean": 0.0007905151333333332,
+          "mean_delta_B_minus_A": -0.00042921420000000004,
+          "delta_ci95": [
+            -0.0005261875333333333,
+            -0.00033817280000000003
+          ]
+        },
+        "answer_chars": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 1608.1222222222223,
+          "B_mean": 1096.2555555555555,
+          "mean_delta_B_minus_A": -511.8666666666667,
+          "delta_ci95": [
+            -618.0222222222222,
+            -409.85555555555555
+          ]
+        },
+        "score": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 4.688888888888889,
+          "B_mean": 4.588888888888889,
+          "mean_delta_B_minus_A": -0.1,
+          "delta_ci95": [
+            -0.25555555555555554,
+            0.044444444444444446
+          ]
+        },
+        "usage_calls": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 1.3777777777777778,
+          "B_mean": 0.9888888888888889,
+          "mean_delta_B_minus_A": -0.3888888888888889,
+          "delta_ci95": [
+            -0.4888888888888889,
+            -0.28888888888888886
+          ]
+        },
+        "usage_cache_hit": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 1571.5555555555557,
+          "B_mean": 440.85555555555555,
+          "mean_delta_B_minus_A": -1130.7,
+          "delta_ci95": [
+            -1297.0666666666666,
+            -984.2111111111111
+          ]
+        },
+        "usage_cache_miss": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 898.5555555555555,
+          "B_mean": 535.8777777777777,
+          "mean_delta_B_minus_A": -362.6777777777778,
+          "delta_ci95": [
+            -558.8444444444444,
+            -166.26666666666668
+          ]
+        },
+        "usage_output": {
+          "overall_n": 90,
+          "n": 90,
+          "A_mean": 783.9444444444445,
+          "B_mean": 522.5888888888888,
+          "mean_delta_B_minus_A": -261.35555555555555,
+          "delta_ci95": [
+            -311.3,
+            -214.9111111111111
+          ]
+        },
+        "top1_distance": {
+          "overall_n": 35,
+          "n": 31,
+          "A_mean": 0.6962163621379484,
+          "B_mean": 0.7297504342371418,
+          "mean_delta_B_minus_A": 0.03353407209919345,
+          "delta_ci95": [
+            -0.011197657354416387,
+            0.07861166807913011
+          ]
+        },
+        "evidence_chars": {
+          "overall_n": 35,
+          "n": 35,
+          "A_mean": 5220.628571428571,
+          "B_mean": 4281.771428571428,
+          "mean_delta_B_minus_A": -938.8571428571429,
+          "delta_ci95": [
+            -1506.2571428571428,
+            -403.0571428571429
+          ]
+        }
+      }
+    },
+    "known_pilot22": {
+      "n": 22,
+      "must_ground_n": 5,
+      "execution_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "judge_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "truncated_answers": {
+        "A": 0,
+        "B": 0
+      },
+      "must_ground_retrieval": {
+        "A": {
+          "searched": 5,
+          "not_searched": 0,
+          "missing_context": 0,
+          "invalid_context": 0
+        },
+        "B": {
+          "searched": 4,
+          "not_searched": 1,
+          "missing_context": 0,
+          "invalid_context": 0
+        }
+      },
+      "binary": {
+        "l1_correct": {
+          "overall_n": 22,
+          "n": 22,
+          "A_correct": 22,
+          "B_correct": 21,
+          "A_only": 1,
+          "B_only": 0,
+          "mcnemar_p": 1.0
+        },
+        "final_judgement": {
+          "overall_n": 22,
+          "n": 22,
+          "A_correct": 21,
+          "B_correct": 20,
+          "A_only": 2,
+          "B_only": 1,
+          "mcnemar_p": 1.0
+        }
+      },
+      "metrics": {
+        "seconds": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 5.252727272727273,
+          "B_mean": 4.2309090909090905,
+          "mean_delta_B_minus_A": -1.0218181818181817,
+          "delta_ci95": [
+            -1.5036363636363637,
+            -0.6004545454545455
+          ]
+        },
+        "cost_usd": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 0.0011647058181818181,
+          "B_mean": 0.000751138909090909,
+          "mean_delta_B_minus_A": -0.0004135669090909091,
+          "delta_ci95": [
+            -0.0005972738181818182,
+            -0.0002556774545454545
+          ]
+        },
+        "answer_chars": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 1596.9545454545455,
+          "B_mean": 1133.2272727272727,
+          "mean_delta_B_minus_A": -463.72727272727275,
+          "delta_ci95": [
+            -612.2727272727273,
+            -339.95454545454544
+          ]
+        },
+        "score": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 4.7727272727272725,
+          "B_mean": 4.681818181818182,
+          "mean_delta_B_minus_A": -0.09090909090909091,
+          "delta_ci95": [
+            -0.3181818181818182,
+            0.09090909090909091
+          ]
+        },
+        "usage_calls": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 1.2272727272727273,
+          "B_mean": 1.0,
+          "mean_delta_B_minus_A": -0.22727272727272727,
+          "delta_ci95": [
+            -0.4090909090909091,
+            -0.045454545454545456
+          ]
+        },
+        "usage_cache_hit": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 1285.8181818181818,
+          "B_mean": 389.8181818181818,
+          "mean_delta_B_minus_A": -896.0,
+          "delta_ci95": [
+            -1088.0,
+            -721.4545454545455
+          ]
+        },
+        "usage_cache_miss": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 674.6363636363636,
+          "B_mean": 242.36363636363637,
+          "mean_delta_B_minus_A": -432.27272727272725,
+          "delta_ci95": [
+            -829.5,
+            -95.86363636363636
+          ]
+        },
+        "usage_output": {
+          "overall_n": 22,
+          "n": 22,
+          "A_mean": 795.5,
+          "B_mean": 563.4090909090909,
+          "mean_delta_B_minus_A": -232.0909090909091,
+          "delta_ci95": [
+            -312.8181818181818,
+            -166.3181818181818
+          ]
+        },
+        "top1_distance": {
+          "overall_n": 5,
+          "n": 4,
+          "A_mean": 0.7317250594496727,
+          "B_mean": 0.8147113919258118,
+          "mean_delta_B_minus_A": 0.08298633247613907,
+          "delta_ci95": [
+            0.03021979331970215,
+            0.136361226439476
+          ]
+        },
+        "evidence_chars": {
+          "overall_n": 5,
+          "n": 5,
+          "A_mean": 5724.4,
+          "B_mean": 3659.6,
+          "mean_delta_B_minus_A": -2064.8,
+          "delta_ci95": [
+            -3553.2,
+            -848.8
+          ]
+        }
+      }
+    },
+    "remaining68": {
+      "n": 68,
+      "must_ground_n": 30,
+      "execution_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "judge_errors": {
+        "A": 0,
+        "B": 0
+      },
+      "truncated_answers": {
+        "A": 0,
+        "B": 0
+      },
+      "must_ground_retrieval": {
+        "A": {
+          "searched": 29,
+          "not_searched": 1,
+          "missing_context": 0,
+          "invalid_context": 0
+        },
+        "B": {
+          "searched": 28,
+          "not_searched": 2,
+          "missing_context": 0,
+          "invalid_context": 0
+        }
+      },
+      "binary": {
+        "l1_correct": {
+          "overall_n": 68,
+          "n": 68,
+          "A_correct": 67,
+          "B_correct": 65,
+          "A_only": 3,
+          "B_only": 1,
+          "mcnemar_p": 0.625
+        },
+        "final_judgement": {
+          "overall_n": 68,
+          "n": 68,
+          "A_correct": 62,
+          "B_correct": 59,
+          "A_only": 5,
+          "B_only": 2,
+          "mcnemar_p": 0.453125
+        }
+      },
+      "metrics": {
+        "seconds": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 5.17,
+          "B_mean": 3.9323529411764704,
+          "mean_delta_B_minus_A": -1.2376470588235293,
+          "delta_ci95": [
+            -1.625,
+            -0.8754411764705883
+          ]
+        },
+        "cost_usd": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 0.0012375310588235294,
+          "B_mean": 0.0008032544999999999,
+          "mean_delta_B_minus_A": -0.00043427655882352943,
+          "delta_ci95": [
+            -0.0005525358529411766,
+            -0.00032248438235294114
+          ]
+        },
+        "answer_chars": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 1611.735294117647,
+          "B_mean": 1084.2941176470588,
+          "mean_delta_B_minus_A": -527.4411764705883,
+          "delta_ci95": [
+            -661.7058823529412,
+            -406.55882352941177
+          ]
+        },
+        "score": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 4.661764705882353,
+          "B_mean": 4.5588235294117645,
+          "mean_delta_B_minus_A": -0.10294117647058823,
+          "delta_ci95": [
+            -0.3088235294117647,
+            0.07352941176470588
+          ]
+        },
+        "usage_calls": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 1.4264705882352942,
+          "B_mean": 0.9852941176470589,
+          "mean_delta_B_minus_A": -0.4411764705882353,
+          "delta_ci95": [
+            -0.5588235294117647,
+            -0.3235294117647059
+          ]
+        },
+        "usage_cache_hit": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 1664.0,
+          "B_mean": 457.36764705882354,
+          "mean_delta_B_minus_A": -1206.6323529411766,
+          "delta_ci95": [
+            -1415.5735294117646,
+            -1025.9264705882354
+          ]
+        },
+        "usage_cache_miss": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 971.0,
+          "B_mean": 630.8382352941177,
+          "mean_delta_B_minus_A": -340.1617647058824,
+          "delta_ci95": [
+            -577.6470588235294,
+            -114.88235294117646
+          ]
+        },
+        "usage_output": {
+          "overall_n": 68,
+          "n": 68,
+          "A_mean": 780.2058823529412,
+          "B_mean": 509.38235294117646,
+          "mean_delta_B_minus_A": -270.8235294117647,
+          "delta_ci95": [
+            -332.55882352941177,
+            -214.98529411764707
+          ]
+        },
+        "top1_distance": {
+          "overall_n": 30,
+          "n": 27,
+          "A_mean": 0.6909558143880632,
+          "B_mean": 0.7171636256906722,
+          "mean_delta_B_minus_A": 0.026207811302608915,
+          "delta_ci95": [
+            -0.02344601794525429,
+            0.07755628559324476
+          ]
+        },
+        "evidence_chars": {
+          "overall_n": 30,
+          "n": 30,
+          "A_mean": 5136.666666666667,
+          "B_mean": 4385.466666666666,
+          "mean_delta_B_minus_A": -751.2,
+          "delta_ci95": [
+            -1382.3,
+            -177.33333333333334
+          ]
+        }
+      }
+    }
+  },
+  "pairs": [
+    {
+      "sample_id": "d01",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.23,
+        "cost_usd": 0.0013252440000000002,
+        "answer_chars": 1962,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 153,
+        "usage_output": 1061,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.01,
+        "cost_usd": 0.001188168,
+        "answer_chars": 1768,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 154,
+        "usage_output": 951,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d02",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.63,
+        "cost_usd": 0.0014065439999999998,
+        "answer_chars": 2412,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 152,
+        "usage_output": 1129,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.41,
+        "cost_usd": 0.000879468,
+        "answer_chars": 1526,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 153,
+        "usage_output": 694,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d03",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.04,
+        "cost_usd": 0.0011548440000000001,
+        "answer_chars": 1616,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 153,
+        "usage_output": 919,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.16,
+        "cost_usd": 0.001053768,
+        "answer_chars": 1495,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 154,
+        "usage_output": 839,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d04",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.12,
+        "cost_usd": 0.000670044,
+        "answer_chars": 1139,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 157,
+        "usage_output": 514,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.16,
+        "cost_usd": 0.0005845679999999999,
+        "answer_chars": 994,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 158,
+        "usage_output": 447,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d05",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.61,
+        "cost_usd": 0.001212144,
+        "answer_chars": 2164,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 156,
+        "usage_output": 966,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.71,
+        "cost_usd": 0.001048668,
+        "answer_chars": 1741,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 157,
+        "usage_output": 834,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d06",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.43,
+        "cost_usd": 0.001108944,
+        "answer_chars": 1735,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 160,
+        "usage_output": 879,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.96,
+        "cost_usd": 0.000784668,
+        "answer_chars": 1136,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 161,
+        "usage_output": 613,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d07",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.9,
+        "cost_usd": 0.001018044,
+        "answer_chars": 1709,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 153,
+        "usage_output": 805,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": false,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.29,
+        "cost_usd": 0.001799736,
+        "answer_chars": 2332,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1874,
+        "usage_output": 1030,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8841555714607239,
+          "evidence_chars": 4778,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Dockerfile pip install cache layer",
+              "top_k": 6,
+              "top1_distance": 0.8841555714607239,
+              "evidence_chars": 4778,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d08",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.46,
+        "cost_usd": 0.001440144,
+        "answer_chars": 2432,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 148,
+        "usage_output": 1158,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.71,
+        "cost_usd": 0.000717468,
+        "answer_chars": 1122,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 149,
+        "usage_output": 560,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d09",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.0,
+        "cost_usd": 0.0014590439999999998,
+        "answer_chars": 2273,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 155,
+        "usage_output": 1172,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.17,
+        "cost_usd": 0.000715968,
+        "answer_chars": 1041,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 156,
+        "usage_output": 557,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d10",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.95,
+        "cost_usd": 0.001091844,
+        "answer_chars": 1828,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 159,
+        "usage_output": 865,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.65,
+        "cost_usd": 0.0007759679999999999,
+        "answer_chars": 1261,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 160,
+        "usage_output": 606,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d11",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.54,
+        "cost_usd": 0.0011344439999999999,
+        "answer_chars": 1632,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 157,
+        "usage_output": 901,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.52,
+        "cost_usd": 0.0009049679999999999,
+        "answer_chars": 1312,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 158,
+        "usage_output": 714,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d12",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.5,
+        "cost_usd": 0.001108644,
+        "answer_chars": 1588,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 159,
+        "usage_output": 879,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.37,
+        "cost_usd": 0.000957168,
+        "answer_chars": 1388,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 160,
+        "usage_output": 757,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d13",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.96,
+        "cost_usd": 0.001099344,
+        "answer_chars": 1746,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 156,
+        "usage_output": 872,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.72,
+        "cost_usd": 0.000838668,
+        "answer_chars": 1301,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 157,
+        "usage_output": 659,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d14",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.9,
+        "cost_usd": 0.0013318439999999998,
+        "answer_chars": 1844,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 167,
+        "usage_output": 1063,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": null,
+        "seconds": 0.46,
+        "cost_usd": 0,
+        "answer_chars": 49,
+        "usage_calls": 0,
+        "usage_cache_hit": 0,
+        "usage_cache_miss": 0,
+        "usage_output": 0,
+        "judge_error": null,
+        "score": 1,
+        "final_judgement": "incorrect",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d15",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.54,
+        "cost_usd": 0.0010810440000000002,
+        "answer_chars": 1605,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 159,
+        "usage_output": 856,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.85,
+        "cost_usd": 0.000798768,
+        "answer_chars": 1084,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 160,
+        "usage_output": 625,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d16",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.74,
+        "cost_usd": 0.0011368440000000001,
+        "answer_chars": 2018,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 153,
+        "usage_output": 904,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.75,
+        "cost_usd": 0.000778968,
+        "answer_chars": 1269,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 154,
+        "usage_output": 610,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d17",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.42,
+        "cost_usd": 0.001230144,
+        "answer_chars": 1871,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 156,
+        "usage_output": 981,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.73,
+        "cost_usd": 0.0012106679999999998,
+        "answer_chars": 1775,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 157,
+        "usage_output": 969,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d18",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 8.87,
+        "cost_usd": 0.0016462439999999998,
+        "answer_chars": 2127,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 159,
+        "usage_output": 1327,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.07,
+        "cost_usd": 0.000936768,
+        "answer_chars": 1150,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 160,
+        "usage_output": 740,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d19",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.95,
+        "cost_usd": 0.001288044,
+        "answer_chars": 1954,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 157,
+        "usage_output": 1029,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.11,
+        "cost_usd": 0.000774168,
+        "answer_chars": 1157,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 158,
+        "usage_output": 605,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "d20",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.82,
+        "cost_usd": 0.001004544,
+        "answer_chars": 1960,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 160,
+        "usage_output": 792,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.53,
+        "cost_usd": 0.000886668,
+        "answer_chars": 1608,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 161,
+        "usage_output": 698,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m01",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.78,
+        "cost_usd": 0.000876144,
+        "answer_chars": 1323,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 144,
+        "usage_output": 689,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.4,
+        "cost_usd": 0.0008782680000000001,
+        "answer_chars": 1310,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 145,
+        "usage_output": 695,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m02",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.07,
+        "cost_usd": 0.000628344,
+        "answer_chars": 1255,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 146,
+        "usage_output": 482,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.02,
+        "cost_usd": 0.000610068,
+        "answer_chars": 1185,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 147,
+        "usage_output": 471,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m03",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.04,
+        "cost_usd": 0.0008623439999999999,
+        "answer_chars": 1217,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 146,
+        "usage_output": 677,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.23,
+        "cost_usd": 0.000688068,
+        "answer_chars": 938,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 147,
+        "usage_output": 536,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m04",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.98,
+        "cost_usd": 0.000798744,
+        "answer_chars": 1085,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 150,
+        "usage_output": 623,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.25,
+        "cost_usd": 0.000624468,
+        "answer_chars": 847,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 151,
+        "usage_output": 482,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m05",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.17,
+        "cost_usd": 0.0010570439999999998,
+        "answer_chars": 1474,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 147,
+        "usage_output": 839,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.14,
+        "cost_usd": 0.000846768,
+        "answer_chars": 1088,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 148,
+        "usage_output": 668,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m06",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.14,
+        "cost_usd": 0.0010795439999999998,
+        "answer_chars": 1676,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 859,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.18,
+        "cost_usd": 0.0009328679999999999,
+        "answer_chars": 1351,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 741,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m07",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.38,
+        "cost_usd": 0.001119744,
+        "answer_chars": 1734,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 144,
+        "usage_output": 892,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.94,
+        "cost_usd": 0.0007498680000000001,
+        "answer_chars": 1117,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 145,
+        "usage_output": 588,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m08",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.59,
+        "cost_usd": 0.001185444,
+        "answer_chars": 1671,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 143,
+        "usage_output": 947,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.42,
+        "cost_usd": 0.000733968,
+        "answer_chars": 996,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 144,
+        "usage_output": 575,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m09",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.91,
+        "cost_usd": 0.001092444,
+        "answer_chars": 1607,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 145,
+        "usage_output": 869,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 8.13,
+        "cost_usd": 0.001327368,
+        "answer_chars": 1818,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 146,
+        "usage_output": 1069,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "m10",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.26,
+        "cost_usd": 0.000701544,
+        "answer_chars": 1007,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 146,
+        "usage_output": 543,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.5,
+        "cost_usd": 0.0005068679999999999,
+        "answer_chars": 797,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 147,
+        "usage_output": 385,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p01",
+      "repeat": 0,
+      "grounding_tier": "ok_generic",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.48,
+        "cost_usd": 0.000943044,
+        "answer_chars": 1813,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 143,
+        "usage_output": 745,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.9,
+        "cost_usd": 0.0007759679999999999,
+        "answer_chars": 1464,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 144,
+        "usage_output": 610,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p02",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.36,
+        "cost_usd": 0.001585356,
+        "answer_chars": 1692,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2185,
+        "usage_output": 764,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.7997894287109375,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "RepoAgent chat 工具调用 tool call 解析 JSON parse tool_calls",
+              "top_k": 6,
+              "top1_distance": 0.7997894287109375,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.33,
+        "cost_usd": 0.001341036,
+        "answer_chars": 1335,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2117,
+        "usage_output": 587,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8524512052536011,
+          "evidence_chars": 5002,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "RepoAgent chat tool_call json parsing",
+              "top_k": 6,
+              "top1_distance": 0.8524512052536011,
+              "evidence_chars": 5002,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p03",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.56,
+        "cost_usd": 0.001097484,
+        "answer_chars": 1597,
+        "usage_calls": 2,
+        "usage_cache_hit": 4864,
+        "usage_cache_miss": 381,
+        "usage_output": 795,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.617621898651123,
+          "evidence_chars": 7162,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "VectorStore dense retrieval RRF hybrid search 混合检索 方法实现",
+              "top_k": 8,
+              "top1_distance": 0.617621898651123,
+              "evidence_chars": 7162,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.2,
+        "cost_usd": 0.000566052,
+        "answer_chars": 873,
+        "usage_calls": 1,
+        "usage_cache_hit": 1792,
+        "usage_cache_miss": 171,
+        "usage_output": 420,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5877692699432373,
+          "evidence_chars": 4791,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "VectorStore dense search RRF rerank",
+              "top_k": 6,
+              "top1_distance": 0.5877692699432373,
+              "evidence_chars": 4791,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p04",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.62,
+        "cost_usd": 0.001765956,
+        "answer_chars": 1791,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2351,
+        "usage_output": 873,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5943449139595032,
+          "evidence_chars": 4816,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "search_codebase 工具返回 JSON 结构 定义 schema 代码片段 source file",
+              "top_k": 6,
+              "top1_distance": 0.5943449139595032,
+              "evidence_chars": 4816,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": false,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.03,
+        "cost_usd": 0.000138168,
+        "answer_chars": 211,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 146,
+        "usage_output": 78,
+        "judge_error": null,
+        "score": 2,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p05",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.94,
+        "cost_usd": 0.001330356,
+        "answer_chars": 1025,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2255,
+        "usage_output": 534,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.4219623804092407,
+          "evidence_chars": 4838,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "BM25 索引 持久化 保存路径 index path persist save load",
+              "top_k": 6,
+              "top1_distance": 0.4219623804092407,
+              "evidence_chars": 4838,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.34,
+        "cost_usd": 0.000969636,
+        "answer_chars": 571,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2207,
+        "usage_output": 255,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5907508730888367,
+          "evidence_chars": 5216,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "BM25Retiever load index_path",
+              "top_k": 6,
+              "top1_distance": 0.5907508730888367,
+              "evidence_chars": 5216,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p06",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.02,
+        "cost_usd": 0.001370256,
+        "answer_chars": 1181,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2112,
+        "usage_output": 603,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5344247221946716,
+          "evidence_chars": 4653,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "代码切块 Chunk 分块 split chunk 实现 模块 chunker text splitter",
+              "top_k": 6,
+              "top1_distance": 0.5344247221946716,
+              "evidence_chars": 4653,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.69,
+        "cost_usd": 0.00046241999999999995,
+        "answer_chars": 680,
+        "usage_calls": 1,
+        "usage_cache_hit": 1920,
+        "usage_cache_miss": 191,
+        "usage_output": 328,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6382626295089722,
+          "evidence_chars": 4653,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "CodeSplitter split chunk",
+              "top_k": 6,
+              "top1_distance": 0.6382626295089722,
+              "evidence_chars": 4653,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p07",
+      "repeat": 0,
+      "grounding_tier": "prefer_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.5,
+        "cost_usd": 0.000864144,
+        "answer_chars": 1760,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 148,
+        "usage_output": 678,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.79,
+        "cost_usd": 0.0010174679999999999,
+        "answer_chars": 1982,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 149,
+        "usage_output": 810,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p08",
+      "repeat": 0,
+      "grounding_tier": "prefer_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.05,
+        "cost_usd": 0.000982344,
+        "answer_chars": 1472,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 778,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.65,
+        "cost_usd": 0.000173268,
+        "answer_chars": 227,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 108,
+        "judge_error": null,
+        "score": 2,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p09",
+      "repeat": 0,
+      "grounding_tier": "ok_generic",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.73,
+        "cost_usd": 0.00027974399999999996,
+        "answer_chars": 396,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 140,
+        "usage_output": 193,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.99,
+        "cost_usd": 0.000268668,
+        "answer_chars": 328,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 141,
+        "usage_output": 188,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p10",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.85,
+        "cost_usd": 0.001309656,
+        "answer_chars": 1052,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2370,
+        "usage_output": 488,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6417940258979797,
+          "evidence_chars": 5157,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Dockerfile 自动生成 模块 generate_dockerfile dockerfile generator",
+              "top_k": 6,
+              "top1_distance": 0.6417940258979797,
+              "evidence_chars": 5157,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.65,
+        "cost_usd": 0.000455556,
+        "answer_chars": 784,
+        "usage_calls": 1,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 227,
+        "usage_output": 312,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.549925684928894,
+          "evidence_chars": 5157,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "generate_dockerfile Dockerfile",
+              "top_k": 6,
+              "top1_distance": 0.549925684928894,
+              "evidence_chars": 5157,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p11",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.58,
+        "cost_usd": 0.001300956,
+        "answer_chars": 1029,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2197,
+        "usage_output": 524,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.7368220686912537,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "settings embedding_provider 配置 可选值 embedding provider 枚举",
+              "top_k": 6,
+              "top1_distance": 0.7368220686912537,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.93,
+        "cost_usd": 0.00053622,
+        "answer_chars": 922,
+        "usage_calls": 1,
+        "usage_cache_hit": 1920,
+        "usage_cache_miss": 205,
+        "usage_output": 386,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9010831117630005,
+          "evidence_chars": 4193,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Settings embedding_provider",
+              "top_k": 6,
+              "top1_distance": 0.9010831117630005,
+              "evidence_chars": 4193,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p12",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.73,
+        "cost_usd": 0.001441056,
+        "answer_chars": 1152,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2184,
+        "usage_output": 644,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.46856608986854553,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "_prune_memory 多轮对话记忆裁剪 memory prune 消息丢弃",
+              "top_k": 6,
+              "top1_distance": 0.46856608986854553,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.5,
+        "cost_usd": 0.001050636,
+        "answer_chars": 889,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1745,
+        "usage_output": 438,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.4510613679885864,
+          "evidence_chars": 4816,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "_prune_memory 记忆裁剪 保留哪些消息",
+              "top_k": 6,
+              "top1_distance": 0.4510613679885864,
+              "evidence_chars": 4816,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p13",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.05,
+        "cost_usd": 0.001165056,
+        "answer_chars": 641,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2408,
+        "usage_output": 358,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.930747926235199,
+          "evidence_chars": 5207,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Streamlit Web UI 入口文件 streamlit run app.py main entry",
+              "top_k": 6,
+              "top1_distance": 0.930747926235199,
+              "evidence_chars": 5207,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.87,
+        "cost_usd": 0.0008514359999999999,
+        "answer_chars": 497,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1929,
+        "usage_output": 226,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.0202749967575073,
+          "evidence_chars": 4544,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "streamlit run main",
+              "top_k": 6,
+              "top1_distance": 1.0202749967575073,
+              "evidence_chars": 4544,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p14",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.64,
+        "cost_usd": 0.001391256,
+        "answer_chars": 1066,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2618,
+        "usage_output": 494,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6532488465309143,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "FastAPI chat 聊天接口 路由 router mount include_router chat endpoint",
+              "top_k": 6,
+              "top1_distance": 0.6532488465309143,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.92,
+        "cost_usd": 0.000330624,
+        "answer_chars": 408,
+        "usage_calls": 1,
+        "usage_cache_hit": 2304,
+        "usage_cache_miss": 368,
+        "usage_output": 172,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5950543284416199,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "chat_endpoint FastAPI router",
+              "top_k": 6,
+              "top1_distance": 0.5950543284416199,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p15",
+      "repeat": 0,
+      "grounding_tier": "prefer_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.86,
+        "cost_usd": 0.000538944,
+        "answer_chars": 771,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 144,
+        "usage_output": 408,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.55,
+        "cost_usd": 0.000334668,
+        "answer_chars": 431,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 145,
+        "usage_output": 242,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p16",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.17,
+        "cost_usd": 0.000688476,
+        "answer_chars": 1063,
+        "usage_calls": 2,
+        "usage_cache_hit": 4096,
+        "usage_cache_miss": 289,
+        "usage_output": 481,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5494623184204102,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Chroma 向量库 从磁盘 load 加载 VectorStore 方法 persist load persist_directory",
+              "top_k": 6,
+              "top1_distance": 0.5494623184204102,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.59,
+        "cost_usd": 0.0008763359999999998,
+        "answer_chars": 554,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1984,
+        "usage_output": 233,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5810381770133972,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "VectorStore load chroma disk",
+              "top_k": 6,
+              "top1_distance": 0.5810381770133972,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p17",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": false,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.17,
+        "cost_usd": 0.000882144,
+        "answer_chars": 1244,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 144,
+        "usage_output": 694,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.21,
+        "cost_usd": 0.001160136,
+        "answer_chars": 1278,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1786,
+        "usage_output": 519,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6856732964515686,
+          "evidence_chars": 3951,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Query_rewriter rewrite 改写查询",
+              "top_k": 6,
+              "top1_distance": 0.6856732964515686,
+              "evidence_chars": 3951,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p18",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.7,
+        "cost_usd": 0.002145156,
+        "answer_chars": 2296,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2403,
+        "usage_output": 1176,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8573024868965149,
+          "evidence_chars": 5005,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "analyse_log 工具注册 接入 Agent tool registry 路由",
+              "top_k": 6,
+              "top1_distance": 0.8573024868965149,
+              "evidence_chars": 5005,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": false,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.36,
+        "cost_usd": 0.000118668,
+        "answer_chars": 170,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 145,
+        "usage_output": 62,
+        "judge_error": null,
+        "score": 1,
+        "final_judgement": "incorrect",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p19",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.23,
+        "cost_usd": 0.0011047560000000001,
+        "answer_chars": 761,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2139,
+        "usage_output": 375,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8210658431053162,
+          "evidence_chars": 4767,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "scripts 目录 构建本地知识库 脚本 build knowledge base index 向量库 索引构建",
+              "top_k": 6,
+              "top1_distance": 0.8210658431053162,
+              "evidence_chars": 4767,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.3,
+        "cost_usd": 0.000304188,
+        "answer_chars": 439,
+        "usage_calls": 1,
+        "usage_cache_hit": 2048,
+        "usage_cache_miss": 181,
+        "usage_output": 198,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.0743921995162964,
+          "evidence_chars": 5072,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "scripts directory local knowledge base",
+              "top_k": 6,
+              "top1_distance": 1.0743921995162964,
+              "evidence_chars": 5072,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p20",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.93,
+        "cost_usd": 0.0015430560000000001,
+        "answer_chars": 1463,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2344,
+        "usage_output": 689,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6884033679962158,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Chroma_persist_dir 向量持久化目录 配置 chroma persist directory config",
+              "top_k": 6,
+              "top1_distance": 0.6884033679962158,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.33,
+        "cost_usd": 0.00053727,
+        "answer_chars": 977,
+        "usage_calls": 1,
+        "usage_cache_hit": 2045,
+        "usage_cache_miss": 134,
+        "usage_output": 404,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.067704439163208,
+          "evidence_chars": 4572,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Chroma_persist_dir Settings",
+              "top_k": 6,
+              "top1_distance": 1.067704439163208,
+              "evidence_chars": 4572,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p21",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.36,
+        "cost_usd": 0.002433756,
+        "answer_chars": 2918,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 3317,
+        "usage_output": 1188,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6788488030433655,
+          "evidence_chars": 7162,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "RepoAgent FastAPI 路由注册 APIRouter include_router app 接口定义",
+              "top_k": 8,
+              "top1_distance": 0.6788488030433655,
+              "evidence_chars": 7162,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.43,
+        "cost_usd": 0.001436136,
+        "answer_chars": 1435,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2390,
+        "usage_output": 598,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.7178642749786377,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "FastAPI router register route",
+              "top_k": 6,
+              "top1_distance": 0.7178642749786377,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p22",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.75,
+        "cost_usd": 0.0015979560000000002,
+        "answer_chars": 1343,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2559,
+        "usage_output": 681,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5755898356437683,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "接收用户问题 分发工具调用 核心逻辑 agent router dispatch tool call 入口",
+              "top_k": 6,
+              "top1_distance": 0.5755898356437683,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.54,
+        "cost_usd": 0.001153836,
+        "answer_chars": 840,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2237,
+        "usage_output": 401,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.748756468296051,
+          "evidence_chars": 4740,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "route 工具路由 分发调用",
+              "top_k": 6,
+              "top1_distance": 0.748756468296051,
+              "evidence_chars": 4740,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p23",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.77,
+        "cost_usd": 0.001973556,
+        "answer_chars": 2133,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2911,
+        "usage_output": 906,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6428124904632568,
+          "evidence_chars": 7030,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "RepoAgent Function Calling 工具列表 tools schema 封装 tool definition",
+              "top_k": 8,
+              "top1_distance": 0.6428124904632568,
+              "evidence_chars": 7030,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.96,
+        "cost_usd": 0.0014700359999999999,
+        "answer_chars": 1869,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1919,
+        "usage_output": 744,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5424352884292603,
+          "evidence_chars": 5230,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Function Calling tool schemas RepoAgent",
+              "top_k": 6,
+              "top1_distance": 0.5424352884292603,
+              "evidence_chars": 5230,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p24",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.59,
+        "cost_usd": 0.002305056,
+        "answer_chars": 2454,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 3092,
+        "usage_output": 1137,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.48941341042518616,
+          "evidence_chars": 7162,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "search_codebase 工具实现 检索流程 向量库 索引 retriever",
+              "top_k": 8,
+              "top1_distance": 0.48941341042518616,
+              "evidence_chars": 7162,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.59,
+        "cost_usd": 0.0010335239999999999,
+        "answer_chars": 1966,
+        "usage_calls": 1,
+        "usage_cache_hit": 2304,
+        "usage_cache_miss": 231,
+        "usage_output": 792,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5966581106185913,
+          "evidence_chars": 5370,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "search_codebase 工具实现流程",
+              "top_k": 6,
+              "top1_distance": 0.5966581106185913,
+              "evidence_chars": 5370,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p25",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.81,
+        "cost_usd": 0.0017518559999999998,
+        "answer_chars": 1737,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2240,
+        "usage_output": 889,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6959697008132935,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Chroma 向量库 初始化 PersistentClient 单例 预热 get_or_create_collection",
+              "top_k": 6,
+              "top1_distance": 0.6959697008132935,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.25,
+        "cost_usd": 0.000801888,
+        "answer_chars": 1368,
+        "usage_calls": 1,
+        "usage_cache_hit": 2048,
+        "usage_cache_miss": 196,
+        "usage_output": 609,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6030387878417969,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Chroma vectorstore initialization singleton warmup",
+              "top_k": 6,
+              "top1_distance": 0.6030387878417969,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p26",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.71,
+        "cost_usd": 0.001782756,
+        "answer_chars": 1649,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2611,
+        "usage_output": 822,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.4585443139076233,
+          "evidence_chars": 6075,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "文档切分 chunk 策略 split_documents text splitter 分块 chunk_size chunk_overlap",
+              "top_k": 8,
+              "top1_distance": 0.4585443139076233,
+              "evidence_chars": 6075,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.43,
+        "cost_usd": 0.001161936,
+        "answer_chars": 1082,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1860,
+        "usage_output": 502,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6576451063156128,
+          "evidence_chars": 4653,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "CodeSplitter split chunk strategy",
+              "top_k": 6,
+              "top1_distance": 0.6576451063156128,
+              "evidence_chars": 4653,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p27",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.47,
+        "cost_usd": 0.000943272,
+        "answer_chars": 1367,
+        "usage_calls": 2,
+        "usage_cache_hit": 3712,
+        "usage_cache_miss": 330,
+        "usage_output": 685,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5401458740234375,
+          "evidence_chars": 3558,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Query Rewrite 查询改写 检索前 pipeline 阶段 query_rewrite",
+              "top_k": 6,
+              "top1_distance": 0.5401458740234375,
+              "evidence_chars": 3558,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.46,
+        "cost_usd": 0.0008706359999999999,
+        "answer_chars": 688,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1625,
+        "usage_output": 318,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6197936534881592,
+          "evidence_chars": 3558,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Query_rewriter rewrite 检索前",
+              "top_k": 6,
+              "top1_distance": 0.6197936534881592,
+              "evidence_chars": 3558,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p28",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.02,
+        "cost_usd": 0.001699956,
+        "answer_chars": 1823,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2327,
+        "usage_output": 824,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6739112138748169,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Dense 检索 embedding 模型调用 dense_retriever embed_query embedding model encode",
+              "top_k": 6,
+              "top1_distance": 0.6739112138748169,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.61,
+        "cost_usd": 0.0011838359999999997,
+        "answer_chars": 1145,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2069,
+        "usage_output": 468,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5020303726196289,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "embedding model dense retrieval VectorStore",
+              "top_k": 6,
+              "top1_distance": 0.5020303726196289,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p29",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.45,
+        "cost_usd": 0.001968456,
+        "answer_chars": 2458,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2474,
+        "usage_output": 1011,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8320888876914978,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "RepoAgent 工具路由 tool routing 结果组织 JSON 输出 format",
+              "top_k": 6,
+              "top1_distance": 0.8320888876914978,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": false,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.25,
+        "cost_usd": 0.00013456799999999998,
+        "answer_chars": 191,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 146,
+        "usage_output": 75,
+        "judge_error": null,
+        "score": 1,
+        "final_judgement": "incorrect",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p30",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.7,
+        "cost_usd": 0.0008244119999999998,
+        "answer_chars": 972,
+        "usage_calls": 2,
+        "usage_cache_hit": 4352,
+        "usage_cache_miss": 313,
+        "usage_output": 587,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.7644648551940918,
+          "evidence_chars": 5370,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "调用指纹 fingerprint 防重复调用 死循环 去重 缓存 key",
+              "top_k": 6,
+              "top1_distance": 0.7644648551940918,
+              "evidence_chars": 5370,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.28,
+        "cost_usd": 0.0012579359999999999,
+        "answer_chars": 1195,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2008,
+        "usage_output": 545,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.7069780826568604,
+          "evidence_chars": 5370,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "调用指纹 重复调用 死循环",
+              "top_k": 6,
+              "top1_distance": 0.7069780826568604,
+              "evidence_chars": 5370,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p31",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.44,
+        "cost_usd": 0.0017914560000000003,
+        "answer_chars": 1832,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2380,
+        "usage_output": 887,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6677122116088867,
+          "evidence_chars": 5716,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "AST 静态分析器 入口函数 ast.parse visitor 反模式 anti-pattern 检查",
+              "top_k": 8,
+              "top1_distance": 0.6677122116088867,
+              "evidence_chars": 5716,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.75,
+        "cost_usd": 0.000921636,
+        "answer_chars": 960,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1463,
+        "usage_output": 401,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.634842038154602,
+          "evidence_chars": 3946,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "analyse_code AST static analysis patterns",
+              "top_k": 6,
+              "top1_distance": 0.634842038154602,
+              "evidence_chars": 3946,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p32",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 8.69,
+        "cost_usd": 0.002292624,
+        "answer_chars": 3089,
+        "usage_calls": 2,
+        "usage_cache_hit": 2304,
+        "usage_cache_miss": 1904,
+        "usage_output": 1423,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9228467345237732,
+          "evidence_chars": 3916,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "GitHub Actions workflow CI 集成 AST 静态分析 ast parse 静态检查 pipeline yml",
+              "top_k": 6,
+              "top1_distance": 0.9228467345237732,
+              "evidence_chars": 3916,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.58,
+        "cost_usd": 0.000592884,
+        "answer_chars": 989,
+        "usage_calls": 1,
+        "usage_cache_hit": 1664,
+        "usage_cache_miss": 243,
+        "usage_output": 425,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8628977537155151,
+          "evidence_chars": 3916,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "GitHub Actions CI AST static analysis",
+              "top_k": 6,
+              "top1_distance": 0.8628977537155151,
+              "evidence_chars": 3916,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p33",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.08,
+        "cost_usd": 0.0015166560000000001,
+        "answer_chars": 1575,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 1896,
+        "usage_output": 779,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6497259736061096,
+          "evidence_chars": 4251,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "日志分析工具 analyse_log 解析日志 生成结果 实现",
+              "top_k": 6,
+              "top1_distance": 0.6497259736061096,
+              "evidence_chars": 4251,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.3,
+        "cost_usd": 0.0013323359999999997,
+        "answer_chars": 1459,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1736,
+        "usage_output": 675,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.39508500695228577,
+          "evidence_chars": 4251,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "analyse_log log_analyser_llm 解析日志",
+              "top_k": 6,
+              "top1_distance": 0.39508500695228577,
+              "evidence_chars": 4251,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p34",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.81,
+        "cost_usd": 0.0013291560000000002,
+        "answer_chars": 1031,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2335,
+        "usage_output": 513,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5578641891479492,
+          "evidence_chars": 4964,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "generate_dockerfile Dockerfile prompt 定义 工具 逻辑 实现",
+              "top_k": 6,
+              "top1_distance": 0.5578641891479492,
+              "evidence_chars": 4964,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.5,
+        "cost_usd": 0.0008808359999999999,
+        "answer_chars": 642,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 1863,
+        "usage_output": 267,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.5298181176185608,
+          "evidence_chars": 4573,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "generate_dockerfile prompt logic",
+              "top_k": 6,
+              "top1_distance": 0.5298181176185608,
+              "evidence_chars": 4573,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p35",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.18,
+        "cost_usd": 0.001193172,
+        "answer_chars": 1734,
+        "usage_calls": 2,
+        "usage_cache_hit": 3712,
+        "usage_cache_miss": 375,
+        "usage_output": 882,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.6403294801712036,
+          "evidence_chars": 4099,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "RAG 检索评测 MRR mean reciprocal rank 计算 eval retrieval metric",
+              "top_k": 6,
+              "top1_distance": 0.6403294801712036,
+              "evidence_chars": 4099,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.3,
+        "cost_usd": 0.0009273840000000001,
+        "answer_chars": 1553,
+        "usage_calls": 1,
+        "usage_cache_hit": 1664,
+        "usage_cache_miss": 250,
+        "usage_output": 702,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.775398313999176,
+          "evidence_chars": 4099,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "MRR retrieval evaluation",
+              "top_k": 6,
+              "top1_distance": 0.775398313999176,
+              "evidence_chars": 4099,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p36",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.25,
+        "cost_usd": 0.001758756,
+        "answer_chars": 1331,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2951,
+        "usage_output": 717,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.0113563537597656,
+          "evidence_chars": 6158,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "LoRA 微调模型加载 动态挂载 load_lora_weights adapter attach detach PEFT",
+              "top_k": 8,
+              "top1_distance": 1.0113563537597656,
+              "evidence_chars": 6158,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.84,
+        "cost_usd": 0.00044552399999999993,
+        "answer_chars": 685,
+        "usage_calls": 1,
+        "usage_cache_hit": 2304,
+        "usage_cache_miss": 147,
+        "usage_output": 323,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9255477786064148,
+          "evidence_chars": 5021,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "LoRA 微调 加载 动态挂载",
+              "top_k": 6,
+              "top1_distance": 0.9255477786064148,
+              "evidence_chars": 5021,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p37",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.7,
+        "cost_usd": 0.001493856,
+        "answer_chars": 1049,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2464,
+        "usage_output": 618,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9616174697875977,
+          "evidence_chars": 4757,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "SFT 数据构造 脚本 6类业务场景 数据生成 pipeline",
+              "top_k": 8,
+              "top1_distance": 0.9616174697875977,
+              "evidence_chars": 4757,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.08,
+        "cost_usd": 0.00044828399999999997,
+        "answer_chars": 599,
+        "usage_calls": 1,
+        "usage_cache_hit": 1664,
+        "usage_cache_miss": 213,
+        "usage_output": 312,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.965191125869751,
+          "evidence_chars": 3150,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "SFT data construction 6 scenarios",
+              "top_k": 6,
+              "top1_distance": 0.965191125869751,
+              "evidence_chars": 3150,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p38",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.54,
+        "cost_usd": 0.001663524,
+        "answer_chars": 1243,
+        "usage_calls": 2,
+        "usage_cache_hit": 2304,
+        "usage_cache_miss": 2351,
+        "usage_output": 787,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.0063649415969849,
+          "evidence_chars": 4992,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "上下文过滤 context filter 滑动窗口 sliding window 推理链路 inference pipeline 阶段 stage 上下文压缩",
+              "top_k": 6,
+              "top1_distance": 1.0063649415969849,
+              "evidence_chars": 4992,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.51,
+        "cost_usd": 0.001068036,
+        "answer_chars": 778,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2075,
+        "usage_output": 370,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 1.0877933502197266,
+          "evidence_chars": 5022,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "context filtering sliding window inference",
+              "top_k": 6,
+              "top1_distance": 1.0877933502197266,
+              "evidence_chars": 5022,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p39",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 8.19,
+        "cost_usd": 0.002475456,
+        "answer_chars": 2908,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 3036,
+        "usage_output": 1293,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.8804051280021667,
+          "evidence_chars": 7200,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "Streamlit 前端 chat_input 用户提问 工具调用 返回 模型回答 消息流 st.write_stream session_state",
+              "top_k": 8,
+              "top1_distance": 0.8804051280021667,
+              "evidence_chars": 7200,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 7.63,
+        "cost_usd": 0.002249136,
+        "answer_chars": 3489,
+        "usage_calls": 1,
+        "usage_cache_hit": 256,
+        "usage_cache_miss": 2192,
+        "usage_output": 1325,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.932068407535553,
+          "evidence_chars": 5400,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "Streamlit chat response tool return",
+              "top_k": 6,
+              "top1_distance": 0.932068407535553,
+              "evidence_chars": 5400,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "p40",
+      "repeat": 0,
+      "grounding_tier": "must_ground",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.14,
+        "cost_usd": 0.001828356,
+        "answer_chars": 1697,
+        "usage_calls": 2,
+        "usage_cache_hit": 2176,
+        "usage_cache_miss": 2547,
+        "usage_output": 876,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9008753299713135,
+          "evidence_chars": 6223,
+          "results_count": 8,
+          "calls": [
+            {
+              "query": "检索结果质量差 降级 fallback 熔断 circuit breaker 重试 retry 检索失败兜底",
+              "top_k": 8,
+              "top1_distance": 0.9008753299713135,
+              "evidence_chars": 6223,
+              "results_count": 8
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.38,
+        "cost_usd": 0.000754152,
+        "answer_chars": 1103,
+        "usage_calls": 1,
+        "usage_cache_hit": 1792,
+        "usage_cache_miss": 146,
+        "usage_output": 583,
+        "judge_error": null,
+        "score": 3,
+        "final_judgement": "partially_correct",
+        "retrieval": {
+          "status": "searched",
+          "top1_distance": 0.9086531400680542,
+          "evidence_chars": 3733,
+          "results_count": 6,
+          "calls": [
+            {
+              "query": "检索质量 降级 熔断",
+              "top_k": 6,
+              "top1_distance": 0.9086531400680542,
+              "evidence_chars": 3733,
+              "results_count": 6
+            }
+          ],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q01",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.32,
+        "cost_usd": 0.0008557440000000001,
+        "answer_chars": 1693,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 140,
+        "usage_output": 673,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.99,
+        "cost_usd": 0.000770268,
+        "answer_chars": 1476,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 141,
+        "usage_output": 606,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q02",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.07,
+        "cost_usd": 0.0012442439999999998,
+        "answer_chars": 2852,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 139,
+        "usage_output": 997,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.83,
+        "cost_usd": 0.000919968,
+        "answer_chars": 2040,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 140,
+        "usage_output": 731,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q03",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.22,
+        "cost_usd": 0.000994944,
+        "answer_chars": 1711,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 136,
+        "usage_output": 790,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.91,
+        "cost_usd": 0.0008014680000000001,
+        "answer_chars": 1363,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 137,
+        "usage_output": 633,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q04",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.48,
+        "cost_usd": 0.00042074399999999997,
+        "answer_chars": 611,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 138,
+        "usage_output": 311,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 1.6,
+        "cost_usd": 0.00015766799999999997,
+        "answer_chars": 178,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 139,
+        "usage_output": 96,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q05",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.94,
+        "cost_usd": 0.000775944,
+        "answer_chars": 1135,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 606,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.7,
+        "cost_usd": 0.0006628679999999999,
+        "answer_chars": 952,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 516,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q06",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.31,
+        "cost_usd": 0.000929844,
+        "answer_chars": 1593,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 135,
+        "usage_output": 736,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.59,
+        "cost_usd": 0.0006463679999999999,
+        "answer_chars": 1035,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 136,
+        "usage_output": 504,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q07",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.5,
+        "cost_usd": 0.000784644,
+        "answer_chars": 1243,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 139,
+        "usage_output": 614,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.25,
+        "cost_usd": 0.000564768,
+        "answer_chars": 836,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 140,
+        "usage_output": 435,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q08",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.25,
+        "cost_usd": 0.0008281439999999998,
+        "answer_chars": 1226,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 136,
+        "usage_output": 651,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.19,
+        "cost_usd": 0.000767868,
+        "answer_chars": 1031,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 137,
+        "usage_output": 605,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q09",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 6.35,
+        "cost_usd": 0.001126944,
+        "answer_chars": 1869,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 136,
+        "usage_output": 900,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.56,
+        "cost_usd": 0.000733068,
+        "answer_chars": 1035,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 137,
+        "usage_output": 576,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q10",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.98,
+        "cost_usd": 0.000990144,
+        "answer_chars": 1419,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 140,
+        "usage_output": 785,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.67,
+        "cost_usd": 0.0006442679999999999,
+        "answer_chars": 928,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 141,
+        "usage_output": 501,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q11",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.49,
+        "cost_usd": 0.001308144,
+        "answer_chars": 2670,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 136,
+        "usage_output": 1051,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.25,
+        "cost_usd": 0.000871068,
+        "answer_chars": 1581,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 137,
+        "usage_output": 691,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q12",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.52,
+        "cost_usd": 0.0007453439999999999,
+        "answer_chars": 1325,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 140,
+        "usage_output": 581,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.83,
+        "cost_usd": 0.00039466799999999993,
+        "answer_chars": 602,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 141,
+        "usage_output": 293,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q13",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.79,
+        "cost_usd": 0.000847044,
+        "answer_chars": 1669,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 143,
+        "usage_output": 665,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.0,
+        "cost_usd": 0.000773568,
+        "answer_chars": 1465,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 144,
+        "usage_output": 608,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q14",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.4,
+        "cost_usd": 0.0008365439999999999,
+        "answer_chars": 1499,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 140,
+        "usage_output": 657,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.75,
+        "cost_usd": 0.000548268,
+        "answer_chars": 781,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 141,
+        "usage_output": 421,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q15",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.76,
+        "cost_usd": 0.000760344,
+        "answer_chars": 1321,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 593,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 2.55,
+        "cost_usd": 0.000427668,
+        "answer_chars": 739,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 320,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q16",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.86,
+        "cost_usd": 0.000814044,
+        "answer_chars": 1191,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 137,
+        "usage_output": 639,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.54,
+        "cost_usd": 0.0006109679999999999,
+        "answer_chars": 900,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 138,
+        "usage_output": 474,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q17",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 4.38,
+        "cost_usd": 0.000868944,
+        "answer_chars": 1248,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 136,
+        "usage_output": 685,
+        "judge_error": null,
+        "score": 4,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.02,
+        "cost_usd": 0.000441468,
+        "answer_chars": 609,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 137,
+        "usage_output": 333,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q18",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.98,
+        "cost_usd": 0.000931944,
+        "answer_chars": 1682,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 736,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.25,
+        "cost_usd": 0.0007024679999999999,
+        "answer_chars": 1172,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 549,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q19",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.76,
+        "cost_usd": 0.0008122439999999999,
+        "answer_chars": 1472,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 139,
+        "usage_output": 637,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 3.52,
+        "cost_usd": 0.000705168,
+        "answer_chars": 1135,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 140,
+        "usage_output": 552,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    },
+    {
+      "sample_id": "q20",
+      "repeat": 0,
+      "grounding_tier": "n/a",
+      "A": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.01,
+        "cost_usd": 0.0011971439999999998,
+        "answer_chars": 2030,
+        "usage_calls": 1,
+        "usage_cache_hit": 1024,
+        "usage_cache_miss": 142,
+        "usage_output": 957,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      },
+      "B": {
+        "l1_correct": true,
+        "execution_error": null,
+        "answer_finish_reason": "stop",
+        "seconds": 5.13,
+        "cost_usd": 0.001075668,
+        "answer_chars": 1793,
+        "usage_calls": 1,
+        "usage_cache_hit": 128,
+        "usage_cache_miss": 143,
+        "usage_output": 860,
+        "judge_error": null,
+        "score": 5,
+        "final_judgement": "correct",
+        "retrieval": {
+          "status": "not_searched",
+          "top1_distance": null,
+          "evidence_chars": 0,
+          "results_count": 0,
+          "calls": [],
+          "non_payload_messages": 0
+        }
+      }
+    }
+  ],
+  "review_plan": {
+    "created_at": "",
+    "seed": 20261024,
+    "population_ids": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10",
+      "d11",
+      "d12",
+      "d13",
+      "d14",
+      "d15",
+      "d16",
+      "d17",
+      "d18",
+      "d19",
+      "d20",
+      "m01",
+      "m02",
+      "m03",
+      "m04",
+      "m05",
+      "m06",
+      "m07",
+      "m08",
+      "m09",
+      "m10",
+      "p01",
+      "p02",
+      "p03",
+      "p04",
+      "p05",
+      "p06",
+      "p07",
+      "p08",
+      "p09",
+      "p10",
+      "p11",
+      "p12",
+      "p13",
+      "p14",
+      "p15",
+      "p16",
+      "p17",
+      "p18",
+      "p19",
+      "p20",
+      "p21",
+      "p22",
+      "p23",
+      "p24",
+      "p25",
+      "p26",
+      "p27",
+      "p28",
+      "p29",
+      "p30",
+      "p31",
+      "p32",
+      "p33",
+      "p34",
+      "p35",
+      "p36",
+      "p37",
+      "p38",
+      "p39",
+      "p40",
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q07",
+      "q08",
+      "q09",
+      "q10",
+      "q11",
+      "q12",
+      "q13",
+      "q14",
+      "q15",
+      "q16",
+      "q17",
+      "q18",
+      "q19",
+      "q20"
+    ],
+    "random_sample_ids": [
+      "d03",
+      "d08",
+      "d10",
+      "m03",
+      "m05",
+      "p10",
+      "p38",
+      "q02",
+      "q06",
+      "q14"
+    ],
+    "scope": "同一批10题复核两条链路；再加入全部三分类判定分歧题，重合去重但保留来源标签。",
+    "blind_review": "审阅时隐藏链路名及评委评分，先根据实际工具记录、可见证据、事实与任务完成情况判定。",
+    "human_error_definition": "关键事实、公式或工具动作错误，或未完成关键要求，均计为错误；包括因此仅部分正确的答案。措辞偏好不计错误。",
+    "miss_rate_definition": "人工确认错误但评委判correct的数量 / 人工确认错误数量；分母为0记null。",
+    "sampling_analysis": "随机样本与分歧题分别统计，不直接合并估计总体漏判率。",
+    "status": "名单已预注册；人工复核尚未进行",
+    "operational_review": "额外纳入输出被截断、回答运行失败和评委失败的题，单列来源，不混入随机样本的漏判率估计。",
+    "blind_materials": "comparison.review.jsonl供盲审；comparison.review-map.json单独保存解盲映射，复核完成前不提供给审阅者。"
+  },
+  "review_queue": [
+    {
+      "sample_id": "d03",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "d08",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "d10",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "d14",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "m03",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "m05",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p03",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p04",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p07",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p09",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p10",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p17",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p18",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p24",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p29",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p30",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p38",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "p40",
+      "repeat": 0,
+      "selection": [
+        "judgement_disagreement"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "q02",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "q06",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    },
+    {
+      "sample_id": "q14",
+      "repeat": 0,
+      "selection": [
+        "random"
+      ],
+      "human_review": "pending"
+    }
+  ],
+  "human_review_status": "pending",
+  "publishable": true,
+  "review_files": {
+    "blinded": ".\\data\\v2\\frozen90\\comparison.review.jsonl",
+    "mapping": ".\\data\\v2\\frozen90\\comparison.review-map.json"
+  }
+}

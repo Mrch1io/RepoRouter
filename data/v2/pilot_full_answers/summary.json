@@ -1,0 +1,46 @@
+{
+  "status": "native_complete_q4_waiting_for_5090",
+  "sample_count": 22,
+  "native": {
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "normal_finish_count": 22,
+    "answer_length_min": 986,
+    "answer_length_max": 2824,
+    "answers_over_1200": 16,
+    "characters_preserved_beyond_preview": 9458,
+    "tool_decision_correct": 22,
+    "judge_counts": {
+      "correct": 21,
+      "partially_correct": 1
+    },
+    "judge_mean_score": 4.7727272727272725,
+    "judge_correct_wilson_95": [
+      0.7820151050048196,
+      0.9919307806988522
+    ],
+    "mean_seconds": 6.531363636363636,
+    "answerer_estimated_cost_usd": 0.025832327999999998,
+    "cost_scope": "DeepSeek answerer only, local configured rates; excludes embedding, judge and GPU costs"
+  },
+  "manual_review_flags": [
+    {
+      "sample_id": "p24",
+      "issue": "Answer calls soft_fuse a Dense/BM25 fusion fallback. search_tool.py actually uses it to skip injecting low-confidence code; it is a soft fuse, not sparse fusion. Raw judge score 4 partially_correct retained."
+    },
+    {
+      "sample_id": "m04",
+      "issue": "Answer defines A as d x r and B as r x d but adds BA to W; BA has r x r dimensions under those definitions. Judge gave 5/correct and missed this error; raw score retained."
+    }
+  ],
+  "limitations": [
+    "Single-judge pilot scores are not manually verified factual accuracy.",
+    "No new Q4 answers or scores yet; no old truncated answers were substituted.",
+    "Native returns complete tool context; phase2a currently supplies at most 6000 characters. The future comparison measures whole pipelines, not isolated finetuning.",
+    "Existing index is a historical 87-chunk snapshot."
+  ],
+  "index_files_unchanged": false,
+  "temporary_files": "Inline/mock checks only; temporary result directories removed; no new Markdown or test files.",
+  "index_logical_content_unchanged": true,
+  "index_validation_note": "Chroma/HNSW file bytes changed during load/query. Read-only SQLite comparison against the verified pre-run backup confirms all 87 IDs, documents, metadata and stored vectors unchanged; BM25 bytes also unchanged."
+}

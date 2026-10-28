@@ -1,0 +1,374 @@
+{
+  "status": "passed",
+  "date": "",
+  "finalized_at": "",
+  "python": ".\\.venv\\Scripts\\python.exe",
+  "cwd": ".",
+  "max_false_block": 0.075,
+  "interception_rule": "top1_distance > recommended_threshold",
+  "question_counts": {
+    "domain": 40,
+    "far_general": 28,
+    "term_near_no_rag": 12,
+    "misleading_edge": 10
+  },
+  "source_origin": ".\\data\\v2\\soft_fuse_clean\\source",
+  "historical_metrics_excluded_from_rebaseline_tables": true,
+  "explanation": {
+    "source_matches": 90,
+    "max_absolute_distance_difference": 0.00036513805389404297,
+    "old_auc": 0.8015,
+    "new_auc": 0.801,
+    "old_auc_3dp": "0.801",
+    "new_auc_3dp": "0.801",
+    "passed": true
+  },
+  "explanation_difference_report": ".\\data\\v2\\soft_fuse_rebaseline\\explanation_check.json",
+  "runs": [
+    {
+      "index": "src",
+      "label": "字符＋标准",
+      "stage": "original",
+      "embedding": "qwen3.7-text-embedding",
+      "roc_auc": 0.798,
+      "recommended_threshold": 0.8868874907493591,
+      "outdomain_intercepted": 28,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 35,
+      "top1_exam_questions": 33,
+      "outdomain_category_intercepted": {
+        "far_general": 20,
+        "term_near_no_rag": 6,
+        "misleading_edge": 2
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.log"
+    },
+    {
+      "index": "src_ast",
+      "label": "AST＋标准",
+      "stage": "original",
+      "embedding": "qwen3.7-text-embedding",
+      "roc_auc": 0.801,
+      "recommended_threshold": 0.8066497445106506,
+      "outdomain_intercepted": 32,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 40,
+      "top1_exam_questions": 38,
+      "outdomain_category_intercepted": {
+        "far_general": 23,
+        "term_near_no_rag": 6,
+        "misleading_edge": 3
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.log"
+    },
+    {
+      "index": "src_flash",
+      "label": "字符＋Flash",
+      "stage": "original",
+      "embedding": "qwen3.7-text-embedding-flash",
+      "roc_auc": 0.744,
+      "recommended_threshold": 1.1008355617523193,
+      "outdomain_intercepted": 24,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 54,
+      "top1_exam_questions": 49,
+      "outdomain_category_intercepted": {
+        "far_general": 15,
+        "term_near_no_rag": 6,
+        "misleading_edge": 3
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.log"
+    },
+    {
+      "index": "src_ast_flash",
+      "label": "AST＋Flash",
+      "stage": "original",
+      "embedding": "qwen3.7-text-embedding-flash",
+      "roc_auc": 0.6655,
+      "recommended_threshold": 1.0791512727737427,
+      "outdomain_intercepted": 18,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 49,
+      "top1_exam_questions": 48,
+      "outdomain_category_intercepted": {
+        "far_general": 11,
+        "term_near_no_rag": 4,
+        "misleading_edge": 3
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.log"
+    },
+    {
+      "index": "src_frozen90_clean",
+      "label": "字符＋标准",
+      "stage": "clean",
+      "embedding": "qwen3.7-text-embedding",
+      "roc_auc": 0.8515,
+      "recommended_threshold": 0.9053469300270081,
+      "outdomain_intercepted": 33,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 6,
+      "top1_exam_questions": 0,
+      "outdomain_category_intercepted": {
+        "far_general": 25,
+        "term_near_no_rag": 6,
+        "misleading_edge": 2
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.log"
+    },
+    {
+      "index": "src_ast_noexam",
+      "label": "AST＋标准",
+      "stage": "clean",
+      "embedding": "qwen3.7-text-embedding",
+      "roc_auc": 0.8685,
+      "recommended_threshold": 0.8851770162582397,
+      "outdomain_intercepted": 36,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 4,
+      "top1_exam_questions": 0,
+      "outdomain_category_intercepted": {
+        "far_general": 28,
+        "term_near_no_rag": 6,
+        "misleading_edge": 2
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.log"
+    },
+    {
+      "index": "src_flash_noexam",
+      "label": "字符＋Flash",
+      "stage": "clean",
+      "embedding": "qwen3.7-text-embedding-flash",
+      "roc_auc": 0.863,
+      "recommended_threshold": 1.1664958000183105,
+      "outdomain_intercepted": 35,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 19,
+      "top1_exam_questions": 0,
+      "outdomain_category_intercepted": {
+        "far_general": 25,
+        "term_near_no_rag": 6,
+        "misleading_edge": 4
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.log"
+    },
+    {
+      "index": "src_ast_flash_noexam",
+      "label": "AST＋Flash",
+      "stage": "clean",
+      "embedding": "qwen3.7-text-embedding-flash",
+      "roc_auc": 0.8305,
+      "recommended_threshold": 1.1677236557006836,
+      "outdomain_intercepted": 33,
+      "private_intercepted": 3,
+      "top1_evaluation_questions": 12,
+      "top1_exam_questions": 0,
+      "outdomain_category_intercepted": {
+        "far_general": 25,
+        "term_near_no_rag": 5,
+        "misleading_edge": 3
+      },
+      "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.json",
+      "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.log"
+    }
+  ],
+  "pairs": [
+    {
+      "label": "字符＋标准",
+      "original": {
+        "index": "src",
+        "label": "字符＋标准",
+        "stage": "original",
+        "embedding": "qwen3.7-text-embedding",
+        "roc_auc": 0.798,
+        "recommended_threshold": 0.8868874907493591,
+        "outdomain_intercepted": 28,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 35,
+        "top1_exam_questions": 33,
+        "outdomain_category_intercepted": {
+          "far_general": 20,
+          "term_near_no_rag": 6,
+          "misleading_edge": 2
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src.log"
+      },
+      "clean": {
+        "index": "src_frozen90_clean",
+        "label": "字符＋标准",
+        "stage": "clean",
+        "embedding": "qwen3.7-text-embedding",
+        "roc_auc": 0.8515,
+        "recommended_threshold": 0.9053469300270081,
+        "outdomain_intercepted": 33,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 6,
+        "top1_exam_questions": 0,
+        "outdomain_category_intercepted": {
+          "far_general": 25,
+          "term_near_no_rag": 6,
+          "misleading_edge": 2
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_frozen90_clean.log"
+      }
+    },
+    {
+      "label": "AST＋标准",
+      "original": {
+        "index": "src_ast",
+        "label": "AST＋标准",
+        "stage": "original",
+        "embedding": "qwen3.7-text-embedding",
+        "roc_auc": 0.801,
+        "recommended_threshold": 0.8066497445106506,
+        "outdomain_intercepted": 32,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 40,
+        "top1_exam_questions": 38,
+        "outdomain_category_intercepted": {
+          "far_general": 23,
+          "term_near_no_rag": 6,
+          "misleading_edge": 3
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast.log"
+      },
+      "clean": {
+        "index": "src_ast_noexam",
+        "label": "AST＋标准",
+        "stage": "clean",
+        "embedding": "qwen3.7-text-embedding",
+        "roc_auc": 0.8685,
+        "recommended_threshold": 0.8851770162582397,
+        "outdomain_intercepted": 36,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 4,
+        "top1_exam_questions": 0,
+        "outdomain_category_intercepted": {
+          "far_general": 28,
+          "term_near_no_rag": 6,
+          "misleading_edge": 2
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_noexam.log"
+      }
+    },
+    {
+      "label": "字符＋Flash",
+      "original": {
+        "index": "src_flash",
+        "label": "字符＋Flash",
+        "stage": "original",
+        "embedding": "qwen3.7-text-embedding-flash",
+        "roc_auc": 0.744,
+        "recommended_threshold": 1.1008355617523193,
+        "outdomain_intercepted": 24,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 54,
+        "top1_exam_questions": 49,
+        "outdomain_category_intercepted": {
+          "far_general": 15,
+          "term_near_no_rag": 6,
+          "misleading_edge": 3
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash.log"
+      },
+      "clean": {
+        "index": "src_flash_noexam",
+        "label": "字符＋Flash",
+        "stage": "clean",
+        "embedding": "qwen3.7-text-embedding-flash",
+        "roc_auc": 0.863,
+        "recommended_threshold": 1.1664958000183105,
+        "outdomain_intercepted": 35,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 19,
+        "top1_exam_questions": 0,
+        "outdomain_category_intercepted": {
+          "far_general": 25,
+          "term_near_no_rag": 6,
+          "misleading_edge": 4
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_flash_noexam.log"
+      }
+    },
+    {
+      "label": "AST＋Flash",
+      "original": {
+        "index": "src_ast_flash",
+        "label": "AST＋Flash",
+        "stage": "original",
+        "embedding": "qwen3.7-text-embedding-flash",
+        "roc_auc": 0.6655,
+        "recommended_threshold": 1.0791512727737427,
+        "outdomain_intercepted": 18,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 49,
+        "top1_exam_questions": 48,
+        "outdomain_category_intercepted": {
+          "far_general": 11,
+          "term_near_no_rag": 4,
+          "misleading_edge": 3
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash.log"
+      },
+      "clean": {
+        "index": "src_ast_flash_noexam",
+        "label": "AST＋Flash",
+        "stage": "clean",
+        "embedding": "qwen3.7-text-embedding-flash",
+        "roc_auc": 0.8305,
+        "recommended_threshold": 1.1677236557006836,
+        "outdomain_intercepted": 33,
+        "private_intercepted": 3,
+        "top1_evaluation_questions": 12,
+        "top1_exam_questions": 0,
+        "outdomain_category_intercepted": {
+          "far_general": 25,
+          "term_near_no_rag": 5,
+          "misleading_edge": 3
+        },
+        "result_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.json",
+        "log_path": ".\\data\\v2\\soft_fuse_rebaseline\\baseline_src_ast_flash_noexam.log"
+      }
+    }
+  ],
+  "clean_threshold_range": {
+    "min": 0.8851770162582397,
+    "max": 1.1677236557006836
+  },
+  "character_standard_clean_cosine_threshold": {
+    "formula": "cos = 1 - d / 2",
+    "distance_threshold": 0.9053469300270081,
+    "cosine_threshold": 0.547326534986496,
+    "interception_rule": "cosine < cosine_threshold"
+  },
+  "protected_integrity": {
+    "status": "passed",
+    "protected_file_count": 387,
+    "changed": [],
+    "missing": [],
+    "added": []
+  },
+  "index_rebuilds": 0,
+  "index_reembedding_calls": 0,
+  "evaluated_queries": 810,
+  "evaluation_subprocess_seconds": 166.6070984000071,
+  "new_file_manifest": ".\\data\\v2\\soft_fuse_rebaseline\\new_files.json",
+  "notes": [
+    "八次基线均使用原样冻结源码和当前RepoAgent题面，每次索引先复制到系统临时目录再由Chroma打开。",
+    "历史JSON仅作解释性核对参考，不与本次基线结果并列比较。",
+    "阈值在同一批90题上选出、又在这90题上统计，结果偏乐观。"
+  ]
+}

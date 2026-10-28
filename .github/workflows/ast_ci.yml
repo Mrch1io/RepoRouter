@@ -1,0 +1,44 @@
+name: RepoRouter AST Code Inspector
+
+#触发时机：
+on:
+
+  push:
+  #往main分支推代码（冒号后必须有空格）
+    branches: [ "main" ]
+  pull_request:
+  #往main分支发送合并代码请求
+    branches: [ "main" ]
+
+jobs:
+  ast-scan:
+    #分配虚拟机服务器
+    runs-on: ubuntu-latest
+    steps:
+    - name: 拉取代码
+      uses: actions/checkout@v4 #克隆代码
+  
+    - name: 配置Python 3.12环境
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"   #和本地 .venv 一致
+        cache: 'pip'
+  
+    - name: 安装依赖
+      run: |                  
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ] ; then pip install -r requirements.txt;fi
+        #先升级一下pip包  
+    - name: 启动AST代码分析
+      run: |        
+
+        PYTHONPATH=. python scripts/check_code.py
+      #环境变量调成项目根目录
+
+    - name: 运行单元测试（不联网，假的大模型）
+      #config 里 key 是必填项，CI 里随便给一个；live 用例默认跳过，不会真的调 API
+      env:
+        deepseek_api_key: dummy
+        qwen_api_key: dummy
+      run: |
+        python -m pytest
